@@ -16,8 +16,8 @@ var stylelintConfig = require('stylelint-config-standard');
 
 module.exports = {
 	buildCSS: function(src, dest) {
-		if (typeof(src)==='undefined') src = 'sources/less/style.less';
-		if (typeof(dest)==='undefined') dest = 'appengine/css/';
+		if (typeof(src)==='undefined') src = '/sources/less/style.less';
+		if (typeof(dest)==='undefined') dest = '/appengine/css/';
 
 		src = dirname(dirname(__dirname)) + src; 
 		dest = dirname(dirname(__dirname)) + dest;
