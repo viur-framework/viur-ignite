@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* ------------------------------------------------------------------------------------------------------
+	#ICONS
+------------------------------------------------------------------------------------------------------ */
+
+/*
+ViUR Ignite features two types of icons: as inline SVG or before element.
+*/
+
+@iconSuccessColor: @successColor;
+@iconWarnColor: @warnColor;
+
+/* InlineSVG Icons */
+
+.icon {
+	display: inline-block;
+	vertical-align: text-top;
+	fill: currentcolor;
+	color:inherit;
+	width:1em;
+	height:1em;
+	& path {fill:inherit}
+}
+
+.icon-vSuccess {
+	color: darken(@iconSuccessColor, 25%);
+}
+
+.icon-vWarn {
+	color: darken(@iconWarnColor, 25%);
+}
+
+/* Before Icons */

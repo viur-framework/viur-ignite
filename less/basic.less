@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------
+	BASICS, FUNDAMENTALS and TYPE
+--------------------------------------------------------------------------------------- */
+
+// ViUR Ignite CSS supports the 100% Easy to read standard:
+// https://ia.net/know-how/100e2r
+
+// The body font size is 100% (roughly 16px).
+// Objects use a font size based on this size: using »rem« (root em).
+// Inline elements and type should react to their direct surroundings - thus use »em«.
+
+
+
+body {
+	margin: 0; /* IE Reset */
+	background: @backgroundColor;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	font-size:100.01%;
+	line-height:1.5;
+	color: @textColor;
+	font-family: @bodyFonts;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Links */
+a { color: @mainColor; text-decoration: none; outline: 0; }
+a:hover, a:focus, a:active { color: darken(@mainColor, 10%); }
+p a, p a:visited { line-height: inherit; }
+
+/* Typography */
+
+// Please style your headlines with the help of classes (e.g.: .headline, .subline) in the project.less
+h1, h2, h3, h4, h5, h6 {font-family: @headFonts; font-weight: normal; font-size: 1.2em; line-height: 1.6;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight: inherit; color: inherit;}
+
+h1 {color: @mainColor; font-size:2.1em;}
+h2 {color: @mainColor; font-size:1.7em;}
+h3 {color: @complementColor; font-size:1.5em;}
+h4, h5, h6 {color: @complementColor}
+
+.lead {
+	font-size: 1.3em;
+	font-weight: 300;
+}
+
+p {
+	line-height: 1.6;
+	font-size: 1em;
+}
+
+strong {font-weight: 700;}
+em {font-style:italic;}
+small {font-size: .8em}
+
+ins {
+	text-decoration: none;
+	border-bottom: 1px dashed;
+}
+
+mark {
+		background: lighten(@mainColor,40%);
+		color: contrast(lighten(@mainColor,40%), @textColor, @invTextColor);
+		padding:1px;
+		&:before,
+		&:after {
+			letter-spacing: -0.2em;
+			content: "\00a0";
+		}
+}
+
+blockquote {
+	font-family: @headFonts;
+	font-style: italic;
+	font-size: 1.2em;
+	color: @complementColor;
+	padding: 0 15px;
+	border-left: 7px solid @complementColor;
+}
+
+code, pre {font-family: @monoFonts;}
+code {
+	color:contrast(darken(@backgroundColor,10%));
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	tab-size: 4;
+	hyphens: none;
+	background: fadeout(darken(@backgroundColor,15%),10%);
+	padding: 3px;
+	border-radius: 3px;
+	&:before,
+	&:after {
+		letter-spacing: -0.2em;
+		content: "\00a0";
+	}
+}
+
+/* Lists */
+ul.is-list {
+		padding: 3px 18px;
+		margin:0;
+		list-style-type: disc;
+}
+
+.is-list ul {
+		padding: 3px 18px;
+		list-style-type: square;
+}
+
+.is-list ul ul,
+.is-list ol ul {
+		list-style-type: circle;
+}
+
+ol.is-list {
+		padding: 3px 20px;
+		margin:0;
+		list-style-type: decimal;
+}
+
+.is-list ol {
+		padding: 3px 20px;
+		list-style-type: upper-roman;
+}
+
+.is-list ol ol,
+.is-list ul ol {
+		list-style-type: upper-alpha;
+}
+
+// => Basic Media Queries
+
+.media-mixin(@break) when (@break = @breakSmall) {
+	body {font-size: 90%;}
+}
+
+.media-mixin(@break) when (@break = @breakMedium) {
+
+}
+
+.media-mixin(@break) when (@break = @breakLarge) {
+
+}
+
+.media-mixin(@break) when (@break = @break2x) {
+
+}
+
+.media-mixin(@break) when (@break = @breakPrint) {
+
+}

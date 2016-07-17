@@ -1,0 +1,368 @@
+/* ALL CHANGES IN THIS WILL BE OVERWRITTEN */
+/* USE icon_prototype.less */
+
+
+@charset "UTF-8";
+
+/* ------------------------------------------------------------------------------------------------------
+	#ICONS
+------------------------------------------------------------------------------------------------------ */
+
+/*
+ViUR Ignite features two types of icons: as inline SVG or before element.
+*/
+
+@iconSuccessColor: @successColor;
+@iconWarnColor: @warnColor;
+
+/* InlineSVG Icons */
+
+.icon {
+	display: inline-block;
+	vertical-align: text-top;
+	fill: currentcolor;
+	color:inherit;
+	width:1em;
+	height:1em;
+	& path {fill:inherit}
+}
+
+.icon-vSuccess {
+	color: darken(@iconSuccessColor, 25%);
+}
+
+.icon-vWarn {
+	color: darken(@iconWarnColor, 25%);
+}
+
+/* Before Icons */
+.i-add-shape:before {
+	background-image:url('../icons/actions/add-shape.svg');
+}
+.i-add-stats:before {
+	background-image:url('../icons/actions/add-stats.svg');
+}
+.i-add-table:before {
+	background-image:url('../icons/actions/add-table.svg');
+}
+.i-arrow-hat-bottom:before {
+	background-image:url('../icons/actions/arrow-hat-bottom.svg');
+}
+.i-arrow-hat-left:before {
+	background-image:url('../icons/actions/arrow-hat-left.svg');
+}
+.i-arrow-hat-right:before {
+	background-image:url('../icons/actions/arrow-hat-right.svg');
+}
+.i-arrow-hat-top:before {
+	background-image:url('../icons/actions/arrow-hat-top.svg');
+}
+.i-bin:before {
+	background-image:url('../icons/actions/bin.svg');
+}
+.i-bookmark-add:before {
+	background-image:url('../icons/actions/bookmark-add.svg');
+}
+.i-bookmark-added:before {
+	background-image:url('../icons/actions/bookmark-added.svg');
+}
+.i-cancel:before {
+	background-image:url('../icons/actions/cancel.svg');
+}
+.i-clone:before {
+	background-image:url('../icons/actions/clone.svg');
+}
+.i-download-bill:before {
+	background-image:url('../icons/actions/download-bill.svg');
+}
+.i-download-delivery-note:before {
+	background-image:url('../icons/actions/download-delivery-note.svg');
+}
+.i-download:before {
+	background-image:url('../icons/actions/download.svg');
+}
+.i-edit-blue:before {
+	background-image:url('../icons/actions/edit-blue.svg');
+}
+.i-edit-grey:before {
+	background-image:url('../icons/actions/edit-grey.svg');
+}
+.i-error-cloudstorm:before {
+	background-image:url('../icons/actions/error-cloudstorm.svg');
+}
+.i-error-file1:before {
+	background-image:url('../icons/actions/error-file1.svg');
+}
+.i-error-file2:before {
+	background-image:url('../icons/actions/error-file2.svg');
+}
+.i-error:before {
+	background-image:url('../icons/actions/error.svg');
+}
+.i-exit-left:before {
+	background-image:url('../icons/actions/exit-left.svg');
+}
+.i-exit-right:before {
+	background-image:url('../icons/actions/exit-right.svg');
+}
+.i-export:before {
+	background-image:url('../icons/actions/export.svg');
+}
+.i-eye:before {
+	background-image:url('../icons/actions/eye.svg');
+}
+.i-folder-red:before {
+	background-image:url('../icons/actions/folder-red.svg');
+}
+.i-import:before {
+	background-image:url('../icons/actions/import.svg');
+}
+.i-link:before {
+	background-image:url('../icons/actions/link.svg');
+}
+.i-lock:before {
+	background-image:url('../icons/actions/lock.svg');
+}
+.i-minus:before {
+	background-image:url('../icons/actions/minus.svg');
+}
+.i-new-folder:before {
+	background-image:url('../icons/actions/new-folder.svg');
+}
+.i-paid:before {
+	background-image:url('../icons/actions/paid.svg');
+}
+.i-plus:before {
+	background-image:url('../icons/actions/plus.svg');
+}
+.i-previous-folder:before {
+	background-image:url('../icons/actions/previous-folder.svg');
+}
+.i-redo:before {
+	background-image:url('../icons/actions/redo.svg');
+}
+.i-reload:before {
+	background-image:url('../icons/actions/reload.svg');
+}
+.i-rename:before {
+	background-image:url('../icons/actions/rename.svg');
+}
+.i-save-and-continue:before {
+	background-image:url('../icons/actions/save-and-continue.svg');
+}
+.i-save-and-new:before {
+	background-image:url('../icons/actions/save-and-new.svg');
+}
+.i-save:before {
+	background-image:url('../icons/actions/save.svg');
+}
+.i-scale:before {
+	background-image:url('../icons/actions/scale.svg');
+}
+.i-scissors:before {
+	background-image:url('../icons/actions/scissors.svg');
+}
+.i-screen:before {
+	background-image:url('../icons/actions/screen.svg');
+}
+.i-spyglass:before {
+	background-image:url('../icons/actions/spyglass.svg');
+}
+.i-square-select-all:before {
+	background-image:url('../icons/actions/square-select-all.svg');
+}
+.i-square-selected:before {
+	background-image:url('../icons/actions/square-selected.svg');
+}
+.i-square-unselect-all:before {
+	background-image:url('../icons/actions/square-unselect-all.svg');
+}
+.i-square-unselected:before {
+	background-image:url('../icons/actions/square-unselected.svg');
+}
+.i-undo:before {
+	background-image:url('../icons/actions/undo.svg');
+}
+.i-unlock:before {
+	background-image:url('../icons/actions/unlock.svg');
+}
+.i-upload:before {
+	background-image:url('../icons/actions/upload.svg');
+}
+.i-bmp:before {
+	background-image:url('../icons/filetypes/bmp.svg');
+}
+.i-doc:before {
+	background-image:url('../icons/filetypes/doc.svg');
+}
+.i-gif:before {
+	background-image:url('../icons/filetypes/gif.svg');
+}
+.i-jpg:before {
+	background-image:url('../icons/filetypes/jpg.svg');
+}
+.i-pdf:before {
+	background-image:url('../icons/filetypes/pdf.svg');
+}
+.i-png:before {
+	background-image:url('../icons/filetypes/png.svg');
+}
+.i-txt:before {
+	background-image:url('../icons/filetypes/txt.svg');
+}
+.i-zip:before {
+	background-image:url('../icons/filetypes/zip.svg');
+}
+.i-account:before {
+	background-image:url('../icons/modules/account.svg');
+}
+.i-apps:before {
+	background-image:url('../icons/modules/apps.svg');
+}
+.i-archived:before {
+	background-image:url('../icons/modules/archived.svg');
+}
+.i-calendar:before {
+	background-image:url('../icons/modules/calendar.svg');
+}
+.i-cart:before {
+	background-image:url('../icons/modules/cart.svg');
+}
+.i-categories:before {
+	background-image:url('../icons/modules/categories.svg');
+}
+.i-clock:before {
+	background-image:url('../icons/modules/clock.svg');
+}
+.i-comments:before {
+	background-image:url('../icons/modules/comments.svg');
+}
+.i-contact-person:before {
+	background-image:url('../icons/modules/contact-person.svg');
+}
+.i-file-system:before {
+	background-image:url('../icons/modules/file-system.svg');
+}
+.i-film:before {
+	background-image:url('../icons/modules/film.svg');
+}
+.i-gift:before {
+	background-image:url('../icons/modules/gift.svg');
+}
+.i-heart:before {
+	background-image:url('../icons/modules/heart.svg');
+}
+.i-hierarchy:before {
+	background-image:url('../icons/modules/hierarchy.svg');
+}
+.i-home:before {
+	background-image:url('../icons/modules/home.svg');
+}
+.i-labels:before {
+	background-image:url('../icons/modules/labels.svg');
+}
+.i-list:before {
+	background-image:url('../icons/modules/list.svg');
+}
+.i-locations:before {
+	background-image:url('../icons/modules/locations.svg');
+}
+.i-logbook:before {
+	background-image:url('../icons/modules/logbook.svg');
+}
+.i-music:before {
+	background-image:url('../icons/modules/music.svg');
+}
+.i-news:before {
+	background-image:url('../icons/modules/news.svg');
+}
+.i-newsletter-preview:before {
+	background-image:url('../icons/modules/newsletter-preview.svg');
+}
+.i-newsletter-send:before {
+	background-image:url('../icons/modules/newsletter-send.svg');
+}
+.i-newsletter:before {
+	background-image:url('../icons/modules/newsletter.svg');
+}
+.i-order-cancelled:before {
+	background-image:url('../icons/modules/order-cancelled.svg');
+}
+.i-order-not-paid:before {
+	background-image:url('../icons/modules/order-not-paid.svg');
+}
+.i-order-not-shipped:before {
+	background-image:url('../icons/modules/order-not-shipped.svg');
+}
+.i-order-paid:before {
+	background-image:url('../icons/modules/order-paid.svg');
+}
+.i-order-ready:before {
+	background-image:url('../icons/modules/order-ready.svg');
+}
+.i-order-return:before {
+	background-image:url('../icons/modules/order-return.svg');
+}
+.i-order-shipped:before {
+	background-image:url('../icons/modules/order-shipped.svg');
+}
+.i-pages:before {
+	background-image:url('../icons/modules/pages.svg');
+}
+.i-photo:before {
+	background-image:url('../icons/modules/photo.svg');
+}
+.i-press:before {
+	background-image:url('../icons/modules/press.svg');
+}
+.i-qr-code:before {
+	background-image:url('../icons/modules/qr-code.svg');
+}
+.i-recently-added:before {
+	background-image:url('../icons/modules/recently-added.svg');
+}
+.i-recently-edited:before {
+	background-image:url('../icons/modules/recently-edited.svg');
+}
+.i-settings:before {
+	background-image:url('../icons/modules/settings.svg');
+}
+.i-shoutbox:before {
+	background-image:url('../icons/modules/shoutbox.svg');
+}
+.i-statistics:before {
+	background-image:url('../icons/modules/statistics.svg');
+}
+.i-tree:before {
+	background-image:url('../icons/modules/tree.svg');
+}
+.i-users:before {
+	background-image:url('../icons/modules/users.svg');
+}
+.i-video:before {
+	background-image:url('../icons/modules/video.svg');
+}
+.i-.DS_Store:before {
+	background-image:url('../icons/.DS_Store');
+}
+.i-arrowhead-left:before {
+	background-image:url('../icons/arrowhead-left.svg');
+}
+.i-check:before {
+	background-image:url('../icons/check.svg');
+}
+.i-cross:before {
+	background-image:url('../icons/cross.svg');
+}
+.i-flash:before {
+	background-image:url('../icons/flash.svg');
+}
+.i-heart:before {
+	background-image:url('../icons/heart.svg');
+}
+.i-not-allowed:before {
+	background-image:url('../icons/not-allowed.svg');
+}
+.i-pen:before {
+	background-image:url('../icons/pen.svg');
+}

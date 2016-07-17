@@ -1,0 +1,19 @@
+{
+  "name": "test for viur-ignite-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "\"echo Hello world\""
+  },
+  "repository": {},
+  "keywords": [],
+  "author": "VIUR",
+  "license": "GPL-3.0",
+  "bugs": {},
+  "homepage": "",
+  "devDependencies": {
+    "gulp": "latest",
+  },
+  "dependencies": {}
+}

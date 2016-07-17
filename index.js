@@ -13,12 +13,14 @@ var nano = require('gulp-cssnano');
 
 var stylelint = require('stylelint');
 var stylelintConfig = require('stylelint-config-standard'); 
-var gulpCopy = require('gulp-copy'); 
 
 module.exports = {
-	buildViurCSS: function(src, dest) {
-		 if (typeof(src)==='undefined') src = '../../sources/less/style.less';
-		 if (typeof(dest)==='undefined') dest = '../../appengine/css/';
+	buildCSS: function(src, dest) {
+		if (typeof(src)==='undefined') src = 'sources/less/style.less';
+		if (typeof(dest)==='undefined') dest = 'appengine/css/';
+
+		src = dirname(dirname(__dirname)) + src; 
+		dest = dirname(dirname(__dirname)) + dest;
 
 		var processors = [
 			nocomments, // discard comments
@@ -26,9 +28,9 @@ module.exports = {
 			zindex, // reduce z-index values
 			require('stylelint')(stylelintConfig), // lint the css
 			require('postcss-font-magician')({
-				hosted: destpaths.webfonts,
+				hosted: dirname(dest)+'/fonts', // import fonts
 				formats: 'local eot woff2'
-			}) // import fonts   
+			})
 		];
 		return gulp.src(src)
 			.pipe(less({
@@ -41,13 +43,18 @@ module.exports = {
 			.pipe(postcss(processors)) // clean up css
 			.pipe(gulp.dest(dest)) // save cleaned version
 			.pipe(nano()) // minify css
-			.pipe(rename('style.min.css')) // save minified version 
-			.pipe(gulp.dest(dest));
+			.pipe(rename('style.min.css'))
+			.pipe(gulp.dest(dest)); // save minified version 
 	},
 
 	init: function() {
-		console.log(__dirname);
-		return gulp.src('./copy/default_style.less')
-			.pipe(gulp.dest('./'));
+		return gulp.src(__dirname+'/prototype/style.less')
+			.pipe(rename('style.less'))
+			.pipe(gulp.dest('./sources/less'));
 	}
 };
+
+function dirname(path) {
+	return path.replace(/\\/g, '/')
+		.replace(/\/[^\/]*\/?$/, '');
+}

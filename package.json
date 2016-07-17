@@ -24,7 +24,6 @@
   "devDependencies": {
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
-    "gulp-copy": "0.0.2",
     "gulp-cssnano": "latest",
     "gulp-less": "latest",
     "gulp-postcss": "latest",

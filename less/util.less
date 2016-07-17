@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------
+    #UTILITY STYLES
+--------------------------------------------------------------------------------------- */
+
+/* Clearfix */
+.clear {clear:both;}
+
+.clearfix {
+  *zoom: 1;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+  }
+}
+
+/* Floats */
+.f-left {float:left !important;}
+.f-right {float:right !important;}
+
+/* Text Align */
+.txt-right {text-align:right;}
+.txt-left {text-align:left;}
+.txt-center {text-align:center;}
+
+// Cursor => Pointer: use only within objects. Won't work in html!
+.pointer() {cursor: pointer;}
+
+// Shadows: use only within objects. Won't work in html!
+.shd() {box-shadow: @defaultShadow;}
+.txt-shd() {text-shadow: @defaultShadow;}
+
+// => Utils Media Queries
+
+.media-mixin(@break) when (@break = @breakSmall) {
+
+}
+
+.media-mixin(@break) when (@break = @breakMedium) {
+
+}
+
+.media-mixin(@break) when (@break = @breakLarge) {
+
+}
+
+.media-mixin(@break) when (@break = @break2x) {
+
+}
+
+.media-mixin(@break) when (@break = @breakPrint) {
+
+}

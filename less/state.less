@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------
+	GLOBAL STATES
+	--------------------------------------------------------------------------------------- */
+
+// Different element or page states that can be applied on every part of the page. 
+// States that are specific a certain object should be applied to the object itself.
+
+// The namespaces .is-, .has- and .no- are reserved for states. 
+
+@adminColor: @successColor;
+
+/* Admin Hint */
+.is-admin {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: @adminColor;
+	color: contrast(@adminColor);
+	padding: 10px 0;
+	text-align: center;
+	// .zIndex('dev',0);
+}
+.is-admin a,
+.is-admin a:link,
+.is-admin a:active,
+.is-admin a:visited,
+.is-admin a:hover {color: contrast(@adminColor); text-decoration: underline;}
+
+
+
+
+/* Selections */
+::-moz-selection {
+	background-color: darken(@mainColor, 10%);
+	text-shadow: none;
+	color: contrast(@mainColor);
+}
+
+::selection {
+	background-color: darken(@mainColor, 10%);
+	text-shadow: none;
+	color: contrast(@mainColor);
+}
+
+// => Global States Media Queries
+
+.media-mixin(@break) when (@break = @breakSmall) {
+	.no-mobile {display:none;}
+}
+
+.media-mixin(@break) when (@break = @breakMedium) {
+
+}
+
+.media-mixin(@break) when (@break = @breakLarge) {
+
+}
+
+.media-mixin(@break) when (@break = @break2x) {
+
+}
+
+.media-mixin(@break) when (@break = @breakPrint) {
+	.no-print {display:none;}
+}

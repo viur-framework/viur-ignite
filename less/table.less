@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------
+	#TABLES
+	--------------------------------------------------------------------------------------- */
+
+@tableHeadBackgroundColor:@mainColor;
+@tableRowBackgroundColor:#fefefe;
+
+.table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	margin: 0 0 15px;
+	padding: 0;
+	font-size: .8rem; // 80% of body text.
+	.shd(); // default shadow class.
+}
+
+.tableHead {}
+.tableHead-row {
+	background-color:@tableHeadBackgroundColor;
+	&:hover {background-color:lighten(@tableHeadBackgroundColor, 10%);}
+}
+.tableHead-cell {
+	border:0px solid darken(@tableHeadBackgroundColor,15%);
+	border-width:0px 0px 1px 1px;
+	font-weight:bold;
+	color:lighten(contrast(@tableHeadBackgroundColor),5%);
+	text-align:center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	padding: 4px 10px;
+	&:first-of-type {border-width:0px 0px 1px 0px;}
+	&:last-of-type {border-width:0px 0px 1px 1px;}
+}
+
+.tableBody {}
+.tableBody-row {
+	&:nth-of-type(even) {background-color:darken(@tableRowBackgroundColor, 2%);}
+	&:nth-of-type(odd) {background-color:darken(@tableRowBackgroundColor, 4%);}
+	&:nth-of-type(even):hover {background-color:lighten(@tableRowBackgroundColor, 6%);}
+	&:nth-of-type(odd):hover {background-color:lighten(@tableRowBackgroundColor, 6%);}
+	&:nth-of-type(even).is-active {background-color:darken(@successColor, 2%);}
+	&:nth-of-type(odd).is-active {background-color:darken(@successColor, 4%);}
+	&:nth-of-type(even).is-active:hover {background-color:lighten(@successColor, 6%);}
+	&:nth-of-type(odd).is-active:hover {background-color:lighten(@successColor, 6%);}
+}
+
+.tableBody-cell {
+	vertical-align:middle;
+	border:1px solid darken(@tableRowBackgroundColor,15%);
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:5px 10px;
+	font-weight:normal;
+	color:contrast(@tableRowBackgroundColor);
+	.tableBody-row.is-active & {color:contrast(@successColor);}
+	.tableBody-row:last-of-type & {border-width:0px 1px 0px 0px;}
+	.tableBody-row &:last-of-type {border-width:0px 0px 1px 0px;}
+	.tableBody-row:last-of-type &:last-of-type {border-width:0px 0px 0px 0px;}
+}
+
+.tableLink {
+	display:block;
+	padding:8px;
+	color:contrast(@tableRowBackgroundColor);
+}
+
+.tableFoot {}
+
+// => Tables Media Queries
+
+.media-mixin(@break) when (@break = @breakSmall) {
+
+}
+
+.media-mixin(@break) when (@break = @breakMedium) {
+
+}
+
+.media-mixin(@break) when (@break = @breakLarge) {
+
+}
+
+.media-mixin(@break) when (@break = @break2x) {
+
+}
+
+.media-mixin(@break) when (@break = @breakPrint) {
+
+}

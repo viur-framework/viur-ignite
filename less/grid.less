@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------
+	GRID
+--------------------------------------------------------------------------------------- */
+
+@gridSpace: 10px;
+@gridColumns: 12;
+
+
+.grid-row {
+	display: flex;
+	margin-top: -@gridSpace;
+	margin-left: -@gridSpace;
+	margin-right: -@gridSpace;
+
+	&:last-child {
+		margin-bottom: -@gridSpace;
+	}
+
+	&.flex-around {
+		justify-content: space-around;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.grid-col {
+	display: block;
+	flex: 1 1 auto;
+	padding: @gridSpace;
+
+	& p {
+		border: 1px solid darken(@menuBackgroundColor,15%);
+		background: @menuBackgroundColor;
+		border-radius: 3px;
+		padding: 10px;
+		margin: 0;
+	}
+}
+
+
+// auto generate different column sizes and offsets
+.generate-columns(@gridColumns);
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+	.grid-col-@{i} {
+		width: (@i * 100% / @n);
+		flex: none;
+	}
+	.offset-is-@{i} {
+		margin-left: (@i * 100% / @n);
+	}
+	.generate-columns(@n, (@i + 1));
+}
+
+.offset-is-half {
+	margin-left: 50%
+}
+.offset-is-third {
+	margin-left: 100 / 3%
+}
+.offset-is-quarter {
+	margin-left: 25%
+}
+
+
+
+// => Grid Media Queries
+
+.media-mixin(@break) when (@break = @breakSmall) {
+	.grid-row {
+		display: block;
+		margin: 0;
+		margin-bottom: @gridSpace;
+	}
+
+	.grid-col {
+		display: block;
+		flex: 1 1 auto;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+
+		&:not(:last-child) {
+			margin-bottom: @gridSpace;
+		}
+	}
+}
+
+.media-mixin(@break) when (@break = @breakMedium) {
+
+}
+
+.media-mixin(@break) when (@break = @breakLarge) {
+
+}
+
+.media-mixin(@break) when (@break = @breakPrint) {
+
+}
