@@ -1,39 +1,41 @@
 {
-	"name": "viur-ignite-css",
-	"version": "1.0.3",
-	"description": "An extension of viur-ignite",
-	"main": "index.js",
-	"scripts": {
-		"test": "\"echo Hello world\""
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/viur-ignite/viur-ignite-css.git"
-	},
-	"keywords": [
-		"viur",
-		"ignite",
-		"css"
-	],
-	"author": "VIUR",
-	"license": "GPL-3.0",
-	"bugs": {
-		"url": "https://github.com/viur-ignite/viur-ignite-css/issues"
-	},
-	"homepage": "https://github.com/viur-ignite/viur-ignite-css#readme",
-	"devDependencies": {},
-	"dependencies": {
-		"gulp": "latest",
-		"gulp-autoprefixer": "latest",
-		"gulp-cssnano": "latest",
-		"gulp-less": "latest",
-		"gulp-postcss": "latest",
-		"gulp-rename": "latest",
-		"postcss-discard-comments": "latest",
-		"postcss-focus": "latest",
-		"postcss-font-magician": "latest",
-		"postcss-zindex": "latest",
-		"stylelint": "latest",
-		"stylelint-config-standard": "latest"
-	}
+  "name": "viur-ignite-css",
+  "version": "1.0.7",
+  "description": "An extension of viur-ignite",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo Hello world\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viur-ignite/viur-ignite-css.git"
+  },
+  "keywords": [
+    "viur",
+    "ignite",
+    "css"
+  ],
+  "author": "VIUR",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/viur-ignite/viur-ignite-css/issues"
+  },
+  "homepage": "https://github.com/viur-ignite/viur-ignite-css#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "file-exists": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-less": "latest",
+    "gulp-postcss": "latest",
+    "gulp-rename": "latest",
+    "postcss-discard-comments": "latest",
+    "postcss-focus": "latest",
+    "postcss-font-magician": "latest",
+    "postcss-zindex": "latest",
+    "prompt": "latest",
+    "stylelint": "latest",
+    "stylelint-config-standard": "latest"
+  }
 }
