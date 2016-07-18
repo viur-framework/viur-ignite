@@ -43,6 +43,9 @@
 @import "icon.less"; // ViUR SVG icons.
 @import "zindex.less"; // organize your z-indexes.
 
+// Project
+@import (optional) "../../sources/appengine/style.less"; // organize your z-indexes.
+
 
 /* Media Queries */
 @media only screen and (max-width: @breakLarge) {
@@ -57,8 +60,8 @@
 	.media-mixin(@breakSmall);
 }
 
-@media  only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
+@media only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: @break2x) {
 	.media-mixin(@break2x);
 }
 
