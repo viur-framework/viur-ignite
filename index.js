@@ -20,7 +20,7 @@ var prompt = require('prompt');
 module.exports = {
 	build: function(src, dest) {
 		if (typeof(src)==='undefined') src = '/sources/less/style.less';
-		if (typeof(dest)==='undefined') dest = '/appengine/static//css/';
+		if (typeof(dest)==='undefined') dest = '/appengine/static/css/';
 
 		src = dirname(dirname(__dirname)) + src; 
 		dest = dirname(dirname(__dirname)) + dest;
