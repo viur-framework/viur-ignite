@@ -44,6 +44,7 @@ module.exports = {
 				cascade: false
 			})) // add vendor prefixes
 			.pipe(postcss(processors)) // clean up css
+			.pipe(rename('style.css'))
 			.pipe(gulp.dest(dest)) // save cleaned version
 			.pipe(nano()) // minify css
 			.pipe(rename('style.min.css'))
