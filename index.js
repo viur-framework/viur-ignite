@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 var less = require('gulp-less');
 
-
 var postcss = require('gulp-postcss');
 var zindex = require('postcss-zindex');
 var autoprefixer = require('gulp-autoprefixer');
@@ -19,9 +18,9 @@ var prompt = require('prompt');
 
 
 module.exports = {
-	buildCSS: function(src, dest) {
+	build: function(src, dest) {
 		if (typeof(src)==='undefined') src = '/sources/less/style.less';
-		if (typeof(dest)==='undefined') dest = '/appengine/css/';
+		if (typeof(dest)==='undefined') dest = '/appengine/static//css/';
 
 		src = dirname(dirname(__dirname)) + src; 
 		dest = dirname(dirname(__dirname)) + dest;
