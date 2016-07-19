@@ -1,6 +1,6 @@
 {
   "name": "viur-ignite-css",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "An extension of viur-ignite",
   "main": "index.js",
   "scripts": {

@@ -1,4 +1,11 @@
-.breadcrumb { 
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------
+	Breadcrumb
+--------------------------------------------------------------------------------------- */
+
+@breadcrumbColor: @complementColor;
+
+.breadcrumb {
 	list-style: none; 
 	overflow: hidden; 
 
@@ -6,10 +13,10 @@
 		float: left; 
 
 		a {
-			color: contrast(@mainColor, @textColor, @invTextColor);
+			color: contrast(@breadcrumbColor, @textColor, @invTextColor);
 			text-decoration: none; 
-			padding: 10px 0 10px 55px;
-			background: @mainColor;
+			padding: 5px 0 5px 55px;
+			background: @breadcrumbColor;
 			position: relative; 
 			display: block;
 			float: left;
@@ -21,7 +28,7 @@
 				height: 0;
 				border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
 				border-bottom: 50px solid transparent;
-				border-left: 30px solid @mainColor;
+				border-left: 30px solid @breadcrumbColor;
 				position: absolute;
 				top: 50%;
 				margin-top: -50px; 
@@ -44,8 +51,8 @@
 				z-index: 1; 
 			}
 
-			&:hover { background: contrast(@mainColor, @textColor, @invTextColor) !important; color: @mainColor !important; }
-			&:hover:after { border-left-color: contrast(@mainColor, @textColor, @invTextColor) !important; }
+			&:hover { background: contrast(@breadcrumbColor, @textColor, @invTextColor) !important; color: @breadcrumbColor !important; }
+			&:hover:after { border-left-color: contrast(@breadcrumbColor, @textColor, @invTextColor) !important; }
 		}
 	}
 
@@ -53,14 +60,14 @@
 		padding-left: 10px;
 	}
 	
-	li:nth-child(2) a       { background:        lighten(@mainColor, 10%); }
-	li:nth-child(2) a:after { border-left-color: lighten(@mainColor, 10%); }
-	li:nth-child(3) a       { background:        lighten(@mainColor, 20%); }
-	li:nth-child(3) a:after { border-left-color: lighten(@mainColor, 20%); }
-	li:nth-child(4) a       { background:        lighten(@mainColor, 30%); }
-	li:nth-child(4) a:after { border-left-color: lighten(@mainColor, 30%); }
-	li:nth-child(5) a       { background:        lighten(@mainColor, 40%); }
-	li:nth-child(5) a:after { border-left-color: lighten(@mainColor, 40%); }
+	li:nth-child(2) a       { background:        lighten(@breadcrumbColor, 10%); }
+	li:nth-child(2) a:after { border-left-color: lighten(@breadcrumbColor, 10%); }
+	li:nth-child(3) a       { background:        lighten(@breadcrumbColor, 20%); }
+	li:nth-child(3) a:after { border-left-color: lighten(@breadcrumbColor, 20%); }
+	li:nth-child(4) a       { background:        lighten(@breadcrumbColor, 30%); }
+	li:nth-child(4) a:after { border-left-color: lighten(@breadcrumbColor, 30%); }
+	li:nth-child(5) a       { background:        lighten(@breadcrumbColor, 40%); }
+	li:nth-child(5) a:after { border-left-color: lighten(@breadcrumbColor, 40%); }
 	
 	li:last-child a {
 		background: #fff;
