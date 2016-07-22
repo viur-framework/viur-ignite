@@ -45,5 +45,5 @@ Thanks guys!
 
 ### Who do I talk to? ###
 
-* @phneutral
-* @sveneberth
+* [@phneutral](https://github.com/phneutral)
+* [@sveneberth](https://github.com/sveneberth)
