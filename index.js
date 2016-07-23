@@ -66,7 +66,7 @@ module.exports = {
 
 		// Set Default Options
 		var defaultOptions = {
-			src: './sources/less/style.less',
+			dest: './sources/less/style.less',
 			overwrite: false
 		};
 
@@ -76,16 +76,16 @@ module.exports = {
 		}
 
 
-		if(isThere(options.src) && (options.overwrite === false || options.overwrite === "false")) {
-			throw new gutil.PluginError(PLUGIN_NAME, "'" + options.src + "' already exists\n\tcall function with option overwrite: true");
+		if(isThere(options.dest) && (options.overwrite === false || options.overwrite === "false")) {
+			throw new gutil.PluginError(PLUGIN_NAME, "'" + options.dest + "' already exists\n\tcall function with option overwrite: true");
 		} else {
-			return copyPrototype();
+			return copyPrototype(options.dest);
 		}
 	}
 };
 
-function copyPrototype() {
+function copyPrototype(dest) {
 	return gulp.src(__dirname+'/prototype/style.less')
-		.pipe(rename('style.less'))
-		.pipe(gulp.dest('./sources/less'));
+		.pipe(rename(path.basename(dest)))
+		.pipe(gulp.dest(path.dirname(dest)));
 }
