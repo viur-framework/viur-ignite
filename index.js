@@ -29,7 +29,7 @@ module.exports = {
 			dest: './appengine/static/css/'
 		};
 
-		if (typeof(options)==='undefined') options = {};
+		if (typeof(options)==='undefined') var options = {};
 		for (var key in defaultOptions) {
 			if (typeof(options[key])==='undefined') options[key] = defaultOptions[key];
 		}
@@ -70,7 +70,7 @@ module.exports = {
 			overwrite: false
 		};
 
-		if (typeof(options)==='undefined') options = {};
+		if (typeof(options)==='undefined') var options = {};
 		for (var key in defaultOptions) {
 			if (typeof(options[key])==='undefined') options[key] = defaultOptions[key]
 		}

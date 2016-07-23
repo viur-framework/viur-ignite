@@ -1,6 +1,6 @@
 {
   "name": "viur-ignite-css",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Core of VIUR Ignite - a less framework",
   "main": "index.js",
   "scripts": {
@@ -25,19 +25,19 @@
   },
   "homepage": "http://ignite.viur.is",
   "dependencies": {
-    "is-there": "latest",
-    "gulp": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-cssnano": "latest",
-    "gulp-less": "latest",
-    "gulp-postcss": "latest",
-    "gulp-rename": "latest",
-    "gulp-util": "latest",
-    "postcss-discard-comments": "latest",
-    "postcss-focus": "latest",
-    "postcss-font-magician": "latest",
-    "postcss-zindex": "latest",
-    "stylelint": "latest",
-    "stylelint-config-standard": "latest"
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-less": "^3.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.7",
+    "is-there": "^4.3.3",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-focus": "^1.0.0",
+    "postcss-font-magician": "^1.4.0",
+    "postcss-zindex": "^2.1.1",
+    "stylelint": "^7.0.3",
+    "stylelint-config-standard": "^11.0.0"
   }
 }
