@@ -1,7 +1,7 @@
 {
   "name": "viur-ignite-css",
   "version": "1.0.18",
-  "description": "An extension of viur-ignite",
+  "description": "Core of VIUR Ignite - a less framework",
   "main": "index.js",
   "scripts": {
     "test": "\"echo Hello world\""
@@ -11,20 +11,21 @@
     "url": "git+https://github.com/viur-ignite/viur-ignite-css.git"
   },
   "keywords": [
+    "VIUR Ignite",
     "viur",
     "ignite",
-    "css"
+    "css",
+    "less",
+    "gulp"
   ],
   "author": "VIUR",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/viur-ignite/viur-ignite-css/issues"
   },
-  "homepage": "https://github.com/viur-ignite/viur-ignite-css#readme",
-  "devDependencies": {},
+  "homepage": "http://ignite.viur.is",
   "dependencies": {
     "is-there": "latest",
-    "when": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-cssnano": "latest",
@@ -36,7 +37,6 @@
     "postcss-focus": "latest",
     "postcss-font-magician": "latest",
     "postcss-zindex": "latest",
-    "prompt": "latest",
     "stylelint": "latest",
     "stylelint-config-standard": "latest"
   }

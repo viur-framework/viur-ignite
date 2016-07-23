@@ -1,5 +1,7 @@
 "use strict";
 
+const PLUGIN_NAME = 'viur-ignite-css';
+
 var	gulp = require('gulp'),
 	gutil = require('gulp-util'),
 	rename = require('gulp-rename');
@@ -10,15 +12,12 @@ var	less = require('gulp-less'),
 	postcss = require('gulp-postcss'),
 	zindex = require('postcss-zindex'),
 	focus = require('postcss-focus'),
-	nocomments = require('postcss-discard-comments')
-
-var	stylelint = require('stylelint'),
+	nocomments = require('postcss-discard-comments'),
+	stylelint = require('stylelint'),
 	stylelintConfig = require('stylelint-config-standard'); 
 
 var	path = require('path'),
-	isThere = require("is-there"),
-	prompt = require('prompt'),
-	when = require('when');
+	isThere = require("is-there");
 
 
 module.exports = {
@@ -30,10 +29,10 @@ module.exports = {
 			dest: './appengine/static/css/'
 		};
 
+		if (typeof(options)==='undefined') options = {};
 		for (var key in defaultOptions) {
-			if (typeof(key)==='undefined') options[key] = defaultOptions[key]
+			if (typeof(options[key])==='undefined') options[key] = defaultOptions[key];
 		}
-
 
 		// Options for postcss
 		var processors = [
@@ -67,46 +66,24 @@ module.exports = {
 
 		// Set Default Options
 		var defaultOptions = {
-			src: './sources/less/style.less'
+			src: './sources/less/style.less',
+			overwrite: false
 		};
 
+		if (typeof(options)==='undefined') options = {};
 		for (var key in defaultOptions) {
-			if (typeof(key)==='undefined') options[key] = defaultOptions[key]
+			if (typeof(options[key])==='undefined') options[key] = defaultOptions[key]
 		}
 
 
-		if(isThere(options.src)) { 
-				prompt.start();
-
-				var property = {
-					name: 'yesno',
-					message: 'Are you sure to overwrite style.less in sources/less/?',
-					validator: /y[es]*|n[o]?/,
-					warning: 'Must respond yes or no',
-					default: 'no'
-				};
-
-				return prompt.get(property, function (err, result) {
-					console.log('Your Input: ' + result.yesno);
-
-					if(result.yesno == "yes" || result.yesno == "y") {
-						prompt.stop();
-						return copyPrototype();
-					} else {
-						prompt.stop();
-						return false;
-					}
-				});
+		if(isThere(options.src) && (options.overwrite === false || options.overwrite === "false")) {
+			throw new gutil.PluginError(PLUGIN_NAME, "'" + options.src + "' already exists\n\tcall function with option overwrite: true");
 		} else {
 			return copyPrototype();
 		}
 	}
 };
 
-function dirname(path) {
-	return path.replace(/\\/g, '/')
-		.replace(/\/[^\/]*\/?$/, '');
-}
 function copyPrototype() {
 	return gulp.src(__dirname+'/prototype/style.less')
 		.pipe(rename('style.less'))
