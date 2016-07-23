@@ -1,6 +1,6 @@
 {
   "name": "viur-ignite-css",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "An extension of viur-ignite",
   "main": "index.js",
   "scripts": {
@@ -23,13 +23,15 @@
   "homepage": "https://github.com/viur-ignite/viur-ignite-css#readme",
   "devDependencies": {},
   "dependencies": {
-    "file-exists": "latest",
+    "is-there": "latest",
+    "when": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-cssnano": "latest",
     "gulp-less": "latest",
     "gulp-postcss": "latest",
     "gulp-rename": "latest",
+    "gulp-util": "latest",
     "postcss-discard-comments": "latest",
     "postcss-focus": "latest",
     "postcss-font-magician": "latest",

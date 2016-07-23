@@ -1,41 +1,53 @@
-var gulp = require('gulp');
-var rename = require('gulp-rename');
-var less = require('gulp-less');
+"use strict";
 
-var postcss = require('gulp-postcss');
-var zindex = require('postcss-zindex');
-var autoprefixer = require('gulp-autoprefixer');
-var focus = require('postcss-focus');
-var nocomments = require('postcss-discard-comments');
-var nano = require('gulp-cssnano');
+var	gulp = require('gulp'),
+	gutil = require('gulp-util'),
+	rename = require('gulp-rename');
 
-var stylelint = require('stylelint');
-var stylelintConfig = require('stylelint-config-standard'); 
+var	less = require('gulp-less'),
+	autoprefixer = require('gulp-autoprefixer'),
+	nano = require('gulp-cssnano'),
+	postcss = require('gulp-postcss'),
+	zindex = require('postcss-zindex'),
+	focus = require('postcss-focus'),
+	nocomments = require('postcss-discard-comments')
 
-var path = require('path');
-var fileExists = require('file-exists');
-var prompt = require('prompt');
+var	stylelint = require('stylelint'),
+	stylelintConfig = require('stylelint-config-standard'); 
+
+var	path = require('path'),
+	isThere = require("is-there"),
+	prompt = require('prompt'),
+	when = require('when');
 
 
 module.exports = {
-	build: function(src, dest) {
-		if (typeof(src)==='undefined') src = '/less/viur.less';
-		if (typeof(dest)==='undefined') dest = '/appengine/static/css/';
+	build: function(options) {
 
-		src = __dirname + src; 
-		dest = dirname(dirname(__dirname)) + dest;
+		// Set Default Options
+		var defaultOptions = {
+			src: __dirname + '/less/viur.less',
+			dest: './appengine/static/css/'
+		};
 
+		for (var key in defaultOptions) {
+			if (typeof(key)==='undefined') options[key] = defaultOptions[key]
+		}
+
+
+		// Options for postcss
 		var processors = [
 			nocomments, // discard comments
 			focus, // add focus to hover-states
 			zindex, // reduce z-index values
 			require('stylelint')(stylelintConfig), // lint the css
 			require('postcss-font-magician')({
-				hosted: dirname(dest)+'/fonts', // import fonts
+				hosted: path.dirname(options.dest)+'/fonts', // import fonts
 				formats: 'local eot woff2'
 			})
 		];
-		return gulp.src(src)
+
+		return gulp.src(options.src)
 			.pipe(less({
 				paths: [ path.join(__dirname, 'less', 'includes') ]
 			})) // compile less to css
@@ -45,16 +57,25 @@ module.exports = {
 			})) // add vendor prefixes
 			.pipe(postcss(processors)) // clean up css
 			.pipe(rename('style.css'))
-			.pipe(gulp.dest(dest)) // save cleaned version
+			.pipe(gulp.dest(options.dest)) // save cleaned version
 			.pipe(nano()) // minify css
 			.pipe(rename('style.min.css'))
-			.pipe(gulp.dest(dest)); // save minified version 
+			.pipe(gulp.dest(options.dest)); // save minified version 
 	},
 
-	init: function() {
-		if(fileExists('./sources/less/style.less')) { 
-			setTimeout(function() {
+	init: function(options) {
 
+		// Set Default Options
+		var defaultOptions = {
+			src: './sources/less/style.less'
+		};
+
+		for (var key in defaultOptions) {
+			if (typeof(key)==='undefined') options[key] = defaultOptions[key]
+		}
+
+
+		if(isThere(options.src)) { 
 				prompt.start();
 
 				var property = {
@@ -65,7 +86,7 @@ module.exports = {
 					default: 'no'
 				};
 
-				prompt.get(property, function (err, result) {
+				return prompt.get(property, function (err, result) {
 					console.log('Your Input: ' + result.yesno);
 
 					if(result.yesno == "yes" || result.yesno == "y") {
@@ -76,8 +97,6 @@ module.exports = {
 						return false;
 					}
 				});
-
-			}, 5);
 		} else {
 			return copyPrototype();
 		}
