@@ -2,10 +2,9 @@
 [![Dependency Status](https://david-dm.org/viur-ignite/viur-ignite-css.svg)](https://david-dm.org/viur-ignite/viur-ignite-css)
 [![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg)](https://raw.githubusercontent.com/viur-ignite/viur-ignite-js/master/LICENSE)
 
-# ViUR Ignite CSS #
+# ViUR Ignite CSS
 
-The ViUR Ignite Framework is the first attempt in building a sturdy foundation for ViUR products and Mausbrand projects.
-This CSS toolkit is the very core of ViUR Ignite. It is built upon the principles of many CSS guides and frameworks.
+>The ViUR Ignite Framework is the first attempt in building a sturdy foundation for ViUR products and Mausbrand projects.<br>This CSS toolkit is the very core of ViUR Ignite. It is built upon the principles of many CSS guides and frameworks.
 
 Different projects demand different solutions.
 ViUR Ignite CSS is a solution based on the needs of our python/jinja oriented stack.
@@ -23,27 +22,54 @@ Their samples, knowledge and expertise helped us to make ViUR Ignite CSS.
 
 Thanks guys!
 
-### What is this repository for? ###
+## What is this framework for?
 * ViUR Ignite CSS is a development toolkit for sturdy HTML and CSS
 * It is a lightweightned collection of helpful CSS components
 * It is responsive and adaptable
 * It is build in LESS
 * ViUR Ignite CSS is JavaScript free as most projects use their own JS implementation (We are stil working on our own JS lib: ViUR Ignite JS).
 
-### How do I get set up? ###
-* Clone this Repository to your Desktop
-* Open your shell in your workspace and run "$ npm install" (make sure that you have installed npm)
-* All LESS files are stored in the sources/less folder.
-* Each LESS file is documented in itself, too.
-* viur.less is the catalogue of all used less files. Add and remove files as needed.
-* Customize your project using style.less for dimensions, fonts, colors and custom CSS.
-* Only the contents of the appengine folder is deployed to the server.
+## Install
+```
+$ npm install viur-ignite-css
+```
 
-### Contribution guidelines ###
+## Usage
+```js
+const gulp = require('gulp');
+const css = require('viur-ignite-css');
 
-* Available for use under the GNU license
+gulp.task('init', function() {
+  return css.init();
+});
 
-### Who do I talk to? ###
+gulp.task('default', function() {
+  return css.build();
+});
+```
 
+Run first the init task with ```$ gulp init``` than you can edit the style.less and compile the css with ```$ gulp css```
+
+
+### Be individual
+Transmit the function by call an object with options
+```js
+gulp.task('default', function() {
+  return css.build({
+    dest: './output/css'
+  });
+});
+```
+
+The Default options are:
+```js
+src: __dirname + '/less/viur.less',
+dest: './appengine/static/css/'
+```
+
+## Contribution guidelines
+* Available for use under the GPL-3.0 license
+
+## Who do I talk to?
 * [@phneutral](https://github.com/phneutral)
 * [@sveneberth](https://github.com/sveneberth)
