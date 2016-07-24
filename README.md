@@ -52,7 +52,7 @@ Run first the init task with ```$ gulp init``` than you can edit the style.less 
 
 
 ### Be individual
-Transmit the function by call an object with options
+Call the function with an object of options
 ```js
 gulp.task('default', function() {
   return css.build({
