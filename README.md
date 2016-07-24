@@ -48,7 +48,14 @@ gulp.task('default', function() {
 });
 ```
 
-Run first the init task with ```$ gulp init``` than you can edit the style.less and compile the css with ```$ gulp css```
+Run first the init task with
+```
+$ gulp init
+```
+than you can edit the style.less and compile the css with
+```
+$ gulp
+```
 
 
 ### Be individual
