@@ -4,7 +4,7 @@
   "description": "Core of VIUR Ignite - a less framework",
   "main": "index.js",
   "scripts": {
-    "test": "console.log('Hello world')"
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",
