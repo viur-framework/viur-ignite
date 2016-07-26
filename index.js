@@ -1,12 +1,13 @@
-"use strict";
+'use strict';
 
 const PLUGIN_NAME = 'viur-ignite-css';
 
+var	path = require('path');
+
 var	gulp = require('gulp'),
 	gutil = require('gulp-util'),
-	rename = require('gulp-rename');
-
-var	less = require('gulp-less'),
+	rename = require('gulp-rename'),
+	less = require('gulp-less'),
 	autoprefixer = require('gulp-autoprefixer'),
 	nano = require('gulp-cssnano'),
 	postcss = require('gulp-postcss'),
@@ -14,24 +15,22 @@ var	less = require('gulp-less'),
 	focus = require('postcss-focus'),
 	nocomments = require('postcss-discard-comments'),
 	stylelint = require('stylelint'),
-	stylelintConfig = require('stylelint-config-standard'); 
+	stylelintConfig = require('stylelint-config-standard');
 
-var	path = require('path'),
-	isThere = require("is-there");
+var isThere = require('is-there');
 
 
 module.exports = {
-	build: function(options) {
-
+	build: function (options) {
 		// Set Default Options
 		var defaultOptions = {
-			src: __dirname + '/less/viur.less',
+			src: path.join(__dirname, 'less/viur.less'),
 			dest: './appengine/static/css/'
 		};
 
-		if (typeof(options)==='undefined') var options = {};
+		if (typeof options === 'undefined') var options = {};
 		for (var key in defaultOptions) {
-			if (typeof(options[key])==='undefined') options[key] = defaultOptions[key];
+			if (typeof options[key] === 'undefined') options[key] = defaultOptions[key];
 		}
 
 		// Options for postcss
@@ -39,16 +38,16 @@ module.exports = {
 			nocomments, // discard comments
 			focus, // add focus to hover-states
 			zindex, // reduce z-index values
-			require('stylelint')(stylelintConfig), // lint the css
+			stylelint(stylelintConfig), // lint the css
 			require('postcss-font-magician')({
-				hosted: path.dirname(options.dest)+'/fonts', // import fonts
+				hosted: path.join(options.dest, '..', 'fonts'), // import fonts
 				formats: 'local eot woff2'
 			})
 		];
 
 		return gulp.src(options.src)
 			.pipe(less({
-				paths: [ path.join(__dirname, 'less', 'includes') ]
+				paths: [path.join(__dirname, 'less', 'includes')]
 			})) // compile less to css
 			.pipe(autoprefixer({
 				browsers: ['last 2 versions'],
@@ -62,22 +61,20 @@ module.exports = {
 			.pipe(gulp.dest(options.dest)); // save minified version 
 	},
 
-	init: function(options) {
-
+	init: function (options) {
 		// Set Default Options
 		var defaultOptions = {
 			dest: './sources/less/style.less',
 			overwrite: false
 		};
 
-		if (typeof(options)==='undefined') var options = {};
+		if (typeof options === 'undefined') var options = {};
 		for (var key in defaultOptions) {
-			if (typeof(options[key])==='undefined') options[key] = defaultOptions[key]
+			if (typeof options[key] === 'undefined') options[key] = defaultOptions[key];
 		}
 
-
-		if(isThere(options.dest) && (options.overwrite === false || options.overwrite === "false")) {
-			throw new gutil.PluginError(PLUGIN_NAME, "'" + options.dest + "' already exists\n\tcall function with option overwrite: true");
+		if (isThere(options.dest) && (options.overwrite === false || options.overwrite === 'false')) {
+			throw new gutil.PluginError(PLUGIN_NAME, '\'' + options.dest + '\' already exists\n\tcall function with option overwrite: true');
 		} else {
 			return copyPrototype(options.dest);
 		}
@@ -85,7 +82,7 @@ module.exports = {
 };
 
 function copyPrototype(dest) {
-	return gulp.src(__dirname+'/prototype/style.less')
+	return gulp.src(path.join(__dirname, 'prototype/style.less'))
 		.pipe(rename(path.basename(dest)))
 		.pipe(gulp.dest(path.dirname(dest)));
 }

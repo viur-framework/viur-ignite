@@ -4,7 +4,8 @@
   "description": "Core of VIUR Ignite - a less framework",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "lint": "xo"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,8 @@
     "css",
     "framework",
     "less",
-    "gulp"
+    "gulp",
+    "❤"
   ],
   "author": "VIUR",
   "license": "GPL-3.0",
@@ -40,5 +42,8 @@
     "postcss-zindex": "^2.1.1",
     "stylelint": "^7.0.3",
     "stylelint-config-standard": "^11.0.0"
+  },
+  "devDependencies": {
+    "xo": "^0.16.0"
   }
 }
