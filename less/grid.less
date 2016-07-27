@@ -17,10 +17,6 @@
 		margin-bottom: -@gridSpace;
 	}
 
-	&.flex-around {
-		justify-content: space-around;
-	}
-
 	&:after {
 		clear: both;
 	}
@@ -30,15 +26,6 @@
 	display: block;
 	flex: 1 1 auto;
 	padding: @gridSpace;
-
-	p {
-		border: 1px solid darken(@menuBackgroundColor,15%);
-		background: @menuBackgroundColor;
-		border-radius: 3px;
-		padding: 10px;
-		margin: 0;
-		height: 100%;
-	}
 }
 
 
@@ -53,6 +40,15 @@
 		margin-left: (@i * 100% / @n);
 	}
 	.generate-columns(@n, (@i + 1));
+}
+.grid-col-half {
+	with: 50%
+}
+.grid-col-third {
+	with: 100 / 3%
+}
+.grid-col-quarter {
+	with: 25%
 }
 
 .offset-is-half {
