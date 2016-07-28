@@ -4,8 +4,17 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 ### Added
 - center-functions [.center(), .centerX().centerY()]
+- key element: a container to present key visuals, claims or slogans
+- bar element: for vertical alignment and horizontal distribution, such as navigation bars or inline forms
+
 ### Changed   
 - monoFont to 'Source Code Pro'
+- .tab label is now called .tab-label to increase the sturdiness
+- .media-image.small is now called .media-image.media-image-vSmall to increase consistency
+- breadcrumb items are now namespaced
+
+### Fixed
+- placeholder.svg is now linked correctly in image.less
 
 ## [1.0.22] - 2016-07-28
 ### Removed
