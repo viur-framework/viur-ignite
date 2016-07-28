@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 ### Added
 - center-functions [.center(), .centerX().centerY()]
+ 
 ### Changed   
 - monoFont to 'Source Code Pro'
 
