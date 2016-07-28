@@ -16,39 +16,39 @@
 	100% { left: -400%; }
 }
 
-.gallery-slider-auto { 
+.gallery-slider-auto {
 	width: 100%;
-	overflow: hidden; 
+	overflow: hidden;
 
 	* {
 		user-select: none;
 	}
 
-	.slider { 
+	.slider {
 		position: relative;
 		width: 500%;
 		font-size: 0;
-		animation: 30s slidy infinite; 
+		animation: 30s slidy infinite;
 
-		figure { 
+		figure {
 			width: 20%;
 			height: auto;
 			display: inline-block;
-			position: inherit; 
+			position: inherit;
 		}
 		img {
 			width: 100%;
 			height: auto;
 		}
 
-		figcaption { 
+		figcaption {
 			position: absolute;
 			bottom: 0;
 			background: rgba(0,0,0,0.4);
 			color: #fff;
 			width: 100%;
 			font-size: 2rem;
-			padding: .6rem; 
+			padding: .6rem;
 		}
 	}
 }
@@ -59,7 +59,6 @@
  * GALLERY SLIDER with navigation
  * @source: http://codepen.io/AMKohn/full/EKJHf/
  */
-@import url(http://fonts.googleapis.com/css?family=Varela+Round);
 .gallery-slider-manuell {
 	padding: 0;
 	width: 609px;
@@ -70,7 +69,7 @@
 
 	* {
 		user-select: none;
-		position: static; // else height:100% in label doesnt work
+		position: static; // needed that height:100% in label work
 	}
 
 	input {
@@ -80,7 +79,7 @@
 	.slide-container {
 		display: block;
 	}
-	
+
 	.slide {
 		top: 0;
 		opacity: 0;
@@ -154,7 +153,7 @@
 			border-radius: 100%;
 			display: inline-block;
 			background-color: rgba(0, 0, 0, 0.6);
-		
+
 			&:hover {
 				cursor: pointer;
 				background-color: rgba(0, 0, 0, 0.8);
