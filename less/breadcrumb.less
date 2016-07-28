@@ -6,49 +6,49 @@
 @breadcrumbColor: @complementColor;
 
 .breadcrumb {
-	list-style: none; 
-	overflow: hidden; 
+	list-style: none;
+	overflow: hidden;
 
-	li { 
-		float: left; 
+	li {
+		float: left;
 
 		a {
 			color: contrast(@breadcrumbColor, @textColor, @invTextColor);
-			text-decoration: none; 
+			text-decoration: none;
 			padding: 5px 0 5px 55px;
 			background: @breadcrumbColor;
-			position: relative; 
+			position: relative;
 			display: block;
 			float: left;
-		
-			&:after { 
-				content: " "; 
-				display: block; 
-				width: 0; 
+
+			&:after {
+				content: " ";
+				display: block;
+				width: 0;
 				height: 0;
 				border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
 				border-bottom: 50px solid transparent;
 				border-left: 30px solid @breadcrumbColor;
 				position: absolute;
 				top: 50%;
-				margin-top: -50px; 
+				margin-top: -50px;
 				left: 100%;
-				z-index: 2; 
-			}	
-			&:before { 
-				content: " "; 
-				display: block; 
-				width: 0; 
+				z-index: 2;
+			}
+			&:before {
+				content: " ";
+				display: block;
+				width: 0;
 				height: 0;
 				border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
 				border-bottom: 50px solid transparent;
 				border-left: 30px solid white;
 				position: absolute;
 				top: 50%;
-				margin-top: -50px; 
+				margin-top: -50px;
 				margin-left: 1px;
 				left: 100%;
-				z-index: 1; 
+				z-index: 1;
 			}
 
 			&:hover { background: contrast(@breadcrumbColor, @textColor, @invTextColor) !important; color: @breadcrumbColor !important; }
@@ -59,7 +59,7 @@
 	li:first-child a {
 		padding-left: 10px;
 	}
-	
+
 	li:nth-child(2) a       { background:        lighten(@breadcrumbColor, 10%); }
 	li:nth-child(2) a:after { border-left-color: lighten(@breadcrumbColor, 10%); }
 	li:nth-child(3) a       { background:        lighten(@breadcrumbColor, 20%); }
@@ -68,7 +68,7 @@
 	li:nth-child(4) a:after { border-left-color: lighten(@breadcrumbColor, 30%); }
 	li:nth-child(5) a       { background:        lighten(@breadcrumbColor, 40%); }
 	li:nth-child(5) a:after { border-left-color: lighten(@breadcrumbColor, 40%); }
-	
+
 	li:last-child a {
 		background: #fff;
 		color: @textColor;

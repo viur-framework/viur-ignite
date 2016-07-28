@@ -2,7 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-nothing since last release
+### Added
+- center-functions [.center(), .centerX().centerY()]
+### Changed   
+- monoFont to 'Source Code Pro'
 
 ## [1.0.22] - 2016-07-28
 ### Removed
