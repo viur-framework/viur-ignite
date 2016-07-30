@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 - key element: a container to present key visuals, claims or slogans
 - bar element: for vertical alignment and horizontal distribution, such as navigation bars or inline forms
 - pagination
+- tab variation: tab-vFullscreen
 
 ### Changed   
 - monoFont to 'Source Code Pro'
