@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - placeholder.svg is now linked correctly in image.less
+- Tabs works again
 
 ## [1.0.22] - 2016-07-28
 ### Removed
