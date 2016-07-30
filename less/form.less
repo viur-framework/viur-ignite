@@ -1,8 +1,8 @@
 @charset "UTF-8";
+/**
+ * FORM PARTS
+ */
 
-/* ------------------------------------------------------------------------------------------------------
-	#FORM PARTS
------------------------------------------------------------------------------------------------------- */
 
 @inputValidColor: @successColor;
 @inputDangerColor: @failColor;
@@ -14,64 +14,64 @@
 @inputHoverShadow: 0 3px 3px rgba(0,0,0,0.4);
 
 .input {
-	padding: 7px 14px;
-	width: 250px;
-	margin:6px 0;
-	background-color: @inputColor;
-	border: 1px solid darken(@inputColor,10%);
-	color:contrast(@inputColor, #222222, #f4f4f4);
-	vertical-align: middle;
-	display: inline-block;
-	transition: all .3s ease;
-	background-position: 150% center;
-	background-size: 15px;
-	background-repeat: no-repeat;
-	.inputGroup.is-invalid &,
-	&.is-invalid {
-		color: darken(@inputDangerColor, 15%);
-		border-color: @inputDangerColor;
-		background-color: lighten(@inputDangerColor, 40%);
-		background-image: url(../icons/cross.svg);
-		background-position: 95% center;
-	}
-	.inputGroup.is-recommended &,
-	&.is-recommended {
-		color: darken(@inputHintColor, 15%);
-		border-color: @inputHintColor;
-		background-color: lighten(@inputHintColor, 40%);
-		background-image: url(../icons/pen.svg);
-		background-position: 95% center;
-	}
-	.inputGroup.is-valid  &,
-	&.is-valid {
-		color: darken(@inputValidColor, 15%);
-		border-color: @inputValidColor;
-		background-color: lighten(@inputValidColor, 40%);
-		background-image: url(../icons/check.svg);
-		background-position: 95% center;
-	}
-	&.is-readonly,
-	&:read-only {
-		color: contrast(@inputColor, #222222, #f4f4f4);
-		cursor: default;
-		box-shadow: none;
-		border: 1px dashed darken(@inputColor,15%);
-		border-bottom-style: solid;
-		background-color: darken(@inputColor, 5%);
-	}
-	&.is-disabled,
-	&:disabled {
-		color: #aaaaaa;
-		cursor: not-allowed;
-		box-shadow: none;
-		border: 1px dashed darken(@inputColor,20%);
-		background-color: darken(@inputColor, 5%);
-		background-image:url('../icons/not-allowed.svg');
-		background-position: 95% center;
-	}
+  padding: 7px 14px;
+  width: 250px;
+  margin:6px 0;
+  background-color: @inputColor;
+  border: 1px solid darken(@inputColor,10%);
+  color:contrast(@inputColor, #222222, #f4f4f4);
+  vertical-align: middle;
+  display: inline-block;
+  transition: all .3s ease;
+  background-position: 150% center;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  .inputGroup.is-invalid &,
+  &.is-invalid {
+    color: darken(@inputDangerColor, 15%);
+    border-color: @inputDangerColor;
+    background-color: lighten(@inputDangerColor, 40%);
+    background-image: url(../icons/cross.svg);
+    background-position: 95% center;
+  }
+  .inputGroup.is-recommended &,
+  &.is-recommended {
+    color: darken(@inputHintColor, 15%);
+    border-color: @inputHintColor;
+    background-color: lighten(@inputHintColor, 40%);
+    background-image: url(../icons/pen.svg);
+    background-position: 95% center;
+  }
+  .inputGroup.is-valid  &,
+  &.is-valid {
+    color: darken(@inputValidColor, 15%);
+    border-color: @inputValidColor;
+    background-color: lighten(@inputValidColor, 40%);
+    background-image: url(../icons/check.svg);
+    background-position: 95% center;
+  }
+  &.is-readonly,
+  &:read-only {
+    color: contrast(@inputColor, #222222, #f4f4f4);
+    cursor: default;
+    box-shadow: none;
+    border: 1px dashed darken(@inputColor,15%);
+    border-bottom-style: solid;
+    background-color: darken(@inputColor, 5%);
+  }
+  &.is-disabled,
+  &:disabled {
+    color: #aaaaaa;
+    cursor: not-allowed;
+    box-shadow: none;
+    border: 1px dashed darken(@inputColor,20%);
+    background-color: darken(@inputColor, 5%);
+    background-image:url('../icons/not-allowed.svg');
+    background-position: 95% center;
+  }
 }
 
-/* placeholder text color */
+// placeholder text color
 .input::-webkit-input-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
 .input:-moz-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
 .input::-moz-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
@@ -82,194 +82,194 @@
 // textareas
 
 .input-vContrast {
-	background-color: darken(@inputColor,5%);
-	border: 1px solid darken(@inputColor,15%);
-	color:contrast(darken(@inputColor,5%), #000000, #ffffff);
+  background-color: darken(@inputColor,5%);
+  border: 1px solid darken(@inputColor,15%);
+  color:contrast(darken(@inputColor,5%), #000000, #ffffff);
 }
 
 .input-vSmall {
-	width: 180px;
-	padding: 3px 7px;
-	font-size: .8em;
-	font-weight: 400;
+  width: 180px;
+  padding: 3px 7px;
+  font-size: .8em;
+  font-weight: 400;
 }
 
 .input-vLarge {
-	padding: 8px 11.5px;
-	font-size: 1.25em;
-	width: 280px;
+  padding: 8px 11.5px;
+  font-size: 1.25em;
+  width: 280px;
 }
 
 .input-vBlock {
-	width: 100%;
-	margin: 0;
+  width: 100%;
+  margin: 0;
 }
 
 .label {
-	vertical-align: middle;
-	display: inline-block;
-	padding: 7px 14px;
-	background-color: darken(@inputColor,2%);
-	border: 1px solid darken(@inputColor,12%);
-	color:contrast(darken(@inputColor,2%), #000000, #ffffff);
-	margin:6px 0;
-	min-width: 150px;
-	.inputGroup.is-required &,
-	&.is-required {
-		border-left: 2px solid @inputRequiredColor;
-		color: @inputRequiredColor;
-		font-weight: 600;
-	}
-	.inputGroup.is-required &:after,
-	&.is-required:after {
-		content:'\00a0*';
-	}
-	.inputGroup.is-invalid &,
-	&.is-invalid {
-		color: darken(@inputDangerColor, 25%);
-		border-color: @inputDangerColor;
-		background-color: lighten(@inputDangerColor, 20%);
-	}
-	.inputGroup.is-recommended &,
-	&.is-recommended {
-		color: darken(@inputHintColor, 25%);
-		border-color: @inputHintColor;
-		background-color: lighten(@inputHintColor, 20%);
-	}
-	.inputGroup.is-valid  &,
-	&.is-valid {
-		color: darken(@inputValidColor, 25%);
-		border-color: @inputValidColor;
-		background-color: lighten(@inputValidColor, 20%);
-	}
-	&.is-disabled,
-	&:disabled {
-		color:#777777;
-		cursor: not-allowed;
-		box-shadow: none;
-		border: 1px dashed darken(@inputColor,20%);
-		background-color: darken(@inputColor, 5%);
-	}
-	&.has-icon:before {
-		content: "";
-		position: relative;
-		display: inline-block;
-		height: 1em;
-		width: 1em;
-		vertical-align: text-top;
-		margin: 4px 7px 0 -4px;
-		background-size: cover;
-		background-position: top left;
-		background-repeat: no-repeat;
-		background-color: inherit;
-		background-blend-mode: multiply;
-		//set background-image via icon.less
-	}
-	.icon {margin: 4px 4px 0 -4px;}
+  vertical-align: middle;
+  display: inline-block;
+  padding: 7px 14px;
+  background-color: darken(@inputColor,2%);
+  border: 1px solid darken(@inputColor,12%);
+  color:contrast(darken(@inputColor,2%), #000000, #ffffff);
+  margin:6px 0;
+  min-width: 150px;
+  .inputGroup.is-required &,
+  &.is-required {
+    border-left: 2px solid @inputRequiredColor;
+    color: @inputRequiredColor;
+    font-weight: 600;
+  }
+  .inputGroup.is-required &:after,
+  &.is-required:after {
+    content:'\00a0*';
+  }
+  .inputGroup.is-invalid &,
+  &.is-invalid {
+    color: darken(@inputDangerColor, 25%);
+    border-color: @inputDangerColor;
+    background-color: lighten(@inputDangerColor, 20%);
+  }
+  .inputGroup.is-recommended &,
+  &.is-recommended {
+    color: darken(@inputHintColor, 25%);
+    border-color: @inputHintColor;
+    background-color: lighten(@inputHintColor, 20%);
+  }
+  .inputGroup.is-valid  &,
+  &.is-valid {
+    color: darken(@inputValidColor, 25%);
+    border-color: @inputValidColor;
+    background-color: lighten(@inputValidColor, 20%);
+  }
+  &.is-disabled,
+  &:disabled {
+    color:#777777;
+    cursor: not-allowed;
+    box-shadow: none;
+    border: 1px dashed darken(@inputColor,20%);
+    background-color: darken(@inputColor, 5%);
+  }
+  &.has-icon:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    vertical-align: text-top;
+    margin: 4px 7px 0 -4px;
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    background-blend-mode: multiply;
+    //set background-image via icon.less
+  }
+  .icon {margin: 4px 4px 0 -4px;}
 }
 
 .label-vSmall {
-	padding: 3px 7px;
-	font-size: .8em;
-	font-weight: 400;
+  padding: 3px 7px;
+  font-size: .8em;
+  font-weight: 400;
 }
 
 .label-vBlock {
-	width: 100%;
-	margin: 0;
+  width: 100%;
+  margin: 0;
 }
 
 .select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border-radius: 0px;
-	vertical-align: middle;
-	display: inline-block;
-	padding: 8px 20px;
-	padding-right: 38px;
-	background-color: #ffffff;
-	border: 1px solid #dddddd;
-	.arrowsUpDownBg(); //import from image.less: arrows (up and down) in base64
-	background-size: 20px;
-	background-repeat: no-repeat;
-	background-position: right center;
-	transition: all .3s ease;
-	&:hover {
-	  box-shadow: @inputHoverShadow;
-	}
-	&.select-vSmall {
-	  padding: 3px 7px 4px;
-	  font-size: .8em;
-	  font-weight: 400;
-	  background-size: 10px;
-	}
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0px;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 8px 20px;
+  padding-right: 38px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  .arrowsUpDownBg(); //import from image.less: arrows (up and down) in base64
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  transition: all .3s ease;
+  &:hover {
+    box-shadow: @inputHoverShadow;
+  }
+  &.select-vSmall {
+    padding: 3px 7px 4px;
+    font-size: .8em;
+    font-weight: 400;
+    background-size: 10px;
+  }
 }
 
 .inputGroup {
-	display: block;
-	margin-bottom: 15px;
-	&:after {
-		content: '';
-		display: block;
-		clear: both; /* Clearfix for inputGroup. */
-		height: 0;
-	}
+  display: block;
+  margin-bottom: 15px;
+  &:after {
+    content: '';
+    display: block;
+    clear: both; // Clearfix for inputGroup.
+    height: 0;
+  }
 }
 
 .inputGroup .input,
 .inputGroup .btn,
 .inputGroup .select,
 .inputGroup .label {
-	margin: 6px 0px;
-	float: left;
-	position: relative;
+  margin: 6px 0px;
+  float: left;
+  position: relative;
 }
 
 .inputGroup .input,
 .inputGroup .label,
 .inputGroup .textarea {
-	box-shadow: @inputShadow;
+  box-shadow: @inputShadow;
 }
 
 .inputGroup .label {
-	&:first-child{border-right-width:0;}
-	&:last-child{border-left-width: 0;}
+  &:first-child{border-right-width:0;}
+  &:last-child{border-left-width: 0;}
 }
 
 .inputGroup .btn {
-	margin-left: -1px;
+  margin-left: -1px;
 }
 
 // Use formGroups to separate different inputs or inputGroups.
 .formGroup {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .textarea {
-	resize: none;
-	margin-top: 6px;
-	padding: 7px 14px;
-	width: 250px;
-	height: 180px;
-	background-color: @inputColor;
-	border: 1px solid darken(@inputColor,10%);
-	color:contrast(@inputColor, #222222, #f4f4f4);
-	transition: all .3s ease;
-	background-position: 150% center;
-	background-size: 15px;
-	background-repeat: no-repeat;
-	text-align: left;
+  resize: none;
+  margin-top: 6px;
+  padding: 7px 14px;
+  width: 250px;
+  height: 180px;
+  background-color: @inputColor;
+  border: 1px solid darken(@inputColor,10%);
+  color:contrast(@inputColor, #222222, #f4f4f4);
+  transition: all .3s ease;
+  background-position: 150% center;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  text-align: left;
 }
 
 .textarea-vBlock {
-	width:100%;
-	margin: 0;
+  width:100%;
+  margin: 0;
 }
 
 .checkbox {
-	margin-right: 5px;
-	cursor: pointer;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 //#FIXME: Radio Buttons
@@ -277,62 +277,63 @@
 //#FIXME: inputGroup for Check/Radio
 
 .note {
-	font-size: 0.8em;
-	margin: 0;
-	padding-left: 22px;
+  font-size: 0.8em;
+  margin: 0;
+  padding-left: 22px;
 }
 
 // Use formActions to float submit buttons to the right at the end of your form.
 .formActions {
-	&:after {
-		content: '';
-		display: block;
-		clear: both; /* Clearfix for formActions. */
-		height: 0;
-	}
-	.btn {float:right;}
-	.btn+.btn {margin-right: 10px;}
+  &:after {
+    content: '';
+    display: block;
+    clear: both; // Clearfix for formActions.
+    height: 0;
+  }
+  .btn {float:right;}
+  .btn+.btn {margin-right: 10px;}
 }
+
 
 // => form Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-	.inputGroup .label,
-	.label {
-		border-width: 0 1px;
-		width: 100%;
-		margin: 0;
-		&:first-child{
-			border-width:1px;
-			border-bottom-width: 0;
-		}
-		&:last-child{
-			border-width: 1px;
-			border-top-width: 0;
-		}
-	}
+  .inputGroup .label,
+  .label {
+    border-width: 0 1px;
+    width: 100%;
+    margin: 0;
+    &:first-child{
+      border-width:1px;
+      border-bottom-width: 0;
+    }
+    &:last-child{
+      border-width: 1px;
+      border-top-width: 0;
+    }
+  }
 
-	.inputGroup .input,
-	.inputGroup .label {
-		box-shadow: none;
-	}
+  .inputGroup .input,
+  .inputGroup .label {
+    box-shadow: none;
+  }
 
-	.input,
-	.select {
-		width:100%;
-		margin: 0;
-		margin-bottom: 5px;
-	}
+  .input,
+  .select {
+    width:100%;
+    margin: 0;
+    margin-bottom: 5px;
+  }
 
-	.inputGroup .select,
-	.inputGroup .input,
-	.inputGroup .btn {
-		width:100%;
-		margin: 0;
-	}
-	.inputGroup .btn {
-		margin-top: -1px;
-	}
+  .inputGroup .select,
+  .inputGroup .input,
+  .inputGroup .btn {
+    width:100%;
+    margin: 0;
+  }
+  .inputGroup .btn {
+    margin-top: -1px;
+  }
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {

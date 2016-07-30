@@ -1,6 +1,12 @@
+@charset "UTF-8";
+/**
+ * Tabs
+ */
+
+
 .tabs {
   position: relative;
-  min-height: 200px; /* This part sucks */
+  min-height: 200px; // This part sucks
   clear: both;
   margin: 25px 0;
   display: flex;
@@ -63,4 +69,22 @@
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
+}
+
+
+// => Tabs Media Queries
+
+.media-mixin(@break) when (@break = @breakSmall) {
+}
+
+.media-mixin(@break) when (@break = @breakMedium) {
+}
+
+.media-mixin(@break) when (@break = @breakLarge) {
+}
+
+.media-mixin(@break) when (@break = @break2x) {
+}
+
+.media-mixin(@break) when (@break = @breakPrint) {
 }

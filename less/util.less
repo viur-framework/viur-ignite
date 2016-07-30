@@ -1,26 +1,27 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-	#UTILITY STYLES
---------------------------------------------------------------------------------------- */
+/**
+ * UTILITY STYLES
+ */
 
-/* Clearfix */
+
+// Clearfix
 .clear {clear:both;}
 
 .clearfix {
-	*zoom: 1;
-	&:after {
-		content: '';
-		display: block;
-		clear: both;
-		height: 0;
-	}
+  *zoom: 1;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+  }
 }
 
-/* Floats */
+// Floats
 .f-left {float:left !important;}
 .f-right {float:right !important;}
 
-/* Text Align */
+// Text Align
 .txt-right {text-align:right;}
 .txt-left {text-align:left;}
 .txt-center {text-align:center;}
@@ -34,40 +35,36 @@
 
 // center
 .center() {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .centerX() {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 .centerY() {
-	position: absolute;
-	top: 50%;
-	transform: translate(0, -50%);
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
 }
+
 
 // => Utils Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-
 }
 
 .media-mixin(@break) when (@break = @breakMedium) {
-
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {
-
 }
 
 .media-mixin(@break) when (@break = @break2x) {
-
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
-
 }

@@ -1,10 +1,11 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-	#HORIZONTAL BAR
---------------------------------------------------------------------------------------- */
+/**
+ * HORIZONTAL BAR
+ *
+ * The .bar element is a horizontal stripe that can contain any other item.
+ * Use it for vertical alignment and horizontal distribution, such as navigation bars or inline forms.
+ */
 
-// The .bar element is a horizontal stripe that can contain any other item.
-// Use it for vertical alignment and horizontal distribution, such as navigation bars or inline forms.
 
 @barBackgroundColor: @backgroundColor;
 
@@ -54,10 +55,10 @@
   display: flex;
 }
 
+
 // => Bar Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-
 }
 
 .media-mixin(@break) when (@break = @breakMedium) {
@@ -80,14 +81,10 @@
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {
-
 }
 
 .media-mixin(@break) when (@break = @break2x) {
-
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
-
 }
-

@@ -51,7 +51,7 @@ gulp.task('default', function() {
 });
 ```
 
-Run first the init task with
+First run the init task with
 ```
 $ gulp init
 ```

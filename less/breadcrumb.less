@@ -1,7 +1,7 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-	Breadcrumb
---------------------------------------------------------------------------------------- */
+/**
+ * BREADCRUMB
+ */
 
 @breadcrumbColor: @complementColor;
 
@@ -22,7 +22,7 @@
   color: white;
   text-decoration: none;
   padding: 10px 0 10px 55px;
-  background: brown; /* fallback color */
+  background: brown; // fallback color
   background: hsla(34, 85%, 35%, 1);
   position: relative;
   display: block;
@@ -32,7 +32,7 @@
     display: block;
     width: 0;
     height: 0;
-    border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+    border-top: 50px solid transparent; // Go big on the size, and let overflow hide
     border-bottom: 50px solid transparent;
     border-left: 30px solid hsla(34, 85%, 35%, 1);
     position: absolute;
@@ -46,7 +46,7 @@
     display: block;
     width: 0;
     height: 0;
-    border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+    border-top: 50px solid transparent; // Go big on the size, and let overflow hide
     border-bottom: 50px solid transparent;
     border-left: 30px solid white;
     position: absolute;
@@ -77,6 +77,7 @@
   &:hover { background: hsla(34, 85%, 25%, 1); }
   &:hover:after { border-left-color: hsla(34, 85%, 25%, 1) !important; }
 }
+
 
 // => Breadcrumb Media Queries
 

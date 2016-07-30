@@ -1,7 +1,8 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-	MESSAGES and ALERTS
---------------------------------------------------------------------------------------- */
+/**
+ * MESSAGES and ALERTS
+ */
+
 
 @alertColor: @hintColor;
 @alertSuccessColor: @successColor;
@@ -9,226 +10,222 @@
 @alertErrorColor: @failColor;
 
 .msg {
-	position: relative;
-	padding: 15px;
-	margin-bottom: 20px;
-	font-size: .9rem;
-	color: darken(@alertColor,25%);
-	background-color: lighten(@alertColor, 40%);
-	border: 1px solid darken(@alertColor,15%);
-	border-radius: 3px;
-	p:last-child {
-		margin-bottom: 0;
-	}
-	&.has-icon {padding-left:4em; min-height: 5em;}
-	&.has-icon:before {
-		content: "";
-		position: absolute;
-		display: block;
-		height: 2.4em;
-		width: 2.4em;
-		margin-left: -2em;
-		margin-top: 5px;
-		transform: translateX(-45%);
-		background-size: cover;
-		background-position: top left;
-		background-repeat: no-repeat;
-		background-color: inherit;
-		background-blend-mode: multiply;
-		//set background-image via icon.less
-	}
-	.icon {
-		position: absolute;
-		display: block;
-		height: 2.4em;
-		width: 2.4em;
-		margin-left: -2em;
-		margin-top: 5px;
-		transform: translateX(-45%);
-	}
-	a {
-		color:darken(@alertColor,35%);
-		text-decoration: underline;
-	}
+  position: relative;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: .9rem;
+  color: darken(@alertColor,25%);
+  background-color: lighten(@alertColor, 40%);
+  border: 1px solid darken(@alertColor,15%);
+  border-radius: 3px;
+  p:last-child {
+    margin-bottom: 0;
+  }
+  &.has-icon {padding-left:4em; min-height: 5em;}
+  &.has-icon:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2.4em;
+    width: 2.4em;
+    margin-left: -2em;
+    margin-top: 5px;
+    transform: translateX(-45%);
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    background-blend-mode: multiply;
+    //set background-image via icon.less
+  }
+  .icon {
+    position: absolute;
+    display: block;
+    height: 2.4em;
+    width: 2.4em;
+    margin-left: -2em;
+    margin-top: 5px;
+    transform: translateX(-45%);
+  }
+  a {
+    color:darken(@alertColor,35%);
+    text-decoration: underline;
+  }
 }
 
 .msg-headline {
-	font-size:.9rem;
-	font-weight: 600;
-	color: inherit;
+  font-size:.9rem;
+  font-weight: 600;
+  color: inherit;
 }
 
 // Contain the messages
 .msg-center {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 // Close button #FIXME!
 .msg-close {
-	float: right;
-	width: 34px;
-	height: 44px;
-	margin: -11px;
-	line-height: 40px;
-	color: inherit;
-	text-align: center;
-	cursor: pointer;
-	// Undo `<button>` styles
-	background: none;
-	border: 0;
-	-webkit-appearance: none;
-	opacity: 0.6;
-	&:hover {
-		opacity: 1;
-	}
+  float: right;
+  width: 34px;
+  height: 44px;
+  margin: -11px;
+  line-height: 40px;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  // Undo `<button>` styles
+  background: none;
+  border: 0;
+  -webkit-appearance: none;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 // Variations
 
 .msg-vSuccess {
-	color: darken(@alertSuccessColor,25%);
-	background-color: lighten(@alertSuccessColor, 40%);
-	border: 1px solid darken(@alertSuccessColor,15%);
-	a {
-		color:darken(@alertSuccessColor,35%);
-		text-decoration: underline;
-	}
+  color: darken(@alertSuccessColor,25%);
+  background-color: lighten(@alertSuccessColor, 40%);
+  border: 1px solid darken(@alertSuccessColor,15%);
+  a {
+    color:darken(@alertSuccessColor,35%);
+    text-decoration: underline;
+  }
 }
 
 .msg-vWarn {
-	color: darken(@alertWarnColor,25%);
-	background-color: lighten(@alertWarnColor, 30%);
-	border: 1px solid darken(@alertWarnColor,15%);
-	a {
-		color:darken(@alertWarnColor,35%);
-		text-decoration: underline;
-	}
+  color: darken(@alertWarnColor,25%);
+  background-color: lighten(@alertWarnColor, 30%);
+  border: 1px solid darken(@alertWarnColor,15%);
+  a {
+    color:darken(@alertWarnColor,35%);
+    text-decoration: underline;
+  }
 }
 
 .msg-vError {
-	color: darken(@alertErrorColor,25%);
-	background-color: lighten(@alertErrorColor, 30%);
-	border: 1px solid darken(@alertErrorColor,15%);
-	a {
-		color:darken(@alertErrorColor,35%);
-		text-decoration: underline;
-	}
+  color: darken(@alertErrorColor,25%);
+  background-color: lighten(@alertErrorColor, 30%);
+  border: 1px solid darken(@alertErrorColor,15%);
+  a {
+    color:darken(@alertErrorColor,35%);
+    text-decoration: underline;
+  }
 }
 
 .msg-vFull {
-	margin-top: -1px;
-	border-width: 1px 0;
-	border-radius: 0;
+  margin-top: -1px;
+  border-width: 1px 0;
+  border-radius: 0;
 }
 
 
 .alert {
-	user-select: none;
-	position: relative;
-	padding: 8px 10px;
-	font-size: .8rem;
-	color: darken(@alertColor,25%);
-	background-color: lighten(@alertColor, 40%);
-	border: 1px solid darken(@alertColor,15%);
-	border-radius: 2px;
-	min-width: 300px;
-	max-width: 25%;
-	float: right;
-	clear: both;
-	margin-bottom: 10px;
-	cursor: default;
-	.zIndex('alert',1);
-	p:last-child {
-		margin-bottom: 0;
-	}
-	&.has-icon {padding-left:2em;}
-	&.has-icon:before {
-		content: "";
-		position: absolute;
-		display: block;
-		height: .8em;
-		width: .8em;
-		margin-left: -1em;
-		margin-top: 5px;
-		transform: translateX(-50%);
-		background-size: cover;
-		background-position: top left;
-		background-repeat: no-repeat;
-		background-color: inherit;
-		background-blend-mode: multiply;
-		//set background-image via icon.less
-	}
-	a {
-		color:darken(@alertColor,35%);
-		text-decoration: underline;
-	}
+  user-select: none;
+  position: relative;
+  padding: 8px 10px;
+  font-size: .8rem;
+  color: darken(@alertColor,25%);
+  background-color: lighten(@alertColor, 40%);
+  border: 1px solid darken(@alertColor,15%);
+  border-radius: 2px;
+  min-width: 300px;
+  max-width: 25%;
+  float: right;
+  clear: both;
+  margin-bottom: 10px;
+  cursor: default;
+  .zIndex('alert',1);
+  p:last-child {
+    margin-bottom: 0;
+  }
+  &.has-icon {padding-left:2em;}
+  &.has-icon:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: .8em;
+    width: .8em;
+    margin-left: -1em;
+    margin-top: 5px;
+    transform: translateX(-50%);
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    background-blend-mode: multiply;
+    //set background-image via icon.less
+  }
+  a {
+    color:darken(@alertColor,35%);
+    text-decoration: underline;
+  }
 }
 
 .alert-headline {
-	font-size:.8rem;
-	font-weight: 600;
-	color: inherit;
+  font-size:.8rem;
+  font-weight: 600;
+  color: inherit;
 }
 
 // Contain the messages
 .alert-center {
-	position: fixed;
-	top:0;
-	right:0;
-	padding: 25px;
-	.zIndex('alert',0);
+  position: fixed;
+  top:0;
+  right:0;
+  padding: 25px;
+  .zIndex('alert',0);
 }
 
 // Variations
 
 .alert-vSuccess {
-	color: darken(@alertSuccessColor,25%);
-	background-color: lighten(@alertSuccessColor, 40%);
-	border: 1px solid darken(@alertSuccessColor,15%);
-	a {
-		color:darken(@alertSuccessColor,35%);
-		text-decoration: underline;
-	}
+  color: darken(@alertSuccessColor,25%);
+  background-color: lighten(@alertSuccessColor, 40%);
+  border: 1px solid darken(@alertSuccessColor,15%);
+  a {
+    color:darken(@alertSuccessColor,35%);
+    text-decoration: underline;
+  }
 }
 
 .alert-vWarn {
-	color: darken(@alertWarnColor,25%);
-	background-color: lighten(@alertWarnColor, 30%);
-	border: 1px solid darken(@alertWarnColor,15%);
-	a {
-		color:darken(@alertWarnColor,35%);
-		text-decoration: underline;
-	}
+  color: darken(@alertWarnColor,25%);
+  background-color: lighten(@alertWarnColor, 30%);
+  border: 1px solid darken(@alertWarnColor,15%);
+  a {
+    color:darken(@alertWarnColor,35%);
+    text-decoration: underline;
+  }
 }
 
 .alert-vError {
-	color: darken(@alertErrorColor,25%);
-	background-color: lighten(@alertErrorColor, 30%);
-	border: 1px solid darken(@alertErrorColor,15%);
-	a {
-		color:darken(@alertErrorColor,35%);
-		text-decoration: underline;
-	}
+  color: darken(@alertErrorColor,25%);
+  background-color: lighten(@alertErrorColor, 30%);
+  border: 1px solid darken(@alertErrorColor,15%);
+  a {
+    color:darken(@alertErrorColor,35%);
+    text-decoration: underline;
+  }
 }
+
 
 // => Message and Alert Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-
 }
 
 .media-mixin(@break) when (@break = @breakMedium) {
-
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {
-
 }
 
 .media-mixin(@break) when (@break = @break2x) {
-
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
-
 }

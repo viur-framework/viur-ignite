@@ -1,60 +1,59 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-	BASICS, FUNDAMENTALS and TYPE
---------------------------------------------------------------------------------------- */
-
-// ViUR Ignite CSS supports the 100% Easy to read standard:
-// https://ia.net/know-how/100e2r
-
-// The body font size is 100% (roughly 16px).
-// Objects use a font size based on this size: using »rem« (root em).
-// Inline elements and type should react to their direct surroundings - thus use »em«.
-
+/**
+ * BASICS, FUNDAMENTALS and TYPE
+ *
+ * ViUR Ignite CSS supports the 100% Easy to read standard:
+ * https://ia.net/know-how/100e2r
+ *
+ * The body font size is 100% (roughly 16px).
+ * Objects use a font size based on this size: using »rem« (root em).
+ * Inline elements and type should react to their direct surroundings - thus use »em«.
+ */
 
 
 html {
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body {
-	margin: 0; /* IE Reset */
-	background: @backgroundColor;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	font-size:100.01%;
-	line-height:1.5;
-	color: @textColor;
-	font-family: @bodyFonts;
-	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-	-webkit-text-size-adjust: 100%;
-	min-height: 100vh;
+  margin: 0; // IE Reset
+  background: @backgroundColor;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size:100.01%;
+  line-height:1.5;
+  color: @textColor;
+  font-family: @bodyFonts;
+  -webkit-font-smoothing: antialiased; // Fix for webkit rendering
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
 }
 
-/* Links */
+// Links
 a { color: @mainColor; text-decoration: none; outline: 0; }
 a:hover, a:focus, a:active { color: darken(@mainColor, 10%); }
 p a, p a:visited { line-height: inherit; }
 
-/* Typography */
+// Typography
 
 // Please style your headlines with the help of classes (e.g.: .headline, .subline, .heading)
 h1, h2, h3, h4, h5, h6 {color: inherit; font-family: @headFonts; font-weight: normal; font-size: 1em; line-height: 1.6;}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight: inherit; color: inherit;}
 
-/* Use .headline and .subline for your important headlines. */
+// Use .headline and .subline for your important headlines.
 .headline {font-family: @headFonts; color: @mainColor; font-size:2.1em; line-height: 1.3;}
 .subline {font-family: @headFonts; color: @mainColor; font-size:1.7em; line-height: 1.3;}
 
-/* Use .heading for less important headlines. */
+// Use .heading for less important headlines.
 .heading {font-family: @headFonts; color: @complementColor; font-size:1.5em; line-height: 1.3;}
 
-/* Use .lead to emphasize the first paragraph of a section. */
+// Use .lead to emphasize the first paragraph of a section.
 .lead {font-size: 1.3em; font-weight: 300;}
 
 p {
-	line-height: 1.6;
-	font-size: 1em;
+  line-height: 1.6;
+  font-size: 1em;
 }
 
 strong {font-weight: 700;}
@@ -62,99 +61,96 @@ em {font-style:italic;}
 small {font-size: .8em}
 
 ins {
-	text-decoration: none;
-	border-bottom: 1px dashed;
+  text-decoration: none;
+  border-bottom: 1px dashed;
 }
 
 mark {
-		background: lighten(@mainColor,40%);
-		color: contrast(lighten(@mainColor,40%), @textColor, @invTextColor);
-		padding:1px;
-		&:before,
-		&:after {
-			letter-spacing: -0.2em;
-			content: "\00a0";
-		}
+  background: lighten(@mainColor,40%);
+  color: contrast(lighten(@mainColor,40%), @textColor, @invTextColor);
+  padding:1px;
+  &:before,
+  &:after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+  }
 }
 
 blockquote {
-	font-family: @headFonts;
-	font-style: italic;
-	font-size: 1.2em;
-	color: @complementColor;
-	padding: 0 15px;
-	border-left: 7px solid @complementColor;
+  font-family: @headFonts;
+  font-style: italic;
+  font-size: 1.2em;
+  color: @complementColor;
+  padding: 0 15px;
+  border-left: 7px solid @complementColor;
 }
 
 code, pre {font-family: @monoFonts;}
 code {
-	color:contrast(darken(@backgroundColor,10%));
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	tab-size: 4;
-	hyphens: none;
-	background: fadeout(darken(@backgroundColor,15%),10%);
-	padding: 3px;
-	border-radius: 3px;
-	&:before,
-	&:after {
-		letter-spacing: -0.2em;
-		content: "\00a0";
-	}
+  color:contrast(darken(@backgroundColor,10%));
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  tab-size: 4;
+  hyphens: none;
+  background: fadeout(darken(@backgroundColor,15%),10%);
+  padding: 3px;
+  border-radius: 3px;
+  &:before,
+  &:after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+  }
 }
 
-/* Lists */
+// Lists
 ul.is-list {
-		padding: 3px 18px;
-		margin:0;
-		list-style-type: disc;
+  padding: 3px 18px;
+  margin:0;
+  list-style-type: disc;
 }
 
 .is-list ul {
-		padding: 3px 18px;
-		list-style-type: square;
+  padding: 3px 18px;
+  list-style-type: square;
 }
 
 .is-list ul ul,
 .is-list ol ul {
-		list-style-type: circle;
+  list-style-type: circle;
 }
 
 ol.is-list {
-		padding: 3px 20px;
-		margin:0;
-		list-style-type: decimal;
+  padding: 3px 20px;
+  margin:0;
+  list-style-type: decimal;
 }
 
 .is-list ol {
-		padding: 3px 20px;
-		list-style-type: upper-roman;
+  padding: 3px 20px;
+  list-style-type: upper-roman;
 }
 
 .is-list ol ol,
 .is-list ul ol {
-		list-style-type: upper-alpha;
+  list-style-type: upper-alpha;
 }
+
 
 // => Basic Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-	body {font-size: 90%;}
+  body {font-size: 90%;}
 }
 
 .media-mixin(@break) when (@break = @breakMedium) {
-
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {
-
 }
 
 .media-mixin(@break) when (@break = @break2x) {
-
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
-
 }

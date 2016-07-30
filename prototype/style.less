@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
-// ---------------------------------------------------------------------------------------
-//    APPCONFIGURATION
-// ---------------------------------------------------------------------------------------
+/**
+ * APPCONFIGURATION
+ *
+ * Here you can configure the styling with global variables.
+ */
 
-// Here you can configure the styling with global variables.
 
 // Color and Shadow Sets
 @mainColor: #d00f1c; // The corporate color - defining most of the looks.
@@ -17,13 +18,13 @@
 @warnColor: #f5b639; // Orange
 @failColor: #f44336; // Red
 @hintColor: #1da7e0; // Blue
- 
+
 @defaultShadow: 1px 2px 3px rgba(0,0,0,0.3);
 
 // Font Stacks
 @bodyFonts: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; // Default font stack.
 @headFonts: 'Source Sans Pro', 'Open Sans', sans-serif; // Fonts for headlines, blockquotes and alike.
-@monoFonts: Courier, monospace; // Fonts for code pieces.
+@monoFonts: 'Source Code Pro', Courier, monospace; // Fonts for code pieces.
 
 // Put your custom color, shadow and font overwrites here. Try this:
 // @btnDangerBgColor: orange;
@@ -34,32 +35,32 @@
 @breakSmall: 900px; // smart phones
 @breakMedium: 1100px; // tablets
 @breakLarge: 1400px; // screens
-@break2x: 192dpi; // high-density displays
+@break2x: 228dpi; // high-density displays
 @breakPrint: print; // make it printable!
 
 
 
-/* ---------------------------------------------------------------------------------------
-	#PROJECTSPECIFIC ELEMENTS
-	--------------------------------------------------------------------------------------- */
 
-// Put all your custom CSS down here!
-// But start new LESS files for major components.
+/**
+ * PROJECTSPECIFIC ELEMENTS
+ *
+ * Put all your custom CSS down here!
+ * But start new LESS files for major components.
+ */
 
 
-
+// => Project Media Queries
 .media-mixin(@break) when (@break = @breakMedium) {
-
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {
-
 }
 
 .media-mixin(@break) when (@break = @break2x) {
-
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
+}
 
+.media-mixin(@break) when (@break = @breakPrint) {
 }
