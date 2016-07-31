@@ -3,8 +3,8 @@ All notable changes to this project will be documented in this file.
 
 
 ## [Unreleased]
-nothing since last release
-
+### Added
+- menu variation .menu-vRow
 
 ## [1.0.23] - 2016-07-31
 ### Added
