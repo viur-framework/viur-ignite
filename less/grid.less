@@ -1,98 +1,96 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-	GRID
---------------------------------------------------------------------------------------- */
+/**
+ * GRID
+ *
+ * A simple way to build responsive columns
+ */
+
 
 @gridSpace: 10px;
 @gridColumns: 12;
 
 
+// wrapper for columns
 .grid-row {
-	display: flex;
-	margin-top: -@gridSpace;
-	margin-left: -@gridSpace;
-	margin-right: -@gridSpace;
+  display: flex;
+  margin-top: -@gridSpace;
+  margin-left: -@gridSpace;
+  margin-right: -@gridSpace;
 
-	&:last-child {
-		margin-bottom: -@gridSpace;
-	}
+  &:last-child {
+    margin-bottom: -@gridSpace;
+  }
 
-	&:after {
-		clear: both;
-	}
+  &:after {
+    clear: both;
+  }
 }
 
 .grid-col {
-	display: block;
-	flex: 1 1 auto;
-	padding: @gridSpace;
+  display: block;
+  flex: 1 1 auto;
+  padding: @gridSpace;
 }
 
 
 // auto generate different column sizes and offsets
 .generate-columns(@gridColumns);
 .generate-columns(@n, @i: 1) when (@i =< @n) {
-	.grid-col-@{i} {
-		width: (@i * 100% / @n);
-		flex: none;
-	}
-	.offset-is-@{i} {
-		margin-left: (@i * 100% / @n);
-	}
-	.generate-columns(@n, (@i + 1));
+  .grid-col-@{i} {
+    width: (@i * 100% / @n);
+    flex: none;
+  }
+  .offset-is-@{i} {
+    margin-left: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
 }
 .grid-col-half {
-	with: 50%
+  with: 50%
 }
 .grid-col-third {
-	with: 100 / 3%
+  with: 100 / 3%
 }
 .grid-col-quarter {
-	with: 25%
+  with: 25%
 }
 
 .offset-is-half {
-	margin-left: 50%
+  margin-left: 50%
 }
 .offset-is-third {
-	margin-left: 100 / 3%
+  margin-left: 100 / 3%
 }
 .offset-is-quarter {
-	margin-left: 25%
+  margin-left: 25%
 }
-
 
 
 // => Grid Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-	.grid-row {
-		display: block;
-		margin: 0;
-		margin-bottom: @gridSpace;
-	}
-
-	.grid-col {
-		display: block;
-		flex: 1 1 auto;
-		width: 100%;
-		padding: 0;
-		margin: 0;
-
-		&:not(:last-child) {
-			margin-bottom: @gridSpace;
-		}
-	}
+  .grid-row {
+    display: block;
+    margin: 0;
+    margin-bottom: @gridSpace;
+  }
+  .grid-col {
+    display: block;
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    &:not(:last-child) {
+      margin-bottom: @gridSpace;
+    }
+  }
 }
 
 .media-mixin(@break) when (@break = @breakMedium) {
-
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {
-
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
-
 }

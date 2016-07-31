@@ -1,10 +1,13 @@
 @charset "UTF-8";
 
-/* ViUR Ignite CSS 2016 */
+/**
+ * ViUR Ignite CSS 2016
+ *
+ * This is the master file.
+ * It imports all less files in their intended order for easy mass-inclusion.
+ * Should you need specific files, you can easily customize the imports.
+ */
 
-// This is the master file.
-// It imports all less files in their intended order for easy mass-inclusion.
-// Should you need specific files, you can easily customize the imports.
 
 // Reset
 @import "reset.less"; // resets all browsers to the same base state.
@@ -37,36 +40,39 @@
 @import "tabs.less";
 @import "breadcrumb.less";
 @import "slider.less";
+@import "key.less";
+@import "bar.less";
+@import "pagination.less";
 
 // Configuration and Mixins
 @import "appconf.less"; // customize colors and fonts here.
 @import "image.less"; // base64 encoded imagery.
-@import (optional) "../../../viur-ignite-docs/sources/less/icon.less"; // ViUR SVG icons.
+@import (optional) "../../../sources/less/icon.less"; // ViUR SVG icons.
 @import "zindex.less"; // organize your z-indexes.
 
 // Project
-@import (optional) "../../../viur-ignite-docs/sources/less/style.less"; // Include Project
+@import (optional) "../../../sources/less/style.less"; // Include Project
 
 
-/* Media Queries */
+// Media Queries
 @media only screen and (max-width: @breakLarge) {
-	.media-mixin(@breakLarge);
+  .media-mixin(@breakLarge);
 }
 
 @media only screen and (max-width: @breakMedium) {
-	.media-mixin(@breakMedium);
+  .media-mixin(@breakMedium);
 }
 
 @media only screen and (max-width: @breakSmall) {
-	.media-mixin(@breakSmall);
+  .media-mixin(@breakSmall);
 }
 
 @media only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: @break2x) {
-	.media-mixin(@break2x);
+  .media-mixin(@break2x);
 }
 
-/* Print */
+// Print
 @media @breakPrint {
-	.media-mixin(@breakPrint);
+  .media-mixin(@breakPrint);
 }

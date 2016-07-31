@@ -1,7 +1,8 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-	BOXES
---------------------------------------------------------------------------------------- */
+/**
+ * BOXES
+ */
+
 
 // Colors:
 @progressBackground: lighten(@complementColor,60%);
@@ -12,96 +13,92 @@
 @progressDanger: @failColor;
 
 .progress {
-	appearance: none;
-	border: none;
-  	border-radius: .2em;
-	display: block;
-	height: 1rem;
-	overflow: hidden;
-	padding: 0;
-	width: 100%;
+  appearance: none;
+  border: none;
+  border-radius: .2em;
+  display: block;
+  height: 1rem;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
 
-	&:not(:last-child) {
-		margin-bottom: 1em;
-	}
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
 }
 
 .progress::-webkit-progress-bar {
-	background-color: @progressBackground;
+  background-color: @progressBackground;
 }
 
 .progress::-webkit-progress-value {
-	background-color: @progressDefault;
-	transition: 1s ease-in-out all;
+  background-color: @progressDefault;
+  transition: 1s ease-in-out all;
 }
 
 .progress::-moz-progress-bar {
-	background-color: @progressDefault;
+  background-color: @progressDefault;
 }
 
 
 .progress-vPrimary::-webkit-progress-value {
-	background-color: @progressPrimary;
+  background-color: @progressPrimary;
 }
 
 .progress-vPrimary::-moz-progress-bar {
-	background-color: @progressPrimary;
+  background-color: @progressPrimary;
 }
 
 
 .progress-vInfo::-webkit-progress-value {
-	background-color: @progressInfo;
+  background-color: @progressInfo;
 }
 
 .progress-vInfo::-moz-progress-bar {
-	background-color: @progressInfo;
+  background-color: @progressInfo;
 }
 
 .progress-vWarning::-webkit-progress-value {
-	background-color: @progressWarning;
+  background-color: @progressWarning;
 }
 
 .progress-vWarning::-moz-progress-bar {
-	background-color: @progressWarning;
+  background-color: @progressWarning;
 }
 
 
 .progress-vDanger::-webkit-progress-value {
-	background-color: @progressDanger;
+  background-color: @progressDanger;
 }
 
 .progress-vDanger::-moz-progress-bar {
-	background-color: @progressDanger;
+  background-color: @progressDanger;
 }
 
 
 .progress-vSmall {
-	height: .6rem;
+  height: .6rem;
 }
 
 .progress-vMedium {
-	height: 1.4rem;
+  height: 1.4rem;
 }
 
 .progress-vLarge {
-	height: 1.8rem;
+  height: 1.8rem;
 }
 
 
-// => Grid Media Queries
+// => Progress Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-
 }
 
 .media-mixin(@break) when (@break = @breakMedium) {
-
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {
-
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
-
 }

@@ -58,7 +58,7 @@ module.exports = {
 			.pipe(gulp.dest(options.dest)) // save cleaned version
 			.pipe(nano()) // minify css
 			.pipe(rename('style.min.css'))
-			.pipe(gulp.dest(options.dest)); // save minified version 
+			.pipe(gulp.dest(options.dest)); // save minified version
 	},
 
 	init: function (options) {

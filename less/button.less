@@ -1,7 +1,8 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-	BUTTONS
---------------------------------------------------------------------------------------- */
+/**
+ * BUTTONS
+ */
+
 
 // Colors:
 @btnBackgroundColor: #e7e5e5;
@@ -16,256 +17,253 @@
 //overwrite these colors and shadows in your appconf.less
 
 .btn {
-	font-weight: 200;
-	padding: 7px 21px;
-	margin: 6px 0;
-	color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
-	background-color: @btnBackgroundColor;
-	border: 1px solid darken(@btnBackgroundColor, 10%);;
-	box-shadow: @btnShadow;
-	border-radius: 1px;
-	cursor: pointer;
-	user-select: none;
-	vertical-align: middle;
-	white-space: nowrap;
-	display: inline-block;
-	transition: all .3s ease;
-	&:link,
-	&:visited {color:contrast(@btnBackgroundColor, #222222, #f4f4f4);}
-	&:hover {
-		color: contrast(lighten(@btnBackgroundColor, 5%));
-		background-color: lighten(@btnBackgroundColor, 5%);
-		box-shadow: @btnHoverShadow;
-	}
-	&:active,
-	&.is-active {
-		color: contrast(lighten(@btnBackgroundColor, 10%));
-		background-color: lighten(@btnBackgroundColor, 10%);
-	}
-	&.is-disabled,
-	&:disabled,
-	&[aria-disabled=true]{
-		color: #aaaaaa;
-		cursor: default;
-		box-shadow: none;
-		border-style: dashed;
-		background-color: lighten(@btnBackgroundColor, 15%);
-		&:hover {
-			background-color: lighten(@btnBackgroundColor, 5%);
-		}
-	}
-	&.has-icon:before {
-		content: "";
-		position: relative;
-		display: inline-block;
-		height: 1em;
-		width: 1em;
-		vertical-align: text-top;
-		margin: 4px 10px 0 -5px;
-		background-size: cover;
-		background-position: top left;
-		background-repeat: no-repeat;
-		background-color: inherit;
-		background-blend-mode: multiply;
-		//set background-image via icon.less
-	}
-	&.just-icon {
-		color: transparent !important;
-		letter-spacing: -1em;
-		padding: 7px 14px;
-		position: relative;
-	}
-	&.just-icon:before {
-		margin: 2px 0 0;
-		height: 1.4em;
-		width: 1.4em;
-	}
-	.icon {margin: 4px 7px 0 -5px;}
+  font-weight: 200;
+  padding: 7px 21px;
+  margin: 6px 0;
+  color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
+  background-color: @btnBackgroundColor;
+  border: 1px solid darken(@btnBackgroundColor, 10%);;
+  box-shadow: @btnShadow;
+  border-radius: 1px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  display: inline-block;
+  transition: all .3s ease;
+  &:link,
+  &:visited {color:contrast(@btnBackgroundColor, #222222, #f4f4f4);}
+  &:hover {
+    color: contrast(lighten(@btnBackgroundColor, 5%));
+    background-color: lighten(@btnBackgroundColor, 5%);
+    box-shadow: @btnHoverShadow;
+  }
+  &:active,
+  &.is-active {
+    color: contrast(lighten(@btnBackgroundColor, 10%));
+    background-color: lighten(@btnBackgroundColor, 10%);
+  }
+  &.is-disabled,
+  &:disabled,
+  &[aria-disabled=true]{
+    color: #aaaaaa;
+    cursor: default;
+    box-shadow: none;
+    border-style: dashed;
+    background-color: lighten(@btnBackgroundColor, 15%);
+    &:hover {
+      background-color: lighten(@btnBackgroundColor, 5%);
+    }
+  }
+  &.has-icon:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    vertical-align: text-top;
+    margin: 4px 10px 0 -5px;
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    background-blend-mode: multiply;
+    //set background-image via icon.less
+  }
+  &.just-icon {
+    color: transparent !important;
+    letter-spacing: -1em;
+    padding: 7px 14px;
+    position: relative;
+  }
+  &.just-icon:before {
+    margin: 2px 0 0;
+    height: 1.4em;
+    width: 1.4em;
+  }
+  .icon {margin: 4px 7px 0 -5px;}
 }
 
 .btn-vSmall {
-	padding: 3px 11px;
-	font-size: .8em;
-	font-weight: 400;
-	&.has-icon:before {
-		margin: 3px 5px 0 0;
-		//set background-image via icon.less
-	}
-	&.just-icon {
-		color: transparent !important;
-		letter-spacing: -1em;
-		padding: 3px 8px;
-	}
-	&.just-icon:before {
-		margin: 2px 0 0;
-		height: 1.2em;
-		width: 1.2em;
-	}
-	.icon {margin: 3px 3px 0 0;}
+  padding: 3px 11px;
+  font-size: .8em;
+  font-weight: 400;
+  &.has-icon:before {
+    margin: 3px 5px 0 0;
+    //set background-image via icon.less
+  }
+  &.just-icon {
+    color: transparent !important;
+    letter-spacing: -1em;
+    padding: 3px 8px;
+  }
+  &.just-icon:before {
+    margin: 2px 0 0;
+    height: 1.2em;
+    width: 1.2em;
+  }
+  .icon {margin: 3px 3px 0 0;}
 }
 
 .btn-vPrimary {
-	font-weight: 600;
-	color: contrast(darken(@btnPrimaryBgColor, 15%), #222222, #f4f4f4);
-	background-color: @btnPrimaryBgColor;
-	border: 1px solid darken(@btnPrimaryBgColor, 10%);
-	&:link,
-	&:visited {color:contrast(darken(@btnPrimaryBgColor, 15%), #222222, #f4f4f4);}
-	&:hover {
-		color: contrast(darken(@btnPrimaryBgColor, 15%));
-		background-color: lighten(@btnPrimaryBgColor, 5%);
-		border: 1px solid darken(@btnPrimaryBgColor, 5%);
-	}
-	&:active,
-	&.is-active {
-		color: contrast(darken(@btnPrimaryBgColor,20%));
-		background-color: lighten(@btnPrimaryBgColor, 10%);
-		border: 1px solid lighten(@btnPrimaryBgColor, 5%);
-	}
-	&.is-disabled,
-	&:disabled,
-	&[aria-disabled=true] {
-		color: lighten(@btnPrimaryBgColor, 30%);
-		background-color: lighten(@btnBackgroundColor, 15%);
-		border: 1px dashed lighten(@btnPrimaryBgColor, 30%);
-		cursor: default;
-		box-shadow: none;
-		&:hover {
-			background-color: lighten(@btnPrimaryBgColor, 40%);
-		}
-	}
+  font-weight: 600;
+  color: contrast(darken(@btnPrimaryBgColor, 15%), #222222, #f4f4f4);
+  background-color: @btnPrimaryBgColor;
+  border: 1px solid darken(@btnPrimaryBgColor, 10%);
+  &:link,
+  &:visited {color:contrast(darken(@btnPrimaryBgColor, 15%), #222222, #f4f4f4);}
+  &:hover {
+    color: contrast(darken(@btnPrimaryBgColor, 15%));
+    background-color: lighten(@btnPrimaryBgColor, 5%);
+    border: 1px solid darken(@btnPrimaryBgColor, 5%);
+  }
+  &:active,
+  &.is-active {
+    color: contrast(darken(@btnPrimaryBgColor,20%));
+    background-color: lighten(@btnPrimaryBgColor, 10%);
+    border: 1px solid lighten(@btnPrimaryBgColor, 5%);
+  }
+  &.is-disabled,
+  &:disabled,
+  &[aria-disabled=true] {
+    color: lighten(@btnPrimaryBgColor, 30%);
+    background-color: lighten(@btnBackgroundColor, 15%);
+    border: 1px dashed lighten(@btnPrimaryBgColor, 30%);
+    cursor: default;
+    box-shadow: none;
+    &:hover {
+      background-color: lighten(@btnPrimaryBgColor, 40%);
+    }
+  }
 }
 
 .btn-vDanger {
-	color: darken(@btnDangerBgColor,5%);
-	border: 1px solid darken(@btnDangerBgColor, 10%);
-	box-shadow: 0 1px 2px fadeout(@btnDangerBgColor, 60%);
-	&:link,
-	&:visited {color:darken(@btnDangerBgColor,5%);}
-	&:hover {
-		color: contrast(darken(@btnDangerBgColor, 15%));
-		background-color: lighten(@btnDangerBgColor, 5%);
-		border: 1px solid darken(@btnDangerBgColor, 5%);
-	}
-	&:active,
-	&.is-active {
-		color: contrast(darken(@btnDangerBgColor,20%));
-		background-color: lighten(@btnDangerBgColor, 10%);
-		border: 1px solid lighten(@btnDangerBgColor, 5%);
-	}
-	&.is-disabled,
-	&:disabled,
-	&[aria-disabled=true] {
-		color: lighten(@btnDangerBgColor, 30%);
-		background-color: lighten(@btnBackgroundColor, 15%);
-		border: 1px dashed lighten(@btnDangerBgColor, 30%);
-		cursor: default;
-		box-shadow: none;
-		&:hover {
-			background-color: lighten(@btnDangerBgColor, 40%);
-		}
-	}
+  color: darken(@btnDangerBgColor,5%);
+  border: 1px solid darken(@btnDangerBgColor, 10%);
+  box-shadow: 0 1px 2px fadeout(@btnDangerBgColor, 60%);
+  &:link,
+  &:visited {color:darken(@btnDangerBgColor,5%);}
+  &:hover {
+    color: contrast(darken(@btnDangerBgColor, 15%));
+    background-color: lighten(@btnDangerBgColor, 5%);
+    border: 1px solid darken(@btnDangerBgColor, 5%);
+  }
+  &:active,
+  &.is-active {
+    color: contrast(darken(@btnDangerBgColor,20%));
+    background-color: lighten(@btnDangerBgColor, 10%);
+    border: 1px solid lighten(@btnDangerBgColor, 5%);
+  }
+  &.is-disabled,
+  &:disabled,
+  &[aria-disabled=true] {
+    color: lighten(@btnDangerBgColor, 30%);
+    background-color: lighten(@btnBackgroundColor, 15%);
+    border: 1px dashed lighten(@btnDangerBgColor, 30%);
+    cursor: default;
+    box-shadow: none;
+    &:hover {
+      background-color: lighten(@btnDangerBgColor, 40%);
+    }
+  }
 }
 
 .btn-vEdit {
-	color: darken(@btnEditBgColor,5%);
-	border: 1px solid darken(@btnEditBgColor, 10%);
-	box-shadow: 0 1px 2px fadeout(@btnEditBgColor, 60%);
-	&:link,
-	&:visited {color:darken(@btnEditBgColor,5%);}
-	&:hover {
-		color: contrast(darken(@btnEditBgColor, 15%));
-		background-color: lighten(@btnEditBgColor, 5%);
-		border: 1px solid darken(@btnEditBgColor, 5%);
-	}
-	&:active,
-	&.is-active {
-		color: contrast(darken(@btnEditBgColor,20%));
-		background-color: lighten(@btnEditBgColor, 10%);
-		border: 1px solid lighten(@btnEditBgColor, 5%);
-	}
-	&.is-disabled,
-	&:disabled,
-	&[aria-disabled=true] {
-		color: lighten(@btnEditBgColor, 20%);
-		background-color: lighten(@btnBackgroundColor, 15%);
-		border: 1px dashed lighten(@btnEditBgColor, 30%);
-		cursor: default;
-		box-shadow: none;
-		&:hover {
-			background-color: lighten(@btnEditBgColor, 40%);
-		}
-	}
+  color: darken(@btnEditBgColor,5%);
+  border: 1px solid darken(@btnEditBgColor, 10%);
+  box-shadow: 0 1px 2px fadeout(@btnEditBgColor, 60%);
+  &:link,
+  &:visited {color:darken(@btnEditBgColor,5%);}
+  &:hover {
+    color: contrast(darken(@btnEditBgColor, 15%));
+    background-color: lighten(@btnEditBgColor, 5%);
+    border: 1px solid darken(@btnEditBgColor, 5%);
+  }
+  &:active,
+  &.is-active {
+    color: contrast(darken(@btnEditBgColor,20%));
+    background-color: lighten(@btnEditBgColor, 10%);
+    border: 1px solid lighten(@btnEditBgColor, 5%);
+  }
+  &.is-disabled,
+  &:disabled,
+  &[aria-disabled=true] {
+    color: lighten(@btnEditBgColor, 20%);
+    background-color: lighten(@btnBackgroundColor, 15%);
+    border: 1px dashed lighten(@btnEditBgColor, 30%);
+    cursor: default;
+    box-shadow: none;
+    &:hover {
+      background-color: lighten(@btnEditBgColor, 40%);
+    }
+  }
 }
 
 .btnGroup {
-	vertical-align: middle;
-	display: inline-block;
-	.btn {
-		margin-right: 0px;
-		margin-left: -1px;
-		float: left;
-		position: relative;
-		.zIndex('content',0);
-		&:not(:first-child):not(:last-child) {
-			border-radius: 0;
-		}
-		&:first-child:not(:last-child) {
-		  border-top-right-radius: 0;
-		  border-bottom-right-radius: 0;
-		}
-		&:last-child:not(:first-child) {
-		  border-top-left-radius: 0;
-		  border-bottom-left-radius: 0;
-		}
-		&:first-of-type {
-			margin-left: 6px;
-		}
-		&.btn:last-of-type {
-			margin-right: 6px;
-		}
-		// Bring any button into forefront for proper borders given negative margin below
-		&.btn-vDanger,
-		&.btn-vPrimary,
-		&.btn-vEdit {
-			.zIndex('content',1); // border colors are important here.
-		}
-		&:hover,
-		&:active,
-		&.is-selected {
-			.zIndex('content',2);
-		}
-		&.is-disabled,
-		&.is-disabled:hover {
-			.zIndex('content',0); // stay down!
-		}
-		&:focus {
-			.zIndex('content',3);
-		}
-	}
+  vertical-align: middle;
+  display: inline-block;
+  .btn {
+    margin-right: 0px;
+    margin-left: -1px;
+    float: left;
+    position: relative;
+    .zIndex('content',0);
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+    &:first-child:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:last-child:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &:first-of-type {
+      margin-left: 6px;
+    }
+    &.btn:last-of-type {
+      margin-right: 6px;
+    }
+    // Bring any button into forefront for proper borders given negative margin below
+    &.btn-vDanger,
+    &.btn-vPrimary,
+    &.btn-vEdit {
+      .zIndex('content',1); // border colors are important here.
+    }
+    &:hover,
+    &:active,
+    &.is-selected {
+      .zIndex('content',2);
+    }
+    &.is-disabled,
+    &.is-disabled:hover {
+      .zIndex('content',0); // stay down!
+    }
+    &:focus {
+      .zIndex('content',3);
+    }
+  }
 }
 
 .btn-vBlock {
-	margin: 0;
-	width: 100%;
-	display: block;
-	margin-top: 5px;
+  margin: 0;
+  width: 100%;
+  display: block;
+  margin-top: 5px;
 }
+
 
 // => Buttons Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-
 }
 
 .media-mixin(@break) when (@break = @breakMedium) {
-
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {
-
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
-
 }

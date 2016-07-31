@@ -1,74 +1,73 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-	#PARALLAX EFFECT WRAPPER
---------------------------------------------------------------------------------------- */
+/**
+ * PARALLAX EFFECT WRAPPER
+ *
+ * The parallax effect wrapper makes it easy to use screen wide images with the well known scroll effect.
+ * Attach a variant to achieve better fitting for different screen ratios (3:1, 2:1, 16:9, 4:3).
+ *
+ * Thanks and shoutouts to: http://codepen.io/necolas/pen/Aksni
+ */
 
-// The parallax effect wrapper makes it easy to use screen wide images with the well known scroll effect.
-// Attach a variant to achieve better fitting for different screen ratios (3:1, 2:1, 16:9, 4:3).
-
-// Thanks and shoutouts to: http://codepen.io/necolas/pen/Aksni
 
 .parallax {
-	max-height: 400px;
-	width: 100%;
-	background-image: url('../images/placeholder-parallax.jpg');
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	&:before {
-		content: "";
-		display: block;
-		width: 100%;
-		padding-bottom: 100%;
-	}
-	&.parallax-v3by1:before {
-		padding-bottom: 33.33333%; /* image in 3:1 ratio. */
-	}
-	&.parallax-v2by1:before {
-		padding-bottom: 50%; /* image in 2:1 ratio. */
-	}
-	&.parallax-v16by9:before {
-		padding-bottom: 56.25%; /* image in 16:9 ratio. */
-	}
-	&.parallax-v4by3:before {
-		padding-bottom: 75%; /* image in 4:3 ratio. */
-	}
+  max-height: 400px;
+  width: 100%;
+  background-image: url('../images/placeholder-parallax.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  &.parallax-v3by1:before {
+    padding-bottom: 33.33333%; // image in 3:1 ratio.
+  }
+  &.parallax-v2by1:before {
+    padding-bottom: 50%; // image in 2:1 ratio.
+  }
+  &.parallax-v16by9:before {
+    padding-bottom: 56.25%; // image in 16:9 ratio.
+  }
+  &.parallax-v4by3:before {
+    padding-bottom: 75%; // image in 4:3 ratio.
+  }
 }
 
 .parallax-v2by1 {max-height:420px;}
 .parallax-v16by9 {max-height:440px;}
 .parallax-v4by3 {max-height:460px;}
 
+
 // => Parallax Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-	.parallax {
-		background-attachment: scroll!important;
-		background-size: cover;
-		max-height: 300px;
-	}
+  .parallax {
+    background-attachment: scroll!important;
+    background-size: cover;
+    max-height: 300px;
+  }
 }
 
 .media-mixin(@break) when (@break = @breakMedium) {
-	.parallax {
-		background-attachment: scroll!important;
-	}
+  .parallax {
+    background-attachment: scroll!important;
+  }
 }
 
 .media-mixin(@break) when (@break = @breakLarge) {
-
 }
 
 .media-mixin(@break) when (@break = @break2x) {
-	/* disable background-attachment: fixed on iOS devices */
-	.parallax {
-		background-attachment: scroll!important;
-		background-size: 100%;
-	}
+  // disable background-attachment: fixed on iOS devices
+  .parallax {
+    background-attachment: scroll!important;
+    background-size: 100%;
+  }
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
-
 }
-
