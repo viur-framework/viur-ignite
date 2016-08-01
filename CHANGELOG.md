@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 ### Added
 - menu variation .menu-vRow
+- single element spinner: .single-spinner
+- single-spinner support for buttons and menu-links
+- the .switch
+- :focus states for inputs
+
+### Changed
+- some responsive behaviour of form elements for increased consistency
+
+### Deprecated
+- .formActions are deprecated -- please use the .bar element instead
 
 ## [1.0.23] - 2016-07-31
 ### Added
@@ -22,7 +32,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - placeholder.svg is now linked correctly in image.less
-- Tabs works again
+- Tabs work again
 
 
 ## [1.0.22] - 2016-07-28

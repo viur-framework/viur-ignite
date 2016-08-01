@@ -55,6 +55,17 @@
       background-color: lighten(@btnBackgroundColor, 5%);
     }
   }
+  &.is-busy,
+  &.is-loading,
+  &[aria-busy=true] {
+    cursor: progress;
+    & .single-spinner {
+      margin-right: 1em;
+    }
+    &:hover {
+      box-shadow: @btnShadow;
+    }
+  }
   &.has-icon:before {
     content: "";
     position: relative;

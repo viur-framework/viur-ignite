@@ -33,6 +33,12 @@
     background-color: lighten(@inputDangerColor, 40%);
     background-image: url(../icons/cross.svg);
     background-position: 95% center;
+    &:focus {
+      color: contrast(@inputColor, #222222, #f4f4f4);
+      background-color: @inputColor;
+      border: 1px solid darken(@inputColor, 10%);
+      background-position: 150% center;
+    }
   }
   .inputGroup.is-recommended &,
   &.is-recommended {
@@ -41,6 +47,12 @@
     background-color: lighten(@inputHintColor, 40%);
     background-image: url(../icons/pen.svg);
     background-position: 95% center;
+    &:focus {
+      color: contrast(@inputColor, #222222, #f4f4f4);
+      background-color: @inputColor;
+      border: 1px solid darken(@inputColor, 10%);
+      background-position: 150% center;
+    }
   }
   .inputGroup.is-valid  &,
   &.is-valid {
@@ -49,6 +61,12 @@
     background-color: lighten(@inputValidColor, 40%);
     background-image: url(../icons/check.svg);
     background-position: 95% center;
+    &:focus {
+      color: contrast(@inputColor, #222222, #f4f4f4);
+      background-color: @inputColor;
+      border: 1px solid darken(@inputColor, 10%);
+      background-position: 150% center;
+    }
   }
   &.is-readonly,
   &:read-only {
@@ -220,7 +238,8 @@
 .inputGroup .input,
 .inputGroup .btn,
 .inputGroup .select,
-.inputGroup .label {
+.inputGroup .label,
+.inputGroup .switch {
   margin: 6px 0px;
   float: left;
   position: relative;
@@ -228,7 +247,8 @@
 
 .inputGroup .input,
 .inputGroup .label,
-.inputGroup .textarea {
+.inputGroup .textarea,
+.inputGroup .switch {
   box-shadow: @inputShadow;
 }
 
@@ -272,17 +292,63 @@
   cursor: pointer;
 }
 
-//#FIXME: Radio Buttons
-
-//#FIXME: inputGroup for Check/Radio
-
 .note {
   font-size: 0.8em;
   margin: 0;
   padding-left: 22px;
 }
 
-// Use formActions to float submit buttons to the right at the end of your form.
+// A simple, yet elegant, boolean switch.
+.switch {
+  margin: 6px 0;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 7px 14px;
+  background-color: darken(@inputColor, 2%);
+  border: 1px solid darken(@inputColor, 12%);
+  color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
+}
+
+.switch-input {
+  display: none;
+  &:checked + .switch-label {
+    background: lighten(@inputValidColor, 20%);
+  }
+  &:checked + .switch-label:after {
+    left: 50%;
+  }
+}
+
+.switch-label {
+  background: darken(@inputColor, 10%);
+  padding: 2px;
+  transition: all .4s ease;
+  outline: 0;
+  display: block;
+  width: 3em;
+  height: 1.5em;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  &:after {
+    left: 0;
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    transition: all .2s ease;
+    box-shadow: @inputShadow;
+  }
+}
+
+//#FIXME: Radio Buttons
+
+//#FIXME: inputGroup for Check/Radio
+
+// Use .formActions to float submit buttons to the right at the end of your form.
+// #DEPRECATED: .formActions are deprecated -- please use the .bar element instead.
 .formActions {
   &:after {
     content: '';
@@ -314,12 +380,15 @@
   }
 
   .inputGroup .input,
-  .inputGroup .label {
+  .inputGroup .label,
+  .inputGroup .switch,
+  .inputGroup .textarea {
     box-shadow: none;
   }
 
   .input,
-  .select {
+  .select,
+  .switch {
     width:100%;
     margin: 0;
     margin-bottom: 5px;
@@ -327,7 +396,9 @@
 
   .inputGroup .select,
   .inputGroup .input,
-  .inputGroup .btn {
+  .inputGroup .btn,
+  .inputGroup .switch,
+  .inputGroup .textarea {
     width:100%;
     margin: 0;
   }
