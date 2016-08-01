@@ -5,12 +5,20 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 ### Added
 - menu variation .menu-vRow
-
-### Fixed
-- double scroller
+- single element spinner: .single-spinner
+- single-spinner support for buttons and menu-links
+- the .switch
+- :focus states for inputs
 
 ### Changed
 - using .menuWrapper for mobile menu instead of .sidebar
+- some responsive behaviour of form elements for increased consistency
+
+### Deprecated
+- .formActions are deprecated -- please use the .bar element instead
+
+### Fixed
+- double scroller
 
 
 ## [1.0.23] - 2016-07-31
@@ -29,7 +37,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - placeholder.svg is now linked correctly in image.less
-- Tabs works again
+- Tabs work again
 
 
 ## [1.0.22] - 2016-07-28
@@ -46,7 +54,7 @@ All notable changes to this project will be documented in this file.
 - Changelog started here
 
 
-[Unreleased]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.23...master
+[Unreleased]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.23...develop
 [1.0.23]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.22...1.0.23
 [1.0.22]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.21...1.0.22
 [1.0.21]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.20...1.0.21

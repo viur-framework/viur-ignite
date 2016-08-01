@@ -107,6 +107,14 @@ a.menu-link {
   &.is-active:hover {
     background-color: lighten(@menuActiveColor,5%);
   }
+  &.is-busy,
+  &.is-loading,
+  &[aria-busy=true] {
+    cursor: progress;
+    & .single-spinner {
+      margin-top: 0;
+    }
+  }
   &.has-icon:before {
     content: '';
     position: relative;

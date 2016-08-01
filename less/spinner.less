@@ -1,15 +1,14 @@
 @charset "UTF-8";
-/**
- * SPINNER
- *
- * Based on SpinKit:
- * https://github.com/tobiasahlin/SpinKit
+/*
+ * #SPINNER
  */
 
 
 @spinnerColor: @complementColor;
 @spinnerBackColor: @complementColor;
 
+// Based on SpinKit:
+// https://github.com/tobiasahlin/SpinKit
 
 .spinner-overlay {
   transition: all .7s ease;
@@ -93,6 +92,67 @@
   }
 }
 
+// Based on Single Element CSS Spinners:
+// https://github.com/lukehaas/css-loaders
+
+.single-spinner {
+  transition: all .7s ease;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  margin:-.8em 1.8em 6px;
+  text-indent: -9999em;
+}
+
+.single-spinner:before,
+.single-spinner:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+
+.single-spinner:before {
+  left: -1.2em;
+  animation-delay: -0.32s;
+}
+
+.single-spinner:after {
+  left: 1.2em;
+}
+
+.is-busy,
+.is-loading,
+[aria-busy=true] {
+  & .single-spinner,
+  & .single-spinner:before,
+  & .single-spinner:after {
+    background: @spinnerColor;
+    animation: single-spinner-ani 1s infinite ease-in-out;
+    width: .8em;
+    height: .8em;
+  }
+  & .single-spinner {
+    color: #ffffff;
+    margin: 6px 1.8em;
+    position: relative;
+    transform: translateZ(0);
+    animation-delay: -0.16s;
+    display: inline-block;
+    cursor: progress;
+    vertical-align: middle;
+  }
+}
+
+@keyframes single-spinner-ani {
+  0%,
+  80%,
+  100% {
+    opacity: .2;
+  }
+  40% {
+    opacity: 1;
+  }
+}
 
 // => Spinner Media Queries
 
