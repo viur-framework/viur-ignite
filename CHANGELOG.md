@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 ### Added
 - menu variation .menu-vRow
 
+### Fixed
+- double scroller
+
+
 ## [1.0.23] - 2016-07-31
 ### Added
 - center-functions [.center(), .centerX().centerY()]
