@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - double scroller
 
+### Changed
+- using .menuWrapper for mobile menu instead of .sidebar
+
 
 ## [1.0.23] - 2016-07-31
 ### Added
