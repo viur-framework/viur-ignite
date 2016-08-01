@@ -165,7 +165,7 @@ a.menu-link {
 // => Menu Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
-  .sidebar {
+  .menuWrapper {
     width: 70%;
     position: absolute;
     top: 40px;
@@ -207,7 +207,7 @@ a.menu-link {
     }
   }
 
-  .nav-trigger&:checked ~ .sidebar {
+  .nav-trigger&:checked ~ .menuWrapper {
     right: 0;
   }
 }

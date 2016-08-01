@@ -16,6 +16,13 @@ All notable changes to this project will be documented in this file.
 ### Deprecated
 - .formActions are deprecated -- please use the .bar element instead
 
+### Fixed
+- double scroller
+
+### Changed
+- using .menuWrapper for mobile menu instead of .sidebar
+
+
 ## [1.0.23] - 2016-07-31
 ### Added
 - center-functions [.center(), .centerX().centerY()]
