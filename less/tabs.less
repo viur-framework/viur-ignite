@@ -60,18 +60,18 @@
   -o-transition: all 0.6s ease;
 }
 
-[type=radio]:checked ~ label {
+.tab [type=radio]:checked ~ label {
   background: white;
   border-bottom: 1px solid white;
   z-index: 2;
 }
 
-[type=radio]:checked ~ label ~ .tab-content {
+.tab [type=radio]:checked ~ label ~ .tab-content {
   z-index: 1;
   visibility: visible;
 }
 
-[type=radio]:checked ~ label ~ .tab-content > * {
+.tab [type=radio]:checked ~ label ~ .tab-content > * {
   opacity: 1;
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
