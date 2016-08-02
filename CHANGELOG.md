@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - single-spinner support for buttons and menu-links
 - the .switch
 - :focus states for inputs
+- .radio buttons and .radioGroups
 
 ### Changed
 - using .menuWrapper for mobile menu instead of .sidebar
@@ -19,6 +20,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - double scroller
+- namespacing for tabs (styling affected radio buttons)
 
 
 ## [1.0.23] - 2016-07-31
@@ -29,7 +31,7 @@ All notable changes to this project will be documented in this file.
 - pagination
 - tab variation: tab-vFullscreen
 
-### Changed   
+### Changed
 - monoFont to 'Source Code Pro'
 - .tab label is now called .tab-label to increase the sturdiness
 - .media-image.small is now called .media-image.media-image-vSmall to increase consistency

@@ -239,7 +239,9 @@
 .inputGroup .btn,
 .inputGroup .select,
 .inputGroup .label,
-.inputGroup .switch {
+.inputGroup .switch,
+.inputGroup > .radio,
+.inputGroup .radioGroup {
   margin: 6px 0px;
   float: left;
   position: relative;
@@ -248,7 +250,9 @@
 .inputGroup .input,
 .inputGroup .label,
 .inputGroup .textarea,
-.inputGroup .switch {
+.inputGroup .switch,
+.inputGroup > .radio,
+.inputGroup .radioGroup {
   box-shadow: @inputShadow;
 }
 
@@ -343,9 +347,65 @@
   }
 }
 
-//#FIXME: Radio Buttons
+.radio {
+  margin: 6px 0;
+  vertical-align: middle;
+  display: inline-block;
+  background-color: darken(@inputColor, 2%);
+  border: 1px solid darken(@inputColor, 12%);
+  color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
+}
+.radio-input {
+  opacity: 0;
+  position: absolute;
+}
+.radio-label {
+  position: relative;
+  display: inline-block;
+  padding: 7px 14px;
+  outline: 0;
+  cursor: pointer;
+  &:before {
+    content:'';
+    background: #fff;
+    border: 2px solid darken(@inputColor, 10%);;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin-right: 10px;
+    margin-top:-2px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all .4s ease;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+  }
+  &:hover {
+    background-color: @inputColor;
+  }
+}
 
-//#FIXME: inputGroup for Check/Radio
+.radio-input:checked + .radio-label:before {
+  background: lighten(@inputValidColor, 20%);
+  border: 2px solid lighten(@inputValidColor, 10%);
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  .radio {
+    margin:0;
+    border-width: 0 1px;
+    &:first-child {
+      border-width: 1px;
+      border-bottom-width: 0;
+    }
+    &:last-child {
+      border-width: 1px;
+      border-top-width: 0;
+    }
+  }
+}
 
 // Use .formActions to float submit buttons to the right at the end of your form.
 // #DEPRECATED: .formActions are deprecated -- please use the .bar element instead.
@@ -382,14 +442,17 @@
   .inputGroup .input,
   .inputGroup .label,
   .inputGroup .switch,
-  .inputGroup .textarea {
+  .inputGroup .textarea,
+  .inputGroup > .radio,
+  .inputGroup .radioGroup {
     box-shadow: none;
   }
 
   .input,
   .select,
-  .switch {
-    width:100%;
+  .switch,
+  .radio {
+    width: 100%;
     margin: 0;
     margin-bottom: 5px;
   }
@@ -398,8 +461,11 @@
   .inputGroup .input,
   .inputGroup .btn,
   .inputGroup .switch,
-  .inputGroup .textarea {
-    width:100%;
+  .inputGroup .textarea,
+  .inputGroup > .radio,
+  .inputGroup .radioGroup,
+  .radioGroup .radio {
+    width: 100%;
     margin: 0;
   }
   .inputGroup .btn {
