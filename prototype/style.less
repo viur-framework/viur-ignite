@@ -50,6 +50,9 @@
 
 
 // => Project Media Queries
+.media-mixin(@break) when (@break = @breakSmall) {
+}
+
 .media-mixin(@break) when (@break = @breakMedium) {
 }
 
@@ -57,9 +60,6 @@
 }
 
 .media-mixin(@break) when (@break = @break2x) {
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
 }
 
 .media-mixin(@break) when (@break = @breakPrint) {
