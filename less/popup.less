@@ -38,7 +38,11 @@
   left:-14%;
   width: 33%;
   max-width:@pageWidth/2.5;
+  max-height: 90vh;
   transform: translateX(-50%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   &.is-active {
     .zIndex('overlay', 1);
     opacity: 1;

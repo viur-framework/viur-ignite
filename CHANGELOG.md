@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - double scroller
 - namespacing for tabs (styling affected radio buttons)
+- .popup now has a max-height and proper content scrollbars
 
 
 ## [1.0.23] - 2016-07-31
