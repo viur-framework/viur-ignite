@@ -54,56 +54,86 @@
 .popup-s,
 .popup-se,
 .popup-sw {
-  bottom: 20px;
-  top: inherit;
-  right: inherit;
+  transform: translateY(110%);
+  &.is-active {
+    bottom: 20px;
+    top: inherit;
+    right: inherit;
+  }
 }
 .popup-s {
   left: 50%;
+  transform: translate(-50%, 110%);
+  &.is-active {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 .popup-se {
   right: 20px;
-  left: inherit;
-  transform: none;
+  &.is-active {
+    right: 20px;
+    left: inherit;
+    transform: none;
+  }
 }
 .popup-sw {
   left: 20px;
-  transform: none;
+  &.is-active {
+    left: 20px;
+    transform: none;
+  }
 }
 
 .popup-n,
 .popup-ne,
 .popup-nw {
-  bottom: inherit;
-  top: 20px;
-  right: inherit;
+  &.is-active {
+    bottom: inherit;
+    top: 20px;
+    right: inherit;
+  }
 }
 .popup-n {
-  left: 50%;
+  &.is-active {
+    left: 50%;
+  }
 }
 .popup-ne {
-  left: 20px;
-  transform: none;
+  &.is-active {
+    left: 20px;
+    transform: none;
+  }
 }
 .popup-nw {
-  left: inherit;
-  right: 20px;
-  transform: none;
+  &.is-active {
+    left: inherit;
+    right: 20px;
+    transform: none;
+  }
 }
+
 .popup-w,
 .popup-e {
-  top: 50%;
-  transform: translateY(-50%);
-  bottom: inherit;
-}
-.popup-w {
-  left: 20px;
-  right: inherit;
+  &.is-active {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: inherit;
+  }
 }
 .popup-e {
-  right: 20px;
-  left: inherit;
+  &.is-active {
+    right: 20px;
+    left: inherit;
+  }
 }
+.popup-w {
+  &.is-active {
+    left: 20px;
+    right: inherit;
+  }
+}
+
 
 // The main popup window
 .popup-box {
