@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 - the .switch
 - :focus states for inputs
 - .radio buttons and .radioGroups
+- NESW positioning for .popup element
 
 ### Changed
 - using .menuWrapper for mobile menu instead of .sidebar

@@ -51,6 +51,60 @@
   }
 }
 
+.popup-s,
+.popup-se,
+.popup-sw {
+  bottom: 20px;
+  top: inherit;
+  right: inherit;
+}
+.popup-s {
+  left: 50%;
+}
+.popup-se {
+  right: 20px;
+  left: inherit;
+  transform: none;
+}
+.popup-sw {
+  left: 20px;
+  transform: none;
+}
+
+.popup-n,
+.popup-ne,
+.popup-nw {
+  bottom: inherit;
+  top: 20px;
+  right: inherit;
+}
+.popup-n {
+  left: 50%;
+}
+.popup-ne {
+  left: 20px;
+  transform: none;
+}
+.popup-nw {
+  left: inherit;
+  right: 20px;
+  transform: none;
+}
+.popup-w,
+.popup-e {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: inherit;
+}
+.popup-w {
+  left: 20px;
+  right: inherit;
+}
+.popup-e {
+  right: 20px;
+  left: inherit;
+}
+
 // The main popup window
 .popup-box {
   position: relative;
