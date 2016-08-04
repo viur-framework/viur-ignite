@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - using .menuWrapper for mobile menu instead of .sidebar
 - some responsive behaviour of form elements for increased consistency
+- now each element is border-box: box-sizing (before there were some exceptions)
 
 ### Deprecated
 - .formActions are deprecated -- please use the .bar element instead
