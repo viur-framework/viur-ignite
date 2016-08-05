@@ -16,6 +16,8 @@ All notable changes to this project will be documented in this file.
 - .thumnail
 - cite element to .blockquote
 - kbd (key) element
+- added support for .input-vBlock and .textarea-vBlock next to a label (inline)
+- table.less: no-border variations
 
 ### Changed
 - using .menuWrapper for mobile menu instead of .sidebar
@@ -24,6 +26,7 @@ All notable changes to this project will be documented in this file.
 - .shd, .center (X, Y), .pointer are now native css classes so you can use those as mixin and in html
 - restyled pre/code element
 - grid sizes/offsets (third, quarter)
+- redrawn headlines/sublines
 
 ### Deprecated
 - .formActions are deprecated -- please use the .bar element instead
