@@ -82,23 +82,64 @@ blockquote {
   color: @complementColor;
   padding: 0 15px;
   border-left: 7px solid @complementColor;
+  cite {
+    font-size: .8em;
+    vertical-align: baseline;
+    * {vertical-align: baseline;}
+    &:before {
+      display: inline-block;
+      content: '−';
+      margin-right: 3px;
+      color: @complementColor;
+    }
+  }
+  &:after {
+    content: attr(cite);
+    font-size: .6em;
+    margin-top: 2em;
+  }
 }
 
-code, pre {font-family: @monoFonts;}
+code, pre {font-family: @monoFonts; background: darken(@backgroundColor,5%); color: contrast(darken(@backgroundColor,5%));}
 code {
-  color:contrast(darken(@backgroundColor,10%));
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   tab-size: 4;
   hyphens: none;
-  background: fadeout(darken(@backgroundColor,15%),10%);
   padding: 3px;
   border-radius: 3px;
   &:before,
   &:after {
     letter-spacing: -0.2em;
     content: "\00a0";
+  }
+}
+pre {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+// Keys
+.kbd,
+kbd {
+  background-color: darken(@backgroundColor, 10%);
+  border: 1px solid darken(@backgroundColor, 15%);
+  border-radius: 3px;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  color: contrast(darken(@backgroundColor, 10%));
+  display: inline-block;
+  font-size: .8rem;
+  font-family: @monoFonts;
+  margin: 0 0.1em;
+  padding: .2em .6em;
+  text-shadow: 0 1px 0 #fff;
+  .txt-nowrap;
+  &.kbd-vDark {
+    border: 1px solid contrast(darken(@backgroundColor, 15%));
+    background-color: contrast(darken(@backgroundColor, 10%));
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px lighten(contrast(darken(@backgroundColor, 10%)), 20%) inset;
+    color: darken(@backgroundColor, 10%);
   }
 }
 

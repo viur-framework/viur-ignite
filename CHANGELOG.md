@@ -11,11 +11,19 @@ All notable changes to this project will be documented in this file.
 - :focus states for inputs
 - .radio buttons and .radioGroups
 - NESW positioning for .popup element
+- util.less elements: text transforms, repsosive format, show/hiding class
+- image shapes (rounded, circle, thumbnail)
+- .thumnail
+- cite element to .blockquote
+- kbd (key) element
 
 ### Changed
 - using .menuWrapper for mobile menu instead of .sidebar
 - some responsive behaviour of form elements for increased consistency
 - now each element is border-box: box-sizing (before there were some exceptions)
+- .shd, .center (X, Y), .pointer are now native css classes so you can use those as mixin and in html
+- restyled pre/code element
+- grid sizes/offsets (third, quarter)
 
 ### Deprecated
 - .formActions are deprecated -- please use the .bar element instead
