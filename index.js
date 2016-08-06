@@ -2,23 +2,21 @@
 
 const PLUGIN_NAME = 'viur-ignite-css';
 
-var	path = require('path');
+const path = require('path');
+const isThere = require('is-there');
 
-var	gulp = require('gulp'),
-	gutil = require('gulp-util'),
-	rename = require('gulp-rename'),
-	less = require('gulp-less'),
-	autoprefixer = require('gulp-autoprefixer'),
-	nano = require('gulp-cssnano'),
-	postcss = require('gulp-postcss'),
-	zindex = require('postcss-zindex'),
-	focus = require('postcss-focus'),
-	nocomments = require('postcss-discard-comments'),
-	stylelint = require('stylelint'),
-	stylelintConfig = require('stylelint-config-standard');
-
-var isThere = require('is-there');
-
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const rename = require('gulp-rename');
+const less = require('gulp-less');
+const autoprefixer = require('gulp-autoprefixer');
+const nano = require('gulp-cssnano');
+const postcss = require('gulp-postcss');
+const zindex = require('postcss-zindex');
+const focus = require('postcss-focus');
+const nocomments = require('postcss-discard-comments');
+const stylelint = require('stylelint');
+const stylelintConfig = require('stylelint-config-standard');
 
 module.exports = {
 	build: function (options) {
@@ -28,9 +26,13 @@ module.exports = {
 			dest: './appengine/static/css/'
 		};
 
-		if (typeof options === 'undefined') var options = {};
+		if (typeof options === 'undefined') {
+			options = {};
+		}
 		for (var key in defaultOptions) {
-			if (typeof options[key] === 'undefined') options[key] = defaultOptions[key];
+			if (typeof options[key] === 'undefined') {
+				options[key] = defaultOptions[key];
+			}
 		}
 
 		// Options for postcss
@@ -68,13 +70,20 @@ module.exports = {
 			overwrite: false
 		};
 
-		if (typeof options === 'undefined') var options = {};
+		if (typeof options === 'undefined') {
+			options = {};
+		}
 		for (var key in defaultOptions) {
-			if (typeof options[key] === 'undefined') options[key] = defaultOptions[key];
+			if (typeof options[key] === 'undefined') {
+				options[key] = defaultOptions[key];
+			}
 		}
 
 		if (isThere(options.dest) && (options.overwrite === false || options.overwrite === 'false')) {
-			throw new gutil.PluginError(PLUGIN_NAME, '\'' + options.dest + '\' already exists\n\tcall function with option overwrite: true');
+			throw new gutil.PluginError(
+				PLUGIN_NAME,
+				'\'' + options.dest + '\' already exists\n\tcall function with option overwrite: true'
+			);
 		} else {
 			return copyPrototype(options.dest);
 		}
