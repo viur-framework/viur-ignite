@@ -73,8 +73,10 @@ gulp.task('default', function() {
 
 The Default options are:
 ```js
-src: __dirname + '/less/viur.less',
-dest: './appengine/static/css/'
+src: path.join(__dirname, 'less/viur.less') // source path of basic less file
+dest: './appengine/static/css/' // destination path of css
+sourceMap: true // sourcemap for style.css
+minSourceMap: false // sourcemap four style.min.css
 ```
 
 ## Contribution guidelines

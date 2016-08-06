@@ -15,6 +15,4 @@ const viurCSS = require('.');
 viurCSS.init();
 
 // compile less to css
-viurCSS.build({
-	dest: './css/'
-});
+viurCSS.build();

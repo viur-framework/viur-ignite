@@ -18,6 +18,10 @@ All notable changes to this project will be documented in this file.
 - kbd (key) element
 - added support for .input-vBlock and .textarea-vBlock next to a label (inline)
 - table.less: no-border variations
+- build task:
+	- stylefmt for the correct syntax
+	- sourcemap support
+	- support for /* ... */ comments in style.css
 
 ### Changed
 - using .menuWrapper for mobile menu instead of .sidebar

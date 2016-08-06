@@ -8,22 +8,26 @@ const isThere = require('is-there');
 const gulp = require('gulp');
 const gutil = require('gulp-util');
 const rename = require('gulp-rename');
+const clone = require('gulp-clone');
+const gulpif = require('gulp-if');
 const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer');
 const nano = require('gulp-cssnano');
 const postcss = require('gulp-postcss');
+const stylefmt = require('gulp-stylefmt');
+const sourcemaps = require('gulp-sourcemaps');
 const zindex = require('postcss-zindex');
 const focus = require('postcss-focus');
-const nocomments = require('postcss-discard-comments');
-const stylelint = require('stylelint');
-const stylelintConfig = require('stylelint-config-standard');
+const merge = require('merge-stream');
 
 module.exports = {
 	build: function (options) {
 		// Set Default Options
 		var defaultOptions = {
-			src: path.join(__dirname, 'less/viur.less'),
-			dest: './appengine/static/css/'
+			src: path.join(__dirname, 'less/viur.less'), // source path of basic less file
+			dest: './appengine/static/css/', // destination path of css
+			sourceMap: true, // sourcemap for style.css
+			minSourceMap: false // sourcemap four style.min.css
 		};
 
 		if (typeof options === 'undefined') {
@@ -37,30 +41,36 @@ module.exports = {
 
 		// Options for postcss
 		var processors = [
-			nocomments, // discard comments
 			focus, // add focus to hover-states
 			zindex, // reduce z-index values
-			stylelint(stylelintConfig), // lint the css
 			require('postcss-font-magician')({
 				hosted: path.join(options.dest, '..', 'fonts'), // import fonts
 				formats: 'local eot woff2'
 			})
 		];
 
-		return gulp.src(options.src)
-			.pipe(less({
-				paths: [path.join(__dirname, 'less', 'includes')]
-			})) // compile less to css
+		var source = gulp.src(options.src)
+			.pipe(sourcemaps.init()) // initial sourcemap
+			.pipe(less()) // compile less to css
 			.pipe(autoprefixer({
 				browsers: ['last 2 versions'],
 				cascade: false
 			})) // add vendor prefixes
 			.pipe(postcss(processors)) // clean up css
-			.pipe(rename('style.css'))
-			.pipe(gulp.dest(options.dest)) // save cleaned version
+			.pipe(stylefmt()); // syntax formatting
+
+		var stylesPipe1 = source.pipe(clone()) // Create non-minified sourcemap
+			.pipe(rename('style.css')) // rename file -> style.css
+			.pipe(gulpif(options.sourceMap, sourcemaps.write('../map'))) // create sourcemap
+			.pipe(gulp.dest(options.dest)); // save style.css
+
+		var stylesPipe2 = source.pipe(clone()) // Create minified sourcemap
 			.pipe(nano()) // minify css
-			.pipe(rename('style.min.css'))
-			.pipe(gulp.dest(options.dest)); // save minified version
+			.pipe(rename('style.min.css')) // rename -> style.min.css
+			.pipe(gulpif(options.minSourceMap, sourcemaps.write('../map'))) // create sourcemap
+			.pipe(gulp.dest(options.dest)); // save style.min.css
+
+		return merge(stylesPipe1, stylesPipe2);
 	},
 
 	init: function (options) {
