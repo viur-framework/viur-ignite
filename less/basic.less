@@ -54,6 +54,9 @@ h6 {font-size: 1em;}
 // Use .subline to your headline
 .subline {font-family: @headFonts; color: lighten(@complementColor, 20%);}
 
+// remove margin-top of .subline after .headline
+.headline + .subline {margin-top: 0;}
+
 // Use .lead to emphasize the first paragraph of a section.
 .lead {font-size: 1.3em; font-weight: 300;}
 
@@ -95,7 +98,7 @@ blockquote {
     * {vertical-align: baseline;}
     &:before {
       display: inline-block;
-      content: '−';
+      content: '\2014';
       margin-right: 3px;
       color: @complementColor;
     }
@@ -116,6 +119,7 @@ code {
   hyphens: none;
   padding: 3px;
   border-radius: 3px;
+  margin: 0px 3px;
   &:before,
   &:after {
     letter-spacing: -0.2em;

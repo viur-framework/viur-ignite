@@ -54,7 +54,7 @@ module.exports = {
 			})
 			.pipe(sourcemaps.init({ loadMaps: true})) // initial sourcemap
 			.pipe(less({
-				paths: [path.join(__dirname, 'less', 'includes')]
+				paths: [path.join(__dirname, 'less', 'includes')] // need for relative @imports
 			})) // compile less to css
 			.pipe(autoprefixer({
 				browsers: ['last 2 versions'],
