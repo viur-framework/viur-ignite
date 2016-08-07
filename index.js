@@ -49,9 +49,13 @@ module.exports = {
 			})
 		];
 
-		var source = gulp.src(options.src)
-			.pipe(sourcemaps.init()) // initial sourcemap
-			.pipe(less()) // compile less to css
+		var source = gulp.src(options.src, {
+				// base: path.join(options.src, '..')
+			})
+			.pipe(sourcemaps.init({ loadMaps: true})) // initial sourcemap
+			.pipe(less({
+				paths: [path.join(__dirname, 'less', 'includes')]
+			})) // compile less to css
 			.pipe(autoprefixer({
 				browsers: ['last 2 versions'],
 				cascade: false
@@ -61,13 +65,19 @@ module.exports = {
 
 		var stylesPipe1 = source.pipe(clone()) // Create non-minified sourcemap
 			.pipe(rename('style.css')) // rename file -> style.css
-			.pipe(gulpif(options.sourceMap, sourcemaps.write('../map'))) // create sourcemap
+			.pipe(gulpif(options.sourceMap, sourcemaps.write('../map', {
+				includeContent: false,
+				sourceRoot: path.join('../../..', 'node_modules', 'viur-ignite-css', 'less') // #FIXME: this relative path problem sucks
+			}))) // create sourcemap
 			.pipe(gulp.dest(options.dest)); // save style.css
 
 		var stylesPipe2 = source.pipe(clone()) // Create minified sourcemap
 			.pipe(nano()) // minify css
 			.pipe(rename('style.min.css')) // rename -> style.min.css
-			.pipe(gulpif(options.minSourceMap, sourcemaps.write('../map'))) // create sourcemap
+			.pipe(gulpif(options.minSourceMap, sourcemaps.write('../map', {
+				includeContent: false,
+				sourceRoot: path.join('../../..', 'node_modules', 'viur-ignite-css', 'less') // #FIXME: this relative path problem sucks
+			})))
 			.pipe(gulp.dest(options.dest)); // save style.min.css
 
 		return merge(stylesPipe1, stylesPipe2);
