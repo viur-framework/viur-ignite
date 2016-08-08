@@ -7,9 +7,12 @@ All notable changes to this project will be documented in this file.
 - menu variation .menu-vRow
 - single element spinner: .single-spinner
 - single-spinner support for buttons and menu-links
-- the .switch
 - :focus states for inputs
-- .radio buttons and .radioGroups
+- .switch (boolean selection)
+- .radio buttons (single selection)
+- .check boxes (multiple selection)
+- .optionGroup to arrange radios and checks
+- .optionGroup-vSelectionList to style radio and check groups as scrollable list
 - NESW positioning for .popup element
 - util.less elements: text transforms, repsosive format, show/hiding class
 - image shapes (rounded, circle, thumbnail)
