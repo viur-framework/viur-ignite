@@ -11,14 +11,16 @@ All notable changes to this project will be documented in this file.
 - :focus states for inputs
 - .radio buttons and .radioGroups
 - NESW positioning for .popup element
+- Small and large modifier for .popup element
 
 ### Changed
 - using .menuWrapper for mobile menu instead of .sidebar
 - some responsive behaviour of form elements for increased consistency
 - now each element is border-box: box-sizing (before there were some exceptions)
+- .popup-content and .popup-footer now use em instead of rem in font-size
 
 ### Deprecated
-- .formActions are deprecated -- please use the .bar element instead
+- .formActions are deprecated: please use the .bar element instead
 
 ### Fixed
 - double scroller
