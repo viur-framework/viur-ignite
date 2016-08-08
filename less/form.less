@@ -123,6 +123,15 @@
   margin: 0;
 }
 
+// Place a input or textarea as block next to a label
+.label + .input-vBlock {
+  width: calc(~"100% - 154px");
+}
+.label + .textarea-vBlock {
+  width: calc(~"100% - 150px");
+  margin-top: 6px;
+}
+
 .label {
   vertical-align: middle;
   display: inline-block;
@@ -300,6 +309,8 @@
 .note {
   font-size: 0.8em;
   margin: 0;
+}
+.note-vOffset {
   padding-left: 22px;
 }
 
@@ -450,6 +461,8 @@
   }
 
   .input,
+  .label + .input-vBlock,
+  .label + .textarea-vBlock,
   .select,
   .switch,
   .radio {

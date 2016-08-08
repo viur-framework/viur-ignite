@@ -3,7 +3,6 @@
  * UTILITY STYLES
  */
 
-
 // Clearfix
 .clear {clear:both;}
 
@@ -18,38 +17,59 @@
 }
 
 // Floats
-.f-left {float:left !important;}
-.f-right {float:right !important;}
+.f-left {float: left !important;}
+.f-right {float: right !important;}
+.f-none {float: none !important;}
 
 // Text Align
-.txt-right {text-align:right;}
-.txt-left {text-align:left;}
-.txt-center {text-align:center;}
+.txt-right {text-align: right;}
+.txt-left {text-align: left;}
+.txt-center {text-align: center;}
+.txt-justify {text-align: justify;}
+.txt-nowrap {white-space: nowrap;}
 
-// Cursor => Pointer: use only within objects. Won't work in html!
-.pointer() {cursor: pointer;}
+// Text Transform
+.txt-lowercase {text-transform: lowercase;}
+.txt-uppercase {text-transform: uppercase;}
+.txt-capitalize {text-transform: capitalize;}
 
-// Shadows: use only within objects. Won't work in html!
-.shd() {box-shadow: @defaultShadow;}
-.txt-shd() {text-shadow: @defaultShadow;}
+// show and hiding
+.show {display: block !important;}
+.hidden {display: none !important;}
+.visible {visibility: visible;}
+.invisible {visibility: hidden;}
+
+// Cursor => Pointer
+.pointer {cursor: pointer;}
+
+// Shadows
+.shd {box-shadow: @defaultShadow;}
+.txt-shd {text-shadow: @defaultShadow;}
 
 // center
-.center() {
+.center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.centerX() {
+.centerX {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
 }
-.centerY() {
+.centerY {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
 }
+
+// responsive formats 16:9 / 4:3
+.responsive-16by9 {width: 100%; padding-bottom: 56.25%;}
+.responsive-4by3 {width: 100%; padding-bottom: 75%;}
+
+// transparent background
+.is-transparent {background: transparent !important;}
 
 
 // => Utils Media Queries

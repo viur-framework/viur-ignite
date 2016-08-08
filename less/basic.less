@@ -37,15 +37,25 @@ p a, p a:visited { line-height: inherit; }
 // Typography
 
 // Please style your headlines with the help of classes (e.g.: .headline, .subline, .heading)
-h1, h2, h3, h4, h5, h6 {color: inherit; font-family: @headFonts; font-weight: normal; font-size: 1em; line-height: 1.6;}
+h1, h2, h3, h4, h5, h6 {
+  color: inherit; font-family: @headFonts; font-weight: normal; line-height: 1.6;
+  &:not(:first-child) {margin-top: 1.5em;}
+}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight: inherit; color: inherit;}
+h1 {font-size: 2.1em; margin-bottom: 1em;}
+h2 {font-size: 1.7em; margin-bottom: .5em;}
+h3 {font-size: 1.5em; margin-bottom: .25em;}
+h4 {font-size: 1.2em;}
+h5 {font-size: 1.15em;}
+h6 {font-size: 1em;}
+// Use .headline your important headlines.
+.headline {font-family: @headFonts; color: @mainColor;}
 
-// Use .headline and .subline for your important headlines.
-.headline {font-family: @headFonts; color: @mainColor; font-size:2.1em; line-height: 1.3;}
-.subline {font-family: @headFonts; color: @mainColor; font-size:1.7em; line-height: 1.3;}
+// Use .subline to your headline
+.subline {font-family: @headFonts; color: lighten(@complementColor, 20%);}
 
-// Use .heading for less important headlines.
-.heading {font-family: @headFonts; color: @complementColor; font-size:1.5em; line-height: 1.3;}
+// remove margin-top of .subline after .headline
+.headline + .subline {margin-top: 0;}
 
 // Use .lead to emphasize the first paragraph of a section.
 .lead {font-size: 1.3em; font-weight: 300;}
@@ -82,23 +92,65 @@ blockquote {
   color: @complementColor;
   padding: 0 15px;
   border-left: 7px solid @complementColor;
+  cite {
+    font-size: .8em;
+    vertical-align: baseline;
+    * {vertical-align: baseline;}
+    &:before {
+      display: inline-block;
+      content: '\2014';
+      margin-right: 3px;
+      color: @complementColor;
+    }
+  }
+  &:after {
+    content: attr(cite);
+    font-size: .6em;
+    margin-top: 2em;
+  }
 }
 
-code, pre {font-family: @monoFonts;}
+code, pre {font-family: @monoFonts; background: darken(@backgroundColor,5%); color: contrast(darken(@backgroundColor,5%));}
 code {
-  color:contrast(darken(@backgroundColor,10%));
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   tab-size: 4;
   hyphens: none;
-  background: fadeout(darken(@backgroundColor,15%),10%);
   padding: 3px;
   border-radius: 3px;
+  margin: 0px 3px;
   &:before,
   &:after {
     letter-spacing: -0.2em;
     content: "\00a0";
+  }
+}
+pre {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+// Keys
+.kbd,
+kbd {
+  background-color: darken(@backgroundColor, 10%);
+  border: 1px solid darken(@backgroundColor, 15%);
+  border-radius: 3px;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  color: contrast(darken(@backgroundColor, 10%));
+  display: inline-block;
+  font-size: .8rem;
+  font-family: @monoFonts;
+  margin: 0 0.1em;
+  padding: .2em .6em;
+  text-shadow: 0 1px 0 #fff;
+  .txt-nowrap;
+  &.kbd-vDark {
+    border: 1px solid contrast(darken(@backgroundColor, 15%));
+    background-color: contrast(darken(@backgroundColor, 10%));
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px lighten(contrast(darken(@backgroundColor, 10%)), 20%) inset;
+    color: darken(@backgroundColor, 10%);
   }
 }
 

@@ -1,7 +1,7 @@
 [![npm version](https://badge.fury.io/js/viur-ignite-css.svg)](https://badge.fury.io/js/viur-ignite-css)
-[![Dependency Status](https://david-dm.org/viur-ignite/viur-ignite-css.svg)](https://david-dm.org/viur-ignite/viur-ignite-css)
-[![Build Status](https://travis-ci.org/viur-ignite/viur-ignite-css.svg?branch=master)](https://travis-ci.org/viur-ignite/viur-ignite-css)
-[![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg)](https://raw.githubusercontent.com/viur-ignite/viur-ignite-js/master/LICENSE)
+[![dependencies Status](https://david-dm.org/viur-ignite/viur-ignite-css/develop/status.svg)](https://david-dm.org/viur-ignite/viur-ignite-css/develop)
+[![Build Status](https://travis-ci.org/viur-ignite/viur-ignite-css.svg?branch=develop)](https://travis-ci.org/viur-ignite/viur-ignite-css)
+[![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg)](https://raw.githubusercontent.com/viur-ignite/viur-ignite-css/master/LICENSE)
 
 # ViUR Ignite CSS
 
@@ -73,8 +73,10 @@ gulp.task('default', function() {
 
 The Default options are:
 ```js
-src: __dirname + '/less/viur.less',
-dest: './appengine/static/css/'
+src: path.join(__dirname, 'less/viur.less') // source path of basic less file
+dest: './appengine/static/css/' // destination path of css
+sourceMap: true // sourcemap for style.css
+minSourceMap: false // sourcemap four style.min.css
 ```
 
 ## Contribution guidelines

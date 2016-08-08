@@ -11,12 +11,27 @@ All notable changes to this project will be documented in this file.
 - :focus states for inputs
 - .radio buttons and .radioGroups
 - NESW positioning for .popup element
+- util.less elements: text transforms, repsosive format, show/hiding class
+- image shapes (rounded, circle, thumbnail)
+- .thumnail
+- cite element to .blockquote
+- kbd (key) element
+- added support for .input-vBlock and .textarea-vBlock next to a label (inline)
+- table.less: no-border variations
+- build task:
+	- stylefmt for the correct syntax
+	- sourcemap support
+	- support for /* ... */ comments in style.css
 - Small and large modifier for .popup element
 
 ### Changed
 - using .menuWrapper for mobile menu instead of .sidebar
 - some responsive behaviour of form elements for increased consistency
 - now each element is border-box: box-sizing (before there were some exceptions)
+- .shd, .center (X, Y), .pointer are now native css classes so you can use those as mixin and in html
+- restyled pre/code element
+- grid sizes/offsets (third, quarter)
+- redrawn headlines/sublines
 - .popup-content and .popup-footer now use em instead of rem in font-size
 
 ### Deprecated
