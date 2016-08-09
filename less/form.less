@@ -472,7 +472,10 @@
   .check-label {
     white-space: nowrap;
     padding-right: 30px;
-    border-bottom:1px solid darken(@inputColor, 20%);
+  }
+  .radio:not(:last-child) .radio-label,
+  .check:not(:last-child) .check-label {
+    border-bottom: 1px solid darken(@inputColor, 20%);
   }
   .radio-label:before,
   .check-label:before {content:none;}
