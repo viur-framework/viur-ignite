@@ -22,14 +22,15 @@
 .barGroup {
   display: flex;
   align-items: center;
+  margin-bottom: 0;
   .btn:not(:last-child),
   .bar-item:not(:last-child),
   .bar-link:not(:last-child) {margin-right: 10px;}
 }
 
 .barGroup-vLeft {justify-content: flex-start;}
-.barGroup-vCenter {justify-content: center;}
-.barGroup-vRight {justify-content: flex-end;}
+.barGroup-vCenter {justify-content: center; margin-left: auto; margin-right: auto;}
+.barGroup-vRight {justify-content: flex-end; margin-left: auto;}
 
 .barGroup-vNav {
   align-items: stretch;
