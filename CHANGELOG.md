@@ -37,6 +37,7 @@ All notable changes to this project will be documented in this file.
 - redrawn headlines/sublines
 - .popup-content and .popup-footer now use em instead of rem in font-size
 - .content now uses min-width:0; instead of overflow:hidden;
+- .single-spinner is now smaller
 
 ### Deprecated
 - .formActions are deprecated: please use the .bar element instead
