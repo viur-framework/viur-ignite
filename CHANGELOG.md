@@ -36,6 +36,7 @@ All notable changes to this project will be documented in this file.
 - grid sizes/offsets (third, quarter)
 - redrawn headlines/sublines
 - .popup-content and .popup-footer now use em instead of rem in font-size
+- .content now uses min-width:0; instead of overflow:hidden;
 
 ### Deprecated
 - .formActions are deprecated: please use the .bar element instead
@@ -44,7 +45,7 @@ All notable changes to this project will be documented in this file.
 - double scroller
 - namespacing for tabs (styling affected radio buttons)
 - .popup now has a max-height and proper content scrollbars
-- .barGroup-vRight and .barGroup-vCenter now float correctly 
+- .barGroup-vRight and .barGroup-vCenter now float correctly
 
 
 ## [1.0.23] - 2016-07-31
