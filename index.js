@@ -52,7 +52,7 @@ module.exports = {
 		var source = gulp.src(options.src, {
 			// base: path.join(options.src, '..')
 		})
-			.pipe(sourcemaps.init({loadMaps: true})) // initial sourcemap
+			.pipe(sourcemaps.init()) // initial sourcemap
 			.pipe(less({
 				paths: [path.join(__dirname, 'less', 'includes')] // need for relative @imports
 			})) // compile less to css
