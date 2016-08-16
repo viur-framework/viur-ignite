@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 
 ## [Unreleased]
+nothing since last release
+
+## [1.0.24] - 2016-08-16
 ### Added
 - menu variation .menu-vRow
 - single element spinner: .single-spinner
@@ -82,7 +85,8 @@ All notable changes to this project will be documented in this file.
 - Changelog started here
 
 
-[Unreleased]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.23...develop
+[Unreleased]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.24...master
+[1.0.24]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.23...1.0.24
 [1.0.23]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.22...1.0.23
 [1.0.22]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.21...1.0.22
 [1.0.21]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.20...1.0.21
