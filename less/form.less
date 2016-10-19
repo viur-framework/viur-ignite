@@ -15,13 +15,14 @@
 
 .input {
   padding: 7px 14px;
-  width: 250px;
   margin:6px 0;
   background-color: @inputColor;
   border: 1px solid darken(@inputColor,10%);
   color:contrast(@inputColor, #222222, #f4f4f4);
   vertical-align: middle;
-  display: inline-block;
+  display: inline-flex;
+  width: 100%;
+  max-width: 100%;
   transition: all .3s ease;
   background-position: 150% center;
   background-size: 15px;
