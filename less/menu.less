@@ -8,6 +8,7 @@
 @menuPrimaryColor: @complementColor;
 
 .menu-list {
+  font-size: .9rem;
   list-style: none;
   .shd; // default shadow class.
   display: flex;
@@ -154,18 +155,39 @@ a.menu-link {
   }
 }
 
-
-
-// Hamburger Icon
-.nav-trigger, label[for="nav-trigger"] {
+// Hamburger Menu
+.nav-trigger {
   display: none;
 }
 
+label[for="nav-trigger"] {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 9999;
+  width: 40px;
+  height: 35px;
+  cursor: pointer;
+  background-color: @mainColor;
+  background-size: contain;
+  box-shadow: 0 0 3px 1px #777777;
+  border-radius: 0 0 3px 3px;
+  &:before {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect style='fill:#fff' width='30' height='6'/><rect style='fill:#fff' y='24' width='30' height='6'/><rect style='fill:#fff' y='12' width='30' height='6'/></svg>");
+    background-size: contain;
+    display: block;
+    content: '';
+    height: 27px;
+    width: 32px;
+    margin-top: 4px;
+    margin-left: 4px;
+  }
+  .mq-min(@breakSmall, {display:none;})
+}
 
-// => Menu Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-  .menuWrapper {
+.menuWrapper {
+  .mq-max(@breakSmall, {
     width: 70%;
     position: absolute;
     top: 40px;
@@ -174,53 +196,11 @@ a.menu-link {
     padding: 0;
     transition: right 0.6s ease;
     box-shadow: 0 0 5px 0px #777777;
-
     .menu-list {
       margin: 0;
     }
-  }
-
-  // Hamburger Icon
-  label[for="nav-trigger"] {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    z-index: 9999;
-    width: 40px;
-    height: 35px;
-    cursor: pointer;
-    background-color: @mainColor;
-    background-size: contain;
-    box-shadow: 0 0 3px 1px #777777;
-    border-radius: 0 0 3px 3px;
-
-    &:before {
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect style='fill:#fff' width='30' height='6'/><rect style='fill:#fff' y='24' width='30' height='6'/><rect style='fill:#fff' y='12' width='30' height='6'/></svg>");
-      background-size: contain;
-      display: block;
-      content: '';
-      height: 27px;
-      width: 32px;
-      margin-top: 4px;
-      margin-left: 4px;
+    .nav-trigger&:checked ~ & {
+      right: 0;
     }
-  }
-
-  .nav-trigger&:checked ~ .menuWrapper {
-    right: 0;
-  }
-}
-
-
-.media-mixin(@break) when (@break = @breakMedium) {
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
+  })
 }

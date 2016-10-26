@@ -14,19 +14,30 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
+  font-size: 16px;
 }
 
 body {
   margin: 0; // IE Reset
   background: @backgroundColor;
   overflow: hidden;
-  font-size:100.01%;
+  font-size: @fontSizeSmall;
   line-height:1.5;
   color: @textColor;
   font-family: @bodyFonts;
   -webkit-font-smoothing: antialiased; // Fix for webkit rendering
   -webkit-text-size-adjust: 100%;
   min-height: 100vh;
+  // Font-size scales with screen-size:
+  .mq-min (@breakSmall, {
+    font-size: @fontSizeMedium;
+  });
+  .mq-min (@breakMedium, {
+    font-size: @fontSizeLarge;
+  });
+  .mq-min (@breakLarge, {
+    font-size: @fontSizeExtraLarge;
+  });
 }
 
 // Links
@@ -40,34 +51,33 @@ p a, p a:visited { line-height: inherit; }
 h1, h2, h3, h4, h5, h6 {
   color: inherit; font-family: @headFonts; font-weight: normal; line-height: 1.6;
   &:not(:first-child) {margin-top: 1.5em;}
+  a {font-weight: inherit; color: inherit;}
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight: inherit; color: inherit;}
+
 h1 {font-size: 2.1em; margin-bottom: 1em;}
 h2 {font-size: 1.7em; margin-bottom: .5em;}
 h3 {font-size: 1.5em; margin-bottom: .25em;}
 h4 {font-size: 1.2em;}
 h5 {font-size: 1.15em;}
 h6 {font-size: 1em;}
+
 // Use .headline for your important headlines.
 .headline {font-family: @headFonts; color: @mainColor;}
-
 // Use .subline to your headline
 .subline {font-family: @headFonts; color: lighten(@complementColor, 20%);}
-
 // remove margin-top of .subline after .headline
 .headline + .subline {margin-top: 0;}
-
 // Use .lead to emphasize the first paragraph of a section.
 .lead {font-size: 1.3em; font-weight: 300;}
 
 p {
   line-height: 1.6;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 strong {font-weight: 700;}
 em {font-style:italic;}
-small {font-size: .8em}
+small {font-size: .75em}
 
 ins {
   text-decoration: none;
@@ -88,7 +98,7 @@ mark {
 blockquote {
   font-family: @headFonts;
   font-style: italic;
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: @complementColor;
   padding: 0 15px;
   border-left: 7px solid @complementColor;
@@ -187,21 +197,3 @@ ol.is-list {
   list-style-type: upper-alpha;
 }
 
-
-// => Basic Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-  body {font-size: 90%;}
-}
-
-.media-mixin(@break) when (@break = @breakMedium) {
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-}

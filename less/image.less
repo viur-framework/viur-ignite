@@ -17,6 +17,13 @@
 // An image with parallax effect wrapper makes it easy to use screen wide images with the well known scroll effect.
 .image-vParallax {
   background-attachment: fixed;
+  // disable background-attachment: fixed; on iOS devices
+  .mq-max(@breakMedium, {
+    .mq-hdpi(@break2x, {
+      background-attachment: scroll !important;
+      background-size: 100%;
+    });
+  });
 }
 
 // A squared image. Set the width of the .image container.
@@ -69,31 +76,4 @@ a:hover .thumbnail {
 }
 
 
-// => Image Media Queries
 
-.media-mixin(@break) when (@break = @breakSmall) {
-  .image-vParallax {
-    background-attachment: scroll !important;
-    background-size: cover;
-  }
-}
-
-.media-mixin(@break) when (@break = @breakMedium) {
-  .image-vParallax {
-    background-attachment: scroll !important;
-  }
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-  //  disable background-attachment: fixed; on iOS devices
-  .image-vParallax {
-    background-attachment: scroll !important;
-    background-size: 100%;
-  }
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-}

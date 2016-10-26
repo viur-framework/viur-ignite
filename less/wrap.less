@@ -1,7 +1,5 @@
 @charset "UTF-8";
-/**
- * WRAPPER AND BINDER
- */
+/* WRAPPER AND BINDER */
 
 
 // Container to wrap up chunks of content over the whole width of the page.
@@ -16,28 +14,28 @@
   padding:0 25px;
   margin:0 auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
   &:after {
     content: '';
     display: block;
     clear: both; // Clearfix for the binding container.
     height: 0;
   }
+  .mq-min(@breakSmall, {
+    .mq-landscape({flex-direction: row;})
+  });
+  .mq-min(@breakMedium, {flex-direction: row;});
 }
 
 .container {
   position: relative;
 }
 
-// Use .flex on the outer container to separate sidebar and content.
-.flex {
-  display: flex;
-  flex-direction: row;
-}
-
 .sidebar {
-  flex: 0 0 25%;
-  order: 1;
-  padding:40px 2em 20px .5em;
+  order: 2;
+  padding: 0px .5em 40px .5em;
+  flex:auto;
   &:after {
     content: '';
     display: block;
@@ -45,13 +43,18 @@
     height: 0;
   }
   &:nth-of-type(2) {order:3} // Aside element on the right.
+  .mq-min(@breakSmall, {
+    .mq-landscape({flex: 0 0 25%; order: 1; padding: 40px 2em 20px .5em;})
+  });
+  .mq-min(@breakMedium, {flex: 0 0 25%; order: 1; padding: 40px 2em 20px .5em;});
 }
 
 .content {
   flex: 1;
-  order: 2;
+  order: 1;
   padding-bottom:20px;
   min-width:0; // Prevents overflows.
+  .mq-min(@breakMedium, {order: 2;})
 }
 
 // Container to seperate chunks of content in the middle of the page.
@@ -70,19 +73,3 @@
 .section.content:last-of-type {padding-bottom:40px;}
 
 
-// => Wrapper and Binder Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-  .flex {flex-direction: column;}
-  .sidebar {order: 2; padding: 0px .5em 40px .5em; flex:auto;}
-  .content {order: 1;}
-}
-
-.media-mixin(@break) when (@break = @breakMedium) {
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-}

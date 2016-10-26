@@ -36,7 +36,7 @@
   pointer-events: none;
   top:50px;
   left:-14%;
-  width: 33%;
+  width: 90%;
   max-width:@pageWidth/2.5;
   max-height: 90vh;
   transform: translateX(-50%);
@@ -50,6 +50,9 @@
     left:50%;
     pointer-events: auto;
   }
+  .mq-min(@breakMedium, {
+    width: 33%;
+  });
 }
 
 .popup-s,
@@ -276,24 +279,3 @@
       margin: 0;
     }
   }
-
-
-// => Popup Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-}
-
-.media-mixin(@break) when (@break = @breakMedium) {
-  .popup {
-    width:90%;
-  }
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-}

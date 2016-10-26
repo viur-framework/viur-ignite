@@ -3,7 +3,6 @@
  * FORM PARTS
  */
 
-
 @inputValidColor: @successColor;
 @inputDangerColor: @failColor;
 @inputHintColor: @hintColor;
@@ -246,16 +245,24 @@
   }
 }
 
+.inputGroup .select,
 .inputGroup .input,
 .inputGroup .btn,
-.inputGroup .select,
-.inputGroup .label,
 .inputGroup .switch,
+.inputGroup .textarea,
 .inputGroup > .radio,
-.inputGroup .optionGroup {
-  margin: 6px 0px;
-  float: left;
+.inputGroup > .check,
+.inputGroup .optionGroup,
+.optionGroup .radio,
+.optionGroup .check {
+  width: 100%;
+  margin: 0;
   position: relative;
+  .mq-min(@breakSmall, {
+    width:auto;
+    margin: 6px 0px;
+    float: left;
+  });
 }
 
 .inputGroup .input,
@@ -263,17 +270,37 @@
 .inputGroup .textarea,
 .inputGroup .switch,
 .inputGroup > .radio,
+.inputGroup > .check,
 .inputGroup .optionGroup {
-  box-shadow: @inputShadow;
+  box-shadow: none;
+  .mq-min(@breakSmall, {box-shadow: @inputShadow;});
 }
 
 .inputGroup .label {
-  &:first-child{border-right-width:0;}
-  &:last-child{border-left-width: 0;}
+  border-width: 0 1px;
+  width: 100%;
+  margin: 0;
+  &:first-child {
+    border-width:1px;
+    border-bottom-width: 0;
+    .mq-min(@breakSmall, {
+      border-width:1px;
+      border-right-width:0;
+    })
+  }
+  &:last-child {
+    border-width: 1px;
+    border-top-width: 0;
+    .mq-min(@breakSmall, {
+      border-width:1px;
+      border-left-width: 0;
+    })
+  }
 }
 
 .inputGroup .btn {
-  margin-left: -1px;
+  .mq-max(@breakSmall, {margin-top: -1px;});
+  .mq-min(@breakSmall, {margin-left: -1px;})
 }
 
 // Use formGroups to separate different inputs or inputGroups.
@@ -491,6 +518,19 @@
   }
 }
 
+.input,
+.label + .input-vBlock,
+.label + .textarea-vBlock,
+.select,
+.switch,
+.radio {
+  .mq-max(@breakSmall, {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 5px;
+  });
+}
+
 // Use .formActions to float submit buttons to the right at the end of your form.
 // #DEPRECATED: .formActions are deprecated -- please use the .bar element instead.
 .formActions {
@@ -502,70 +542,4 @@
   }
   .btn {float:right;}
   .btn+.btn {margin-right: 10px;}
-}
-
-
-// => form Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-  .inputGroup .label,
-  .label {
-    border-width: 0 1px;
-    width: 100%;
-    margin: 0;
-    &:first-child{
-      border-width:1px;
-      border-bottom-width: 0;
-    }
-    &:last-child{
-      border-width: 1px;
-      border-top-width: 0;
-    }
-  }
-
-  .inputGroup .input,
-  .inputGroup .label,
-  .inputGroup .switch,
-  .inputGroup .textarea,
-  .inputGroup > .radio,
-  .inputGroup > .check,
-  .inputGroup .optionGroup {
-    box-shadow: none;
-  }
-
-  .input,
-  .label + .input-vBlock,
-  .label + .textarea-vBlock,
-  .select,
-  .switch,
-  .radio {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 5px;
-  }
-
-  .inputGroup .select,
-  .inputGroup .input,
-  .inputGroup .btn,
-  .inputGroup .switch,
-  .inputGroup .textarea,
-  .inputGroup > .radio,
-  .inputGroup > .check,
-  .inputGroup .optionGroup,
-  .optionGroup .radio,
-  .optionGroup .check {
-    width: 100%;
-    margin: 0;
-  }
-  .inputGroup .btn {
-    margin-top: -1px;
-  }
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-
 }

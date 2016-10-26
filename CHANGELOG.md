@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 
 ## [Unreleased]
+
+In this major release ViUR Ignite CSS starts using the mobile first paradigm.
+
+This means some huge changes to the way media queries are handled.
+With 2.0.0 just use classes with .mq- prefix.
+They are stored within mediaqueries.less and can be stacked (min + max + orientation).
+The gulp task merges all media queries to the end of the compiled css file.
+
+Moreover flex layout is no longer the exception but the norm.
+
 ### Added
 - menu variation .menu-vRow
 - single element spinner: .single-spinner

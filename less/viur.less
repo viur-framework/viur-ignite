@@ -53,26 +53,5 @@
 // Project
 @import (optional) "../../../sources/less/style"; // Include Project
 
-
 // Media Queries
-@media only screen and (max-width: @breakLarge) {
-  .media-mixin(@breakLarge);
-}
-
-@media only screen and (max-width: @breakMedium) {
-  .media-mixin(@breakMedium);
-}
-
-@media only screen and (max-width: @breakSmall) {
-  .media-mixin(@breakSmall);
-}
-
-@media only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: @break2x) {
-  .media-mixin(@break2x);
-}
-
-// Print
-@media @breakPrint {
-  .media-mixin(@breakPrint);
-}
+@import "mediaqueries"; // really simple media queries.

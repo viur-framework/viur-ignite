@@ -9,15 +9,35 @@
 @barBackgroundColor: @backgroundColor;
 
 .bar {
-  align-items: stretch;
-  display: flex;
-  min-height: 35px;
-  position: relative;
-  text-align: center;
-  justify-content: space-between;
+  font-size: .9rem;
+  display:block;
+  text-align:left;
+  .mq-min(@breakMedium, {
+    align-items: stretch;
+    display: flex;
+    min-height: 35px;
+    position: relative;
+    text-align: center;
+    justify-content: space-between;
+  })
 }
 
 .barGroup {
+  .mq-max(@breakMedium, {
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .btn:not(:last-child),
+    .bar-item:not(:last-child),
+    .bar-link:not(:last-child) {margin-right: 0; margin-bottom: 10px;}
+    &.barGroup-vNav .bar-link {margin-bottom: 0;}
+    .btn,
+    .bar-item,
+    .bar-link {display: block; width: 100%; align-items: center;}
+  });
   display: flex;
   align-items: center;
   margin-bottom: 0;
@@ -51,40 +71,5 @@
 }
 
 .bar-link {
-  align-items: center;
-  display: flex;
-}
-
-
-// => Bar Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-}
-
-.media-mixin(@break) when (@break = @breakMedium) {
-  .bar {display:block; text-align:left;}
-  .barGroup {
-    display: block;
-    &:not(:last-child) {
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #ccc;
-    }
-    .btn:not(:last-child),
-    .bar-item:not(:last-child),
-    .bar-link:not(:last-child) {margin-right: 0; margin-bottom: 10px;}
-    &.barGroup-vNav .bar-link {margin-bottom: 0;}
-    .btn,
-    .bar-item,
-    .bar-link {display: block; width: 100%;}
-  }
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
+  .mq-min(@breakMedium, {display: flex;});
 }

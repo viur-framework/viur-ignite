@@ -8,9 +8,7 @@
  * The namespaces .is-, .has- and .no- are reserved for states.
  */
 
-
 @adminColor: @successColor;
-
 
 // Admin Hint
 .is-admin {
@@ -22,7 +20,7 @@
   color: contrast(@adminColor);
   padding: 10px 0;
   text-align: center;
-  // .zIndex('dev',0);
+  .zIndex('dev',0);
 }
 .is-admin a,
 .is-admin a:link,
@@ -44,22 +42,11 @@
   color: contrast(@mainColor);
 }
 
-
-// => Global States Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-  .no-mobile {display:none;}
+.no-mobile {
+  .mq-max(@breakSmall,{display:none;});
 }
 
-.media-mixin(@break) when (@break = @breakMedium) {
+.no-print {
+  .mq-print({display:none;})
 }
 
-.media-mixin(@break) when (@break = @breakLarge) {
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-  .no-print {display:none;}
-}

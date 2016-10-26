@@ -23,11 +23,17 @@
 @headFonts: 'Source Sans Pro', 'Open Sans', sans-serif; // Fonts for headlines, blockquotes and alike.
 @monoFonts: 'Source Code Pro', Courier, monospace; // Fonts for code pieces.
 
+// Font Sizes
+@fontSizeSmall: 100.01%; // 16px
+@fontSizeMedium: 115%; // 18px
+@fontSizeLarge: 125%; // 20px
+@fontSizeExtraLarge: 135%; // 21px
+
 // Width and Media Queries
 @pageWidth: 1300px; // max-width of the centered container.
 
-@breakSmall: 900px; // smart phones
-@breakMedium: 1100px; // tablets
-@breakLarge: 1400px; // screens
-@break2x: 228dpi; // high-density displays
+@breakSmall: 48em; // smart phones: 768px / 16px = 48em;
+@breakMedium: 62em; // tablets: 992px / 16px = 62em;
+@breakLarge: 87em; // screens: 1400px / 16px = 87em;
+@break2x: 2; // hiDPI displays
 @breakPrint: print; // make it printable!
