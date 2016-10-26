@@ -8,12 +8,12 @@
 @menuPrimaryColor: @complementColor;
 
 .menu-list {
-  font-size: .9rem;
   list-style: none;
   .shd; // default shadow class.
   display: flex;
   flex-direction: column;
   margin: 1em 0;
+  .mq-min(@breakMedium, {font-size: .9rem;})
 }
 
 .menu-item {
