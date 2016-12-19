@@ -7,47 +7,45 @@
 // Should you need specific files, you can easily customize the imports.
 
 // Reset
-@import "reset"; // resets all browsers to the same base state.
+@import "foundation/reset"; // resets all browsers to the same base state.
 
-// Fundamental parts, Type and Utilities
-@import "basic"; // classic basic styling.
-@import "wrap"; // page wrappers.
-@import "util"; // utility classes.
+// Fundamental parts: positioning, type and utilities
+@import "foundation/appconf"; // variables and constants.
+@import "foundation/basic"; // classic basic styling.
+@import "foundation/util"; // utility classes.
+@import "foundation/wrap"; // page wrappers.
+@import "foundation/grid"; // grid system.
+@import "foundation/bar"; // horizontal bars.
 
-// Buttons, Forms and Tables
-@import "button"; // some classic buttons.
-@import "form"; // inputs, selects and other form elements.
-@import "table"; // a classic table layout.
-
-// Tooltips, Messages and States
-@import "tooltip"; // lightweight tooltips.
-@import "badge"; // badges and marker.
-@import "message"; // hints, errors, warnings etc.
-@import "state"; // is-, has-, no- etc.
-@import "popup";
-@import "footnote";
-@import "spinner"; // loading state for ajax request
+// Generic elements: buttons, forms and messages
+@import "generic/button"; // some classic buttons.
+@import "generic/form"; // inputs, selects and other form elements.
+@import "generic/table"; // a classic table layout.
+@import "generic/tooltip"; // lightweight tooltips.
+@import "generic/badge"; // badges and marker.
+@import "generic/message"; // hints, errors, warnings etc.
+@import "generic/popup"; // popup dialog messages.
+@import "generic/spinner"; // loading state for ajax requests.
 
 // Objects
-@import "menu";
-@import "grid";
-@import "boxes"; // media element
-@import "progress";
-@import "tabs";
-@import "breadcrumb";
-@import "slider";
-@import "key";
-@import "bar";
-@import "pagination";
+@import "objects/menu";
+@import "objects/boxes"; // classic media element.
+@import "objects/progress";
+@import "objects/tabs";
+@import "objects/breadcrumb";
+@import "objects/footnote";
+@import "objects/slider";
+@import "objects/key";
+@import "objects/pagination";
+@import "objects/image"; // base64 encoded images, image shapes and thumbnails.
 
 // Configuration and Mixins
-@import "appconf"; // customize colors and fonts here.
-@import "image"; // base64 encoded images, image shapes and thumbnail
 @import (optional) "../../../sources/less/icon"; // ViUR SVG icons.
-@import "zindex"; // organize your z-indexes.
+@import "tools/zindex"; // organize your z-indexes.
+@import "tools/state"; // is-, has-, no- etc.
 
 // Project
 @import (optional) "../../../sources/less/style"; // Include Project
 
 // Media Queries
-@import "mediaqueries"; // really simple media queries.
+@import "tools/mediaqueries"; // really simple media queries.
