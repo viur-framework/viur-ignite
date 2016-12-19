@@ -12,7 +12,7 @@ const clone = require('gulp-clone');
 const gulpif = require('gulp-if');
 const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer');
-const cmq = require('gulp-combine-media-queries');
+const mmq = require('gulp-merge-media-queries');
 const nano = require('gulp-cssnano');
 const postcss = require('gulp-postcss');
 const stylefmt = require('gulp-stylefmt');
@@ -61,7 +61,7 @@ module.exports = {
 				cascade: false
 			})) // add vendor prefixes
 			.pipe(postcss(processors)) // clean up css
-			.pipe(cmq({
+			.pipe(mmq({
 				log: true
 			}))
 			.pipe(stylefmt()); // syntax formatting
