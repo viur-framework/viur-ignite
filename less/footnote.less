@@ -1,7 +1,8 @@
 @charset "UTF-8";
-/**
- * FOOTNOTES
- */
+/* FOOTNOTES */
+
+// Prefixes and objects:
+// .footnotes
 
 // #DOCUME .has-footnote
 
@@ -55,21 +56,3 @@ a.has-footnote {
 .footnotes-backlink  {
   font-size: 0.8em;
 } // use: ↩
-
-
-// => Footnote Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-}
-
-.media-mixin(@break) when (@break = @breakMedium) {
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-}
