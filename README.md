@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/viur-ignite-css.svg)](https://badge.fury.io/js/viur-ignite-css)
-[![dependencies Status](https://david-dm.org/viur-ignite/viur-ignite-css/develop/status.svg)](https://david-dm.org/viur-ignite/viur-ignite-css/develop)
-[![Build Status](https://travis-ci.org/viur-ignite/viur-ignite-css.svg?branch=develop)](https://travis-ci.org/viur-ignite/viur-ignite-css)
+[![dependencies Status](https://david-dm.org/viur-ignite/viur-ignite-css/status.svg)](https://david-dm.org/viur-ignite/viur-ignite-css/develop)
+[![Build Status](https://travis-ci.org/viur-ignite/viur-ignite-css.svg)](https://travis-ci.org/viur-ignite/viur-ignite-css)
 [![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg)](https://raw.githubusercontent.com/viur-ignite/viur-ignite-css/master/LICENSE)
 
 # ViUR Ignite CSS
