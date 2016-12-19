@@ -29,17 +29,28 @@
 // Put your custom color, shadow and font overwrites here. Try this:
 // @btnDangerBgColor: orange;
 
-// Width and Media Queries
+// Font Sizes
+@fontSizeSmall: 16px;
+@fontSizeMedium: 17px;
+@fontSizeLarge: 19px;
+@fontSizeExtraLarge: 20px;
+
+// Spaces
+@outerSpace: 20px; // Space around objects, boxes etc.
+@innerSpace: 10px; // Space within objects: mostly paddings.
+@bottomSpace: 20px; // The distance between two sections.
+@gridSpace: 20px; // Space between grid items.
+
+// Width, Height and Media Queries
 @pageWidth: 1300px; // max-width of the centered container.
+@paragraphWidth: 720px; // max-width of text paragraphs.
 
-@breakSmall: 900px; // smart phones
-@breakMedium: 1100px; // tablets
-@breakLarge: 1400px; // screens
-@break2x: 228dpi; // high-density displays
+@breakSmall: 37.5em; // smart phones: 600px / 16px = 37.5em;
+@breakMedium: 56.25em; // tablets: 900px / 16px = 56.25em;
+@breakLarge: 75em; // screens: 1200px / 16px = 75em;
+@breakXlarge: 112.5em; // huge screeens: 1800px / 16px = 112.5em;
+@break2x: 2; // hiDPI displays
 @breakPrint: print; // make it printable!
-
-
-
 
 /**
  * PROJECTSPECIFIC ELEMENTS
@@ -47,20 +58,3 @@
  * Put all your custom CSS down here!
  * But start new LESS files for major components.
  */
-
-
-// => Project Media Queries
-.media-mixin(@break) when (@break = @breakSmall) {
-}
-
-.media-mixin(@break) when (@break = @breakMedium) {
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-}
