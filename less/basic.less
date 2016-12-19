@@ -1,33 +1,26 @@
 @charset "UTF-8";
-/**
- * BASICS, FUNDAMENTALS and TYPE
- *
- * ViUR Ignite CSS supports the 100% Easy to read standard:
- * https://ia.net/know-how/100e2r
- *
- * The body font size is 100% (roughly 16px).
- * Objects use a font size based on this size: using »rem« (root em).
- * Inline elements and type should react to their direct surroundings - thus use »em«.
- */
+/* ---------------------------------------------------------------------------------------
+    BASICS, FUNDAMENTALS and TYPE
+--------------------------------------------------------------------------------------- */
 
+// ViUR Ignite CSS supports the 100% Easy to read standard:
+// https://ia.net/know-how/100e2r
+
+// The body font size is 100% (roughly 16px).
+// Objects use a font size based on this size: using »rem« (root em).
+// Inline elements and type should react to their direct surroundings - thus use »em«.
+
+*, *::before, *::after {
+  .mq-print({
+    text-shadow: none !important;
+    box-shadow: none !important;
+  });
+}
 
 html {
   overflow-y: scroll;
   overflow-x: hidden;
-  font-size: 16px;
-}
-
-body {
-  margin: 0; // IE Reset
-  background: @backgroundColor;
-  overflow: hidden;
   font-size: @fontSizeSmall;
-  line-height:1.5;
-  color: @textColor;
-  font-family: @bodyFonts;
-  -webkit-font-smoothing: antialiased; // Fix for webkit rendering
-  -webkit-text-size-adjust: 100%;
-  min-height: 100vh;
   // Font-size scales with screen-size:
   .mq-min (@breakSmall, {
     font-size: @fontSizeMedium;
@@ -38,20 +31,57 @@ body {
   .mq-min (@breakLarge, {
     font-size: @fontSizeExtraLarge;
   });
+  .mq-print({
+    padding-left: 1.8cm;
+    padding-right: 1.8cm;
+    padding-top: 2.54cm;
+    padding-bottom: 2.54cm;
+    background: none;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  });
 }
 
-// Links
+body {
+  margin: 0; /* IE Reset */
+  background: @backgroundColor;
+  line-height:1.5;
+  color: @textColor;
+  font-family: @bodyFonts;
+  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  font-size: 100.01%;
+}
+
+/* Links */
 a { color: @mainColor; text-decoration: none; outline: 0; }
 a:hover, a:focus, a:active { color: darken(@mainColor, 10%); }
 p a, p a:visited { line-height: inherit; }
+
+a[href^="http://"]:after,
+a[href^="https://"]:after,
+a[href^="ftp://"]:after {
+  .mq-print({
+    content: " (" attr(href) ")";
+    font-size: 80%;
+  });
+}
 
 // Typography
 
 // Please style your headlines with the help of classes (e.g.: .headline, .subline, .heading)
 h1, h2, h3, h4, h5, h6 {
-  color: inherit; font-family: @headFonts; font-weight: normal; line-height: 1.6;
+  color: inherit;
+  font-family: @headFonts;
+  font-weight: normal;
+  line-height: 1.6;
   &:not(:first-child) {margin-top: 1.5em;}
   a {font-weight: inherit; color: inherit;}
+  .mq-print({
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  });
 }
 
 h1 {font-size: 2.1em; margin-bottom: 1em;}
@@ -70,14 +100,37 @@ h6 {font-size: 1em;}
 // Use .lead to emphasize the first paragraph of a section.
 .lead {font-size: 1.3em; font-weight: 300;}
 
-p {
-  line-height: 1.6;
+
+p,
+.paragraph {
+  margin-bottom: @bottomSpace;
+  .mq-print({
+    orphans: 3;
+    widows: 3;
+  });
+}
+
+.paragraph {
   font-size: 1.1em;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
+  max-width: @paragraphWidth;
+  margin: 0 auto @bottomSpace 0;
+  h1, h2, h3, h4, h5, h6 {font-weight:600; margin-bottom: @innerSpace;}
+}
+
+// Text einrücken, aber nicht den ersten.
+p + p,
+p + .paragraph,
+.paragraph + p,
+.paragraph + .paragraph {
+   text-indent: @outerSpace;
 }
 
 strong {font-weight: 700;}
 em {font-style:italic;}
-small {font-size: .75em}
+small {font-size: .8em}
 
 ins {
   text-decoration: none;
@@ -98,7 +151,7 @@ mark {
 blockquote {
   font-family: @headFonts;
   font-style: italic;
-  font-size: 1.3em;
+  font-size: 1.2em;
   color: @complementColor;
   padding: 0 15px;
   border-left: 7px solid @complementColor;
@@ -197,3 +250,8 @@ ol.is-list {
   list-style-type: upper-alpha;
 }
 
+table, blockquote, pre, code, figure, li, hr, ul, ol, a {
+  .mq-print({
+    page-break-inside: avoid;
+  });
+}

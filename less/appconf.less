@@ -1,8 +1,7 @@
 @charset "UTF-8";
-/**
- * APPCONFIGURATION
- */
-
+// ---------------------------------------------------------------------------------------
+//    APPCONFIGURATION
+// ---------------------------------------------------------------------------------------
 
 // Color and Shadow Sets
 @mainColor: #d00f1c; // The corporate color - defining most of the looks.
@@ -24,16 +23,24 @@
 @monoFonts: 'Source Code Pro', Courier, monospace; // Fonts for code pieces.
 
 // Font Sizes
-@fontSizeSmall: 100.01%; // base font: 16px / paragraphs: 17px;
-@fontSizeMedium: 110%; // 17px / 19px
-@fontSizeLarge: 120%; // 19px / 21px
-@fontSizeExtraLarge: 125%; // 20px / 22px
+@fontSizeSmall: 16px;
+@fontSizeMedium: 17px;
+@fontSizeLarge: 19px;
+@fontSizeExtraLarge: 20px;
 
-// Width and Media Queries
+// Spaces
+@outerSpace: 20px; // Space around objects, boxes etc.
+@innerSpace: 10px; // Space within objects: mostly paddings.
+@bottomSpace: 20px; // The distance between two sections.
+@gridSpace: 20px; // Space between grid items.
+
+// Width, Height and Media Queries
 @pageWidth: 1300px; // max-width of the centered container.
+@paragraphWidth: 720px; // max-width of text paragraphs.
 
-@breakSmall: 48em; // smart phones: 768px / 16px = 48em;
-@breakMedium: 62em; // tablets: 992px / 16px = 62em;
-@breakLarge: 87em; // screens: 1400px / 16px = 87em;
+@breakSmall: 37.5em; // smart phones: 600px / 16px = 37.5em;
+@breakMedium: 56.25em; // tablets: 900px / 16px = 56.25em;
+@breakLarge: 75em; // screens: 1200px / 16px = 75em;
+@breakXlarge: 112.5em; // huge screeens: 1800px / 16px = 112.5em;
 @break2x: 2; // hiDPI displays
 @breakPrint: print; // make it printable!

@@ -1,75 +1,80 @@
 @charset "UTF-8";
-/* WRAPPER AND BINDER */
 
-
+/* #WRAPPER and BINDER */
 // Container to wrap up chunks of content over the whole width of the page.
 // Use it for different background colors oder images across the screen.
+
+// Objects and Prefixes:
+// .pagebody
+// .wrap
+// .bind
+// .content
+// .sidebar-
+// .section-
+
+
+.outerwrap {
+  display:flex;
+  flex-wrap:wrap;
+  min-height: 100%;
+}
+
 .wrap {
-  width:100%;
+  min-width:100%;
+  flex:1 100%;
 }
 
 // Container to center the content in the middle of the page.
 .bind {
-  max-width:@pageWidth+50px;
-  padding:0 25px;
+  max-width:@pageWidth;
+  padding:0 @outerSpace;
   margin:0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
-  &:after {
-    content: '';
-    display: block;
-    clear: both; // Clearfix for the binding container.
-    height: 0;
-  }
+  flex: 1 100%;
   .mq-min(@breakSmall, {
-    .mq-landscape({flex-direction: row;})
+    .mq-landscape({flex-flow: row wrap;})
   });
-  .mq-min(@breakMedium, {flex-direction: row;});
+  .mq-min(@breakMedium, {flex-flow: row wrap;});
 }
 
-.container {
-  position: relative;
-}
-
-.sidebar {
-  order: 2;
-  padding: 0px .5em 40px .5em;
+/* Sidebars */
+.content ~ .sidebar {
+  font-size:.9em;
+  order: 4;
+  padding: @innerSpace 0 @bottomSpace;
   flex:auto;
-  &:after {
-    content: '';
-    display: block;
-    clear: both; // Clearfix for the sidebar container.
-    height: 0;
-  }
-  &:nth-of-type(2) {order:3} // Aside element on the right.
+  &:nth-of-type(2) {flex: 0 0 20%; order:3} // second aside element on the right.
   .mq-min(@breakSmall, {
-    .mq-landscape({flex: 0 0 25%; order: 1; padding: 40px 2em 20px .5em;})
+    .mq-landscape({flex: 0 0 25%; order: 4; padding: @innerSpace 0 @bottomSpace @innerSpace;})
   });
-  .mq-min(@breakMedium, {flex: 0 0 25%; order: 1; padding: 40px 2em 20px .5em;});
+  .mq-min(@breakMedium, {flex: 0 0 25%; order: 4; padding: @innerSpace 0 @bottomSpace @innerSpace;});
 }
 
-.content {
-  flex: 1;
+.content ~ .sidebar-vLeft {
   order: 1;
-  padding-bottom:20px;
-  min-width:0; // Prevents overflows.
+  flex: 0 0 20%;
+}
+
+.content ~ .sidebar-vMarginal {
+  font-size: .8em;
+  flex: 0 0 15%;
+  min-width: 200px;
+}
+
+/* Content Containers */
+.content {
+  flex: 2 0px;
+  order: 2;
+  max-width: 100%;
   .mq-min(@breakMedium, {order: 2;})
 }
 
-// Container to seperate chunks of content in the middle of the page.
+/* Container to seperate chunks of content in the middle of the page. */
 .section {
-  max-width:100%;
-  padding:40px .5em 20px; // 40px padding-top helps with top navigation, .5em paddings prevent shadow overflow.
-  &:after {
-    content: '';
-    display: block;
-    clear: both; // Clearfix for sections.
-    height: 0;
-  }
+  min-width: 0; // Prevents overflows.
+  padding-top: @innerSpace;
+  padding-bottom: @bottomSpace;
 }
-
-.content:last-of-type,
-.section.content:last-of-type {padding-bottom:40px;}
-
 
