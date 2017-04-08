@@ -5,20 +5,17 @@
 // .msg-
 // .alert-
 
-@alertColor: @hintColor;
-
-@msgBorderWidth: 1px;
-@msgBorderRadius: 3px;
-
 /* Messages */
-.msg {
+.msg(@msgColor: @hintColor,
+  @msgBorderWidth: @defaultBorderWidth,
+  @msgBorderRadius: 3px) {
   position: relative;
   padding: 15px;
   margin-bottom: 20px;
   font-size: .9rem;
-  color: darken(@alertColor,25%);
-  background-color: lighten(@alertColor, 40%);
-  border: @msgBorderWidth solid darken(@alertColor,15%);
+  color: darken(@msgColor,25%);
+  background-color: lighten(@msgColor, 40%);
+  border: @msgBorderWidth solid darken(@msgColor,15%);
   border-radius: @msgBorderRadius;
   p:last-child {
     margin-bottom: 0;
@@ -34,20 +31,19 @@
     transform: translateX(-45%);
   }
   & a {
-    color:darken(@alertColor,35%);
-    border-bottom: 1px solid fadeout(darken(@alertColor,35%),50%);
+    color:darken(@msgColor,35%);
+    border-bottom: 1px solid fadeout(darken(@msgColor,35%),50%);
   }
+}
+
+.msg {
+  .msg;
 }
 
 .msg-headline {
   font-size:.9rem;
   font-weight: 600;
   color: inherit;
-}
-
-// Contain the messages
-.msg-center {
-  margin-bottom: 20px;
 }
 
 // Close button #FIXME!
@@ -71,32 +67,42 @@
 }
 
 // Variations
-.colorizeMsg(@color) {
+.colorizeMsg(
+  @color,
+  @msgBorderWidth: @defaultBorderWidth) {
   color: darken(@color,25%);
   background-color: lighten(@color, 35%);
   border-color: darken(@color,15%);
   & a {
     color:darken(@color,35%);
-    border-bottom: @msgBorderWidth solid fadeout(darken(@alertColor,35%),50%);
+    border-bottom: @msgBorderWidth solid fadeout(darken(@color,35%),50%);
   }
 }
 
 .msg-vFull {
   margin-top: -1px;
-  border-width: @msgBorderWidth 0;
+  border-width: @defaultBorderWidth 0;
   border-radius: 0;
 }
 
+// Contain the messages
+.msgGroup {
+  margin-bottom: @bottomSpace;
+}
+
 /* Alerts */
-.alert {
+.alert(@alertColor: @hintColor,
+  @alertBorderWidth: @defaultBorderWidth,
+  @alertBorderRadius: 3px
+  ) {
   user-select: none;
   position: relative;
   padding: 8px 10px;
   font-size: .8rem;
   color: darken(@alertColor,25%);
   background-color: lighten(@alertColor, 40%);
-  border: @msgBorderWidth solid darken(@alertColor,15%);
-  border-radius: @msgBorderRadius;
+  border: @alertBorderWidth solid darken(@alertColor,15%);
+  border-radius: @alertBorderRadius;
   min-width: 300px;
   max-width: 25%;
   float: right;
@@ -130,19 +136,14 @@
   }
 }
 
+.alert {
+  .alert;
+}
+
 .alert-headline {
   font-size:.8rem;
   font-weight: 600;
   color: inherit;
-}
-
-// Contain the messages
-.alert-center {
-  position: fixed;
-  top:0;
-  right:0;
-  padding: 25px;
-  .zIndex('alert',0);
 }
 
 // Variations
@@ -154,4 +155,13 @@
     color:darken(@color,35%);
     text-decoration: underline;
   }
+}
+
+// Contain the messages
+.alertGroup {
+  position: fixed;
+  top:0;
+  right:0;
+  padding: 25px;
+  .zIndex('alert',0);
 }

@@ -1859,7 +1859,7 @@ ol.is-list {
   display: table-cell;
 }
 .tip-vSuccess:after {
-  color: #000000;
+  color: #ffffff;
   background: rgba(76, 173, 66, 0.9);
 }
 .tip-vSuccess.tip-s:before,
@@ -1879,7 +1879,7 @@ ol.is-list {
   border-left-color: rgba(76, 173, 66, 0.9);
 }
 .tip-vError:after {
-  color: #000000;
+  color: #ffffff;
   background: rgba(244, 67, 54, 0.9);
 }
 .tip-vError.tip-s:before,
@@ -1911,10 +1911,11 @@ ol.is-list {
   text-shadow: none;
   text-align: center;
   vertical-align: middle;
+  align-self: center;
   letter-spacing: normal;
   padding: 0 .45em;
   margin: -3px -2px 0 10px;
-  color: #000000;
+  color: #ffffff;
   background: #ef2331;
   border-radius: .1em;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.2);
@@ -1942,10 +1943,11 @@ ol.is-list {
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
+  align-self: center;
   letter-spacing: normal;
   padding: .1em .6em;
   margin: -2px -2px 0 0.8em;
-  color: #000000;
+  color: #ffffff;
   background: #ef2331;
   border-radius: .1em;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.2);
@@ -1996,9 +1998,6 @@ ol.is-list {
   font-weight: 600;
   color: inherit;
 }
-.msg-center {
-  margin-bottom: 20px;
-}
 .msg-close {
   float: right;
   width: 34px;
@@ -2020,6 +2019,9 @@ ol.is-list {
   margin-top: -1px;
   border-width: 1px 0;
   border-radius: 0;
+}
+.msgGroup {
+  margin-bottom: 20px;
 }
 /* Alerts */
 .alert {
@@ -2069,7 +2071,7 @@ ol.is-list {
   font-weight: 600;
   color: inherit;
 }
-.alert-center {
+.alertGroup {
   position: fixed;
   top: 0;
   right: 0;
@@ -3700,7 +3702,7 @@ a:hover .thumbnail {
 }
 .msg-vSuccess a {
   color: #132c11;
-  border-bottom: 1px solid rgba(9, 49, 66, 0.5);
+  border-bottom: 1px solid rgba(19, 44, 17, 0.5);
 }
 .msg-vWarn {
   color: #a67108;
@@ -3709,7 +3711,7 @@ a:hover .thumbnail {
 }
 .msg-vWarn a {
   color: #765006;
-  border-bottom: 1px solid rgba(9, 49, 66, 0.5);
+  border-bottom: 1px solid rgba(118, 80, 6, 0.5);
 }
 .msg-vError {
   color: #a21309;
@@ -3718,7 +3720,7 @@ a:hover .thumbnail {
 }
 .msg-vError a {
   color: #710e06;
-  border-bottom: 1px solid rgba(9, 49, 66, 0.5);
+  border-bottom: 1px solid rgba(113, 14, 6, 0.5);
 }
 .alert-vSuccess {
   color: #23511f;

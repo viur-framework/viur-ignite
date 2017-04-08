@@ -221,7 +221,7 @@
 // Colors for different alert states.
 .colorizeTooltip(@backgroundColor) {
   &:after {
-    color: contrast(@backgroundColor);
+    color: contrast(darken(@backgroundColor,12%));
     background: fadeout(@backgroundColor,10%);
   }
 
