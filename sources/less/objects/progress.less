@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* PROGRESS */
+
+// Prefixes and objects:
+// .progress-
+
+// Colors:
+@progressBackground: lighten(@complementColor,60%);
+@progressDefault: @complementColor;
+@progressPrimary: @successColor;
+@progressInfo: @hintColor;
+@progressWarning: @warnColor;
+@progressDanger: @failColor;
+
+.progress {
+  appearance: none;
+  border: none;
+  border-radius: .2em;
+  display: block;
+  height: 1rem;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+  &::-webkit-progress-bar {
+    background-color: @progressBackground;
+  }
+  &::-webkit-progress-value {
+    background-color: @progressDefault;
+    transition: 1s ease-in-out all;
+  }
+  &::-moz-progress-bar {
+    background-color: @progressDefault;
+  }
+}
+
+.colorizeProgress(@color){
+  &::-webkit-progress-value {
+    background-color: @color;
+  }
+  &::-moz-progress-bar {
+    background-color: @color;
+  }
+}
+
+.progress-vSmall {
+  height: .6rem;
+}
+
+.progress-vMedium {
+  height: 1.4rem;
+}
+
+.progress-vLarge {
+  height: 1.8rem;
+}
