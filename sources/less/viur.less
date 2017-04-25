@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* ViUR Ignite CSS 2017 */
+
+// This is the master file.
+// It imports all less files in their intended order for easy mass-inclusion.
+// Should you need specific files, you can easily customize the imports.
+
+// Reset
+@import "foundation/reset"; // resets all browsers to the same base state.
+
+// Fundamental parts: positioning, type and utilities
+@import "foundation/appconf"; // variables and constants.
+@import "foundation/basic"; // classic basic styling.
+@import "foundation/util"; // utility classes.
+@import "foundation/wrap"; // page wrappers.
+@import "foundation/grid"; // grid system.
+@import "foundation/bar"; // horizontal bars.
+
+// Generic elements: buttons, forms and messages
+@import "generic/button"; // some classic buttons.
+@import "generic/burger"; // your own menu burger.
+@import "generic/form"; // inputs, selects and other form elements.
+@import "generic/table"; // a classic table layout.
+@import "generic/tooltip"; // lightweight tooltips.
+@import "generic/badge"; // badges and marker.
+@import "generic/message"; // hints, errors, warnings etc.
+@import "generic/popup"; // popup dialog messages.
+@import "generic/spinner"; // loading state for ajax requests.
+@import "generic/icon"; // inline SVG icons.
+
+// Objects
+@import "objects/menu";
+@import "objects/boxes"; // classic media element.
+@import "objects/progress"; // custom progress bars.
+@import "objects/tabs";
+@import "objects/breadcrumb";
+@import "objects/footnote";
+@import "objects/slider";
+@import "objects/key";
+@import "objects/pagination";
+@import "objects/image"; // base64 encoded images, image shapes and thumbnails.
+
+// Configuration and Mixins
+@import "tools/zindex"; // organize your z-indexes.
+@import "tools/state"; // is-, has-, no- etc.
+@import "tools/mediaqueries"; // really simple media queries.
+@import "tools/shadow"; // material design shadow mixin.
