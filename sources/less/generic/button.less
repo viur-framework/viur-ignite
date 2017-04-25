@@ -64,17 +64,16 @@
       margin: 0 .25em 0 -.1em;
       align-self: center;
     }
+    &.btn-vSmall {
+      font-size: .8em;
+      font-weight: 400;
+    }
+    &.btn-vBlock {
+      margin: @btnMargin 0;
+      width: 100%;
+      display: block;
+    }
   }
-
-// The basic button is build here.
-.btn {
-  .btn;
-}
-
-.btn-vSmall {
-  font-size: .8em;
-  font-weight: 400;
-}
 
 .colorizeBtn(
   @backgroundColor,
@@ -194,10 +193,4 @@
       .zIndex('content',3);
     }
   }
-}
-
-.btn-vBlock {
-  margin: @btnMargin 0;
-  width: 100%;
-  display: block;
 }

@@ -850,76 +850,6 @@ ol.is-list {
   }
 }
 /* BUTTONS */
-.btn {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  display: inline-flex;
-  position: relative;
-  border-radius: 1px;
-  padding: 0.2em 0.75em;
-  margin: 0.25em 0;
-  vertical-align: middle;
-  font-size: 1em;
-  font-weight: 200;
-  line-height: 1.5;
-  color: #222222;
-  background-color: #e7e5e5;
-  border: 1px solid #cfcaca;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  cursor: pointer;
-  user-select: none;
-  white-space: nowrap;
-  transition: all .3s ease;
-}
-.btn:link,
-.btn:visited {
-  color: #222222;
-}
-.btn:hover {
-  color: #000000;
-  background-color: #f3f2f2;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-.btn:active,
-.btn.is-active {
-  color: #000000;
-  background-color: #ffffff;
-}
-.btn.is-disabled:hover,
-.btn:disabled:hover,
-.btn[aria-disabled=true]:hover,
-.btn.is-disabled,
-.btn:disabled,
-.btn[aria-disabled=true] {
-  color: #cdcdcd;
-  cursor: not-allowed;
-  border-style: dashed;
-  background-color: #ffffff;
-  box-shadow: none;
-}
-.btn.is-busy,
-.btn.is-loading,
-.btn[aria-busy=true] {
-  cursor: progress;
-}
-.btn.is-busy .single-spinner,
-.btn.is-loading .single-spinner,
-.btn[aria-busy=true] .single-spinner {
-  margin-right: 1em;
-}
-.btn.is-busy:hover,
-.btn.is-loading:hover,
-.btn[aria-busy=true]:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-.btn .icon {
-  margin: 0 0.25em 0 -0.1em;
-  align-self: center;
-}
-.btn-vSmall {
-  font-size: .8em;
-  font-weight: 400;
-}
 .btnGroup {
   vertical-align: middle;
   display: inline-flex;
@@ -959,11 +889,6 @@ ol.is-list {
 }
 .btnGroup .btn:focus {
   z-index: 203;
-}
-.btn-vBlock {
-  margin: 0.25em 0;
-  width: 100%;
-  display: block;
 }
 /* ---------------------------------------------------------------------------------------
     #MENU #BURGER
@@ -1124,6 +1049,7 @@ ol.is-list {
   font-weight: 200;
   line-height: 1.5;
   align-self: flex-start;
+  white-space: nowrap;
   background-color: #fafafa;
   border: 1px solid #e0e0e0;
   color: #000000;
@@ -1191,6 +1117,7 @@ ol.is-list {
   line-height: 1.5;
   align-self: flex-start;
   max-width: 100%;
+  min-width: 0;
   flex: 1;
   padding-right: 38px;
   background-color: #ffffff;
@@ -1451,11 +1378,6 @@ ol.is-list {
   flex-direction: column;
   margin-bottom: 20px;
 }
-@media (min-width: 37.5em) {
-  .inputGroup:not(.inputGroup-vBlock) {
-    flex-flow: row wrap;
-  }
-}
 .inputGroup .select,
 .inputGroup .input,
 .inputGroup .btn,
@@ -1485,39 +1407,23 @@ ol.is-list {
   width: 100%;
   margin: 0;
 }
-@media (min-width: 37.5em) {
-  .inputGroup .label {
-    max-width: 25vw;
-  }
-}
 .inputGroup .label:first-child {
   border-width: 1px;
   border-bottom-width: 0;
-}
-@media (min-width: 37.5em) {
-  .inputGroup .label:first-child {
-    border-width: 1px;
-    border-right-width: 0;
-  }
 }
 .inputGroup .label:last-child {
   border-width: 1px;
   border-top-width: 0;
 }
 @media (min-width: 37.5em) {
-  .inputGroup .label:last-child {
-    border-width: 1px;
-    border-left-width: 0;
-  }
-}
-@media (min-width: 37.5em) {
   .inputGroup:not(.inputGroup-vBlock) {
-    flex-flow: row wrap;
+    flex-flow: row;
   }
   .inputGroup:not(.inputGroup-vBlock) .label {
     width: auto;
     margin: 0.25em 0;
     float: left;
+    max-width: 25vw;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   }
   .inputGroup:not(.inputGroup-vBlock) .label:not(:first-child):not(:last-child) {
