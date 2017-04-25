@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/* BREADCRUMB */
+
+// Prefixes and objects:
+// .breadcrumb-
+
+@breadcrumbColor: @complementColor;
+
+.breadcrumb {
+  list-style: none;
+  overflow: hidden;
+}
+
+.breadcrumb-item {
+  float: left;
+}
+
+.breadcrumb-item:first-child .breadcrumb-link {
+  padding-left: 10px;
+}
+
+.breadcrumb-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0 10px 55px;
+  background: brown; // fallback color
+  background: hsla(34, 85%, 35%, 1);
+  position: relative;
+  display: block;
+  float: left;
+  &:after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent; // Go big on the size, and let overflow hide
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid hsla(34, 85%, 35%, 1);
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 100%;
+    z-index: 2;
+  }
+  &:before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent; // Go big on the size, and let overflow hide
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+  }
+}
+
+.breadcrumb-item:nth-child(2) .breadcrumb-link { background: hsla(34, 85%, 45%, 1); }
+.breadcrumb-item:nth-child(2) .breadcrumb-link:after { border-left-color: hsla(34, 85%, 45%, 1); }
+.breadcrumb-item:nth-child(3) .breadcrumb-link { background: hsla(34, 85%, 55%, 1); }
+.breadcrumb-item:nth-child(3) .breadcrumb-link:after { border-left-color: hsla(34, 85%, 55%, 1); }
+.breadcrumb-item:nth-child(4) .breadcrumb-link { background: hsla(34, 85%, 65%, 1); }
+.breadcrumb-item:nth-child(4) .breadcrumb-link:after { border-left-color: hsla(34, 85%, 65%, 1); }
+.breadcrumb-item:nth-child(5) .breadcrumb-link { background: hsla(34, 85%, 75%, 1); }
+.breadcrumb-item:nth-child(5) .breadcrumb-link:after { border-left-color: hsla(34, 85%, 75%, 1); }
+
+.breadcrumb-item:last-child .breadcrumb-link {
+  background: #fff;
+  color: black;
+  pointer-events: none;
+  cursor: default;
+  &:before { margin-left: 0; }
+  &:after { border: 0; }
+  &:hover { background: hsla(34, 85%, 25%, 1); }
+  &:hover:after { border-left-color: hsla(34, 85%, 25%, 1) !important; }
+}

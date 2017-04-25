@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* PAGINATION */
+
+// Prefixes and objects:
+// .pagination-
+
+.pagination {
+  font-size: .9em;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  .mq-max(@breakSmall, {
+    flex-wrap: wrap;
+  });
+  > .pagination-btn:not(:first-child) {
+    .mq-max(@breakSmall, {
+      margin-left: 10px;
+      order: 0;
+    });
+    .mq-min(@breakSmall, {
+      order: 1;
+    });
+  }
+  > .pagination-btn {
+    .mq-max(@breakSmall, {
+      width: calc(~"50% - 5px");
+    });
+  }
+}
+
+.pagination-spacer {
+  display: block;
+}
+
+.pagination-item {
+  .mq-max(@breakSmall, {flex: 1;});
+}
+
+.pagination-item:not(:last-child) {
+  margin-right: 4px;
+}
+
+.pagination-list {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin:0 4px;
+  .mq-max(@breakSmall, {margin-top: 10px; flex:1 100%;});
+}
+
+.pagination-btn {
+  display: block;
+  min-width: 2em; // width of 2 digit counters.
+  padding: 3px 8px;
+}

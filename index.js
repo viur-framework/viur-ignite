@@ -12,6 +12,7 @@ const clone = require('gulp-clone');
 const gulpif = require('gulp-if');
 const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer');
+const mmq = require('gulp-merge-media-queries');
 const nano = require('gulp-cssnano');
 const postcss = require('gulp-postcss');
 const stylefmt = require('gulp-stylefmt');
@@ -48,7 +49,6 @@ module.exports = {
 				formats: 'local eot woff2'
 			})
 		];
-
 		var source = gulp.src(options.src, {
 			// base: path.join(options.src, '..')
 		})
@@ -61,6 +61,9 @@ module.exports = {
 				cascade: false
 			})) // add vendor prefixes
 			.pipe(postcss(processors)) // clean up css
+			.pipe(mmq({
+				log: true
+			}))
 			.pipe(stylefmt()); // syntax formatting
 
 		var stylesPipe1 = source.pipe(clone()) // Create non-minified sourcemap

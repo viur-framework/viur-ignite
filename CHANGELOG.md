@@ -1,9 +1,19 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-
 ## [Unreleased]
 nothing since last release
+
+## [2.0.00] - 2016-12-19
+
+In this major release ViUR Ignite CSS starts using the mobile first paradigm.
+
+This means some huge changes to the way media queries are handled.
+With 2.0.0 just use classes with .mq- prefix.
+They are stored within mediaqueries.less and can be stacked (min + max + orientation).
+The gulp task merges all media queries to the end of the compiled css file.
+
+Moreover flex layout is no longer the exception but the norm.
 
 ## [1.0.24] - 2016-08-16
 ### Added
@@ -85,7 +95,8 @@ nothing since last release
 - Changelog started here
 
 
-[Unreleased]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.24...master
+[Unreleased]: https://github.com/viur-ignite/viur-ignite-css/compare/2.0.00...master
+[2.0.00]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.24...2.0.00
 [1.0.24]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.23...1.0.24
 [1.0.23]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.22...1.0.23
 [1.0.22]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.21...1.0.22
