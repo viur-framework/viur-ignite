@@ -1058,7 +1058,7 @@ ol.is-list {
   background-color: #fafafa;
   border: 1px solid #e0e0e0;
   color: #000000;
-  min-width: 150px;
+  min-width: 190px;
 }
 .inputGroup.is-required .label,
 .label.is-required {
