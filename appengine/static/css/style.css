@@ -751,7 +751,7 @@ ol.is-list {
 }
 /* Content Containers */
 .content {
-  flex: 2 0px;
+  flex: 2 0;
   order: 2;
   max-width: 100%;
 }
