@@ -5,12 +5,12 @@
 // Use it for different background colors oder images across the screen.
 
 // Objects and Prefixes:
-// .pagebody
+// .outerwrap
 // .wrap
 // .bind
 // .content
 // .sidebar-
-// .section-
+// .section
 
 .outerwrap {
   display:flex;
@@ -41,18 +41,27 @@
 /* Sidebars */
 .content ~ .sidebar {
   font-size:.9em;
-  order: 4;
+  .order('content',4);
   padding: @innerSpace 0 @bottomSpace;
   flex:auto;
-  &:nth-of-type(2) {flex: 0 0 20%; order:3} // second aside element on the right.
+  &:nth-of-type(2) {
+    flex: 0 0 20%;
+    .order('content',3);
+  } // second aside element on the right.
   .mq-min(@breakSmall, {
-    .mq-landscape({flex: 0 0 25%; order: 4; padding: @innerSpace 0 @bottomSpace @innerSpace;})
+    .mq-landscape({flex: 0 0 25%; .order('content',4);
+      padding: @innerSpace 0 @bottomSpace @innerSpace;
+    });
   });
-  .mq-min(@breakMedium, {flex: 0 0 25%; order: 4; padding: @innerSpace 0 @bottomSpace @innerSpace;});
+  .mq-min(@breakMedium, {
+    flex: 0 0 25%;
+    .order('content',4);
+    padding: @innerSpace 0 @bottomSpace @innerSpace;
+  });
 }
 
 .content ~ .sidebar-vLeft {
-  order: 1;
+  .order('content',1);
   flex: 0 0 20%;
 }
 
@@ -64,8 +73,8 @@
 
 /* Content Containers */
 .content {
-  flex: 2 0px;
-  order: 2;
+  flex: 2 0;
+  .order('content',2);
   max-width: 100%;
   .mq-min(@breakMedium, {order: 2;})
 }
