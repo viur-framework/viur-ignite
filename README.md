@@ -1,6 +1,3 @@
-[![npm version](https://badge.fury.io/js/viur-ignite-css.svg)](https://badge.fury.io/js/viur-ignite-css)
-[![dependencies Status](https://david-dm.org/viur-ignite/viur-ignite-css/status.svg)](https://david-dm.org/viur-ignite/viur-ignite-css/develop)
-[![Build Status](https://travis-ci.org/viur-ignite/viur-ignite-css.svg)](https://travis-ci.org/viur-ignite/viur-ignite-css)
 [![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg)](https://raw.githubusercontent.com/viur-ignite/viur-ignite-css/master/LICENSE)
 
 # ViUR Ignite CSS
@@ -34,50 +31,19 @@ Thanks guys!
 
 ## Install
 ```
-$ npm install viur-ignite-css
+$ npm install
 ```
 
 ## Usage
-```js
-const gulp = require('gulp');
-const css = require('viur-ignite-css');
-
-gulp.task('init', function() {
-  return css.init();
-});
-
-gulp.task('default', function() {
-  return css.build();
-});
-```
-
-First run the init task with
-```
-$ gulp init
-```
-than you can edit the style.less and compile the css with
+edit the style.less and compile the css with
 ```
 $ gulp
 ```
-
-
-### Be individual
-Call the function with an object of options
-```js
-gulp.task('default', function() {
-  return css.build({
-    dest: './output/css'
-  });
-});
+or use the watchtask with
+```
+$ gulp wtach
 ```
 
-The Default options are:
-```js
-src: path.join(__dirname, 'less/viur.less') // source path of basic less file
-dest: './appengine/static/css/' // destination path of css
-sourceMap: true // sourcemap for style.css
-minSourceMap: false // sourcemap four style.min.css
-```
 
 ## Contribution guidelines
 * Available for use under the GPL-3.0 license
