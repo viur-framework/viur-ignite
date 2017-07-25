@@ -47,6 +47,12 @@
   line-height:1.5;
 }
 
+// Arrows (up and down) in base64:
+.arrowsUpDownBg() {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.14286 50" height="50" width="80"><path d="M0 16.429l30-34.286 30 34.286H0zm0 17.142l30 34.286 30-34.286H0z"/></svg>');
+}
+
+
 /* Input */
 .input {
   .basicInput;
@@ -229,7 +235,7 @@
   padding-right: 38px;
   background-color: #ffffff;
   border: 1px solid #dddddd;
-  .arrowsUpDownBg(); //import from image.less: arrows (up and down) in base64
+  .arrowsUpDownBg(); // arrows (up and down) in svg
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: right center;

@@ -64,10 +64,9 @@
   .grid(@gridSpace, 12);
 }
 
-.burger-box {
+.burger {
   .burger(@outerSpace, 5px, 8px, @mainColor);
 }
-
 .burger.is-active .burger-box {
   .burger-to-cross(5px, 8px, @mainColor);
 }
@@ -75,62 +74,71 @@
 .btn {
   .btn;
 }
-
 .btn-vPrimary {
   .colorizeBtn(@successColor);
 }
-
 .btn-vDanger {
   .invertColorizedBtn(@failColor);
 }
-
 .btn-vEdit {
   .invertColorizedBtn(@hintColor);
 }
+
 .icon-vSuccess {
 	.colorizeIcon(@successColor)
 }
-
 .icon-vWarn {
 	.colorizeIcon(@warnColor)
 }
 
+.msg {
+  .msg;
+}
 .msg-vSuccess {
   .colorizeMsg(@successColor);
 }
-
 .msg-vWarn {
   .colorizeMsg(@warnColor);
 }
-
 .msg-vError {
   .colorizeMsg(@failColor);
 }
 
+.alert {
+  .alert;
+}
 .alert-vSuccess {
   .colorizeAlert(@successColor);
 }
-
 .alert-vWarn {
   .colorizeAlert(@warnColor);
 }
-
 .alert-vError {
   .colorizeAlert(@failColor);
 }
 
-.progress-vSuccess {
-  .colorizeProgress(@successColor);
+.table{
+  .table();
 }
 
-.progress-vInfo {
-  .colorizeProgress(@hintColor);
-}
 
-.progress-vWarning {
-  .colorizeProgress(@warnColor);
-}
+// styles
 
-.progress-vDanger {
-  .colorizeProgress(@failColor);
+.google-info a {
+  width: 400px;
+  padding: 20px 0px;
+  font-weight: 300;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.25);
+  background: #cc0000;
+  border: 1px solid #555;
+  cursor: pointer;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.75);
+  height: auto;
+  margin: 30px 0;
+  text-align: center;
+  display: block;
 }

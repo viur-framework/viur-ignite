@@ -7,46 +7,52 @@
 // https://github.com/MarkRabey/less-burger
 
 .burger(@width: 30px, @height: 5px, @gutter: 3px, @color: #000, @border-radius: 0, @transition-duration: .3s) {
-  cursor:pointer;
-  position: relative;
-  margin-top: @height + @gutter;
-  margin-bottom: @height + @gutter;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  display: block;
+  align-self: center;
+  .mq-min(@breakMedium, {display:none;});
 
-  &,
-  &:before,
-  &:after {
-    display: block;
-    width: @width;
-    height: @height;
-    background-color: @color;
-    .border-radius(@border-radius);
-    -webkit-transition-property: background-color, -webkit-transform;
-    -moz-transition-property: background-color, -moz-transform;
-    -o-transition-property: background-color, -o-transform;
-    transition-property: background-color, transform;
+  &-box {
+    cursor:pointer;
+    position: relative;
+    margin-top: @height + @gutter;
+    margin-bottom: @height + @gutter;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
-    -webkit-transition-duration: @transition-duration;
-    -moz-transition-duration: @transition-duration;
-    -o-transition-duration: @transition-duration;
-    transition-duration: @transition-duration;
-  }
+    &,
+    &:before,
+    &:after {
+      display: block;
+      width: @width;
+      height: @height;
+      background-color: @color;
+      .border-radius(@border-radius);
+      -webkit-transition-property: background-color, -webkit-transform;
+      -moz-transition-property: background-color, -moz-transform;
+      -o-transition-property: background-color, -o-transform;
+      transition-property: background-color, transform;
 
-  &:before,
-  &:after {
-    position: absolute;
-    content: "";
-  }
+      -webkit-transition-duration: @transition-duration;
+      -moz-transition-duration: @transition-duration;
+      -o-transition-duration: @transition-duration;
+      transition-duration: @transition-duration;
+    }
 
-  &:before {
-    top: -(@height + @gutter);
-  }
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+    }
 
-  &:after {
-    top: @height + @gutter;
+    &:before {
+      top: -(@height + @gutter);
+    }
+
+    &:after {
+      top: @height + @gutter;
+    }
   }
 }
 
@@ -78,16 +84,3 @@
     transform: translateY(-(@gutter + @height)) rotate(-45deg);
   }
 }
-
-
-// Helper Mixins
-.border-radius(@radius) when not(@radius = 0) {
-  border-radius: @border-radius;
-}
-
-.burger {
-  display: block;
-  align-self: center;
-  .mq-min(@breakMedium, {display:none;});
-}
-

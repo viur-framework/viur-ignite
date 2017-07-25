@@ -212,9 +212,17 @@ nav ol {
 // 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
 // 2. Improves image quality when scaled in IE7
 //    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+// 3. avoid overflow by high resolution images
 img {
   border: 0; // 1
   -ms-interpolation-mode: bicubic; // 2
+  max-width: 100%; // 3
+  height: auto;
+  .mq-print({
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+  });
 }
 
 // Corrects overflow displayed oddly in IE9

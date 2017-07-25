@@ -6,10 +6,10 @@ var srcpaths = {
 };
 
 var destpaths = {
-	css: './css',
-	webfonts: './webfonts',
-	images: './images',
-	icons: './icons'
+	css: '../static/css',
+	webfonts: '../static/webfonts',
+	images: '../static/images',
+	icons: '../static/icons'
 };
 
 // Variables and requirements
