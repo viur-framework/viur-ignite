@@ -6,26 +6,6 @@
 // The namespaces .is-, .has- and .no- are reserved for states.
 // Use .js- prefix to mark java script targets.
 
-@adminColor: @successColor;
-
-// Admin Hint
-.is-admin {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: @adminColor;
-  color: contrast(@adminColor);
-  padding: 10px 0;
-  text-align: center;
-  .zIndex('dev',0);
-}
-.is-admin a,
-.is-admin a:link,
-.is-admin a:active,
-.is-admin a:visited,
-.is-admin a:hover {color: contrast(@adminColor); text-decoration: underline;}
-
 
 // Selections
 ::-moz-selection {
