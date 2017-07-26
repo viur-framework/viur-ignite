@@ -1,6 +1,7 @@
 // Project data
 var srcpaths = {
 	less: './less/**/*.less',
+	projectless: '../static/less/**/*.less',
 	images: './images/**/*',
 	icons: './icons/**/*',
 };
@@ -90,6 +91,7 @@ gulp.task ('icons', function () {
 
 gulp.task('watch', function () {
 	gulp.watch(srcpaths.less, ['css']);
+	gulp.watch(srcpaths.projectless, ['css']);
 	gulp.watch(srcpaths.icons, ['icons']);
 	gulp.watch(srcpaths.images, ['images']);
 });
