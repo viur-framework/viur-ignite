@@ -42,7 +42,7 @@ $ gulp
 ```
 or use the watchtask with
 ```
-$ gulp wtach
+$ gulp watch
 ```
 
 
