@@ -1,7 +1,7 @@
 {
-  "name": "viur-ignite-css",
+  "name": "ignite",
   "version": "2.0.0",
-  "description": "VIUR Ignite CSS - a less framework",
+  "description": "Ignite - a less framework",
   "main": "index.js",
   "scripts": {
     "test": "node test.js && npm run lint",
@@ -9,10 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/viur-framework/viur-ignite-css.git"
+    "url": "git+https://github.com/viur-framework/ignite.git"
   },
   "keywords": [
-    "VIUR Ignite",
     "viur",
     "ignite",
     "css",
@@ -24,7 +23,7 @@
   "author": "VIUR",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/viur-framework/viur-ignite-css/issues"
+    "url": "https://github.com/viur-framework/ignite/issues"
   },
   "homepage": "http://ignite.viur.is",
   "dependencies": {
