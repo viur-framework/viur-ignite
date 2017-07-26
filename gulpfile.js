@@ -44,7 +44,7 @@ gulp.task('css', function () {
 		}) // import fonts
 	];
 
-	return gulp.src('./less/style.less')
+	return gulp.src('./less/viur.less')
 	.pipe(less({
 		paths: [ path.join(__dirname, 'less', 'includes') ]
 	})) // compile less to css
@@ -57,10 +57,11 @@ gulp.task('css', function () {
 		log: true
 	}))
 	.pipe(stylefmt()) // syntax formatting
+	.pipe(rename('style.css'))
 	.pipe(gulp.dest(destpaths.css)) // save cleaned version
 	.pipe(nano()) // minify css
-	.pipe(rename('style.min.css')) // save minified version
-	.pipe(gulp.dest(destpaths.css));
+	.pipe(rename('style.min.css'))
+	.pipe(gulp.dest(destpaths.css)); // save minified version
 });
 
 
