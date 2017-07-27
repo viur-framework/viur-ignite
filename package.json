@@ -4,8 +4,8 @@
   "description": "Ignite - a less framework",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js && npm run lint",
-    "lint": "xo"
+	"install": "npm install gulp -g && npm install",
+	"setup": "npm run install && gulp init"
   },
   "repository": {
     "type": "git",
@@ -47,8 +47,5 @@
     "postcss-focus": "^2.0",
     "postcss-font-magician": "^2.0",
     "postcss-zindex": "^2.2"
-  },
-  "devDependencies": {
-    "xo": "^0.18"
   }
 }

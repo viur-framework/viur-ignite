@@ -111,8 +111,7 @@
     margin-bottom: 0;
   }
   &.has-icon {padding-left:2em;}
-  &.has-icon:before {
-    content: "";
+  & .icon {
     position: absolute;
     display: block;
     height: .8em;
@@ -120,12 +119,6 @@
     margin-left: -1em;
     margin-top: 5px;
     transform: translateX(-50%);
-    background-size: cover;
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-color: inherit;
-    background-blend-mode: multiply;
-    //set background-image via icon.less
   }
   a {
     color:darken(@alertColor,35%);
