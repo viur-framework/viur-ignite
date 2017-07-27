@@ -42,7 +42,10 @@
 
   .barGroup-vLeft {justify-content: flex-start;}
   .barGroup-vCenter {justify-content: center; margin-left: auto; margin-right: auto;}
-  .barGroup-vRight {justify-content: flex-end;}
+  .barGroup-vRight {
+    justify-content: flex-end;
+    &:first-child{margin-left: auto;}
+  }
 
   .barGroup.barGroup-vNav {
     & .bar-item {

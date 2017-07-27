@@ -33,6 +33,9 @@
     margin: 0;
     &:not(:last-child) {
       margin-bottom: @gridSpace;
+      .mq-min(@breakMedium, {
+        margin-bottom: 0;
+      });
     }
     .mq-min(@breakMedium, {
       padding: @gridSpace;
