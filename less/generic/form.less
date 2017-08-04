@@ -100,7 +100,7 @@
   }
   .inputGroup.is-valid  &,
   &.is-valid,
-  &:valid:not(:placeholder-shown) {
+  &:valid:not(:placeholder-shown):not([type="password"]) {
     color: darken(@inputValidColor, 15%);
     border-color: @inputValidColor;
     background-color: lighten(@inputValidColor, 40%);

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* InlineSVG Icons */
+.icon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentcolor;
+  color: inherit;
+  width: 1em;
+  height: 1em;
+}
+.icon path {
+  fill: inherit;
+  stroke: none;
+}
