@@ -4,10 +4,10 @@
   "description": "Ignite - a less framework",
   "main": "index.js",
   "scripts": {
-	"install": "npm install gulp -g && npm install",
-	"setup": "npm run install && gulp init",
-	"checkUpdates": "npm-check-updates -u && npm install",
-	"initCheckUpdates": "npm i -g npm-check-updates"
+    "preInstall": "npm install gulp -g && npm install",
+    "setup": "npm run preInstall && gulp init",
+    "checkUpdates": "npm-check-updates -u && npm install",
+    "initCheckUpdates": "npm i -g npm-check-updates"
   },
   "repository": {
     "type": "git",
