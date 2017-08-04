@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
 	"install": "npm install gulp -g && npm install",
-	"setup": "npm run install && gulp init"
+	"setup": "npm run install && gulp init",
+	"checkUpdates": "npm-check-updates -u && npm install",
+	"initCheckUpdates": "npm i -g npm-check-updates"
   },
   "repository": {
     "type": "git",
@@ -29,9 +31,7 @@
   "dependencies": {
     "gulp": "^3.9",
     "gulp-autoprefixer": "^4.0",
-    "gulp-clone": "^1.0",
     "gulp-cssnano": "^2.1",
-    "gulp-if": "^2.0",
     "gulp-imagemin": "^3.3.0",
     "gulp-join-media-queries": "0.0.1",
     "gulp-less": "^3.3",
@@ -40,12 +40,8 @@
     "gulp-sourcemaps": "^2.6",
     "gulp-stylefmt": "^1.1",
     "gulp-svgmin": "^1.2",
-    "gulp-util": "^3.0",
     "imagemin-pngquant": "^5.0.1",
-    "is-there": "^4.4",
-    "merge-stream": "^1.0",
     "postcss-focus": "^2.0",
-    "postcss-font-magician": "^2.0",
     "postcss-zindex": "^2.2"
   }
 }
