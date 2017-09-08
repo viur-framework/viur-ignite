@@ -2,10 +2,8 @@
   "name": "viur-ignite",
   "version": "2.0.0",
   "description": "Ignite - a less framework",
-  "main": "index.js",
   "scripts": {
-    "preInstall": "npm install gulp -g && npm install",
-    "setup": "npm run preInstall && gulp init",
+    "setup": "npm install gulp -g && npm install",
     "checkUpdates": "npm-check-updates -u && npm install",
     "initCheckUpdates": "npm i -g npm-check-updates"
   },
@@ -41,6 +39,7 @@
     "gulp-stylefmt": "^1.1",
     "gulp-svgmin": "^1.2",
     "imagemin-pngquant": "^5.0.1",
+    "p": "^0.2.0",
     "postcss-focus": "^2.0",
     "postcss-zindex": "^2.2"
   }
