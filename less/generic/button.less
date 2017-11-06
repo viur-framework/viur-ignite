@@ -61,19 +61,24 @@
     }
   }
   & .icon {
-    margin: 0 .25em 0 -.1em;
     align-self: center;
+    &:first-child{
+      margin-left: -.1em;
+      margin-right: .25em;
+    }
   }
-  &&-vSmall {
+  &-vSmall {
     font-size: .8em;
+    & .icon:first-child {margin-right: .15em;}
   }
-  &&-vBig {
+  &-vBig {
     font-size: 1.2em;
   }
-  &&-vBlock {
+  &-vBlock {
     margin: @btnMargin 0;
     width: 100%;
     display: block;
+    text-align: center;
   }
 
   &Group {

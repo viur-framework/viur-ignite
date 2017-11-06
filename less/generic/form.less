@@ -100,7 +100,7 @@
   }
   .inputGroup.is-valid  &,
   &.is-valid,
-  &:valid:not(:placeholder-shown) {
+  &:valid:not(:placeholder-shown):not([type="password"]) {
     color: darken(@inputValidColor, 15%);
     border-color: @inputValidColor;
     background-color: lighten(@inputValidColor, 40%);
@@ -213,6 +213,7 @@
 .label-vSmall {
   font-size: .8em;
   font-weight: 400;
+  min-width: 90px;
 }
 
 .label-vBlock {
@@ -237,6 +238,25 @@
   transition: all .3s ease;
   &:hover {
     .boxShadow(@inputShadowHover, @inputShadowColor);
+  }
+  &.is-disabled,
+  &:disabled {
+    color:#777777;
+    cursor: not-allowed;
+    .boxShadow(0);
+    border: @defaultBorderWidth dashed darken(@inputColor,20%);
+    background-color: darken(@inputColor, 5%);
+  }
+  .inputGroup.is-valid  &,
+  &.is-valid {
+    color: darken(@inputValidColor, 15%);
+    border-color: @inputValidColor;
+    background-color: lighten(@inputValidColor, 40%);
+    &:focus {
+      color: contrast(@inputColor, #222222, #f4f4f4);
+      background-color: @inputColor;
+      border-color: darken(@inputColor, 10%);
+    }
   }
 }
 
@@ -328,8 +348,7 @@
 }
 .radio-label {
   position: relative;
-  display: inline-block;
-  padding: @inputPadding @inputPadding*3.75;
+  display: block;
   outline: 0;
   cursor: pointer;
   &:before {
@@ -340,15 +359,20 @@
     vertical-align: middle;
     width: 1em;
     height: 1em;
-    margin-right: 10px;
     margin-top:-2px;
     text-align: center;
     border-radius: 50%;
     transition: all .4s ease;
-    box-shadow: inset 0px 0px 0px 2px #fff;
+    box-shadow: inset 0 0 0 2px #fff;
   }
-  &:hover {
-    background-color: @inputColor;
+  &:not(:empty){
+    padding: @inputPadding @inputPadding*3.75;
+    &:before {
+      margin-right: 10px;
+    }
+    &:hover {
+      background-color: @inputColor;
+    }
   }
 }
 
@@ -373,8 +397,7 @@
 }
 .check-label {
   position: relative;
-  display: inline-block;
-  padding: @inputPadding @inputPadding*3.75;
+  display: block;
   outline: 0;
   cursor: pointer;
   &:before {
@@ -385,14 +408,19 @@
     vertical-align: middle;
     width: 1em;
     height: 1em;
-    margin-right: 10px;
     margin-top:-2px;
     text-align: center;
     transition: all .4s ease;
-    box-shadow: inset 0px 0px 0px 2px #fff;
+    box-shadow: inset 0 0 0 2px #fff;
   }
-  &:hover {
-    background-color: @inputColor;
+  &:not(:empty){
+    padding: @inputPadding @inputPadding*3.75;
+    &:before {
+      margin-right: 10px;
+    }
+    &:hover {
+      background-color: @inputColor;
+    }
   }
 }
 .check-input:checked + .check-label:before {

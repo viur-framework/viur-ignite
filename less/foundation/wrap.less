@@ -61,8 +61,10 @@
 }
 
 .content ~ .sidebar-vLeft {
-  .order('content',1);
-  flex: 0 0 20%;
+  .mq-min(@breakMedium, {
+    padding: @innerSpace @innerSpace*3 @bottomSpace 0;
+    .order('content',1);
+  });
 }
 
 .content ~ .sidebar-vMarginal {
@@ -74,9 +76,12 @@
 /* Content Containers */
 .content {
   flex: 2 0;
+  min-width: 0;
   .order('content',2);
   max-width: 100%;
-  .mq-min(@breakMedium, {order: 2;})
+  .mq-min(@breakMedium, {
+    .order('content',2);
+    });
 }
 
 /* Container to seperate chunks of content in the middle of the page. */

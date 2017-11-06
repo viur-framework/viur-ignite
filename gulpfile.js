@@ -1,6 +1,7 @@
 // Project data
 var srcpaths = {
 	less: './less/**/*.less',
+	projectless: '../static/less/**/*.less',
 	images: './images/**/*',
 	icons: './icons/**/*',
 };
@@ -37,11 +38,7 @@ gulp.task('css', function () {
 	var processors = [
 		nocomments, // discard comments
 		focus, // add focus to hover-states
-		zindex, // reduce z-index values
-		require('postcss-font-magician')({
-			hosted: destpaths.webfonts,
-			formats: 'local eot woff2'
-		}) // import fonts
+		zindex // reduce z-index values
 	];
 
 	return gulp.src('./less/viur.less')
@@ -90,6 +87,7 @@ gulp.task ('icons', function () {
 
 gulp.task('watch', function () {
 	gulp.watch(srcpaths.less, ['css']);
+	gulp.watch(srcpaths.projectless, ['css']);
 	gulp.watch(srcpaths.icons, ['icons']);
 	gulp.watch(srcpaths.images, ['images']);
 });

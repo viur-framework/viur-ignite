@@ -47,7 +47,6 @@ html {
 }
 
 body {
-  margin: 0; /* IE Reset */
   background: @backgroundColor;
   line-height:1.5;
   color: @textColor;
@@ -59,9 +58,25 @@ body {
 }
 
 /* Links */
-a { color: @mainColor; text-decoration: none; outline: 0; }
-a:hover, a:focus, a:active { color: darken(@mainColor, 10%); }
-p a, p a:visited { line-height: inherit; }
+a[href] {
+  color: @mainColor;
+  text-decoration: none;
+  outline: 0;
+  transition: all ease-in-out .3s;
+  &:hover,
+  &:active {
+    color: darken(@mainColor, 10%);
+  }
+  p &,
+  p &:visited {
+    line-height: inherit;
+  }
+  // Force empty links to show:
+  &[href^="http"]:empty::before {
+    content: attr(href);
+  }
+}
+
 
 a[href^="http://"]:after,
 a[href^="https://"]:after,
