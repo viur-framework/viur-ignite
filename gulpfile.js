@@ -1,16 +1,16 @@
 // Project data
 var srcpaths = {
 	less: './less/**/*.less',
-	projectless: '../static/less/**/*.less',
+	projectless: '../deploy/static/less/**/*.less',
 	images: './images/**/*',
 	icons: './icons/**/*',
 };
 
 var destpaths = {
-	css: '../static/css',
-	webfonts: '../static/webfonts',
-	images: '../static/images',
-	icons: '../static/icons'
+	css: '../deploy/static/css',
+	webfonts: '../deploy/static/webfonts',
+	images: '../deploy/static/images',
+	icons: '../deploy/static/icons'
 };
 
 // Variables and requirements
