@@ -5,3 +5,7 @@
 .border-radius(@radius) when not(@radius = 0) {
   border-radius: @border-radius;
 }
+
+.border(@width, @style, @color) when not (@width = 0) {
+  border: @width @style @color;
+}
