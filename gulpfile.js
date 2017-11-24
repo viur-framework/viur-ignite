@@ -41,7 +41,7 @@ gulp.task('css', function () {
 		zindex // reduce z-index values
 	];
 
-	return gulp.src('./less/viur.less')
+	return gulp.src('./less/ignite.less')
 	.pipe(less({
 		paths: [ path.join(__dirname, 'less', 'includes') ]
 	})) // compile less to css
