@@ -102,13 +102,6 @@ h1, h2, h3, h4, h5, h6 {
   });
 }
 
-h1 {font-size: 2.1em; margin-bottom: 1em;}
-h2 {font-size: 1.7em; margin-bottom: .5em;}
-h3 {font-size: 1.5em; margin-bottom: .25em;}
-h4 {font-size: 1.2em;}
-h5 {font-size: 1.15em;}
-h6 {font-size: 1em;}
-
 // Use .headline for your important headlines.
 .headline {font-family: @headFonts; color: @mainColor;}
 // Use .subline to your headline
@@ -219,7 +212,7 @@ kbd {
   margin: 0 0.1em;
   padding: .2em .6em;
   text-shadow: 0 1px 0 #fff;
-  .txt-nowrap;
+  white-space: nowrap;
   &.kbd-vDark {
     border: 1px solid contrast(darken(@backgroundColor, 15%));
     background-color: contrast(darken(@backgroundColor, 10%));

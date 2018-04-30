@@ -2,7 +2,26 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-nothing since last release
+Ignite now serves as a less foundation library. 
+Functions and output file size have been reduced to the bare minimum.
+You have to opt-in and initialize functions to use them.
+
+### Added
+- all generic components are now guarded: you have to opt-in
+- border mixin is now used in generic components
+
+### Changed
+- folders have been restructured 
+- »tools« renamed to »mixins«
+- gulpfile changed to adopt the new folder structure
+- moved utility functions to the corresponding mixin less files (e.g. .shd() to shadow.less) 
+- moved .basicInput() to its own less file
+- 
+
+### Removed
+- grid.less has been removed, please use display: grid;  
+- util.less has been removed
+- cleaned up some obsolete vendor prefixes
 
 ## [2.0.00] - 2016-12-19
 

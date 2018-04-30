@@ -1,7 +1,16 @@
 @charset "UTF-8";
 // ---------------------------------------------------------------------------------------
-//    APPCONFIGURATION
+//  FALLBACK IGNITE APPCONFIGURATION
 // ---------------------------------------------------------------------------------------
+
+// Opt-Ins
+@bar: false;
+@burger: false;
+@button: false;
+@form: false;
+@icon: false;
+@message: false;
+@table: false;
 
 // Color and Shadow Sets
 @mainColor: #d00f1c; // The corporate color - defining most of the looks.
@@ -14,8 +23,6 @@
 @warnColor: #f5b639; // Orange
 @failColor: #f44336; // Red
 @hintColor: #1da7e0; // Blue
-
-@defaultShadowColor: #000;
 
 // Font Stacks
 @bodyFonts: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; // Default font stack.
@@ -34,6 +41,9 @@
 @defaultMargin: .25em;
 @defaultBorderWidth: 1px;
 @defaultBorderRadius: 1px;
+@defaultShadow: 0;
+@defaultShadowColor: #000;
+@defaultInputColor:#fff;
 
 // Spaces
 @outerSpace: 20px; // Space around objects, boxes etc.
@@ -42,12 +52,12 @@
 @gridSpace: 20px; // Space between grid items.
 
 // Width, Height and Media Queries
-@pageWidth: 1300px; // max-width of the centered container.
-@paragraphWidth: 720px; // max-width of text paragraphs.
+@pageWidth: 1400px; // max-width of the centered container.
+@paragraphWidth: 77ch; // max-width of text paragraphs: 77 characters.
 
 @breakSmall: 37.5em; // smart phones: 600px / 16px = 37.5em;
 @breakMedium: 56.25em; // tablets: 900px / 16px = 56.25em;
 @breakLarge: 75em; // screens: 1200px / 16px = 75em;
 @breakXlarge: 112.5em; // huge screeens: 1800px / 16px = 112.5em;
-@break2x: 2; // hiDPI displays;
+@break2x: 2; // hiDPI displays
 @breakPrint: print; // make it printable!
