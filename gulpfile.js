@@ -1,16 +1,9 @@
 // Project data
-var srcpaths = {
-	less: './less/**/*.less',
-	projectless: '../deploy/static/less/**/*.less',
-	images: './images/**/*',
-	icons: './icons/**/*',
-};
-
 var destpaths = {
-	css: '../deploy/static/css',
-	webfonts: '../deploy/static/webfonts',
-	images: '../deploy/static/images',
-	icons: '../deploy/static/icons'
+	css: './css',
+	webfonts: './webfonts',
+	images: './images',
+	icons: './icons'
 };
 
 // Variables and requirements
@@ -41,7 +34,7 @@ gulp.task('css', function () {
 		zindex // reduce z-index values
 	];
 
-	return gulp.src('./less/ignite.less')
+	return gulp.src('ignite.less')
 	.pipe(less({
 		paths: [ path.join(__dirname, 'less', 'includes') ]
 	})) // compile less to css
@@ -61,35 +54,8 @@ gulp.task('css', function () {
 	.pipe(gulp.dest(destpaths.css)); // save minified version
 });
 
-
-// reduce images for web
-gulp.task ('images', function () {
-	return gulp.src(srcpaths.images)
-	.pipe(imagemin({
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngquant()]
-	}))
-	.pipe(gulp.dest(destpaths.images));
-});
-
-// reduce icons for web
-gulp.task ('icons', function () {
-	return gulp.src(srcpaths.icons)
-	.pipe(imagemin({
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngquant()]
-	}))
-	.pipe(gulp.dest(destpaths.icons));
-});
-
-
 gulp.task('watch', function () {
-	gulp.watch(srcpaths.less, ['css']);
-	gulp.watch(srcpaths.projectless, ['css']);
-	gulp.watch(srcpaths.icons, ['icons']);
-	gulp.watch(srcpaths.images, ['images']);
+	gulp.watch('./*/*.less', ['css']);
 });
 
-gulp.task('default', ['css', 'images', 'icons']);
+gulp.task('default', ['css']);
