@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* InlineSVG Icons */
 
-& when (@form=icon) {
+& when (@icon=true) {
   .icon {
     display: inline-block;
     vertical-align: text-top;
@@ -11,9 +11,10 @@
     height: 1em;
     & path { fill: inherit; stroke: none; }
   }
-
-  .colorizeIcon(@color) {
-    & .icon,
-    &.icon { color: darken(@color, 25%); }
-  }
 }
+
+.colorizeIcon(@color) when (@icon=true) {
+  & .icon,
+  &.icon { color: darken(@color, 25%); }
+}
+
