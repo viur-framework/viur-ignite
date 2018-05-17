@@ -28,17 +28,14 @@
   "homepage": "http://ignite.viur.is",
   "dependencies": {
     "gulp": "^3.9",
+    "gulp-postcss": "^7.0",
     "gulp-autoprefixer": "^4.0",
     "gulp-cssnano": "^2.1",
-    "gulp-imagemin": "^3.3.0",
     "gulp-join-media-queries": "0.0.1",
     "gulp-less": "^3.3",
-    "gulp-postcss": "^7.0",
     "gulp-rename": "^1.2",
     "gulp-sourcemaps": "^2.6",
     "gulp-stylefmt": "^1.1",
-    "gulp-svgmin": "^1.2",
-    "imagemin-pngquant": "^5.0.1",
     "p": "^0.2.0",
     "postcss-focus": "^2.0",
     "postcss-zindex": "^2.2"

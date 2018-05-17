@@ -22,10 +22,6 @@ const nano = require('gulp-cssnano');
 const jmq = require('gulp-join-media-queries');
 const stylefmt = require('gulp-stylefmt');
 
-const svgmin = require('gulp-svgmin');
-const imagemin = require('gulp-imagemin');
-const pngquant = require('imagemin-pngquant');
-
 // compilation and postproduction of LESS to CSS
 gulp.task('css', function () {
 	var processors = [
