@@ -2,7 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-Ignite now serves as a less foundation library. 
+
+## [3.0.00] - 2018-05-17
+After more than a year of development Ignite 3.0.00 now serves as a less foundation library.
+Put it into any project for a solid boiler plate.
 Functions and output file size have been reduced to the bare minimum.
 You have to opt-in and initialize functions to use them.
 
@@ -16,7 +19,7 @@ You have to opt-in and initialize functions to use them.
 - gulpfile changed to adopt the new folder structure
 - moved utility functions to the corresponding mixin less files (e.g. .shd() to shadow.less) 
 - moved .basicInput() to its own less file
-- 
+- more undocumented changes
 
 ### Removed
 - grid.less has been removed, please use display: grid;  
