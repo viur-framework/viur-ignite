@@ -56,69 +56,32 @@
   &.is-invalid,
   &[aria-invalid="true"],
   &:invalid:not(:placeholder-shown) {
-    color: darken(@inputDangerColor, 15%);
-    border-color: @inputDangerColor;
-    background-color: lighten(@inputDangerColor, 40%);
-    background-image: url(../icons/cross.svg);
-    background-position: 95% center;
-    &:focus {
-      color: contrast(@inputColor, #222222, #f4f4f4);
-      background-color: @inputColor;
-      border-color: darken(@inputColor, 10%);
-      background-position: 150% center;
-    }
+    .inputValidation(@inputColor, @inputDangerColor, @backgroundImage:'../icons/cross.svg', @cursor:false, @focus:true);
   }
   .inputGroup.is-recommended &,
   &.is-recommended {
-    color: darken(@inputHintColor, 15%);
-    border-color: @inputHintColor;
-    background-color: lighten(@inputHintColor, 40%);
-    background-image: url(../icons/pen.svg);
-    background-position: 95% center;
-    &:focus {
-      color: contrast(@inputColor, #222222, #f4f4f4);
-      background-color: @inputColor;
-      border-color: darken(@inputColor, 10%);
-      background-position: 150% center;
-    }
+    .inputValidation(@inputColor, @inputHintColor, @backgroundImage:'../icons/pen.svg', @cursor:false, @focus:true);
   }
   .inputGroup.is-valid  &,
   &.is-valid,
+  &[aria-invalid="false"],
   &:valid:not(:placeholder-shown):not([type="password"]) {
-    color: darken(@inputValidColor, 15%);
-    border-color: @inputValidColor;
-    background-color: @inputValidColor;
-    background-image: url(../icons/check.svg);
-    background-position: 95% center;
-    &:focus {
-      color: contrast(@inputColor, #222222, #f4f4f4);
-      background-color: @inputColor;
-      border-color: darken(@inputColor, 10%);
-      background-position: 150% center;
-    }
+    .inputValidation(@inputColor, @inputValidColor, @backgroundImage:'../icons/check.svg', @cursor:false, @focus:true);
   }
   &.is-readonly,
   &:read-only,
   &[aria-readonly="true"]{
-    color: contrast(@inputColor, #222222, #f4f4f4);
-    cursor: default;
+    .inputValidation(@inputColor, darken(@inputColor, 50%), @cursor:auto);
     .boxShadow(0);
-    border-color: darken(@inputColor,15%);
     border-style: dashed;
     border-bottom-style: solid;
-    background-color: darken(@inputColor, 5%);
   }
   &.is-disabled,
   &:disabled,
   &[aria-disabled="true"] {
-    color: #aaaaaa;
-    cursor: not-allowed;
+    .inputValidation(@inputColor, darken(@inputColor,15%), @backgroundImage:'../icons/not-allowed.svg', @cursor:not-allowed);
     .boxShadow(0);
-    border-color: darken(@inputColor,15%);
     border-style: dashed;
-    background-color: darken(@inputColor, 5%);
-    background-image:url('../icons/not-allowed.svg');
-    background-position: 95% center;
   }
   &-vContrast {
     background-color: darken(@inputColor,5%);
@@ -227,16 +190,16 @@
     border: @defaultBorderWidth dashed darken(@inputColor,20%);
     background-color: darken(@inputColor, 5%);
   }
+  .inputGroup.is-invalid &,
+  &.is-invalid,
+  &[aria-invalid="true"],
+  &:invalid {
+    .inputValidation(@inputColor, @inputDangerColor, @focus:true);
+  }
   .inputGroup.is-valid  &,
-  &.is-valid {
-    color: darken(@inputValidColor, 15%);
-    border-color: @inputValidColor;
-    background-color: lighten(@inputValidColor, 40%);
-    &:focus {
-      color: contrast(@inputColor, #222222, #f4f4f4);
-      background-color: @inputColor;
-      border-color: darken(@inputColor, 10%);
-    }
+  &.is-valid,
+  &:valid {
+    .inputValidation(@inputColor, @inputValidColor, @focus:true);
   }
   &-vSmall {
     font-size: .8em;
