@@ -3,7 +3,7 @@
 
 // Prefixes and objects:
 // .btn-
-// .btnGroup
+// .btn-group
 
   .btn(
     @btnBackgroundColor:#e7e5e5,
@@ -65,20 +65,20 @@
         margin-right: .25em;
       }
     }
-    &-vSmall {
+    &--small {
       font-size: .8em;
       & > .icon:first-child { margin-right: .15em; }
     }
-    &-vBig {
+    &--large {
       font-size: 1.2em;
     }
-    &-vBlock {
+    &--block {
       margin: @btnMargin 0;
       width: 100%;
       text-align: center;
     }
 
-    &Group {
+    &-group {
       vertical-align: middle;
       display: inline-flex;
       .btn {
@@ -156,7 +156,7 @@
         background-color: lighten(desaturate(@backgroundColor, 20%), 30%);
       }
     }
-    .btnGroup & {
+    .btn-group & {
       .zIndex('content', 1); // border colors are important here.
     }
   }
@@ -194,7 +194,7 @@
         .boxShadow(0);
       }
     }
-    .btnGroup & {
+    .btn-group & {
       .zIndex('content', 1); // border colors are important here.
     }
   }

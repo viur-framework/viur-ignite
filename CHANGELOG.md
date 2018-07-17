@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- version syntax from "-v" to "--" (&-vSmall is now &--small)
+
+### Removed
+- camelCase in class names (btnGroup, optionGroup, -vSmall etc.)
+
 ## [3.0.00] - 2018-05-17
 After more than a year of development Ignite 3.0.00 now serves as a less foundation library.
 Put it into any project for a solid boiler plate.

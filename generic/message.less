@@ -6,6 +6,15 @@
 // .alert-
 
 /* Messages */
+
+/* Example:
+<div class="msg">
+  <h2 class="msg-headline">A headline</h2>
+  <p>A message.</p>
+  <span class="msg-close">&times;</span>
+</div>
+ */
+
 .msg(
   @msgColor: @hintColor,
   @msgBorderWidth: @defaultBorderWidth,
@@ -62,14 +71,14 @@
     }
   }
 
-  &-vFull {
+  &--full {
     margin-top: -1px;
     border-width: @defaultBorderWidth 0;
     border-radius: 0;
   }
 
   // Contain the messages
-  &Group {
+  &-group {
     margin-bottom: @bottomSpace;
   }
 }
@@ -132,7 +141,7 @@
   }
 
   // Contain the messages
-  &Group {
+  &-group {
     position: fixed;
     top: 0;
     right: 0;
