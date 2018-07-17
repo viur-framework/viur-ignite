@@ -11,8 +11,8 @@
     @btnMargin: @defaultMargin,
     @btnBorderWidth: @defaultBorderWidth,
     @btnBorderRadius: @defaultBorderRadius,
-    @btnShadow: 1,
-    @btnShadowHover: 2,
+    @btnShadow: @defaultShadow,
+    @btnShadowHover: @defaultShadow+1,
     @btnShadowColor: @defaultShadowColor) when (@button=true) {
     .basicInput(@btnPadding, @btnMargin, @btnBorderRadius);
     color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
