@@ -14,10 +14,9 @@
     @btnShadow: 1,
     @btnShadowHover: 2,
     @btnShadowColor: @defaultShadowColor) when (@button=true) {
-    .basicInput(@btnPadding, @btnMargin, @btnBorderRadius);
+    .basicInput(@btnPadding, @btnMargin, @btnBorderRadius, @btnBorderWidth, darken(@btnBackgroundColor, 10%));
     color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
     background-color: @btnBackgroundColor;
-    border: @btnBorderWidth solid darken(@btnBackgroundColor, 10%);
     .boxShadow(@btnShadow, @btnShadowColor);
     cursor: pointer;
     user-select: none;
