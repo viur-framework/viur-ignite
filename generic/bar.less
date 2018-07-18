@@ -5,11 +5,9 @@
 
 // Prefixes and objects:
 // .bar-
-// .barGroup-
+// .bar-group-
 
 & when (@bar=true) {
-  @barBackgroundColor: #fff;
-
   .bar {
     display: block;
     text-align: left;
@@ -26,45 +24,13 @@
       .mq-min(@breakMedium, { display: flex; });
     }
   }
-  .barGroup {
+  .bar-group {
     display: block;
-    .btn:not(:last-child),
-    .bar-item:not(:last-child),
-    .bar-link:not(:last-child) { margin-bottom: 10px; }
-    .btn,
-    .bar-item,
-    .bar-link { display: block; align-items: center; }
-    &-vNav {
-      & .bar-item {
-        padding: 10px;
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 0;
-      }
-      & .bar-link {
-        padding: 10px;
-        border-bottom: 1px solid @mainColor;
-        margin-bottom: 0;
-      }
-      & .bar-link:hover {
-        background-color: darken(@barBackgroundColor, 2%);
-        border-bottom: 1px solid lighten(@mainColor, 10%);
-      }
-      .mq-min(@breakMedium, {
-        align-items: stretch;
-        & .bar-item {
-          display: flex;
-          align-items: center;
-          margin-right: 0;
-        }
-        & .bar-link {
-          justify-content: center;
-          margin-right: 0;
-        }
-      });
-    }
-    &-vLeft { justify-content: flex-start; }
-    &-vCenter { justify-content: center; margin-left: auto; margin-right: auto; }
-    &-vRight {
+    & > *:not(:last-child) { margin-bottom: 10px; }
+    & > * { display: block; align-items: center; }
+    &--left { justify-content: flex-start; }
+    &--center { justify-content: center; margin-left: auto; margin-right: auto; }
+    &--right {
       justify-content: flex-end;
       &:first-child { margin-left: auto; }
     }
@@ -72,12 +38,8 @@
       display: flex;
       align-items: center;
       margin-bottom: 0;
-      .btn,
-      .bar-item,
-      .bar-link { margin-bottom: 0 !important; };
-      .btn:not(:last-child),
-      .bar-item:not(:last-child),
-      .bar-link:not(:last-child) { margin-right: 10px; }
+      & > * { margin-bottom: 0 !important; margin-top: 0 !important; };
+      & > *:not(:last-child) { margin-right: 10px; }
     });
   }
 }

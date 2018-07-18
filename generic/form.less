@@ -5,13 +5,13 @@
 // .input
 // .label
 // .select
-// .formGroup
+// .form-group
 // .textarea
 // .switch
 // .radio
 // .check
-// .optionGroup
-// .inputGroup
+// .option-group
+// .input-group
 
 // Adjustments:
 
@@ -52,17 +52,17 @@
   background-position: 150% center;
   background-size: 15px;
   background-repeat: no-repeat;
-  .inputGroup.is-invalid &,
+  .input-group.is-invalid &,
   &.is-invalid,
   &[aria-invalid="true"],
   &:invalid:not(:placeholder-shown) {
     .inputValidation(@inputColor, @inputDangerColor, @backgroundImage:'../icons/cross.svg', @cursor:false, @focus:true);
   }
-  .inputGroup.is-recommended &,
+  .input-group.is-recommended &,
   &.is-recommended {
     .inputValidation(@inputColor, @inputHintColor, @backgroundImage:'../icons/pen.svg', @cursor:false, @focus:true);
   }
-  .inputGroup.is-valid  &,
+  .input-group.is-valid  &,
   &.is-valid,
   &[aria-invalid="false"],
   &:valid:not(:placeholder-shown):not([type="password"]) {
@@ -83,18 +83,18 @@
     .boxShadow(0);
     border-style: dashed;
   }
-  &-vContrast {
+  &--contrast {
     background-color: darken(@inputColor,5%);
     border: @defaultBorderWidth solid darken(@inputColor,15%);
     color:contrast(darken(@inputColor,5%), #000000, #ffffff);
   }
 
-  &-vSmall {
+  &--small {
     font-size: .8em;
     font-weight: 400;
   }
 
-  &-vLarge {
+  &--large {
     font-size: 1.25em;
   }
 }
@@ -115,29 +115,29 @@
   background-color: darken(@inputColor,2%);
   color:contrast(darken(@inputColor,2%), #000000, #ffffff);
   min-width: 190px;
-  .inputGroup.is-required &,
+  .input-group.is-required &,
   &.is-required {
     border-left: @defaultBorderWidth+1px solid @inputRequiredColor;
     color: @inputRequiredColor;
     font-weight: 600;
   }
-  .inputGroup.is-required &:after,
+  .input-group.is-required &:after,
   &.is-required:after {
     content:'\00a0*';
   }
-  .inputGroup.is-invalid &,
+  .input-group.is-invalid &,
   &.is-invalid {
     color: darken(@inputDangerColor, 25%);
     border-color: @inputDangerColor;
     background-color: lighten(@inputDangerColor, 20%);
   }
-  .inputGroup.is-recommended &,
+  .input-group.is-recommended &,
   &.is-recommended {
     color: darken(@inputHintColor, 25%);
     border-color: @inputHintColor;
     background-color: lighten(@inputHintColor, 20%);
   }
-  .inputGroup.is-valid  &,
+  .input-group.is-valid  &,
   &.is-valid {
     color: darken(@inputValidColor, 25%);
     border-color: @inputValidColor;
@@ -152,13 +152,13 @@
     background-color: darken(@inputColor, 5%);
   }
   .icon {margin: 0 .25em 0 -.1em;}
-  &-vSmall {
+  &--small {
     font-size: .8em;
     font-weight: 400;
     min-width: 90px;
   }
 
-  &-vBlock {
+  &--block {
     width: 100%;
     margin: 0;
   }
@@ -190,18 +190,18 @@
     border: @defaultBorderWidth dashed darken(@inputColor,20%);
     background-color: darken(@inputColor, 5%);
   }
-  .inputGroup.is-invalid &,
+  .input-group.is-invalid &,
   &.is-invalid,
   &[aria-invalid="true"],
   &:invalid {
     .inputValidation(@inputColor, @inputDangerColor, @focus:true);
   }
-  .inputGroup.is-valid  &,
+  .input-group.is-valid  &,
   &.is-valid,
   &:valid {
     .inputValidation(@inputColor, @inputValidColor, @focus:true);
   }
-  &-vSmall {
+  &--small {
     font-size: .8em;
     font-weight: 400;
     background-size: 10px;
@@ -224,7 +224,7 @@
   background-size: 15px;
   background-repeat: no-repeat;
   text-align: left;
-  &-vBlock {
+  &--block {
     width:100%;
     margin: 0;
   }
@@ -333,7 +333,7 @@
 
 /* Option group */
 // Group radio buttons or checkboxes together for multi-selection lists.
-.optionGroup {
+.option-group {
   display: flex;
   flex-direction: column;
   & .radio,
@@ -361,7 +361,7 @@
       padding-right: 1.75em;
     }
   }
-  &-vSelectionList {
+  &--selection-list {
     max-height: 150px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -392,8 +392,8 @@
 
 
 .input,
-.label + .input-vBlock,
-.label + .textarea-vBlock,
+.label + .input--block,
+.label + .textarea--block,
 .select,
 .switch,
 .radio {
@@ -406,7 +406,7 @@
 
 /* Input group */
 // Group buttons, labels and inputs together.
-.inputGroup {
+.input-group {
   display: flex;
   flex-direction:column;
   margin-bottom: @bottomSpace;
@@ -417,7 +417,7 @@
   & .textarea,
   & > .radio,
   & > .check,
-  & .optionGroup {
+  & .option-group {
     width: 100%;
     margin: 0;
     position: relative;
@@ -444,7 +444,7 @@
     }
   }
   .mq-min(@breakSmall, {
-    &:not(.inputGroup-vBlock) {
+    &:not(.input-group--block) {
       flex-flow: row;
       & .label {
         width: auto;
@@ -479,7 +479,7 @@
       & .textarea,
       & > .radio,
       & > .check,
-      & .optionGroup {
+      & .option-group {
         width: auto;
         margin: @inputMargin 0;
         .boxShadow(@inputShadow,@inputShadowColor);
@@ -501,7 +501,7 @@
 
 /* Form group */
 // Use formGroups to separate different inputs or inputGroups.
-.formGroup {
+.form-group {
   margin-bottom: @bottomSpace;
 }
 }

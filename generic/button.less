@@ -3,7 +3,7 @@
 
 // Prefixes and objects:
 // .btn-
-// .btnGroup
+// .btn-group
 
   .btn(
     @btnBackgroundColor:#e7e5e5,
@@ -11,8 +11,8 @@
     @btnMargin: @defaultMargin,
     @btnBorderWidth: @defaultBorderWidth,
     @btnBorderRadius: @defaultBorderRadius,
-    @btnShadow: 1,
-    @btnShadowHover: 2,
+    @btnShadow: @defaultShadow,
+    @btnShadowHover: @defaultShadow+1,
     @btnShadowColor: @defaultShadowColor) when (@button=true) {
     .basicInput(@btnPadding, @btnMargin, @btnBorderRadius, @btnBorderWidth, darken(@btnBackgroundColor, 10%));
     color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
@@ -64,20 +64,20 @@
         margin-right: .25em;
       }
     }
-    &-vSmall {
+    &--small {
       font-size: .8em;
       & > .icon:first-child { margin-right: .15em; }
     }
-    &-vBig {
+    &--large {
       font-size: 1.2em;
     }
-    &-vBlock {
+    &--block {
       margin: @btnMargin 0;
       width: 100%;
       text-align: center;
     }
 
-    &Group {
+    &-group {
       vertical-align: middle;
       display: inline-flex;
       .btn {
@@ -155,7 +155,7 @@
         background-color: lighten(desaturate(@backgroundColor, 20%), 30%);
       }
     }
-    .btnGroup & {
+    .btn-group & {
       .zIndex('content', 1); // border colors are important here.
     }
   }
@@ -193,7 +193,7 @@
         .boxShadow(0);
       }
     }
-    .btnGroup & {
+    .btn-group & {
       .zIndex('content', 1); // border colors are important here.
     }
   }
