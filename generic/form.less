@@ -26,8 +26,8 @@
 @inputHintColor: @hintColor;
 @inputRequiredColor: @mainColor;
 
-@inputShadow: 1;
-@inputShadowHover: 2;
+@inputShadow: @defaultShadow;
+@inputShadowHover: @defaultShadowHover;
 @inputShadowColor: @defaultShadowColor;
 
 
@@ -52,21 +52,24 @@
   background-position: 150% center;
   background-size: 15px;
   background-repeat: no-repeat;
-  .input-group.is-invalid &,
-  &.is-invalid,
-  &[aria-invalid="true"],
-  &:invalid:not(:placeholder-shown) {
-    .inputValidation(@inputColor, @inputDangerColor, @backgroundImage:'../icons/cross.svg', @cursor:false, @focus:true);
-  }
-  .input-group.is-recommended &,
-  &.is-recommended {
-    .inputValidation(@inputColor, @inputHintColor, @backgroundImage:'../icons/pen.svg', @cursor:false, @focus:true);
-  }
-  .input-group.is-valid  &,
-  &.is-valid,
-  &[aria-invalid="false"],
-  &:valid:not(:placeholder-shown):not([type="password"]) {
-    .inputValidation(@inputColor, @inputValidColor, @backgroundImage:'../icons/check.svg', @cursor:false, @focus:true);
+  .input-group--validation &,
+  &--validation {
+    .input-group.is-invalid &,
+    &.is-invalid,
+    &[aria-invalid="true"],
+    &:invalid:not(:placeholder-shown) {
+      .inputValidation(@inputColor, @inputDangerColor, @backgroundImage:'../icons/cross.svg', @cursor:false, @focus:true);
+    }
+    .input-group.is-recommended &,
+    &.is-recommended {
+      .inputValidation(@inputColor, @inputHintColor, @backgroundImage:'../icons/pen.svg', @cursor:false, @focus:true);
+    }
+    .input-group.is-valid &,
+    &.is-valid,
+    &[aria-invalid="false"],
+    &:valid:not(:placeholder-shown):not([type="password"]) {
+      .inputValidation(@inputColor, @inputValidColor, @backgroundImage:'../icons/check.svg', @cursor:false, @focus:true);
+    }
   }
   &.is-readonly,
   &:read-only,
@@ -119,29 +122,32 @@
   &.is-required {
     border-left: @defaultBorderWidth+1px solid @inputRequiredColor;
     color: @inputRequiredColor;
-    font-weight: 600;
+    font-weight: 700;
   }
   .input-group.is-required &:after,
   &.is-required:after {
-    content:'\00a0*';
+    content: '\00a0*';
   }
-  .input-group.is-invalid &,
-  &.is-invalid {
-    color: darken(@inputDangerColor, 25%);
-    border-color: @inputDangerColor;
-    background-color: lighten(@inputDangerColor, 20%);
-  }
-  .input-group.is-recommended &,
-  &.is-recommended {
-    color: darken(@inputHintColor, 25%);
-    border-color: @inputHintColor;
-    background-color: lighten(@inputHintColor, 20%);
-  }
-  .input-group.is-valid  &,
-  &.is-valid {
-    color: darken(@inputValidColor, 25%);
-    border-color: @inputValidColor;
-    background-color: lighten(@inputValidColor, 20%);
+  .input-group--validation &,
+  &--validation {
+    .input-group.is-invalid &,
+    &.is-invalid {
+      color: darken(@inputDangerColor, 25%);
+      border-color: @inputDangerColor;
+      background-color: lighten(@inputDangerColor, 20%);
+    }
+    .input-group.is-recommended &,
+    &.is-recommended {
+      color: darken(@inputHintColor, 25%);
+      border-color: @inputHintColor;
+      background-color: lighten(@inputHintColor, 20%);
+    }
+    .input-group.is-valid &,
+    &.is-valid {
+      color: darken(@inputValidColor, 25%);
+      border-color: @inputValidColor;
+      background-color: lighten(@inputValidColor, 20%);
+    }
   }
   &.is-disabled,
   &:disabled {
@@ -190,16 +196,19 @@
     border: @defaultBorderWidth dashed darken(@inputColor,20%);
     background-color: darken(@inputColor, 5%);
   }
-  .input-group.is-invalid &,
-  &.is-invalid,
-  &[aria-invalid="true"],
-  &:invalid {
-    .inputValidation(@inputColor, @inputDangerColor, @focus:true);
-  }
-  .input-group.is-valid  &,
-  &.is-valid,
-  &:valid {
-    .inputValidation(@inputColor, @inputValidColor, @focus:true);
+  .input-group--validation &,
+  &--validation {
+    .input-group.is-invalid &,
+    &.is-invalid,
+    &[aria-invalid="true"],
+    &:invalid {
+      .inputValidation(@inputColor, @inputDangerColor, @focus:true);
+    }
+    .input-group.is-valid  &,
+    &.is-valid,
+    &:valid {
+      .inputValidation(@inputColor, @inputValidColor, @focus:true);
+    }
   }
   &--small {
     font-size: .8em;
@@ -342,7 +351,7 @@
     margin: 0;
     position: relative;
     border-width: 0 @defaultBorderWidth;
-    font-weight: 200;
+    font-weight: 300;
     font-size: .75em;
     &:first-child {
       border-width: @defaultBorderWidth;
@@ -500,7 +509,7 @@
 }
 
 /* Form group */
-// Use formGroups to separate different inputs or inputGroups.
+// Use formGroups to separate different inputs or input-groups.
 .form-group {
   margin-bottom: @bottomSpace;
 }
