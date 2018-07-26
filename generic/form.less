@@ -432,7 +432,8 @@
     position: relative;
     .boxShadow(0);
   }
-  & .btn {
+  & .btn,
+  & .select {
     .mq-max(@breakSmall, {margin-top: -1px;});
     .mq-min(@breakSmall, {
       margin-left: -1px;
@@ -457,27 +458,16 @@
       flex-flow: row;
       & .label {
         width: auto;
-        margin: @inputMargin 0;
+        margin-top: @inputMargin;
+        margin-bottom: @inputMargin;
         float: left;
         max-width: 25vw;
         .boxShadow(@inputShadow,@inputShadowColor);
-        &:not(:first-child):not(:last-child) {
-          border-radius: 0;
-        }
-        &:first-child:not(:last-child) {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-        &:last-child:not(:first-child) {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
+        border-width: @defaultBorderWidth;
         &:first-child {
-          border-width: @defaultBorderWidth;
           border-right-width:0;
         }
         &:last-child {
-          border-width: @defaultBorderWidth;
           border-left-width: 0;
         }
       }
@@ -490,19 +480,17 @@
       & > .check,
       & .option-group {
         width: auto;
-        margin: @inputMargin 0;
+        margin-top: @inputMargin;
+        margin-bottom: @inputMargin;
         .boxShadow(@inputShadow,@inputShadowColor);
-        &:not(:first-child):not(:last-child) {
-          border-radius: 0;
-        }
-        &:first-child:not(:last-child) {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-        &:last-child:not(:first-child) {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        }
+      }
+      & *:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      & *:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
       }
     };
   });

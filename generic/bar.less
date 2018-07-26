@@ -11,35 +11,37 @@
   .bar {
     display: block;
     text-align: left;
-    .mq-min(@breakMedium, {
+    .mq-min(@breakSmall, {
       font-size: .9rem;
       align-items: stretch;
       display: flex;
+      flex-wrap: wrap;
       min-height: 35px;
       position: relative;
       text-align: center;
       justify-content: space-between;
     });
     &-link {
-      .mq-min(@breakMedium, { display: flex; });
+      .mq-min(@breakSmall, { display: flex; });
     }
   }
   .bar-group {
     display: block;
-    & > *:not(:last-child) { margin-bottom: 10px; }
-    & > * { display: block; align-items: center; }
-    &--left { justify-content: flex-start; }
-    &--center { justify-content: center; margin-left: auto; margin-right: auto; }
+    & > * {display: block; align-items: center;}
+    & > * + * {margin-top: 10px;}
+    &--left {justify-content: flex-start;}
+    &--center {justify-content: center; margin-left: auto; margin-right: auto;}
     &--right {
       justify-content: flex-end;
-      &:first-child { margin-left: auto; }
+      &:first-child {margin-left: auto;}
     }
-    .mq-min(@breakMedium, {
+    .mq-min(@breakSmall, {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       margin-bottom: 0;
-      & > * { margin-bottom: 0 !important; margin-top: 0 !important; };
-      & > *:not(:last-child) { margin-right: 10px; }
+      & > * {margin-bottom: 0 !important; margin-top: 0 !important;};
+      & > * + * {margin-left: 10px;}
     });
   }
 }
