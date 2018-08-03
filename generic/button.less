@@ -51,9 +51,6 @@
   &.is-loading,
   &[aria-busy=true] {
     cursor: progress;
-    & .single-spinner {
-      margin-right: 1em;
-    }
     &:hover {
       .boxShadow(@btnShadow, @btnShadowColor);
     }
@@ -101,7 +98,7 @@
       &:first-of-type {
         margin-left: @btnMargin;
       }
-      &.btn:last-of-type {
+      &:last-of-type {
         margin-right: @btnMargin;
       }
       // Bring any button into forefront for proper borders given negative margin below

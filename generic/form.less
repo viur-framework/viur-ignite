@@ -418,7 +418,7 @@
 .input-group {
   display: flex;
   flex-direction:column;
-  margin-bottom: @bottomSpace;
+  :not(:last-child) {margin-bottom: @bottomSpace;}
   & .select,
   & .input,
   & .btn,
