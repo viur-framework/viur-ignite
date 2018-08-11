@@ -28,18 +28,19 @@
   .bar-group {
     display: block;
     & > * {display: block; align-items: center;}
+    * + &,
     & > * + * {margin-top: 10px;}
-    &--left {justify-content: flex-start;}
-    &--center {justify-content: center; margin-left: auto; margin-right: auto;}
-    &--right {
-      justify-content: flex-end;
-      &:first-child {margin-left: auto;}
-    }
     .mq-min(@breakSmall, {
+      &--left {justify-content: flex-start;}
+      &--center {justify-content: center; margin-left: auto; margin-right: auto;}
+      &--right {
+        justify-content: flex-end;
+        &:first-child {margin-left: auto;}
+      }
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      margin-bottom: 0;
+      & {margin-top: 0;}
       & > * {margin-bottom: 0 !important; margin-top: 0 !important;};
       & > * + * {margin-left: 10px;}
     });

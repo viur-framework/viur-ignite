@@ -74,48 +74,6 @@
     width: 100%;
     text-align: center;
   }
-
-  &-group {
-    vertical-align: middle;
-    display: inline-flex;
-    .btn {
-      margin-right: 0px;
-      margin-left: -1px;
-      float: left;
-      position: relative;
-      .zIndex('content', 0);
-      &:not(:first-child):not(:last-child) {
-        border-radius: 0;
-      }
-      &:first-child:not(:last-child) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-      &:last-child:not(:first-child) {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-      &:first-of-type {
-        margin-left: @btnMargin;
-      }
-      &:last-of-type {
-        margin-right: @btnMargin;
-      }
-      // Bring any button into forefront for proper borders given negative margin below
-      &:hover,
-      &:active,
-      &.is-selected {
-        .zIndex('content', 2);
-      }
-      &.is-disabled,
-      &.is-disabled:hover {
-        .zIndex('content', 0); // stay down!
-      }
-      &:focus {
-        .zIndex('content', 3);
-      }
-    }
-  }
 }
 
 .colorizeBtn(
@@ -152,7 +110,7 @@
       background-color: lighten(desaturate(@btnBackgroundColor, 20%), 30%);
     }
   }
-  .btn-group & {
+  .input-group & {
     .zIndex('content', 1); // border colors are important here.
   }
 }
@@ -190,7 +148,7 @@
       .boxShadow(0);
     }
   }
-  .btn-group & {
+  .input-group & {
     .zIndex('content', 1); // border colors are important here.
   }
 }

@@ -52,6 +52,7 @@
   background-position: 150% center;
   background-size: 15px;
   background-repeat: no-repeat;
+  .form-group--validation &,
   .input-group--validation &,
   &--validation {
     .input-group.is-invalid &,
@@ -128,6 +129,7 @@
   &.is-required:after {
     content: '\00a0*';
   }
+  .form-group--validation &,
   .input-group--validation &,
   &--validation {
     .input-group.is-invalid &,
@@ -196,6 +198,7 @@
     border: @defaultBorderWidth dashed darken(@inputColor,20%);
     background-color: darken(@inputColor, 5%);
   }
+  .form-group--validation &,
   .input-group--validation &,
   &--validation {
     .input-group.is-invalid &,
@@ -418,7 +421,7 @@
 .input-group {
   display: flex;
   flex-direction:column;
-  :not(:last-child) {margin-bottom: @bottomSpace;}
+  &:not(:last-child) {margin-bottom: @bottomSpace;}
   & .select,
   & .input,
   & .btn,
@@ -427,18 +430,25 @@
   & > .radio,
   & > .check,
   & .option-group {
+    .zIndex('content', 0);
     width: 100%;
     margin: 0;
     position: relative;
     .boxShadow(0);
-  }
-  & .btn,
-  & .select {
     .mq-max(@breakSmall, {margin-top: -1px;});
-    .mq-min(@breakSmall, {
-      margin-left: -1px;
-      max-width: 25vw;
-    });
+    // Bring any button into forefront for proper borders given negative margin below
+    &:hover,
+    &:active,
+    &.is-selected {
+      .zIndex('content', 2);
+    }
+    &:focus {
+      .zIndex('content', 3);
+    }
+    &.is-disabled,
+    &.is-disabled:hover {
+      .zIndex('content', 0)!important; // stay down!
+    }
   }
   & .label {
     border-width: 0 @defaultBorderWidth;
@@ -453,16 +463,20 @@
       border-top-width: 0;
     }
   }
+  .mq-max(@breakSmall, {
+    & *:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    & *:not(:first-child) {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+  });
   .mq-min(@breakSmall, {
     &:not(.input-group--block) {
       flex-flow: row;
       & .label {
-        width: auto;
-        margin-top: @inputMargin;
-        margin-bottom: @inputMargin;
-        float: left;
-        max-width: 25vw;
-        .boxShadow(@inputShadow,@inputShadowColor);
         border-width: @defaultBorderWidth;
         &:first-child {
           border-right-width:0;
@@ -471,6 +485,7 @@
           border-left-width: 0;
         }
       }
+      & .label,
       & .select,
       & .input,
       & .btn,
@@ -479,6 +494,8 @@
       & > .radio,
       & > .check,
       & .option-group {
+        margin-left: -1px;
+        max-width: 25vw;
         width: auto;
         margin-top: @inputMargin;
         margin-bottom: @inputMargin;
