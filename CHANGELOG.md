@@ -1,15 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
-
-### Changed
-- version syntax from "-v" to "--" (&-vSmall is now &--small)
-
-### Removed
-- camelCase in class names (btnGroup, optionGroup, -vSmall etc.)
-
-## [3.0.00] - 2018-05-17
+## [3.0.00] - 2018-09-24
 After more than a year of development Ignite 3.0.00 now serves as a less foundation library.
 Put it into any project for a solid boiler plate.
 Functions and output file size have been reduced to the bare minimum.
@@ -26,11 +18,13 @@ You have to opt-in and initialize functions to use them.
 - moved utility functions to the corresponding mixin less files (e.g. .shd() to shadow.less) 
 - moved .basicInput() to its own less file
 - more undocumented changes
+- version syntax from "-v" to "--" (&-vSmall is now &--small)
 
 ### Removed
 - grid.less has been removed, please use display: grid;  
 - util.less has been removed
 - cleaned up some obsolete vendor prefixes
+- camelCase in class names (btnGroup, optionGroup, -vSmall etc.)
 
 ## [2.0.00] - 2016-12-19
 
@@ -123,10 +117,11 @@ Moreover flex layout is no longer the exception but the norm.
 - Changelog started here
 
 
-[Unreleased]: https://github.com/viur-ignite/viur-ignite-css/compare/2.0.00...master
-[2.0.00]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.24...2.0.00
-[1.0.24]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.23...1.0.24
-[1.0.23]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.22...1.0.23
-[1.0.22]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.21...1.0.22
-[1.0.21]: https://github.com/viur-ignite/viur-ignite-css/compare/1.0.20...1.0.21
-[1.0.20]: https://github.com/viur-ignite/viur-ignite-css/compare/02a8706fb892b091bfa913d3194736a5d5a1ef4a...1.0.20
+[Unreleased]: https://github.com/viur-framework/ignite/compare/3.0.00...develop
+[3.0.00]: https://github.com/viur-framework/ignite/compare/2.0.00...3.0.00
+[2.0.00]: https://github.com/viur-framework/ignite/compare/1.0.24...2.0.00
+[1.0.24]: https://github.com/viur-framework/ignite/compare/1.0.23...1.0.24
+[1.0.23]: https://github.com/viur-framework/ignite/compare/1.0.22...1.0.23
+[1.0.22]: https://github.com/viur-framework/ignite/compare/1.0.21...1.0.22
+[1.0.21]: https://github.com/viur-framework/ignite/compare/1.0.20...1.0.21
+[1.0.20]: https://github.com/viur-framework/ignite/compare/02a8706fb892b091bfa913d3194736a5d5a1ef4a...1.0.20
