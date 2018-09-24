@@ -12,5 +12,4 @@ before_script:
   - npm install -g gulp-cli
 
 script:
-  - npm install
   - gulp

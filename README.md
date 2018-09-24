@@ -1,5 +1,5 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE)
-
+[![Build Status](https://travis-ci.org/viur-framework/ignite.svg?branch=release%2F3.0.00)](https://travis-ci.org/viur-framework/ignite)
 
 # Ignite
 >The Ignite Framework is the first attempt in building a sturdy foundation for ViUR products and Mausbrand projects.<br>This CSS toolkit is the very core of ViUR Ignite. It is built upon the principles of many CSS guides and frameworks.
@@ -30,9 +30,12 @@ Thanks guys!
 * Ignite is JavaScript free as most projects use their own JS implementation (We are stil working on our own JS lib: ViUR Ignite JS).
 
 ## Install
+Install global and local dependencies with
 ```
-$ npm install
+$ npm run setup
 ```
+probably you have to run this as sudo 
+
 
 ## Usage
 edit the style.less and compile the css with
