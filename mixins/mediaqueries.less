@@ -24,7 +24,7 @@
 }
 
 .mq-max(@max, @ruleset) {
-  @media (max-width: (@max - 1)) {
+  @media (max-width: (@max - .05)) {
     @ruleset();
   }
 }
@@ -38,7 +38,7 @@
 }
 
 .mq-max-height(@max, @ruleset) {
-  @media (max-height: (@max - 1)) {
+  @media (max-height: (@max - .05)) {
     @ruleset();
   }
 }
