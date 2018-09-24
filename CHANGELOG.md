@@ -26,7 +26,7 @@ You have to opt-in and initialize functions to use them.
 - cleaned up some obsolete vendor prefixes
 - camelCase in class names (btnGroup, optionGroup, -vSmall etc.)
 
-## [2.0.00] - 2016-12-19
+## 2.0.00 - 2016-12-19
 
 In this major release ViUR Ignite CSS starts using the mobile first paradigm.
 
@@ -37,7 +37,7 @@ The gulp task merges all media queries to the end of the compiled css file.
 
 Moreover flex layout is no longer the exception but the norm.
 
-## 1.0.24 - 2016-08-16
+## [1.0.24] - 2016-08-16
 ### Added
 - menu variation .menu-vRow
 - single element spinner: .single-spinner
