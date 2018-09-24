@@ -1,9 +1,11 @@
 // Project data
+
+var srcpaths = {
+  less: './**/*.less',
+};
+
 var destpaths = {
-	css: './css',
-	webfonts: './webfonts',
-	images: './images',
-	icons: './icons'
+	css: './css'
 };
 
 // Variables and requirements
@@ -12,6 +14,7 @@ const rename = require('gulp-rename');
 
 const less = require('gulp-less');
 const path = require('path');
+const del = require('del');
 
 const postcss = require('gulp-postcss');
 const zindex = require('postcss-zindex');
@@ -21,6 +24,13 @@ const nocomments = require('postcss-discard-comments');
 const nano = require('gulp-cssnano');
 const jmq = require('gulp-join-media-queries');
 const stylefmt = require('gulp-stylefmt');
+
+// clean destination folder: remove css files
+gulp.task('clean', function(){
+	return del([
+			destpaths.css + '/**/*.css',
+		], {force: true});
+});
 
 // compilation and postproduction of LESS to CSS
 gulp.task('css', function () {
@@ -51,7 +61,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('watch', function () {
-	gulp.watch(['./*/*.less','ignite.less'], ['css']);
+	gulp.watch([srcpaths.less], gulp.series('css'));
 });
 
-gulp.task('default', ['css']);
+gulp.task('default', gulp.series('css'));
