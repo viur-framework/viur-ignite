@@ -37,7 +37,7 @@ The gulp task merges all media queries to the end of the compiled css file.
 
 Moreover flex layout is no longer the exception but the norm.
 
-## [1.0.24] - 2016-08-16
+## 1.0.24 - 2016-08-16
 ### Added
 - menu variation .menu-vRow
 - single element spinner: .single-spinner
@@ -118,8 +118,7 @@ Moreover flex layout is no longer the exception but the norm.
 
 
 [Unreleased]: https://github.com/viur-framework/ignite/compare/3.0.00...develop
-[3.0.00]: https://github.com/viur-framework/ignite/compare/2.0.00...3.0.00
-[2.0.00]: https://github.com/viur-framework/ignite/compare/1.0.24...2.0.00
+[3.0.00]: https://github.com/viur-framework/ignite/compare/1.0.24...3.0.00
 [1.0.24]: https://github.com/viur-framework/ignite/compare/1.0.23...1.0.24
 [1.0.23]: https://github.com/viur-framework/ignite/compare/1.0.22...1.0.23
 [1.0.22]: https://github.com/viur-framework/ignite/compare/1.0.21...1.0.22
