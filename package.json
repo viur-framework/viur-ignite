@@ -1,6 +1,6 @@
 {
   "name": "viur-ignite",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Ignite - a less framework",
   "scripts": {
     "setup": "npm install gulp -g && npm i -g gulp-cli && npm install",

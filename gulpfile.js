@@ -1,5 +1,6 @@
-// Project data
+/* IGNITE GULPFILE */
 
+// Project data
 var srcpaths = {
   less: './**/*.less',
 };
@@ -25,10 +26,10 @@ const nano = require('gulp-cssnano');
 const jmq = require('gulp-join-media-queries');
 const stylefmt = require('gulp-stylefmt');
 
-// clean destination folder: remove css files
-gulp.task('clean', function(){
+// clean destination folder: clean css folder
+gulp.task('clean', function () {
 	return del([
-			destpaths.css + '/**/*.css',
+			destpaths.css + '/**/*',
 		], {force: true});
 });
 
@@ -41,27 +42,27 @@ gulp.task('css', function () {
 	];
 
 	return gulp.src('ignite.less')
-	.pipe(less({
-		paths: [ path.join(__dirname, 'less', 'includes') ]
-	})) // compile less to css
-	.pipe(autoprefixer({
-		browsers: ['last 2 versions'],
-		cascade: false
-	})) // add vendor prefixes
-	.pipe(postcss(processors)) // clean up css
-	.pipe(jmq({
-		log: true
-	}))
-	.pipe(stylefmt()) // syntax formatting
-	.pipe(rename('style.css'))
-	.pipe(gulp.dest(destpaths.css)) // save cleaned version
-	.pipe(nano()) // minify css
-	.pipe(rename('style.min.css'))
-	.pipe(gulp.dest(destpaths.css)); // save minified version
+		.pipe(less({
+			paths: [ path.join(__dirname, 'less', 'includes') ]
+		})) // compile less to css
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		})) // add vendor prefixes
+		.pipe(postcss(processors)) // clean up css
+		.pipe(jmq({
+			log: true
+		}))
+		.pipe(stylefmt()) // syntax formatting
+		.pipe(rename('style.css'))
+		.pipe(gulp.dest(destpaths.css)) // save cleaned version
+		.pipe(nano()) // minify css
+		.pipe(rename('style.min.css'))
+		.pipe(gulp.dest(destpaths.css)); // save minified version
 });
 
 gulp.task('watch', function () {
-	gulp.watch([srcpaths.less], gulp.series('css'));
+	gulp.watch(srcpaths.less, gulp.series('css'));
 });
 
-gulp.task('default', gulp.series('css'));
+gulp.task('default', gulp.series('clean', 'css'));

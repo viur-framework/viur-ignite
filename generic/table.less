@@ -3,9 +3,9 @@
 
 // Prefixes and objects:
 // .table-
-// .tableHead-
-// .tableBody-
-// .tableFoot-
+// .table-head-
+// .table-body-
+// .table-foot-
 
 .table(@tableHeadBackgroundColor:@mainColor, @tableRowBackgroundColor:#fefefe) when (@table=true) {
   table-layout: fixed;
@@ -15,29 +15,29 @@
   margin-bottom: 1.5em;
   padding: 0;
 
-  & &Body,
-  & &Body-row,
-  & &Body-cell,
-  & &Head-row,
-  & &Head-cell,
-  & &Foot,
-  & &Foot-row,
-  & &Foot-cell {
+  & &-body,
+  & &-body-row,
+  & &-body-cell,
+  & &-head-row,
+  & &-head-cell,
+  & &-foot,
+  & &-foot-row,
+  & &-foot-cell {
     display: block;
     padding: 0;
     text-align: left;
     white-space: normal;
   }
 
-  & &Head-cell,
-  & &Body-cell,
-  & &Foot-cell {
+  & &-head-cell,
+  & &-body-cell,
+  & &-foot-cell {
     padding: .5em;
     vertical-align: middle;
     text-align: right;
   }
 
-  & &Head { // hide workaround
+  & &-head { // hide workaround
     position: absolute;
     clip: rect(1px 1px 1px 1px);
     clip: rect(1px, 1px, 1px, 1px);
@@ -48,7 +48,7 @@
     overflow: hidden;
   }
 
-  & &Head-cell {
+  & &-head-cell {
     background-color: @tableHeadBackgroundColor;
     border: 1px solid darken(@tableHeadBackgroundColor, 15%);
     font-weight: 400;
@@ -56,37 +56,37 @@
     color: contrast(darken(@tableHeadBackgroundColor,15%));
   }
 
-  & &Body-row,
-  & &Foot-row {
+  & &-body-row,
+  & &-foot-row {
     border: 2px solid darken(@tableRowBackgroundColor, 15%);
     &.is-active {
       background-color: darken(@successColor, 2%);
-      & &Body-cell, & &Food-cell { color: contrast(@successColor); }
+      & &-body-cell, & &-food-cell { color: contrast(@successColor); }
     }
   }
 
-  & &Body-row {
+  & &-body-row {
     margin-bottom: 1em;
     &:last-of-type { margin-bottom: 0; }
   }
 
-  & &Foot {
+  & &-foot {
     border-top: 3px solid darken(@tableRowBackgroundColor, 40%);
     margin-top: 1em;
   }
 
-  & &Foot-row {
+  & &-foot-row {
     margin-top: 1em;
   }
 
-  & &Body-cell[scope="row"],
-  & &Foot-cell[scope="row"] {
+  & &-body-cell[scope="row"],
+  & &-foot-cell[scope="row"] {
     background-color: @successColor;
     color: contrast(@successColor);
   }
 
-  & &Body-cell[data-title]:before,
-  & &Foot-cell[data-title]:before {
+  & &-body-cell[data-title]:before,
+  & &-foot-cell[data-title]:before {
     content: attr(data-title);
     float: left;
     font-size: .8em;
@@ -94,35 +94,35 @@
   }
 
   .mq-min(@breakSmall, {
-    & &Head-cell,
-    & &Body-cell,
-    & &Foot-cell {
+    & &-head-cell,
+    & &-body-cell,
+    & &-foot-cell {
       padding: .75em .5em;
     }
-    & &Body-cell,
-    & &Foot-cell {
+    & &-body-cell,
+    & &-foot-cell {
       border-bottom: 1px solid darken(@tableRowBackgroundColor, 15%);
     }
   });
   .mq-min(@breakMedium, {
-    & &Head { // show workaround
+    & &-head { // show workaround
       position: relative;
       clip: auto;
       height: auto;
       width: auto;
       overflow: auto;
     }
-    & &Body,
-    & &Foot {
+    & &-body,
+    & &-foot {
       display: table-row-group;
     }
-    & &Head-row,
-    & &Body-row,
-    & &Foot-row {
+    & &-head-row,
+    & &-body-row,
+    & &-foot-row {
       display: table-row;
     }
-    & &Body-row,
-    & &Foot-row {
+    & &-body-row,
+    & &-foot-row {
       border-width: 1px;
       &:nth-of-type(even) { background-color: darken(@tableRowBackgroundColor, 2%); }
       &:nth-of-type(odd) { background-color: darken(@tableRowBackgroundColor, 4%); }
@@ -133,15 +133,15 @@
       &:nth-of-type(even).is-active:hover { background-color: lighten(@successColor, 6%); }
       &:nth-of-type(odd).is-active:hover { background-color: lighten(@successColor, 6%); }
     }
-    & &Head-cell,
-    & &Body-cell,
-    & &Foot-cell {
+    & &-head-cell,
+    & &-body-cell,
+    & &-foot-cell {
       display: table-cell;
       padding: .5em;
       color: contrast(@tableRowBackgroundColor);
     }
-    & &Body-cell,
-    & &Foot-cell {
+    & &-body-cell,
+    & &-foot-cell {
       text-align: center;
       &[data-title]:before { content: none; }
       &[scope="row"] {
@@ -152,9 +152,9 @@
     }
   });
   .mq-min(@breakLarge, {
-    & &Head-cell,
-    & &Body-cell,
-    & &Foot-cell {
+    & &-head-cell,
+    & &-body-cell,
+    & &-foot-cell {
       padding: .75em .5em;
     }
   });
@@ -162,9 +162,9 @@
     & {
       font-size: .8rem; // 80% of body text.
     }
-    & &Head-cell,
-    & &Body-cell,
-    & &Foot-cell {
+    & &-head-cell,
+    & &-body-cell,
+    & &-foot-cell {
       padding: .75em;
     }
   });

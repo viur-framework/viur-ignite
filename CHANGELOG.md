@@ -1,7 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [3.0.1] - 2018-09-27
+
+### Changed
+- run clean script in default gulp script
+- now clean script cleans the entire css folder
+- comments to a consistent notation
+
+### Removed
+- camelCase in table class names (btnGroup, optionGroup, -vSmall etc.)
+
 ## [3.0.00] - 2018-09-24
+
 After more than a year of development Ignite 3.0.00 now serves as a less foundation library.
 Put it into any project for a solid boiler plate.
 Functions and output file size have been reduced to the bare minimum.
@@ -117,7 +128,8 @@ Moreover flex layout is no longer the exception but the norm.
 - Changelog started here
 
 
-[Unreleased]: https://github.com/viur-framework/ignite/compare/3.0.00...develop
+[Unreleased]: https://github.com/viur-framework/ignite/compare/3.0.1...develop
+[3.0.1]: https://github.com/viur-framework/ignite/compare/3.0.00...3.0.1
 [3.0.00]: https://github.com/viur-framework/ignite/compare/2.0.00...3.0.00
 [2.0.00]: https://github.com/viur-framework/ignite/compare/1.0.24...2.0.00
 [1.0.24]: https://github.com/viur-framework/ignite/compare/1.0.23...1.0.24
