@@ -517,5 +517,16 @@
 // Use formGroups to separate different inputs or input-groups.
 .form-group {
   margin-bottom: @bottomSpace;
+  &--half {
+    .mq-min(@breakMedium, {
+      column-count: 2;
+      break-inside: avoid;
+      column-fill: balance;
+      & * {
+        break-inside: avoid;
+      }
+    });
+  }
 }
+
 }
