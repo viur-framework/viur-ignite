@@ -9,6 +9,7 @@
   -moz-appearance: none;
   display: inline-flex;
   position: relative;
+  border-width: 0;
   .border-radius(@borderRadius);
   .border(@borderWidth, solid, @borderColor);
   padding: @padding @padding*3.75;
@@ -18,6 +19,6 @@
   font-weight: 300;
   line-height:1.5;
   .mq-print({
-    border:0;
+    border-width:0;
   });
 }
