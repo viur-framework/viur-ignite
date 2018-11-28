@@ -11,6 +11,7 @@
   .bar {
     display: block;
     text-align: left;
+    & > * + * {margin-top: 10px;}
     .mq-min(@breakSmall, {
       font-size: .9rem;
       align-items: stretch;
@@ -20,6 +21,9 @@
       position: relative;
       text-align: center;
       justify-content: space-between;
+      & {margin-top: 0;}
+      & > * + * {margin-left: 10px;}
+      &-item {align-self: center;}
     });
     &-link {
       .mq-min(@breakSmall, { display: flex; });
@@ -28,7 +32,6 @@
   .bar-group {
     display: block;
     & > * {display: block; align-items: center;}
-    * + &,
     & > * + * {margin-top: 10px;}
     .mq-min(@breakSmall, {
       &--left {justify-content: flex-start;}
