@@ -11,7 +11,9 @@
   .bar {
     display: block;
     text-align: left;
-    & > * + * {margin-top: 10px;}
+    .mq-max(@breakSmall, {
+      & > * + * {margin-top: 10px;}
+    });
     .mq-min(@breakSmall, {
       font-size: .9rem;
       align-items: stretch;
@@ -21,7 +23,6 @@
       position: relative;
       text-align: center;
       justify-content: space-between;
-      & {margin-top: 0;}
       & > * + * {margin-left: 10px;}
       &-item {align-self: center;}
     });
@@ -32,7 +33,9 @@
   .bar-group {
     display: block;
     & > * {display: block; align-items: center;}
-    & > * + * {margin-top: 10px;}
+    .mq-max(@breakSmall, {
+      & > * + * {margin-top: 10px;}
+    });
     .mq-min(@breakSmall, {
       &--left {justify-content: flex-start;}
       &--center {justify-content: center; margin-left: auto; margin-right: auto;}
@@ -43,7 +46,6 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      & {margin-top: 0;}
       & > * {margin-bottom: 0 !important; margin-top: 0 !important;};
       & > * + * {margin-left: 10px;}
     });
