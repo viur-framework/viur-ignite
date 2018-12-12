@@ -37,7 +37,7 @@ gulp.task('css', function () {
 	var processors = [
 		nocomments, // discard comments
 		focus, // add focus to hover-states
-		zindex // reduce z-index values
+		//zindex // reduce z-index values
 	];
 
 	return gulp.src('ignite.less')

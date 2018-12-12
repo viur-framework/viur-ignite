@@ -3,7 +3,7 @@
 
 @zIndexOrder: 'background', 'content', 'tooltip', 'foreground', 'nav', 'overlay', 'alert', 'admin', 'dev';
 
-.zIndex(@elementName, @elementOffset) {
+.zIndex(@elementName, @elementOffset:0) {
 
   .loop(@elementName, @counter) when (@counter > 0) {
     .loop(@elementName, @counter - 1);
