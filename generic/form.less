@@ -101,7 +101,7 @@
 
   &--small {
     font-size: .8em;
-    font-weight: 400;
+    font-weight: @fontWeightNormal;
   }
 
   &--large {
@@ -129,7 +129,7 @@
   &.is-required {
     border-left: @defaultBorderWidth+1px solid @inputRequiredColor;
     color: @inputRequiredColor;
-    font-weight: 700;
+    font-weight: @fontWeightBold;
   }
   .input-group.is-required &:after,
   &.is-required:after {
@@ -168,7 +168,7 @@
   .icon {margin: 0 .25em 0 -.1em;}
   &--small {
     font-size: .8em;
-    font-weight: 400;
+    font-weight: @fontWeightNormal;
     min-width: 90px;
   }
 
@@ -221,7 +221,7 @@
   }
   &--small {
     font-size: .8em;
-    font-weight: 400;
+    font-weight: @fontWeightNormal;
     background-size: 10px;
   }
 }
@@ -360,7 +360,7 @@
     margin: 0;
     position: relative;
     border-width: 0 @defaultBorderWidth;
-    font-weight: 300;
+    font-weight: @fontWeightLight;
     font-size: .75em;
     &:first-child {
       border-width: @defaultBorderWidth;
