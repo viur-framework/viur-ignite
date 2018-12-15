@@ -291,7 +291,7 @@
 }
 
 .tickbox() {
-  .basicInput;
+  .basicInput(@padding: 0;);
   background-color: darken(@inputColor, 2%);
   border: 1px solid darken(@inputColor, 12%);
   color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
@@ -301,9 +301,11 @@
   }
   &-label {
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
     outline: 0;
     cursor: pointer;
+    flex-basis: 100%;
     &:before {
       content:'';
       background: #fff;
@@ -362,6 +364,9 @@
     border-width: 0 @defaultBorderWidth;
     font-weight: @fontWeightLight;
     font-size: .75em;
+    &:nth-of-type(even) {
+      background-color: darken(@inputColor, 5%);
+    }
     &:first-child {
       border-width: @defaultBorderWidth;
       border-bottom-width: 0;
@@ -501,7 +506,7 @@
       & > .check,
       & .option-group {
         margin-left: -1px;
-        max-width: 25vw;
+        max-width: 30vw;
         width: auto;
         margin-top: @inputMargin;
         margin-bottom: @inputMargin;
