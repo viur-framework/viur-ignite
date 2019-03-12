@@ -475,13 +475,15 @@
     }
   }
   .mq-max(@breakSmall, {
-    & > *:not(:last-child) {
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-    & > *:not(:first-child) {
-      border-top-right-radius: 0;
-      border-top-left-radius: 0;
+    &:not(.input-group--block) {
+      & > *:not(:last-child) {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      & > *:not(:first-child) {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+      }
     }
   });
   .mq-min(@breakSmall, {
