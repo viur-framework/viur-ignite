@@ -25,8 +25,7 @@
   transition: all .3s ease;
   &:link,
   &:visited { color: contrast(@btnBackgroundColor, #222222, #f4f4f4); }
-  &:hover,
-  &[href]:hover {
+  &:hover {
     color: contrast(lighten(@btnBackgroundColor, 5%));
     background-color: lighten(@btnBackgroundColor, 5%);
     .boxShadow(@btnShadowHover, @btnShadowColor);

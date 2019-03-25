@@ -431,8 +431,6 @@
 // Group buttons, labels and inputs together.
 .input-group {
   display: flex;
-  flex-direction:column;
-  &:not(:last-child) {margin-bottom: @bottomSpace;}
   & .select,
   & .input,
   & .btn,
@@ -442,12 +440,8 @@
   & > .check,
   & .option-group {
     .zIndex('content', 0);
-    width: 100%;
-    margin: 0;
     position: relative;
-    .boxShadow(0);
-    .mq-max(@breakSmall, {margin-top: -1px;});
-    // Bring any button into forefront for proper borders given negative margin below
+    // Bring any element into forefront for proper borders given negative margin below
     &:hover,
     &:active,
     &.is-selected {
@@ -461,69 +455,24 @@
       .zIndex('content', 0)!important; // stay down!
     }
   }
-  & .label {
-    border-width: 0 @defaultBorderWidth;
-    width: 100%;
-    margin: 0;
-    &:first-child {
-      border-width: @defaultBorderWidth;
-      border-bottom-width: 0;
-    }
-    &:last-child {
-      border-width: @defaultBorderWidth;
-      border-top-width: 0;
-    }
-  }
   .mq-max(@breakSmall, {
-    &:not(.input-group--block) {
-      & > *:not(:last-child) {
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-      & > *:not(:first-child) {
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
-      }
+    &:not(.input-group--bar) {
+      .input-group--block();
     }
   });
   .mq-min(@breakSmall, {
     &:not(.input-group--block) {
-      flex-flow: row;
-      & .label {
-        border-width: @defaultBorderWidth;
-        &:first-child {
-          border-right-width:0;
-        }
-        &:last-child {
-          border-left-width: 0;
-        }
-      }
-      & .label,
-      & .select,
-      & .input,
-      & .btn,
-      & .switch,
-      & .textarea,
-      & > .radio,
-      & > .check,
-      & .option-group {
-        margin-left: -1px;
-        max-width: 30vw;
-        width: auto;
-        margin-top: @inputMargin;
-        margin-bottom: @inputMargin;
-        .boxShadow(@inputShadow,@inputShadowColor);
-      }
-      & > *:not(:last-child) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-      & > *:not(:first-child) {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
+      .input-group--bar();
     };
   });
+}
+
+.input-group--block {
+  .input-group--block();
+}
+
+.input-group--bar {
+  .input-group--bar();
 }
 
 /* Form group */
@@ -542,4 +491,80 @@
   }
 }
 
+}
+
+.input-group--block() {
+  flex-direction:column;
+  &:not(:last-child) {margin-bottom: @bottomSpace;}
+  & .select,
+  & .input,
+  & .btn,
+  & .switch,
+  & .textarea,
+  & > .radio,
+  & > .check,
+  & .option-group {
+    width: 100%;
+    margin: 0;
+    margin-top: -1px;
+    .boxShadow(0);
+  }
+  & .label {
+    border-width: 0 @defaultBorderWidth;
+    width: 100%;
+    margin: 0;
+    &:first-child {
+      border-width: @defaultBorderWidth;
+      border-bottom-width: 0;
+    }
+    &:last-child {
+      border-width: @defaultBorderWidth;
+      border-top-width: 0;
+    }
+  }
+  & > *:not(:last-child) {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  & > *:not(:first-child) {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
+.input-group--bar() {
+  flex-flow: row;
+  & .label {
+    border-width: @defaultBorderWidth;
+    &:first-child {
+      border-right-width:0;
+    }
+    &:last-child {
+      border-left-width: 0;
+    }
+  }
+  & .label,
+  & .select,
+  & .input,
+  & .btn,
+  & .switch,
+  & .textarea,
+  & > .radio,
+  & > .check,
+  & .option-group {
+    width: auto;
+    max-width: 30vw;
+    margin-left: -1px;
+    margin-top: @inputMargin;
+    margin-bottom: @inputMargin;
+    .boxShadow(@inputShadow,@inputShadowColor);
+  }
+  & > *:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  & > *:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
