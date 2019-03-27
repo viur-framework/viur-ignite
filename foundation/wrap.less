@@ -21,6 +21,8 @@
 .wrap {
   min-width:100%;
   flex:1 100%;
+  position: relative;
+  .zIndex('content',0);
 }
 
 // Container to center the content in the middle of the page.
@@ -31,7 +33,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  flex: 1 100%;
+  flex: 1 0 100%;
   .mq-min(@breakSmall, {
     .mq-landscape({flex-flow: row wrap;})
   });

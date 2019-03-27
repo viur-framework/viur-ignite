@@ -7,37 +7,44 @@
 // .table-body-
 // .table-foot-
 
-.table(@tableHeadBackgroundColor:@mainColor, @tableRowBackgroundColor:#fefefe) when (@table=true) {
+.table(
+  @tableHeadBackgroundColor:@mainColor,
+  @tableRowBackgroundColor:#fefefe,
+  @tableSelectionColor: @successColor,
+  @tableHeadPadding: @defaultPadding,
+  @tablePadding: @defaultPadding,
+  @tableBorderWidth: @defaultBorderWidth) when (@table=true) {
   table-layout: fixed;
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
   margin-bottom: 1.5em;
   padding: 0;
 
-  & &-body,
-  & &-body-row,
-  & &-body-cell,
-  & &-head-row,
-  & &-head-cell,
-  & &-foot,
-  & &-foot-row,
-  & &-foot-cell {
+  &-body,
+  &-body-row,
+  &-body-cell,
+  &-head-row,
+  &-head-cell,
+  &-foot,
+  &-foot-row,
+  &-foot-cell {
     display: block;
     padding: 0;
-    text-align: left;
     white-space: normal;
-  }
-
-  & &-head-cell,
-  & &-body-cell,
-  & &-foot-cell {
-    padding: .5em;
-    vertical-align: middle;
     text-align: right;
+    vertical-align: middle;
   }
 
-  & &-head { // hide workaround
+  &-head-cell {
+    padding: @tableHeadPadding;
+  }
+
+  &-body-cell,
+  &-foot-cell {
+    padding: @tablePadding;
+  }
+
+  &-head { // hide workaround
     position: absolute;
     clip: rect(1px 1px 1px 1px);
     clip: rect(1px, 1px, 1px, 1px);
@@ -48,45 +55,45 @@
     overflow: hidden;
   }
 
-  & &-head-cell {
+  &-head-cell {
     background-color: @tableHeadBackgroundColor;
-    border: 1px solid darken(@tableHeadBackgroundColor, 15%);
-    font-weight: 400;
+    .border(@tableBorderWidth, solid, darken(@tableHeadBackgroundColor, 15%));
+    font-weight: @fontWeightNormal;
     text-align: center;
     color: contrast(darken(@tableHeadBackgroundColor,15%));
   }
 
-  & &-body-row,
-  & &-foot-row {
-    border: 2px solid darken(@tableRowBackgroundColor, 15%);
+  &-body-row,
+  &-foot-row {
+    .border(@tableBorderWidth, solid, darken(@tableHeadBackgroundColor, 15%));
     &.is-active {
-      background-color: darken(@successColor, 2%);
-      & &-body-cell, & &-food-cell { color: contrast(@successColor); }
+      background-color: darken(@tableSelectionColor, 2%);
+      &-body-cell, &-foot-cell { color: contrast(@tableSelectionColor); }
     }
   }
 
-  & &-body-row {
+  &-body-row {
     margin-bottom: 1em;
     &:last-of-type { margin-bottom: 0; }
   }
 
-  & &-foot {
-    border-top: 3px solid darken(@tableRowBackgroundColor, 40%);
+  &-foot {
+    border-top: @tableBorderWidth solid darken(@tableRowBackgroundColor, 40%);
     margin-top: 1em;
   }
 
-  & &-foot-row {
+  &-foot-row {
     margin-top: 1em;
   }
 
-  & &-body-cell[scope="row"],
-  & &-foot-cell[scope="row"] {
-    background-color: @successColor;
-    color: contrast(@successColor);
+  &-body-cell[scope="row"],
+  &-foot-cell[scope="row"] {
+    background-color: @tableSelectionColor;
+    color: contrast(@tableSelectionColor);
   }
 
-  & &-body-cell[data-title]:before,
-  & &-foot-cell[data-title]:before {
+  &-body-cell[data-title]:before,
+  &-foot-cell[data-title]:before {
     content: attr(data-title);
     float: left;
     font-size: .8em;
@@ -94,55 +101,55 @@
   }
 
   .mq-min(@breakSmall, {
-    & &-head-cell,
-    & &-body-cell,
-    & &-foot-cell {
-      padding: .75em .5em;
+    &-head-cell {
+      padding: @tableHeadPadding @tableHeadPadding*1.25;
     }
-    & &-body-cell,
-    & &-foot-cell {
-      border-bottom: 1px solid darken(@tableRowBackgroundColor, 15%);
+    &-body-cell,
+    &-foot-cell {
+      padding: @tablePadding @tablePadding*1.25;
+      border-bottom: @tableBorderWidth solid darken(@tableRowBackgroundColor, 15%);
     }
   });
   .mq-min(@breakMedium, {
-    & &-head { // show workaround
+    &-head { // show workaround
       position: relative;
       clip: auto;
       height: auto;
       width: auto;
       overflow: auto;
     }
-    & &-body,
-    & &-foot {
+    &-body,
+    &-foot {
       display: table-row-group;
     }
-    & &-head-row,
-    & &-body-row,
-    & &-foot-row {
+    &-head-row,
+    &-body-row,
+    &-foot-row {
       display: table-row;
     }
-    & &-body-row,
-    & &-foot-row {
+    &-body-row,
+    &-foot-row {
       border-width: 1px;
       &:nth-of-type(even) { background-color: darken(@tableRowBackgroundColor, 2%); }
       &:nth-of-type(odd) { background-color: darken(@tableRowBackgroundColor, 4%); }
       &:nth-of-type(even):hover { background-color: lighten(@tableRowBackgroundColor, 6%); }
       &:nth-of-type(odd):hover { background-color: lighten(@tableRowBackgroundColor, 6%); }
-      &:nth-of-type(even).is-active { background-color: darken(@successColor, 2%); }
-      &:nth-of-type(odd).is-active { background-color: darken(@successColor, 4%); }
-      &:nth-of-type(even).is-active:hover { background-color: lighten(@successColor, 6%); }
-      &:nth-of-type(odd).is-active:hover { background-color: lighten(@successColor, 6%); }
+      &:nth-of-type(even).is-active { background-color: darken(@tableSelectionColor, 2%); }
+      &:nth-of-type(odd).is-active { background-color: darken(@tableSelectionColor, 4%); }
+      &:nth-of-type(even).is-active:hover { background-color: lighten(@tableSelectionColor, 6%); }
+      &:nth-of-type(odd).is-active:hover { background-color: lighten(@tableSelectionColor, 6%); }
     }
-    & &-head-cell,
-    & &-body-cell,
-    & &-foot-cell {
+    &-head-cell,
+    &-body-cell,
+    &-foot-cell {
       display: table-cell;
-      padding: .5em;
-      color: contrast(@tableRowBackgroundColor);
     }
-    & &-body-cell,
-    & &-foot-cell {
-      text-align: center;
+    &-head-cell {
+      padding: @tableHeadPadding @tableHeadPadding*2;
+    }
+    &-body-cell,
+    &-foot-cell {
+      padding: @tablePadding @tableHeadPadding*2;
       &[data-title]:before { content: none; }
       &[scope="row"] {
         background-color: transparent;
@@ -152,20 +159,24 @@
     }
   });
   .mq-min(@breakLarge, {
-    & &-head-cell,
-    & &-body-cell,
-    & &-foot-cell {
-      padding: .75em .5em;
+    &-head-cell {
+      padding: @tableHeadPadding @tableHeadPadding*3;
+    }
+    &-body-cell,
+    &-foot-cell {
+      padding: @tablePadding @tablePadding*3;
     }
   });
   .mq-min(@breakXlarge, {
     & {
       font-size: .8rem; // 80% of body text.
     }
-    & &-head-cell,
-    & &-body-cell,
-    & &-foot-cell {
-      padding: .75em;
+    &-head-cell {
+      padding: @tableHeadPadding*1.5 @tableHeadPadding*3;
+    }
+    &-body-cell,
+    &-foot-cell {
+      padding: @tablePadding*1.5 @tablePadding*3;
     }
   });
 }

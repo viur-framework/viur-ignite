@@ -15,7 +15,7 @@
   @btnShadowHover: @defaultShadow+1,
   @btnShadowColor: @defaultShadowColor) when (@button=true) {
   .basicInput(@btnPadding, @btnMargin, @btnBorderRadius, @btnBorderWidth, darken(@btnBackgroundColor, 10%));
-  font-weight: 400;
+  font-weight: @fontWeightNormal;
   color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
   background-color: @btnBackgroundColor;
   .boxShadow(@btnShadow, @btnShadowColor);
@@ -57,8 +57,9 @@
   }
   & > .icon {
     align-self: center;
+    font-size: 1.4em;
     &:first-child {
-      margin-left: -.1em;
+      margin-left: -.2em;
       margin-right: .25em;
     }
   }

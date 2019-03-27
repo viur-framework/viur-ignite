@@ -58,7 +58,8 @@ body {
 }
 
 /* Links */
-a[href] {
+a,
+.link {
   color: @mainColor;
   text-decoration: none;
   outline: 0;
@@ -93,7 +94,7 @@ a[href^="ftp://"]:after {
 h1, h2, h3, h4, h5, h6 {
   color: inherit;
   font-family: @headFonts;
-  font-weight: 400;
+  font-weight: @fontWeightNormal;
   line-height: 1.6;
   a {font-weight: inherit; color: inherit;}
   .mq-print({
@@ -109,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 // remove margin-top of .subline after .headline
 .headline + .subline {margin-top: 0;}
 // Use .lead to emphasize the first paragraph of a section.
-.lead {font-size: 1.3em; font-weight: 300;}
+.lead {font-size: 1.3em; font-weight: @fontWeightLight;}
 
 
 p {
@@ -132,7 +133,7 @@ p {
   h1, h2, h3, h4, h5, h6 {font-weight:700; margin-bottom: @innerSpace;}
 }
 
-strong {font-weight: 700;}
+strong {font-weight: @fontWeightBold;}
 em {font-style:italic;}
 small {font-size: .8em}
 

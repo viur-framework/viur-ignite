@@ -30,13 +30,14 @@
 @inputShadowHover: @defaultShadowHover;
 @inputShadowColor: @defaultShadowColor;
 
-// Arrows (up and down) in base64:
-.arrowsUpDownBg() {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.14286 50" height="50" width="80"><path d="M0 16.429l30-34.286 30 34.286H0zm0 17.142l30 34.286 30-34.286H0z"/></svg>');
-}
+@inputBorderRadius: @defaultBorderRadius;
+@inputBorderWidth: @defaultBorderWidth;
+@inputBorderColor: darken(@defaultInputColor, 10%);
+
 
 & when (@form=true) {
   /* Input */
+
   .input {
     .basicInput;
     background-color: @inputColor;
@@ -50,6 +51,7 @@
     background-position: 150% center;
     background-size: 15px;
     background-repeat: no-repeat;
+
     .form-group--validation &,
     .input-group--validation &,
     &--validation {
@@ -57,19 +59,25 @@
       &.is-invalid,
       &[aria-invalid="true"],
       &:invalid:not(:placeholder-shown) {
-        .inputValidation(@inputColor, @inputDangerColor, @backgroundImage:'../icons/cross.svg', @cursor:false, @focus:true);
+        .inputValidation(@inputColor, @inputDangerColor, @backgroundImage:true, @cursor:false, @focus:true);
+        .penBg(@color:@inputDangerColor);
       }
+
       .input-group.is-recommended &,
       &.is-recommended {
-        .inputValidation(@inputColor, @inputHintColor, @backgroundImage:'../icons/pen.svg', @cursor:false, @focus:true);
+        .inputValidation(@inputColor, @inputHintColor, @backgroundImage:true, @cursor:false, @focus:true);
+        .penBg(@color:@inputHintColor);
       }
+
       .input-group.is-valid &,
       &.is-valid,
       &[aria-invalid="false"],
       &:valid:not(:placeholder-shown):not([type="password"]) {
-        .inputValidation(@inputColor, @inputValidColor, @backgroundImage:'../icons/check.svg', @cursor:false, @focus:true);
+        .inputValidation(@inputColor, @inputValidColor, @backgroundImage:true, @cursor:false, @focus:true);
+        .checkBg(@color:@inputValidColor);
       }
     }
+
     &.is-readonly,
     &:read-only,
     &[aria-readonly="true"] {
@@ -78,13 +86,16 @@
       border-style: dashed;
       border-bottom-style: solid;
     }
+
     &.is-disabled,
     &:disabled,
     &[aria-disabled="true"] {
-      .inputValidation(@inputColor, darken(@inputColor, 15%), @backgroundImage:'../icons/not-allowed.svg', @cursor:not-allowed);
+      .inputValidation(@inputColor, darken(@inputColor, 15%), @backgroundImage:true, @cursor:not-allowed);
+      .not-allowedBg(@color:darken(@inputColor,15%));
       .boxShadow(0);
       border-style: dashed;
     }
+
     &--contrast {
       background-color: darken(@inputColor, 5%);
       border: @defaultBorderWidth solid darken(@inputColor, 15%);
@@ -93,7 +104,7 @@
 
     &--small {
       font-size: .8em;
-      font-weight: 400;
+      font-weight: @fontWeightNormal;
     }
 
     &--large {
@@ -101,22 +112,24 @@
     }
   }
 
-  // .is-secure mit Schloßsymbol?
-
   // placeholder text color
-  .input::-webkit-input-placeholder {
+  .input::placeholder, .textarea::placeholder {
     color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
     opacity: 1;
   }
-  .input:-moz-placeholder {
+  .input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder {
     color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
     opacity: 1;
   }
-  .input::-moz-placeholder {
+  .input:-moz-placeholder, .textarea:-moz-placeholder {
     color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
     opacity: 1;
   }
-  .input:-ms-input-placeholder {
+  .input::-moz-placeholder, .textarea::-moz-placeholder {
+    color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
+    opacity: 1;
+  }
+  .input:-ms-input-placeholder, .textarea:-ms-input-placeholder {
     color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
     opacity: 1;
   }
@@ -129,16 +142,19 @@
     background-color: darken(@inputColor, 2%);
     color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
     min-width: 190px;
+
     .input-group.is-required &,
     &.is-required {
       border-left: @defaultBorderWidth+1px solid @inputRequiredColor;
       color: @inputRequiredColor;
-      font-weight: 700;
+      font-weight: @fontWeightBold;
     }
+
     .input-group.is-required &:after,
     &.is-required:after {
       content: '\00a0*';
     }
+
     .form-group--validation &,
     .input-group--validation &,
     &--validation {
@@ -148,12 +164,14 @@
         border-color: @inputDangerColor;
         background-color: lighten(@inputDangerColor, 20%);
       }
+
       .input-group.is-recommended &,
       &.is-recommended {
         color: darken(@inputHintColor, 25%);
         border-color: @inputHintColor;
         background-color: lighten(@inputHintColor, 20%);
       }
+
       .input-group.is-valid &,
       &.is-valid {
         color: darken(@inputValidColor, 25%);
@@ -161,6 +179,7 @@
         background-color: lighten(@inputValidColor, 20%);
       }
     }
+
     &.is-disabled,
     &:disabled {
       color: #777777;
@@ -169,12 +188,15 @@
       border: @defaultBorderWidth dashed darken(@inputColor, 20%);
       background-color: darken(@inputColor, 5%);
     }
+
     .icon {
       margin: 0 .25em 0 -.1em;
+      align-self: center;
     }
+
     &--small {
       font-size: .8em;
-      font-weight: 400;
+      font-weight: @fontWeightNormal;
       min-width: 90px;
     }
 
@@ -184,23 +206,26 @@
     }
   }
 
+
   /* Dropdown */
   .select {
     .basicInput(@borderColor:darken(@defaultInputColor,12%));
-    align-self: flex-start;
+    //align-self: flex-start;
     max-width: 100%;
     min-width: 0;
-    flex: 1;
+    //flex: 1;
     padding-right: 38px;
     background-color: @inputColor;
-    .arrowsUpDownBg(); // arrows (up and down) in svg
+    .arrowsUpDownBg(@color:contrast(@inputColor, #222222, #f4f4f4));
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: right center;
     transition: all .3s ease;
+
     &:hover {
       .boxShadow(@inputShadowHover, @inputShadowColor);
     }
+
     &.is-disabled,
     &:disabled {
       color: #777777;
@@ -209,6 +234,7 @@
       border: @defaultBorderWidth dashed darken(@inputColor, 20%);
       background-color: darken(@inputColor, 5%);
     }
+
     .form-group--validation &,
     .input-group--validation &,
     &--validation {
@@ -218,15 +244,17 @@
       &:invalid {
         .inputValidation(@inputColor, @inputDangerColor, @focus:true);
       }
+
       .input-group.is-valid &,
       &.is-valid,
       &:valid {
         .inputValidation(@inputColor, @inputValidColor, @focus:true);
       }
     }
+
     &--small {
       font-size: .8em;
-      font-weight: 400;
+      font-weight: @fontWeightNormal;
       background-size: 10px;
     }
   }
@@ -246,6 +274,7 @@
     background-size: 15px;
     background-repeat: no-repeat;
     text-align: left;
+
     &--block {
       width: 100%;
       margin: 0;
@@ -258,15 +287,19 @@
     .basicInput(@borderColor:darken(@defaultInputColor,12%));
     background-color: darken(@inputColor, 2%);
     color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
+
     &-input {
       display: none;
+
       &:checked + .switch-label {
         background: lighten(@inputValidColor, 20%);
       }
+
       &:checked + .switch-label:after {
         left: 50%;
       }
     }
+
     &-label {
       background: darken(@inputColor, 10%);
       .border-radius(@defaultBorderRadius);
@@ -279,6 +312,7 @@
       position: relative;
       cursor: pointer;
       user-select: none;
+
       &:after {
         left: 0;
         position: relative;
@@ -294,7 +328,7 @@
   }
 
   .tickbox() {
-    .basicInput;
+    .basicInput(@padding: 0;);
     background-color: darken(@inputColor, 2%);
     border: 1px solid darken(@inputColor, 12%);
     color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
@@ -304,9 +338,12 @@
     }
     &-label {
       position: relative;
-      display: block;
+      display: flex;
+      align-items: center;
       outline: 0;
       cursor: pointer;
+      flex-basis: 100%;
+
       &:before {
         content: '';
         background: #fff;
@@ -320,11 +357,14 @@
         transition: all .4s ease;
         box-shadow: inset 0 0 0 2px #fff;
       }
+
       &:not(:empty) {
         padding: @inputPadding @inputPadding*3.75;
+
         &:before {
           margin-right: 10px;
         }
+
         &:hover {
           background-color: @inputColor;
         }
@@ -339,6 +379,7 @@
   /* Radio button */
   .radio {
     .tickbox();
+
     &-label {
       &:before {
         border-radius: 50%;
@@ -356,61 +397,78 @@
   .option-group {
     display: flex;
     flex-direction: column;
+
     & .radio,
     & .check {
       width: 100%;
       margin: 0;
       position: relative;
       border-width: 0 @defaultBorderWidth;
-      font-weight: 300;
+      font-weight: @fontWeightLight;
       font-size: .75em;
+
+      &:nth-of-type(even) {
+        background-color: darken(@inputColor, 5%);
+      }
+
       &:first-child {
         border-width: @defaultBorderWidth;
         border-bottom-width: 0;
       }
+
       &:last-child {
         border-width: @defaultBorderWidth;
         border-top-width: 0;
       }
+
       .mq-min(@breakSmall, { width: auto; });
+
       & .radio-label,
       & .check-label {
         padding: @inputPadding*1.5 @inputPadding*3.75;
         padding-right: 1.75em;
       }
     }
+
     &--selection-list {
       max-height: 150px;
       overflow-y: auto;
       overflow-x: hidden;
+
       .radio,
       .check {
         flex: 1 0 auto;
       }
+
       .radio-label,
       .check-label {
         white-space: nowrap;
         padding-right: 30px;
       }
+
       .radio:not(:last-child) .radio-label,
       .check:not(:last-child) .check-label {
         border-bottom: @defaultBorderWidth solid darken(@inputColor, 20%);
       }
+
       .radio-label:before,
       .check-label:before {
         content: none;
       }
+
       .radio-input:checked + .radio-label,
       .check-input:checked + .check-label {
         background: lighten(@inputValidColor, 20%);
         border-bottom: @defaultBorderWidth solid lighten(@inputValidColor, 10%);
         color: #fff;
+
         &:hover {
           background-color: lighten(@inputValidColor, 10%);;
         }
       }
     }
   }
+
 
   .input,
   .label + .input--block,
@@ -425,10 +483,7 @@
   // Group buttons, labels and inputs together.
   .input-group {
     display: flex;
-    flex-direction: column;
-    &:not(:last-child) {
-      margin-bottom: @bottomSpace;
-    }
+
     & .select,
     & .input,
     & .btn,
@@ -438,86 +493,135 @@
     & > .check,
     & .option-group {
       .zIndex('content', 0);
-      width: 100%;
-      margin: 0;
       position: relative;
-      .boxShadow(0);
-      .mq-max(@breakSmall, { margin-top: -1px; });
-      // Bring any button into forefront for proper borders given negative margin below
+      // Bring any element into forefront for proper borders given negative margin below
       &:hover,
       &:active,
       &.is-selected {
         .zIndex('content', 2);
       }
+
       &:focus {
         .zIndex('content', 3);
       }
+
       &.is-disabled,
       &.is-disabled:hover {
         .zIndex('content', 0) !important; // stay down!
       }
     }
-    & .label {
-      border-width: 0 @defaultBorderWidth;
-      width: 100%;
-      margin: 0;
-      &:first-child {
-        border-width: @defaultBorderWidth;
-        border-bottom-width: 0;
+
+    .mq-max(@breakSmall, {
+      &:not(.input-group--bar) {
+      .input-group--block();
       }
-      &:last-child {
-        border-width: @defaultBorderWidth;
-        border-top-width: 0;
-      }
-    }
-    .mq-max(@breakSmall, { & *:not(:last-child) {
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-    } & *:not(:first-child) {
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
-      } });
-    .mq-min(@breakSmall, { &:not(.input-group--block) {
-      flex-flow: row;
-      & .label {
-        border-width: @defaultBorderWidth;
-        &:first-child {
-          border-right-width: 0;
-        }
-        &:last-child {
-          border-left-width: 0;
-        }
-      }
-      & .label,
-      & .select,
-      & .input,
-      & .btn,
-      & .switch,
-      & .textarea,
-      & > .radio,
-      & > .check,
-      & .option-group {
-        margin-left: -1px;
-        max-width: 25vw;
-        width: auto;
-        margin-top: @inputMargin;
-        margin-bottom: @inputMargin;
-        .boxShadow(@inputShadow, @inputShadowColor);
-      }
-      & *:not(:last-child) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-      & *:not(:first-child) {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-    }; });
+    });
+    .mq-min(@breakSmall, {
+      &:not(.input-group--block) {
+        .input-group--bar();
+      };
+    });
+  }
+
+  .input-group--block {
+    .input-group--block();
+  }
+
+  .input-group--bar {
+    .input-group--bar();
   }
 
   /* Form group */
   // Use formGroups to separate different inputs or input-groups.
   .form-group {
     margin-bottom: @bottomSpace;
+
+    &--half {
+      .mq-min(@breakMedium, { column-count: 2; break-inside: avoid; column-fill: balance; & * {
+        break-inside: avoid;
+      } });
+    }
+  }
+}
+
+.input-group--block() {
+  flex-direction: column;
+  &:not(:last-child) {
+    margin-bottom: @bottomSpace;
+  }
+  & .select,
+  & .input,
+  & .btn,
+  & .switch,
+  & .textarea,
+  & > .radio,
+  & > .check,
+  & .option-group {
+    width: 100%;
+    margin: 0;
+    margin-top: -1px;
+    .boxShadow(0);
+  }
+  & .label {
+    border-width: 0 @defaultBorderWidth;
+    width: 100%;
+    margin: 0;
+
+    &:first-child {
+      border-width: @defaultBorderWidth;
+      border-bottom-width: 0;
+    }
+
+    &:last-child {
+      border-width: @defaultBorderWidth;
+      border-top-width: 0;
+    }
+  }
+  & > *:not(:last-child) {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  & > *:not(:first-child) {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
+.input-group--bar() {
+  flex-flow: row;
+  & .label {
+    border-width: @defaultBorderWidth;
+
+    &:first-child {
+      border-right-width: 0;
+    }
+
+    &:last-child {
+      border-left-width: 0;
+    }
+  }
+  & .label,
+  & .select,
+  & .input,
+  & .btn,
+  & .switch,
+  & .textarea,
+  & > .radio,
+  & > .check,
+  & .option-group {
+    width: auto;
+    max-width: 30vw;
+    margin-left: -1px;
+    margin-top: @inputMargin;
+    margin-bottom: @inputMargin;
+    .boxShadow(@inputShadow, @inputShadowColor);
+  }
+  & > *:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  & > *:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
