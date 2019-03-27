@@ -1,8 +1,19 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [3.0.00] - 2018-09-24
-After more than a year of development Ignite 3.0.00 now serves as a less foundation library.
+## [3.1.0-alpha]
+
+### Added
+
+### Changed
+
+### Fixed
+
+### Removed
+- NPM Packages and Gulpfile. Ignite should be only a library.
+
+## [3.0.0] - 2018-09-24
+After more than a year of development Ignite 3.0.0 now serves as a less foundation library.
 Put it into any project for a solid boiler plate.
 Functions and output file size have been reduced to the bare minimum.
 You have to opt-in and initialize functions to use them.
@@ -36,6 +47,7 @@ They are stored within mediaqueries.less and can be stacked (min + max + orienta
 The gulp task merges all media queries to the end of the compiled css file.
 
 Moreover flex layout is no longer the exception but the norm.
+
 
 ## [1.0.24] - 2016-08-16
 ### Added
@@ -117,8 +129,8 @@ Moreover flex layout is no longer the exception but the norm.
 - Changelog started here
 
 
-[Unreleased]: https://github.com/viur-framework/ignite/compare/3.0.00...develop
-[3.0.00]: https://github.com/viur-framework/ignite/compare/1.0.24...3.0.00
+[3.1.0-alpha]: https://github.com/viur-framework/ignite/compare/3.0.00...develop
+[3.0.0]: https://github.com/viur-framework/ignite/compare/1.0.24...3.0.00
 [1.0.24]: https://github.com/viur-framework/ignite/compare/1.0.23...1.0.24
 [1.0.23]: https://github.com/viur-framework/ignite/compare/1.0.22...1.0.23
 [1.0.22]: https://github.com/viur-framework/ignite/compare/1.0.21...1.0.22

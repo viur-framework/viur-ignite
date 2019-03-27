@@ -19,18 +19,22 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-family: inherit;
   vertical-align: top;
 }
+
 // remember to define focus styles!
 :focus {
   outline: 0;
 }
+
 ol, ul {
   list-style: none;
 }
+
 // tables still need 'cellspacing="0"' in the markup
 table {
   border-collapse: separate;
   border-spacing: 0;
 }
+
 caption, th, td {
   text-align: left;
   font-weight: normal;
@@ -152,6 +156,7 @@ pre {
 q {
   quotes: none;
 }
+
 // Addresses quote property not supported in S4
 blockquote:before,
 blockquote:after,
@@ -218,11 +223,7 @@ img {
   -ms-interpolation-mode: bicubic; // 2
   max-width: 100%; // 3
   height: auto;
-  .mq-print({
-    page-break-before: auto;
-    page-break-after: auto;
-    page-break-inside: avoid;
-  });
+  .mq-print({ page-break-before: auto; page-break-after: auto; page-break-inside: avoid; });
 }
 
 // Corrects overflow displayed oddly in IE9
@@ -292,13 +293,13 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer; // 1
   -webkit-appearance: button; // 2
-  *overflow: visible;  // 3
+  *overflow: visible; // 3
 }
 
 /* Re-set default cursor for disabled elements */
 
- button[disabled],
- input[disabled] {
+button[disabled],
+input[disabled] {
   cursor: default;
 }
 
@@ -307,10 +308,10 @@ input[type="submit"] {
 // Known issue: excess padding remains in IE6
 input[type="checkbox"],
 input[type="radio"] {
-        padding: 0; // 2
-        *height: 13px; // 3
-        *width: 13px; // 3
-      }
+  padding: 0; // 2
+  *height: 13px; // 3
+  *width: 13px; // 3
+}
 
 // 1. Addresses appearance set to searchfield in S5, Chrome
 input[type="search"] {

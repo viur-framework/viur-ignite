@@ -1,10 +1,10 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE)
-[![Build Status](https://travis-ci.org/viur-framework/ignite.svg?branch=master)](https://travis-ci.org/viur-framework/ignite)
 
 # Ignite
->The Ignite Framework is the first attempt in building a sturdy foundation for ViUR products and Mausbrand projects.<br>This CSS toolkit is the very core of ViUR Ignite. It is built upon the principles of many CSS guides and frameworks.
+>The ViUR Ignite Framework is the a sturdy LESS/CSS foundation for ViUR products and Mausbrand projects.
+This LESS/CSS toolkit is the very core of ViUR Ignite. It is built upon the principles of many CSS guides and frameworks.
 
-For a detailed introduction and examples have a look at [http://ignite.viur.is](http://ignite.viur.is).
+For a detailed introduction and examples have a look at [ignite.viur.is](https://ignite.viur.is).
 
 Different projects demand different solutions.
 Ignite is a solution based on the needs of our python/jinja oriented stack.
@@ -27,26 +27,22 @@ Thanks guys!
 * It is a lightweightned collection of helpful CSS components
 * It is responsive and adaptable
 * It is build in LESS
-* Ignite is JavaScript free as most projects use their own JS implementation (We are stil working on our own JS lib: ViUR Ignite JS).
-
-## Install
-Install global and local dependencies with
-```
-$ npm run setup
-```
-probably you have to run this as sudo 
 
 
 ## Usage
-edit the style.less and compile the css with
+We recommend to add ignite as submodule in your project:
+```bash
+git submodule add git@github.com:viur-framework/ignite.git
 ```
-$ gulp
-```
-or use the watchtask with
-```
-$ gulp watch
+or
+```bash
+git submodule add https://github.com/viur-framework/ignite.git
 ```
 
+Than you can import ignite in your project style.less
+```less
+@import "ignite/ignite";
+```
 
 ## Contribution guidelines
 * Available for use under the GPL-3.0 license
