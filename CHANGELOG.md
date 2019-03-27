@@ -6,13 +6,17 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 ### Changed
+- comments to a consistent notation
 
 ### Fixed
 
 ### Removed
 - NPM Packages and Gulpfile. Ignite should be only a library.
+- camelCase in table class names (btnGroup, optionGroup, -vSmall etc.)
+
 
 ## [3.0.0] - 2018-09-24
+
 After more than a year of development Ignite 3.0.0 now serves as a less foundation library.
 Put it into any project for a solid boiler plate.
 Functions and output file size have been reduced to the bare minimum.
@@ -37,7 +41,7 @@ You have to opt-in and initialize functions to use them.
 - cleaned up some obsolete vendor prefixes
 - camelCase in class names (btnGroup, optionGroup, -vSmall etc.)
 
-## 2.0.00 - 2016-12-19
+## [2.0.0] - 2016-12-19
 
 In this major release ViUR Ignite CSS starts using the mobile first paradigm.
 
@@ -131,6 +135,7 @@ Moreover flex layout is no longer the exception but the norm.
 
 [3.1.0-alpha]: https://github.com/viur-framework/ignite/compare/3.0.00...develop
 [3.0.0]: https://github.com/viur-framework/ignite/compare/1.0.24...3.0.00
+[2.0.0]: https://github.com/viur-framework/ignite/compare/1.0.24...2.0.00
 [1.0.24]: https://github.com/viur-framework/ignite/compare/1.0.23...1.0.24
 [1.0.23]: https://github.com/viur-framework/ignite/compare/1.0.22...1.0.23
 [1.0.22]: https://github.com/viur-framework/ignite/compare/1.0.21...1.0.22
