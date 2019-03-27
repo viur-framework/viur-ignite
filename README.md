@@ -1,7 +1,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE)
 
 # Ignite
->The ViUR Ignite Framework is the a sturdy LESS/CSS foundation for ViUR products and Mausbrand projects.
+>The ViUR Ignite Framework is the a sturdy foundation for ViUR products and Mausbrand projects.
 This LESS/CSS toolkit is the very core of ViUR Ignite. It is built upon the principles of many CSS guides and frameworks.
 
 For a detailed introduction and examples have a look at [ignite.viur.is](https://ignite.viur.is).
@@ -28,8 +28,12 @@ Thanks guys!
 * It is responsive and adaptable
 * It is build in LESS
 
+---
 
 ## Usage
+
+**Submodule**
+
 We recommend to add ignite as submodule in your project:
 ```bash
 git submodule add git@github.com:viur-framework/ignite.git
@@ -39,13 +43,19 @@ or
 git submodule add https://github.com/viur-framework/ignite.git
 ```
 
+**LESS Import**
+
 Than you can import ignite in your project style.less
 ```less
 @import "ignite/ignite";
 ```
 
+---
+
 ## Contribution guidelines
 * Available for use under the GPL-3.0 license
+
+---
 
 ## Who do I talk to?
 * [@phneutral](https://github.com/phneutral)
