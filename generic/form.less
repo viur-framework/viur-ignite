@@ -226,67 +226,67 @@
   }
 }
 
-  /* Text area */
-  .textarea {
-    resize: none;
-    margin: @inputMargin 0;
-    padding: @inputPadding @inputPadding*3.75;
-    width: 250px;
-    height: 180px;
-    background-color: @inputColor;
-    border: 1px solid darken(@inputColor, 10%);
-    color: contrast(@inputColor, #222222, #f4f4f4);
-    transition: all .3s ease;
-    background-position: 150% center;
-    background-size: 15px;
-    background-repeat: no-repeat;
-    text-align: left;
-    &--block {
-      width: 100%;
-      margin: 0;
-    }
+/* Text area */
+.textarea {
+  resize: none;
+  margin: @inputMargin 0;
+  padding: @inputPadding @inputPadding*3.75;
+  width: 250px;
+  height: 180px;
+  background-color: @inputColor;
+  border: 1px solid darken(@inputColor, 10%);
+  color: contrast(@inputColor, #222222, #f4f4f4);
+  transition: all .3s ease;
+  background-position: 150% center;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  text-align: left;
+  &--block {
+    width: 100%;
+    margin: 0;
   }
+}
 
-  /* Switch */
-  // A simple, yet elegant, boolean switch.
-  .switch {
-    .basicInput(@borderColor:darken(@defaultInputColor,12%));
-    background-color: darken(@inputColor, 2%);
-    color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
-    &-input {
-      display: none;
-      &:checked + .switch-label {
-        background: lighten(@inputValidColor, 20%);
-      }
-      &:checked + .switch-label:after {
-        left: 50%;
-      }
+/* Switch */
+// A simple, yet elegant, boolean switch.
+.switch {
+  .basicInput(@borderColor:darken(@defaultInputColor,12%));
+  background-color: darken(@inputColor, 2%);
+  color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
+  &-input {
+    display: none;
+    &:checked + .switch-label {
+      background: lighten(@inputValidColor, 20%);
     }
-    &-label {
-      background: darken(@inputColor, 10%);
-      .border-radius(@defaultBorderRadius);
-      padding: 2px;
-      transition: all .4s ease;
-      outline: 0;
-      display: block;
-      width: 3em;
-      height: 1.5em;
-      position: relative;
-      cursor: pointer;
-      user-select: none;
-      &:after {
-        left: 0;
-        position: relative;
-        display: block;
-        content: "";
-        width: 50%;
-        height: 100%;
-        background: #fff;
-        transition: all .2s ease;
-        .boxShadow(@inputShadow, @inputShadowColor);
-      }
+    &:checked + .switch-label:after {
+      left: 50%;
     }
   }
+  &-label {
+    background: darken(@inputColor, 10%);
+    .border-radius(@defaultBorderRadius);
+    padding: 2px;
+    transition: all .4s ease;
+    outline: 0;
+    display: block;
+    width: 3em;
+    height: 1.5em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    &:after {
+      left: 0;
+      position: relative;
+      display: block;
+      content: "";
+      width: 50%;
+      height: 100%;
+      background: #fff;
+      transition: all .2s ease;
+      .boxShadow(@inputShadow, @inputShadowColor);
+    }
+  }
+}
 
 .tickbox() {
   .basicInput(@padding: 0;);
