@@ -112,10 +112,11 @@
 // .is-secure mit Schloßsymbol?
 
 // placeholder text color
-.input::-webkit-input-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
-.input:-moz-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
-.input::-moz-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
-.input:-ms-input-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
+.input::placeholder, .textarea::placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
+.input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
+.input:-moz-placeholder, .textarea:-moz-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
+.input::-moz-placeholder, .textarea::-moz-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
+.input:-ms-input-placeholder, .textarea:-ms-input-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
 
 /* Label */
 .label {
@@ -165,7 +166,10 @@
     border: @defaultBorderWidth dashed darken(@inputColor,20%);
     background-color: darken(@inputColor, 5%);
   }
-  .icon {margin: 0 .25em 0 -.1em;}
+  .icon {
+    margin: 0 .25em 0 -.1em;
+    align-self: center;
+  }
   &--small {
     font-size: .8em;
     font-weight: @fontWeightNormal;
