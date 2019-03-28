@@ -12,9 +12,11 @@
   .bar {
     display: block;
     text-align: left;
+
     .mq-max(@breakSmall, {
       & > * + * {margin-top: 10px;}
     });
+
     .mq-min(@breakSmall, {
       font-size: .9rem;
       align-items: stretch;
@@ -27,6 +29,7 @@
       & > * + * {margin-left: 10px;}
       &-item {align-self: center;}
     });
+
     &-link {
       .mq-min(@breakSmall, { display: flex; });
     }
@@ -37,16 +40,25 @@
     .mq-max(@breakSmall, {
       & > * + * {margin-top: 10px;}
     });
+
     .mq-min(@breakSmall, {
-      &--left {justify-content: flex-start;}
-      &--center {justify-content: center; margin-left: auto; margin-right: auto;}
-      &--right {
-        justify-content: flex-end;
-        &:first-child {margin-left: auto;}
-      }
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+
+      &--left {
+        justify-content: flex-start;
+      }
+      &--center {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      &--right {
+          justify-content: flex-end;
+          &:first-child { margin-left: auto;}
+      }
+
       & > * {margin-bottom: 0 !important; margin-top: 0 !important;};
       & > * + * {margin-left: 10px;}
     });

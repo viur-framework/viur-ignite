@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 - table-width is not full-sized (100%) by default
 
 ### Fixed
-- several typos and syntax
+- several typos and syntax and improved readability
 
 ### Removed
 - NPM Packages and Gulpfile. Ignite should be only a library.

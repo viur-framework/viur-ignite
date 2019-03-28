@@ -24,7 +24,9 @@
   white-space: nowrap;
   transition: all .3s ease;
   &:link,
-  &:visited { color: contrast(@btnBackgroundColor, #222222, #f4f4f4); }
+  &:visited {
+    color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
+  }
   &:hover {
     color: contrast(lighten(@btnBackgroundColor, 5%));
     background-color: lighten(@btnBackgroundColor, 5%);
@@ -51,6 +53,7 @@
   &.is-loading,
   &[aria-busy=true] {
     cursor: progress;
+
     &:hover {
       .boxShadow(@btnShadow, @btnShadowColor);
     }
@@ -58,6 +61,7 @@
   & > .icon {
     align-self: center;
     font-size: 1.4em;
+
     &:first-child {
       margin-left: -.2em;
       margin-right: .25em;
@@ -65,7 +69,10 @@
   }
   &--small {
     font-size: .8em;
-    & > .icon:first-child { margin-right: .15em; }
+
+    & > .icon:first-child {
+      margin-right: .15em;
+    }
   }
   &--large {
     font-size: 1.2em;
@@ -87,7 +94,9 @@
   border: @btnBorderWidth solid darken(@btnBackgroundColor, 10%);
   .boxShadow(@btnShadow, @btnBackgroundColor);
   &:link,
-  &:visited { color: contrast(darken(@btnBackgroundColor, 15%), #222222, #f4f4f4); }
+  &:visited {
+    color: contrast(darken(@btnBackgroundColor, 15%), #222222, #f4f4f4);
+  }
   &:hover {
     color: contrast(darken(@btnBackgroundColor, 15%));
     background-color: lighten(@btnBackgroundColor, 5%);
@@ -125,7 +134,9 @@
   border: @btnBorderWidth solid darken(@btnBackgroundColor, 10%);
   .boxShadow(@btnShadow, @btnBackgroundColor);
   &:link,
-  &:visited { color: darken(@btnBackgroundColor, 5%); }
+  &:visited {
+    color: darken(@btnBackgroundColor, 5%);
+  }
   &:hover {
     color: contrast(darken(@btnBackgroundColor, 15%));
     background-color: lighten(@btnBackgroundColor, 5%);

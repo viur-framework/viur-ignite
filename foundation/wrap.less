@@ -13,23 +13,23 @@
 // .section
 
 .outerwrap {
-  display:flex;
-  flex-wrap:wrap;
+  display: flex;
+  flex-wrap: wrap;
   min-height: 100%;
 }
 
 .wrap {
-  min-width:100%;
-  flex:1 100%;
+  min-width: 100%;
+  flex: 1 100%;
   position: relative;
-  .zIndex('content',0);
+  .zIndex('content', 0);
 }
 
 // Container to center the content in the middle of the page.
 .bind {
-  max-width:@pageWidth;
-  padding:0 @outerSpace;
-  margin:0 auto;
+  max-width: @pageWidth;
+  padding: 0 @outerSpace;
+  margin: 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -42,10 +42,10 @@
 
 /* Sidebars */
 .content ~ .sidebar {
-  font-size:.9em;
-  .order('content',4);
+  font-size: .9em;
+  .order('content', 4);
   padding: @innerSpace 0 @bottomSpace;
-  flex:auto;
+  flex: auto;
   &:nth-of-type(2) {
     flex: 0 0 20%;
     .order('content',3);
@@ -79,14 +79,14 @@
 .content {
   flex: 2 0;
   min-width: 0;
-  .order('content',2);
   max-width: 100%;
+  .order('content',2);
   .mq-min(@breakMedium, {
     .order('content',2);
-    });
+  });
 }
 
-/* Container to seperate chunks of content in the middle of the page. */
+/* Container to separate chunks of content in the middle of the page. */
 .section {
   min-width: 0; // Prevents overflows.
   padding-top: @innerSpace;
