@@ -537,9 +537,14 @@
     margin-bottom: @bottomSpace;
 
     &--half {
-      .mq-min(@breakMedium, { column-count: 2; break-inside: avoid; column-fill: balance; & * {
+      .mq-min(@breakMedium, {
+        column-count: 2;
         break-inside: avoid;
-      } });
+        column-fill: balance;
+        & * {
+          break-inside: avoid;
+        }
+      });
     }
   }
 }
