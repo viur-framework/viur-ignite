@@ -90,3 +90,12 @@
     @ruleset();
   }
 }
+
+/* Media Queries Helper Classes */
+.no-mobile {
+  .mq-max(@breakSmall,{display:none;});
+}
+
+.no-print {
+  .mq-print({display:none;})
+}

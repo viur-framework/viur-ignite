@@ -145,7 +145,7 @@ ins {
 mark {
   background: lighten(@mainColor,40%);
   color: contrast(lighten(@mainColor,40%), @textColor, @invTextColor);
-  padding:1px;
+  padding: 1px;
   &:before,
   &:after {
     letter-spacing: -0.2em;
@@ -187,7 +187,7 @@ code {
   hyphens: none;
   padding: 3px;
   border-radius: 3px;
-  margin: 0px 3px;
+  margin: 0 3px;
   &:before,
   &:after {
     letter-spacing: -0.2em;
@@ -224,13 +224,13 @@ kbd {
 
 // Lists
 ul.is-list {
-  padding: 3px 18px;
-  margin:0;
+  padding: 3px 4ch;
+  margin: 0;
   list-style-type: disc;
 }
 
 .is-list ul {
-  padding: 3px 18px;
+  padding: 3px 4ch;
   list-style-type: square;
 }
 
@@ -240,13 +240,13 @@ ul.is-list {
 }
 
 ol.is-list {
-  padding: 3px 20px;
-  margin:0;
+  padding: 3px 4ch;
+  margin: 0;
   list-style-type: decimal;
 }
 
 .is-list ol {
-  padding: 3px 20px;
+  padding: 3px 4ch;
   list-style-type: upper-roman;
 }
 
@@ -259,4 +259,21 @@ table, blockquote, pre, code, figure, li, hr, ul, ol, a {
   .mq-print({
     page-break-inside: avoid;
   });
+}
+
+// Selections
+::-moz-selection {
+  background-color: darken(@mainColor, 10%);
+  text-shadow: none;
+  color: contrast(@mainColor);
+}
+
+::selection {
+  background-color: darken(@mainColor, 10%);
+  text-shadow: none;
+  color: contrast(@mainColor);
+}
+
+:focus {
+  outline: 1px dotted #ddd;
 }
