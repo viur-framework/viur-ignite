@@ -7,12 +7,15 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - comments to a consistent notation
+- moved selections from state.less to basic.less
+- moved media queries from state.less to mediaqueries.less
 
 ### Fixed
 
 ### Removed
 - NPM Packages and Gulpfile. Ignite should be only a library.
 - camelCase in table class names (btnGroup, optionGroup, -vSmall etc.)
+- removed state.less
 
 
 ## [3.0.0] - 2018-09-24
