@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - several typos and syntax and improved readability
+- color of border-bottom in last row of a table
 
 ### Removed
 - NPM Packages and Gulpfile. Ignite should be only a library.

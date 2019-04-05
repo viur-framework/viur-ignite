@@ -107,6 +107,10 @@
     &-body-cell,
     &-foot-cell {
       padding: @tablePadding @tablePadding*1.25;
+
+    }
+    &-body-row:not(:last-of-type) &-body-cell,
+    &-foot-row:not(:last-of-type) &-foot-cell {
       border-bottom: @tableBorderWidth solid darken(@tableRowBackgroundColor, 15%);
     }
   });
