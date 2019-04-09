@@ -9,8 +9,14 @@ All notable changes to this project will be documented in this file.
 - comments to a consistent notation
 - moved selections from state.less to basic.less
 - moved media queries from state.less to mediaqueries.less
+- burger: new cascade. class `{burger}--to-cross` is now related to the same element with class `{burger}` 
+- padding of lists (ul/ol with .is-list)
+- table-width is not full-sized (100%) by default
 
 ### Fixed
+- several typos and syntax and improved readability
+- color of border-bottom in last row of a table
+- use @input… classes as default values for basicInput-mixin
 
 ### Removed
 - NPM Packages and Gulpfile. Ignite should be only a library.

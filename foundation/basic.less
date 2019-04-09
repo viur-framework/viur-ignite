@@ -104,13 +104,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Use .headline for your important headlines.
-.headline {font-family: @headFonts; color: @mainColor;}
+.headline {
+  font-family: @headFonts;
+  color: @mainColor;
+}
+
 // Use .subline to your headline
-.subline {font-family: @headFonts; color: lighten(@complementColor, 20%);}
+.subline {
+  font-family: @headFonts;
+  color: lighten(@complementColor, 20%);
+}
+
 // remove margin-top of .subline after .headline
-.headline + .subline {margin-top: 0;}
+.headline + .subline {
+  margin-top: 0;
+}
+
 // Use .lead to emphasize the first paragraph of a section.
-.lead {font-size: 1.3em; font-weight: @fontWeightLight;}
+.lead {
+  font-size: 1.3em;
+  font-weight: @fontWeightLight;
+}
 
 
 p {
@@ -178,7 +192,11 @@ blockquote {
   }
 }
 
-code, pre {font-family: @monoFonts; background: darken(@backgroundColor,5%); color: contrast(darken(@backgroundColor,5%));}
+code, pre {
+  font-family: @monoFonts;
+  background: darken(@backgroundColor, 5%);
+  color: contrast(darken(@backgroundColor, 5%));
+}
 code {
   white-space: pre;
   word-spacing: normal;
@@ -205,7 +223,7 @@ kbd {
   background-color: darken(@backgroundColor, 10%);
   border: 1px solid darken(@backgroundColor, 15%);
   border-radius: 3px;
-  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
   color: contrast(darken(@backgroundColor, 10%));
   display: inline-block;
   font-size: .8rem;
@@ -217,7 +235,7 @@ kbd {
   &.kbd--dark {
     border: 1px solid contrast(darken(@backgroundColor, 15%));
     background-color: contrast(darken(@backgroundColor, 10%));
-    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px lighten(contrast(darken(@backgroundColor, 10%)), 20%) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px lighten(contrast(darken(@backgroundColor, 10%)), 20%) inset;
     color: darken(@backgroundColor, 10%);
   }
 }

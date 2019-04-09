@@ -9,17 +9,23 @@
     color: inherit;
     width: 1em;
     height: 1em;
+
     & path,
     & circle,
     & rect,
     & ellipse,
     & polygon,
-    & polyline { fill: inherit; stroke: none; }
+    & polyline {
+      fill: inherit;
+      stroke: none;
+    }
   }
 }
 
 .colorizeIcon(@color) when (@icon=true) {
   & .icon,
-  &.icon { color: darken(@color, 25%); }
+  &.icon {
+    color: darken(@color, 25%);
+  }
 }
 
