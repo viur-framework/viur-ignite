@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [3.1.0-alpha]
+## [3.1.0]
 
 ### Added
 
@@ -142,7 +142,7 @@ Moreover flex layout is no longer the exception but the norm.
 - Changelog started here
 
 
-[3.1.0-alpha]: https://github.com/viur-framework/ignite/compare/3.0.00...develop
+[3.1.0]: https://github.com/viur-framework/ignite/compare/3.0.00...3.1.0
 [3.0.0]: https://github.com/viur-framework/ignite/compare/1.0.24...3.0.00
 [2.0.0]: https://github.com/viur-framework/ignite/compare/1.0.24...2.0.00
 [1.0.24]: https://github.com/viur-framework/ignite/compare/1.0.23...1.0.24
