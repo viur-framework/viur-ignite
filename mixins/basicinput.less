@@ -4,7 +4,7 @@
 // Height and width of all inputs and buttons.
 // This helps to align basic form elements.
 
-.basicInput(@padding:@inputPadding, @margin:@inputMargin, @borderRadius:@inputBorderRadius, @borderWidth:@inputBorderWidth, @borderColor:@inputBorderColor) {
+.basicInput(@padding:@inputPadding, @margin:@inputMargin, @borderRadius:@inputBorderRadius, @borderWidth:@inputBorderWidth, @borderColor:@inputBorderColor, @fontWeight: @fontWeightLight) {
   -webkit-appearance: none;
   -moz-appearance: none;
   display: inline-flex;
@@ -18,7 +18,7 @@
   margin-bottom: @margin;
   vertical-align: middle;
   font-size: 1em;
-  font-weight: @fontWeightLight;
+  font-weight: @fontWeight;
   //line-height:1;
   .mq-print({
     border-width: 0;

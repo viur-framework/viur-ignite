@@ -13,9 +13,9 @@
   @btnBorderRadius: @defaultBorderRadius,
   @btnShadow: @defaultShadow,
   @btnShadowHover: @defaultShadow+1,
-  @btnShadowColor: @defaultShadowColor) when (@button=true) {
-  .basicInput(@btnPadding, @btnMargin, @btnBorderRadius, @btnBorderWidth, darken(@btnBackgroundColor, 10%));
-  font-weight: @fontWeightNormal;
+  @btnShadowColor: @defaultShadowColor,
+  @btnFontWeight: @fontWeightNormal) when (@button=true) {
+  .basicInput(@btnPadding, @btnMargin, @btnBorderRadius, @btnBorderWidth, darken(@btnBackgroundColor, 10%), @btnFontWeight);
   color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
   background-color: @btnBackgroundColor;
   .boxShadow(@btnShadow, @btnShadowColor);
