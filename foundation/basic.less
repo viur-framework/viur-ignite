@@ -26,14 +26,20 @@ html {
   overflow-x: hidden;
   font-size: @fontSizeSmall;
   // Font-size scales with screen-size:
-  .mq-min (@breakSmall, {
+  .mq-min (@breakMedium, {
     font-size: @fontSizeMedium;
   });
-  .mq-min (@breakMedium, {
+  .mq-min (@breakLarge, {
     font-size: @fontSizeLarge;
   });
-  .mq-min (@breakLarge, {
+  .mq-min (@breakXlarge, {
     font-size: @fontSizeExtraLarge;
+  });
+  .mq-min (@breakXxlarge, {
+    font-size: @fontSizeXxLarge;
+  });
+  .mq-min (@break4k, {
+    font-size: @fontSize4k;
   });
   .mq-print({
     padding-left: 1.8cm;
