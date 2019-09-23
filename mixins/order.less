@@ -3,7 +3,7 @@
 
 @orderOrder: 'header', 'content', 'footer';
 
-.order(@elementName,@elementOffset) {
+.order(@elementName,@elementOffset:0) {
 
     .loop(@elementName, @counter) when (@counter > 0) {
         .loop(@elementName, @counter - 1);
