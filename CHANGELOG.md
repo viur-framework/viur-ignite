@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [develop]
+
+### Changed
+- _.shd_ and _.txt-shd_ are now normal css elements - no mixins more and use the _@defaultShadowColor_
+
+
 ## [3.2.0] - 2020-01-24
 
 ### Added

@@ -27,7 +27,7 @@
 //    }
 //}
 
-.boxShadow(@level, @color: #000){
+.boxShadow(@level, @color: @defaultShadowColor){
     & when (@level = 0) {box-shadow: none;}
     & when (@level = 1) {
         box-shadow: 0 1px 3px fadeout(@color,88%), 0 1px 2px fadeout(@color,76%);
@@ -46,7 +46,7 @@
     }
 }
 
-.textShadow(@level: 1, @color: #000){
+.textShadow(@level: 1, @color: @defaultShadowColor){
     & when (@level = 0) {text-shadow: none;}
     & when (@level = 1) {
         text-shadow: 0 1px 3px fadeout(@color,88%), 0 1px 2px fadeout(@color,76%);
@@ -66,5 +66,5 @@
 }
 
 /* Shadow Helper Classes */
-.shd() {.boxShadow(1, #000);}
-.txt-shd() {.textShadow(1, #000);}
+.shd {.boxShadow(1, @defaultShadowColor);}
+.txt-shd {.textShadow(1, @defaultShadowColor);}
