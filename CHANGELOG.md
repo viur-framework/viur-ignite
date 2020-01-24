@@ -1,9 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [3.1.0] - 2019-05-03
+## [3.2.0] - 2020-01-24
 
 ### Added
+- XXL support for font size and break points
+- missing color to select
+- missing font-weight to textarea
+- default value to .order
+
+
+## [3.1.0] - 2019-05-03
 
 ### Changed
 - comments to a consistent notation
@@ -142,6 +149,7 @@ Moreover flex layout is no longer the exception but the norm.
 - Changelog started here
 
 
+[3.2.0]: https://github.com/viur-framework/ignite/compare/3.1.0...3.2.0
 [3.1.0]: https://github.com/viur-framework/ignite/compare/3.0.00...3.1.0
 [3.0.0]: https://github.com/viur-framework/ignite/compare/1.0.24...3.0.00
 [2.0.0]: https://github.com/viur-framework/ignite/compare/1.0.24...2.0.00
