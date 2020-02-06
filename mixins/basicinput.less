@@ -5,12 +5,8 @@
 // This helps to align basic form elements.
 
 .basicInput(@padding:@inputPadding, @margin:@inputMargin, @borderRadius:@inputBorderRadius, @borderWidth:@inputBorderWidth, @borderColor:@inputBorderColor, @fontWeight: @fontWeightLight) {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   display: inline-flex;
   position: relative;
-  border-width: 0;
-  border-radius: 0;
   .border-radius(@borderRadius);
   .border(@borderWidth, solid, @borderColor);
   padding: @padding @padding*3.75;
@@ -20,7 +16,6 @@
   font-size: 1em;
   line-height: 1.4;
   font-weight: @fontWeightLight;
-  //line-height:1;
   .mq-print({
     border-width: 0;
   });
