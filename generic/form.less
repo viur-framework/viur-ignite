@@ -16,23 +16,26 @@
 // Adjustments:
 
 // Padding:
-@inputPadding: @defaultPadding;
-@inputMargin: @defaultMargin;
+@formConf: {
+  inputPadding: @defaultPadding;
+  inputMargin: @defaultMargin;
+}
 
-// Colors and shadows:
-@inputColor: @defaultInputColor;
-@inputValidColor: @successColor;
-@inputDangerColor: @failColor;
-@inputHintColor: @hintColor;
-@inputRequiredColor: @mainColor;
+  // Colors and shadows:
+  @inputColor: @defaultInputColor;
+  @inputValidColor: @successColor;
+  @inputDangerColor: @failColor;
+  @inputHintColor: @hintColor;
+  @inputRequiredColor: @mainColor;
 
-@inputShadow: @defaultShadow;
-@inputShadowHover: @defaultShadowHover;
-@inputShadowColor: @defaultShadowColor;
+  @inputShadow: @defaultShadow;
+  @inputShadowHover: @defaultShadowHover;
+  @inputShadowColor: @defaultShadowColor;
 
-@inputBorderRadius: @defaultBorderRadius;
-@inputBorderWidth: @defaultBorderWidth;
-@inputBorderColor: darken(@defaultInputColor, 10%);
+  @inputBorderRadius: @defaultBorderRadius;
+  @inputBorderWidth: @defaultBorderWidth;
+  @inputBorderColor: darken(@defaultInputColor, 10%);
+
 
 
 & when (@form=true) {
@@ -263,8 +266,8 @@
   /* Text area */
   .textarea {
     resize: none;
-    margin: @inputMargin 0;
-    padding: @inputPadding @inputPadding*3.75;
+    margin: @formConf[inputMargin] 0;
+    padding: @formConf[inputPadding] @formConf[inputPadding]*3.75;
     width: 250px;
     height: 180px;
     background-color: @inputColor;
@@ -330,9 +333,7 @@
   }
 
   .tickbox() {
-    .basicInput(@padding: 0;);
-    background-color: darken(@inputColor, 2%);
-    border: 1px solid darken(@inputColor, 12%);
+    .basicInput(@padding: 0; @borderColor: darken(@inputColor, 12%));
     color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
     &-input {
       opacity: 0;
@@ -361,7 +362,7 @@
       }
 
       &:not(:empty) {
-        padding: @inputPadding @inputPadding*3.75;
+        padding: @formConf[inputPadding] @formConf[inputPadding]*3.75;
 
         &:before {
           margin-right: 10px;
@@ -378,20 +379,19 @@
     }
   }
 
+  /* Checkbox */
   /* Radio button */
+  .check,
   .radio {
     .tickbox();
+  }
 
+  .radio {
     &-label {
       &:before {
         border-radius: 50%;
       }
     }
-  }
-
-  /* Checkbox */
-  .check {
-    .tickbox();
   }
 
   /* Option group */
@@ -427,7 +427,7 @@
 
       & .radio-label,
       & .check-label {
-        padding: @inputPadding*1.5 @inputPadding*3.75;
+        padding: @formConf[inputPadding]*1.5 @formConf[inputPadding]*3.75;
         padding-right: 1.75em;
       }
     }
@@ -620,8 +620,8 @@
     width: auto;
     max-width: 30vw;
     margin-left: -1px;
-    margin-top: @inputMargin;
-    margin-bottom: @inputMargin;
+    margin-top: @formConf[inputMargin];
+    margin-bottom: @formConf[inputMargin];
     .boxShadow(@inputShadow, @inputShadowColor);
   }
   & > *:not(:last-child) {

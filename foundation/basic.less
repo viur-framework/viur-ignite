@@ -8,6 +8,27 @@
 // Objects use a font size based on this size: using »rem« (root em).
 // Inline elements and type should react to their direct surroundings - thus use »em«.
 
+@basicConf: {
+  bodyBackgroundColor: @backgroundColor;
+  bodyLineHeight: @defaultLineHeight;
+  bodyTextColor: @textColor;
+  bodyFonts: @bodyFonts;
+  bodyFontWeight: @fontWeightNormal;
+  linkColor: @mainColor;
+  linkHoverColor: darken(@mainColor, 10%);
+  headColor: @mainColor;
+  headFonts: @headFonts;
+  headFontWeight: @fontWeightNormal;
+  headLineHeight: 1.6;
+  subColor: lighten(@complementColor, 20%);
+  leadFontWeight: @fontWeightLight;
+  markColor: lighten(@mainColor,40%);
+  quoteColor: @complementColor;
+  codeBackgroundColor: darken(@backgroundColor, 5%);
+  kbdBackgroundColor: darken(@backgroundColor, 10%);
+  selectionBackgroundColor: darken(@mainColor, 10%);
+}
+
 *, *::before, *::after {
   .mq-print({
     text-shadow: none !important;
@@ -53,27 +74,27 @@ html {
 }
 
 body {
-  background: @backgroundColor;
-  line-height: @defaultLineHeight;
-  color: @textColor;
-  font-family: @bodyFonts;
+  background: @basicConf[bodyBackgroundColor];
+  line-height: @basicConf[bodyLineHeight];
+  color: @basicConf[bodyTextColor];
+  font-family: @basicConf[bodyFonts];
   -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
   -webkit-text-size-adjust: 100%;
   min-height: 100vh;
   font-size: 100.01%;
-  font-weight: @fontWeightNormal;
+  font-weight: @basicConf[bodyFontWeight];
 }
 
 /* Links */
 a,
 .link {
-  color: @mainColor;
+  color: @basicConf[linkColor];
   text-decoration: none;
   outline: 0;
   transition: all ease-in-out .3s;
   &:hover,
   &:active {
-    color: darken(@mainColor, 10%);
+    color: @basicConf[linkHoverColor];
   }
   p &,
   p &:visited {
@@ -100,9 +121,9 @@ a[href^="ftp://"]:after {
 // Please style your headlines with the help of classes (e.g.: .headline, .subline, .heading)
 h1, h2, h3, h4, h5, h6 {
   color: inherit;
-  font-family: @headFonts;
-  font-weight: @fontWeightNormal;
-  line-height: 1.6;
+  font-family: @basicConf[headFonts];
+  font-weight: inherit;
+  line-height: @basicConf[headLineHeight];
   a {font-weight: inherit; color: inherit;}
   .mq-print({
     page-break-after: avoid;
@@ -112,14 +133,15 @@ h1, h2, h3, h4, h5, h6 {
 
 // Use .headline for your important headlines.
 .headline {
-  font-family: @headFonts;
-  color: @mainColor;
+  font-family: @basicConf[headFonts];
+  font-weight: @basicConf[headFontWeight];
+  color: @basicConf[headColor];
 }
 
 // Use .subline to your headline
 .subline {
-  font-family: @headFonts;
-  color: lighten(@complementColor, 20%);
+  font-family: @basicConf[headFonts];
+  color: @basicConf[subColor];
 }
 
 // remove margin-top of .subline after .headline
@@ -130,9 +152,8 @@ h1, h2, h3, h4, h5, h6 {
 // Use .lead to emphasize the first paragraph of a section.
 .lead {
   font-size: 1.3em;
-  font-weight: @fontWeightLight;
+  font-weight: @basicConf[leadFontWeight];
 }
-
 
 p {
   &:not(:last-of-type){
@@ -151,7 +172,10 @@ p {
   hyphens: auto;
   max-width: @paragraphWidth;
   margin: 0 auto @bottomSpace 0;
-  h1, h2, h3, h4, h5, h6 {font-weight:@fontWeightBold; margin-bottom: @innerSpace;}
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: @basicConf[headFontWeight];
+    margin-bottom: @innerSpace;
+  }
 }
 
 strong {font-weight: @fontWeightBold;}
@@ -164,8 +188,8 @@ ins {
 }
 
 mark {
-  background: lighten(@mainColor,40%);
-  color: contrast(lighten(@mainColor,40%), @textColor, @invTextColor);
+  background: @basicConf[markColor];
+  color: contrast(@basicConf[markColor], @textColor, @invTextColor);
   padding: 1px;
   &:before,
   &:after {
@@ -175,12 +199,12 @@ mark {
 }
 
 blockquote {
-  font-family: @headFonts;
+  font-family: @basicConf[headFonts];
   font-style: italic;
   font-size: 1.2em;
-  color: @complementColor;
+  color: @basicConf[quoteColor];
   padding: 0 15px;
-  border-left: 7px solid @complementColor;
+  border-left: 7px solid @basicConf[quoteColor];
   cite {
     font-size: .8em;
     vertical-align: baseline;
@@ -189,7 +213,7 @@ blockquote {
       display: inline-block;
       content: '\2014';
       margin-right: 3px;
-      color: @complementColor;
+      color: @basicConf[quoteColor];
     }
   }
   &:after {
@@ -201,8 +225,8 @@ blockquote {
 
 code, pre {
   font-family: @monoFonts;
-  background: darken(@backgroundColor, 5%);
-  color: contrast(darken(@backgroundColor, 5%));
+  background: @basicConf[codeBackgroundColor];
+  color: contrast(@basicConf[codeBackgroundColor]);
 }
 code {
   white-space: pre;
@@ -227,11 +251,11 @@ pre {
 // Keys
 .kbd,
 kbd {
-  background-color: darken(@backgroundColor, 10%);
-  border: 1px solid darken(@backgroundColor, 15%);
+  background-color: @basicConf[kbdBackgroundColor];
+  border: 1px solid darken(@basicConf[kbdBackgroundColor], 5%);
   border-radius: 3px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-  color: contrast(darken(@backgroundColor, 10%));
+  color: contrast(@basicConf[kbdBackgroundColor]);
   display: inline-block;
   font-size: .8rem;
   font-family: @monoFonts;
@@ -240,10 +264,10 @@ kbd {
   text-shadow: 0 1px 0 #fff;
   white-space: nowrap;
   &.kbd--dark {
-    border: 1px solid contrast(darken(@backgroundColor, 15%));
-    background-color: contrast(darken(@backgroundColor, 10%));
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px lighten(contrast(darken(@backgroundColor, 10%)), 20%) inset;
-    color: darken(@backgroundColor, 10%);
+    border: 1px solid contrast(darken(@basicConf[kbdBackgroundColor], 5%));
+    background-color: contrast(@basicConf[kbdBackgroundColor]);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px lighten(contrast(@basicConf[kbdBackgroundColor]), 20%) inset;
+    color: @basicConf[kbdBackgroundColor];
   }
 }
 
@@ -288,15 +312,15 @@ table, blockquote, pre, code, figure, li, hr, ul, ol, a {
 
 // Selections
 ::-moz-selection {
-  background-color: darken(@mainColor, 10%);
+  background-color: @basicConf[selectionBackgroundColor];
   text-shadow: none;
-  color: contrast(@mainColor);
+  color: contrast(@basicConf[selectionBackgroundColor]);
 }
 
 ::selection {
-  background-color: darken(@mainColor, 10%);
+  background-color: @basicConf[selectionBackgroundColor];
   text-shadow: none;
-  color: contrast(@mainColor);
+  color: contrast(@basicConf[selectionBackgroundColor]);
 }
 
 :focus {
