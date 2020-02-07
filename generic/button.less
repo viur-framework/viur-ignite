@@ -5,47 +5,61 @@
 // .btn-
 // .btn-group
 
+@btn-backgroundColor: #e7e5e5;
+@btn-padding: @defaultPadding;
+@btn-margin: @defaultMargin;
+@btn-borderWidth: @defaultBorderWidth;
+@btn-borderRadius: @defaultBorderRadius;
+@btn-shadow: @defaultShadow;
+@btn-shadowHover: @defaultShadow+1;
+@btn-shadowColor: @defaultShadowColor;
+@btn-fontWeight: @fontWeightNormal;
+
+& when (@button=true) {
+  .btn();
+}
+
 .btn(
-  @btnBackgroundColor:#e7e5e5,
-  @btnPadding: @defaultPadding,
-  @btnMargin: @defaultMargin,
-  @btnBorderWidth: @defaultBorderWidth,
-  @btnBorderRadius: @defaultBorderRadius,
-  @btnShadow: @defaultShadow,
-  @btnShadowHover: @defaultShadow+1,
-  @btnShadowColor: @defaultShadowColor,
-  @btnFontWeight: @fontWeightNormal) when (@button=true) {
-  .basicInput(@btnPadding, @btnMargin, @btnBorderRadius, @btnBorderWidth, darken(@btnBackgroundColor, 10%), @btnFontWeight);
-  color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
-  background-color: @btnBackgroundColor;
-  .boxShadow(@btnShadow, @btnShadowColor);
+  @backgroundColor: @btn-backgroundColor,
+  @padding: @btn-padding,
+  @margin: @btn-margin,
+  @borderWidth: @btn-borderWidth,
+  @borderRadius: @btn-borderRadius,
+  @shadow: @btn-shadow,
+  @shadowHover: @btn-shadowHover,
+  @shadowColor: @btn-shadowColor,
+  @fontWeight: @btn-fontWeight) {
+  .basicInput(@padding, @margin, @borderRadius, @borderWidth, darken(@backgroundColor, 10%), @fontWeight);
+  color: contrast(@backgroundColor, #222222, #f4f4f4);
+  background-color: @backgroundColor;
+  .boxShadow(@shadow, @shadowColor);
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
   transition: all .3s ease;
   &:link,
   &:visited {
-    color: contrast(@btnBackgroundColor, #222222, #f4f4f4);
+    color: contrast(@backgroundColor, #222222, #f4f4f4);
   }
   &:hover {
-    color: contrast(lighten(@btnBackgroundColor, 5%));
-    background-color: lighten(@btnBackgroundColor, 5%);
-    .boxShadow(@btnShadowHover, @btnShadowColor);
+    color: contrast(lighten(@backgroundColor, 5%));
+    background-color: lighten(@backgroundColor, 5%);
+    .boxShadow(@shadowHover, @shadowColor);
   }
   &:active,
   &.is-active {
-    color: contrast(lighten(@btnBackgroundColor, 10%));
-    background-color: lighten(@btnBackgroundColor, 10%);
+    color: contrast(lighten(@backgroundColor, 10%));
+    background-color: lighten(@backgroundColor, 10%);
   }
   &.is-disabled,
   &:disabled,
   &[aria-disabled=true] {
     &:hover,
     & {
-      color: darken(desaturate(@btnBackgroundColor, 20%), 10%);
+      color: darken(desaturate(@backgroundColor, 20%), 10%);
       cursor: not-allowed;
       border-style: dashed;
-      background-color: lighten(desaturate(@btnBackgroundColor, 20%), 30%);
+      background-color: lighten(desaturate(@backgroundColor, 20%), 30%);
       .boxShadow(0);
     }
   }
@@ -55,7 +69,7 @@
     cursor: progress;
 
     &:hover {
-      .boxShadow(@btnShadow, @btnShadowColor);
+      .boxShadow(@shadow, @shadowColor);
     }
   }
   & > .icon {
@@ -79,46 +93,46 @@
     font-size: 1.2em;
   }
   &--block {
-    margin: @btnMargin 0;
+    margin: @margin 0;
     width: 100%;
     text-align: center;
   }
 }
 
 .colorizeBtn(
-  @btnBackgroundColor,
-  @btnBorderWidth: @defaultBorderWidth,
-  @btnShadow: 1,
-  @btnShadowHover: 2) when (@button=true) {
-  color: contrast(darken(@btnBackgroundColor, 15%), #222222, #f4f4f4);
-  background-color: @btnBackgroundColor;
-  border: @btnBorderWidth solid darken(@btnBackgroundColor, 10%);
-  .boxShadow(@btnShadow, @btnBackgroundColor);
+  @backgroundColor,
+  @borderWidth: @defaultBorderWidth,
+  @shadow: 1,
+  @shadowHover: 2) when (@button=true) {
+  color: contrast(darken(@backgroundColor, 15%), #222222, #f4f4f4);
+  background-color: @backgroundColor;
+  border: @borderWidth solid darken(@backgroundColor, 10%);
+  .boxShadow(@shadow, @backgroundColor);
   &:link,
   &:visited {
-    color: contrast(darken(@btnBackgroundColor, 15%), #222222, #f4f4f4);
+    color: contrast(darken(@backgroundColor, 15%), #222222, #f4f4f4);
   }
   &:hover {
-    color: contrast(darken(@btnBackgroundColor, 15%));
-    background-color: lighten(@btnBackgroundColor, 5%);
-    border: @btnBorderWidth solid darken(@btnBackgroundColor, 5%);
-    .boxShadow(@btnShadowHover, @btnBackgroundColor);
+    color: contrast(darken(@backgroundColor, 15%));
+    background-color: lighten(@backgroundColor, 5%);
+    border: @borderWidth solid darken(@backgroundColor, 5%);
+    .boxShadow(@shadowHover, @backgroundColor);
   }
   &:active,
   &.is-active {
-    color: contrast(darken(@btnBackgroundColor, 20%));
-    background-color: lighten(@btnBackgroundColor, 10%);
-    border: @btnBorderWidth solid lighten(@btnBackgroundColor, 5%);
+    color: contrast(darken(@backgroundColor, 20%));
+    background-color: lighten(@backgroundColor, 10%);
+    border: @borderWidth solid lighten(@backgroundColor, 5%);
   }
   &.is-disabled,
   &:disabled,
   &[aria-disabled=true] {
     &:hover,
     & {
-      color: lighten(desaturate(@btnBackgroundColor, 20%), 10%);
+      color: lighten(desaturate(@backgroundColor, 20%), 10%);
       .boxShadow(0);
       border-style: dashed;
-      background-color: lighten(desaturate(@btnBackgroundColor, 20%), 30%);
+      background-color: lighten(desaturate(@backgroundColor, 20%), 30%);
     }
   }
   .input-group & {
@@ -127,37 +141,37 @@
 }
 
 .invertColorizedBtn(
-  @btnBackgroundColor,
-  @btnBorderWidth: @defaultBorderWidth,
-  @btnShadow: 1,
-  @btnShadowHover: 2) when (@button=true) {
-  color: darken(@btnBackgroundColor, 5%);
-  border: @btnBorderWidth solid darken(@btnBackgroundColor, 10%);
-  .boxShadow(@btnShadow, @btnBackgroundColor);
+  @backgroundColor,
+  @borderWidth: @defaultBorderWidth,
+  @shadow: 1,
+  @shadowHover: 2) when (@button=true) {
+  color: darken(@backgroundColor, 5%);
+  border: @borderWidth solid darken(@backgroundColor, 10%);
+  .boxShadow(@shadow, @backgroundColor);
   &:link,
   &:visited {
-    color: darken(@btnBackgroundColor, 5%);
+    color: darken(@backgroundColor, 5%);
   }
   &:hover {
-    color: contrast(darken(@btnBackgroundColor, 15%));
-    background-color: lighten(@btnBackgroundColor, 5%);
-    border: @btnBorderWidth solid darken(@btnBackgroundColor, 5%);
-    .boxShadow(@btnShadowHover, @btnBackgroundColor);
+    color: contrast(darken(@backgroundColor, 15%));
+    background-color: lighten(@backgroundColor, 5%);
+    border: @borderWidth solid darken(@backgroundColor, 5%);
+    .boxShadow(@shadowHover, @backgroundColor);
   }
   &:active,
   &.is-active {
-    color: contrast(darken(@btnBackgroundColor, 20%));
-    background-color: lighten(@btnBackgroundColor, 10%);
-    border: @btnBorderWidth solid lighten(@btnBackgroundColor, 5%);
+    color: contrast(darken(@backgroundColor, 20%));
+    background-color: lighten(@backgroundColor, 10%);
+    border: @borderWidth solid lighten(@backgroundColor, 5%);
   }
   &.is-disabled,
   &:disabled,
   &[aria-disabled=true] {
     &:hover,
     & {
-      color: lighten(desaturate(@btnBackgroundColor, 20%), 30%);
-      background-color: lighten(desaturate(@btnBackgroundColor, 20%), 15%);
-      border: @btnBorderWidth dashed lighten(desaturate(@btnBackgroundColor, 20%), 30%);
+      color: lighten(desaturate(@backgroundColor, 20%), 30%);
+      background-color: lighten(desaturate(@backgroundColor, 20%), 15%);
+      border: @borderWidth dashed lighten(desaturate(@backgroundColor, 20%), 30%);
       .boxShadow(0);
     }
   }

@@ -4,7 +4,21 @@
 // Less Burger © 2015, Mark Rabey. Released under the MIT License.
 // https://github.com/MarkRabey/less-burger
 
-.burger(@width: 30px, @height: 5px, @gutter: 3px, @color: #000, @border-radius: 0, @transition-duration: .3s) when (@burger=true) {
+@burger-width: 30px;
+@burger-height: 5px;
+@burger-gutter: 3px;
+@burger-color: @mainColor;
+@burger-borderRadius: @defaultBorderRadius;
+@burger-transitionDuration: .3s;
+
+.burger(
+  @width: @burger-width,
+  @height: @burger-height,
+  @gutter: @burger-gutter,
+  @color: @burger-color,
+  @borderRadius: @burger-borderRadius,
+  @transitionDuration: @burger-transitionDuration
+  ) when (@burger=true) {
   display: block;
   align-self: center;
   .mq-min(@breakMedium, { display: none; });
@@ -23,9 +37,9 @@
       width: @width;
       height: @height;
       background-color: @color;
-      .border-radius(@border-radius);
+      .border-radius(@borderRadius);
       transition-property: background-color, transform;
-      transition-duration: @transition-duration;
+      transition-duration: @transitionDuration;
     }
 
     &:before,
