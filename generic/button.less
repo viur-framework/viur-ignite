@@ -15,7 +15,7 @@
 @btn-shadowColor: @defaultShadowColor;
 @btn-fontWeight: @fontWeightNormal;
 
-& when (@button=true) {
+.btn when (@button=true) {
   .btn();
 }
 
@@ -23,8 +23,8 @@
   @backgroundColor: @btn-backgroundColor,
   @padding: @btn-padding,
   @margin: @btn-margin,
-  @borderWidth: @btn-borderWidth,
   @borderRadius: @btn-borderRadius,
+  @borderWidth: @btn-borderWidth,
   @shadow: @btn-shadow,
   @shadowHover: @btn-shadowHover,
   @shadowColor: @btn-shadowColor,

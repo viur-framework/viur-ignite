@@ -7,13 +7,24 @@
 // .table-body-
 // .table-foot-
 
+@table-headBackgroundColor: @mainColor;
+@table-rowBackgroundColor: #fefefe;
+@table-relectionColor: @successColor;
+@table-headPadding: @defaultPadding;
+@table-padding: @defaultPadding;
+@table-borderWidth: @defaultBorderWidth;
+
+.table when (@table=true) {
+  .table();
+}
+
 .table(
-  @tableHeadBackgroundColor:@mainColor,
-  @tableRowBackgroundColor:#fefefe,
-  @tableSelectionColor: @successColor,
-  @tableHeadPadding: @defaultPadding,
-  @tablePadding: @defaultPadding,
-  @tableBorderWidth: @defaultBorderWidth) when (@table=true) {
+  @headBackgroundColor: @table-headBackgroundColor,
+  @rowBackgroundColor: @table-rowBackgroundColor,
+  @selectionColor: @table-relectionColor,
+  @headPadding: @table-headPadding,
+  @padding: @table-padding,
+  @borderWidth: @table-borderWidth) {
   table-layout: fixed;
   border-collapse: collapse;
   border-spacing: 0;
@@ -36,12 +47,12 @@
   }
 
   &-head-cell {
-    padding: @tableHeadPadding;
+    padding: @headPadding;
   }
 
   &-body-cell,
   &-foot-cell {
-    padding: @tablePadding;
+    padding: @padding;
   }
 
   &-head { // hide workaround
@@ -56,19 +67,19 @@
   }
 
   &-head-cell {
-    background-color: @tableHeadBackgroundColor;
-    .border(@tableBorderWidth, solid, darken(@tableHeadBackgroundColor, 15%));
+    background-color: @headBackgroundColor;
+    .border(@borderWidth, solid, darken(@headBackgroundColor, 15%));
     font-weight: @fontWeightNormal;
     text-align: center;
-    color: contrast(darken(@tableHeadBackgroundColor,15%));
+    color: contrast(darken(@headBackgroundColor,15%));
   }
 
   &-body-row,
   &-foot-row {
-    .border(@tableBorderWidth, solid, darken(@tableHeadBackgroundColor, 15%));
+    .border(@borderWidth, solid, darken(@headBackgroundColor, 15%));
     &.is-active {
-      background-color: darken(@tableSelectionColor, 2%);
-      &-body-cell, &-foot-cell { color: contrast(@tableSelectionColor); }
+      background-color: darken(@selectionColor, 2%);
+      &-body-cell, &-foot-cell { color: contrast(@selectionColor); }
     }
   }
 
@@ -78,7 +89,7 @@
   }
 
   &-foot {
-    border-top: @tableBorderWidth solid darken(@tableRowBackgroundColor, 40%);
+    border-top: @borderWidth solid darken(@rowBackgroundColor, 40%);
     margin-top: 1em;
   }
 
@@ -88,8 +99,8 @@
 
   &-body-cell[scope="row"],
   &-foot-cell[scope="row"] {
-    background-color: @tableSelectionColor;
-    color: contrast(@tableSelectionColor);
+    background-color: @selectionColor;
+    color: contrast(@selectionColor);
   }
 
   &-body-cell[data-title]:before,
@@ -102,16 +113,16 @@
 
   .mq-min(@breakSmall, {
     &-head-cell {
-      padding: @tableHeadPadding @tableHeadPadding*1.25;
+      padding: @headPadding @headPadding*1.25;
     }
     &-body-cell,
     &-foot-cell {
-      padding: @tablePadding @tablePadding*1.25;
+      padding: @padding @padding*1.25;
 
     }
     &-body-row:not(:last-of-type) &-body-cell,
     &-foot-row:not(:last-of-type) &-foot-cell {
-      border-bottom: @tableBorderWidth solid darken(@tableRowBackgroundColor, 15%);
+      border-bottom: @borderWidth solid darken(@rowBackgroundColor, 15%);
     }
   });
   .mq-min(@breakMedium, {
@@ -134,14 +145,14 @@
     &-body-row,
     &-foot-row {
       border-width: 1px;
-      &:nth-of-type(even) { background-color: darken(@tableRowBackgroundColor, 2%); }
-      &:nth-of-type(odd) { background-color: darken(@tableRowBackgroundColor, 4%); }
-      &:nth-of-type(even):hover { background-color: lighten(@tableRowBackgroundColor, 6%); }
-      &:nth-of-type(odd):hover { background-color: lighten(@tableRowBackgroundColor, 6%); }
-      &:nth-of-type(even).is-active { background-color: darken(@tableSelectionColor, 2%); }
-      &:nth-of-type(odd).is-active { background-color: darken(@tableSelectionColor, 4%); }
-      &:nth-of-type(even).is-active:hover { background-color: lighten(@tableSelectionColor, 6%); }
-      &:nth-of-type(odd).is-active:hover { background-color: lighten(@tableSelectionColor, 6%); }
+      &:nth-of-type(even) { background-color: darken(@rowBackgroundColor, 2%); }
+      &:nth-of-type(odd) { background-color: darken(@rowBackgroundColor, 4%); }
+      &:nth-of-type(even):hover { background-color: lighten(@rowBackgroundColor, 6%); }
+      &:nth-of-type(odd):hover { background-color: lighten(@rowBackgroundColor, 6%); }
+      &:nth-of-type(even).is-active { background-color: darken(@selectionColor, 2%); }
+      &:nth-of-type(odd).is-active { background-color: darken(@selectionColor, 4%); }
+      &:nth-of-type(even).is-active:hover { background-color: lighten(@selectionColor, 6%); }
+      &:nth-of-type(odd).is-active:hover { background-color: lighten(@selectionColor, 6%); }
     }
     &-head-cell,
     &-body-cell,
@@ -149,26 +160,26 @@
       display: table-cell;
     }
     &-head-cell {
-      padding: @tableHeadPadding @tableHeadPadding*2;
+      padding: @headPadding @headPadding*2;
     }
     &-body-cell,
     &-foot-cell {
-      padding: @tablePadding @tableHeadPadding*2;
+      padding: @padding @headPadding*2;
       &[data-title]:before { content: none; }
       &[scope="row"] {
         background-color: transparent;
-        color: contrast(@tableRowBackgroundColor);
+        color: contrast(@rowBackgroundColor);
         text-align: center;
       }
     }
   });
   .mq-min(@breakLarge, {
     &-head-cell {
-      padding: @tableHeadPadding @tableHeadPadding*3;
+      padding: @headPadding @headPadding*3;
     }
     &-body-cell,
     &-foot-cell {
-      padding: @tablePadding @tablePadding*3;
+      padding: @padding @padding*3;
     }
   });
   .mq-min(@breakXlarge, {
@@ -176,11 +187,11 @@
       font-size: .8rem; // 80% of body text.
     }
     &-head-cell {
-      padding: @tableHeadPadding*1.5 @tableHeadPadding*3;
+      padding: @headPadding*1.5 @headPadding*3;
     }
     &-body-cell,
     &-foot-cell {
-      padding: @tablePadding*1.5 @tablePadding*3;
+      padding: @padding*1.5 @padding*3;
     }
   });
 }

@@ -14,37 +14,33 @@
 // .input-group
 
 // Adjustments:
+// Spacing:
+@form-padding: @defaultPadding;
+@form-margin: @defaultMargin;
 
-// Padding:
-@formConf: {
-  inputPadding: @defaultPadding;
-  inputMargin: @defaultMargin;
-}
+// Colors:
+@form-color: @defaultFormColor;
+@form-validColor: @successColor;
+@form-dangerColor: @failColor;
+@form-hintColor: @hintColor;
+@form-requiredColor: @mainColor;
 
-  // Colors and shadows:
-  @inputColor: @defaultInputColor;
-  @inputValidColor: @successColor;
-  @inputDangerColor: @failColor;
-  @inputHintColor: @hintColor;
-  @inputRequiredColor: @mainColor;
+// Shadows:
+@form-shadow: @defaultShadow;
+@form-shadowHover: @defaultShadowHover;
+@form-shadowColor: @defaultShadowColor;
 
-  @inputShadow: @defaultShadow;
-  @inputShadowHover: @defaultShadowHover;
-  @inputShadowColor: @defaultShadowColor;
-
-  @inputBorderRadius: @defaultBorderRadius;
-  @inputBorderWidth: @defaultBorderWidth;
-  @inputBorderColor: darken(@defaultInputColor, 10%);
-
-
+// Borders:
+@form-borderRadius: @defaultBorderRadius;
+@form-borderWidth: @defaultBorderWidth;
+@form-borderColor: darken(@defaultFormColor, 12%);
 
 & when (@form=true) {
   /* Input */
-
   .input {
     .basicInput;
-    background-color: @inputColor;
-    color: contrast(@inputColor, #222222, #f4f4f4);
+    background-color: @form-color;
+    color: contrast(@form-color, #222222, #f4f4f4);
     white-space: nowrap;
     text-overflow: ellipsis;
     min-width: 0;
@@ -62,29 +58,29 @@
       &.is-invalid,
       &[aria-invalid="true"],
       &:invalid:not(:placeholder-shown) {
-        .inputValidation(@inputColor, @inputDangerColor, @backgroundImage:true, @cursor:false, @focus:true);
-        .penBg(@color:@inputDangerColor);
+        .inputValidation(@form-color, @form-dangerColor, @backgroundImage:true, @cursor:false, @focus:true);
+        .penBg(@color:@form-dangerColor);
       }
 
       .input-group.is-recommended &,
       &.is-recommended {
-        .inputValidation(@inputColor, @inputHintColor, @backgroundImage:true, @cursor:false, @focus:true);
-        .penBg(@color:@inputHintColor);
+        .inputValidation(@form-color, @form-hintColor, @backgroundImage:true, @cursor:false, @focus:true);
+        .penBg(@color:@form-hintColor);
       }
 
       .input-group.is-valid &,
       &.is-valid,
       &[aria-invalid="false"],
       &:valid:not(:placeholder-shown):not([type="password"]) {
-        .inputValidation(@inputColor, @inputValidColor, @backgroundImage:true, @cursor:false, @focus:true);
-        .checkBg(@color:@inputValidColor);
+        .inputValidation(@form-color, @form-validColor, @backgroundImage:true, @cursor:false, @focus:true);
+        .checkBg(@color:@form-validColor);
       }
     }
 
     &.is-readonly,
     &:read-only,
     &[aria-readonly="true"] {
-      .inputValidation(@inputColor, darken(@inputColor, 50%), @cursor:auto);
+      .inputValidation(@form-color, darken(@form-color, 50%), @cursor:auto);
       .boxShadow(0);
       border-style: dashed;
       border-bottom-style: solid;
@@ -93,16 +89,16 @@
     &.is-disabled,
     &:disabled,
     &[aria-disabled="true"] {
-      .inputValidation(@inputColor, darken(@inputColor, 15%), @backgroundImage:true, @cursor:not-allowed);
-      .not-allowedBg(@color:darken(@inputColor,15%));
+      .inputValidation(@form-color, darken(@form-color, 15%), @backgroundImage:true, @cursor:not-allowed);
+      .not-allowedBg(@color:darken(@form-color,15%));
       .boxShadow(0);
       border-style: dashed;
     }
 
     &--contrast {
-      background-color: darken(@inputColor, 5%);
-      border: @defaultBorderWidth solid darken(@inputColor, 15%);
-      color: contrast(darken(@inputColor, 5%), #000000, #ffffff);
+      background-color: darken(@form-color, 5%);
+      border: @form-borderWidth solid darken(@form-color, 15%);
+      color: contrast(darken(@form-color, 5%), #000000, #ffffff);
     }
 
     &--small {
@@ -117,39 +113,39 @@
 
   // placeholder text color
   .input::placeholder, .textarea::placeholder {
-    color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
+    color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
     opacity: 1;
   }
   .input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder {
-    color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
+    color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
     opacity: 1;
   }
   .input:-moz-placeholder, .textarea:-moz-placeholder {
-    color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
+    color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
     opacity: 1;
   }
   .input::-moz-placeholder, .textarea::-moz-placeholder {
-    color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
+    color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
     opacity: 1;
   }
   .input:-ms-input-placeholder, .textarea:-ms-input-placeholder {
-    color: lighten(contrast(@inputColor, #222222, #f4f4f4), 50%);
+    color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
     opacity: 1;
   }
 
   /* Label */
   .label {
-    .basicInput(@borderColor:darken(@defaultInputColor,12%));
+    .basicInput(@borderColor:@form-borderColor);
     align-self: flex-start;
     white-space: nowrap;
-    background-color: darken(@inputColor, 2%);
-    color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
+    background-color: darken(@form-color, 2%);
+    color: contrast(darken(@form-color, 2%), #000000, #ffffff);
     min-width: 190px;
 
     .input-group.is-required &,
     &.is-required {
-      border-left: @defaultBorderWidth+1px solid @inputRequiredColor;
-      color: @inputRequiredColor;
+      border-left: @form-borderWidth+1px solid @form-requiredColor;
+      color: @form-requiredColor;
       font-weight: @fontWeightBold;
     }
 
@@ -163,23 +159,23 @@
     &--validation {
       .input-group.is-invalid &,
       &.is-invalid {
-        color: darken(@inputDangerColor, 25%);
-        border-color: @inputDangerColor;
-        background-color: lighten(@inputDangerColor, 20%);
+        color: darken(@form-dangerColor, 25%);
+        border-color: @form-dangerColor;
+        background-color: lighten(@form-dangerColor, 20%);
       }
 
       .input-group.is-recommended &,
       &.is-recommended {
-        color: darken(@inputHintColor, 25%);
-        border-color: @inputHintColor;
-        background-color: lighten(@inputHintColor, 20%);
+        color: darken(@form-hintColor, 25%);
+        border-color: @form-hintColor;
+        background-color: lighten(@form-hintColor, 20%);
       }
 
       .input-group.is-valid &,
       &.is-valid {
-        color: darken(@inputValidColor, 25%);
-        border-color: @inputValidColor;
-        background-color: lighten(@inputValidColor, 20%);
+        color: darken(@form-validColor, 25%);
+        border-color: @form-validColor;
+        background-color: lighten(@form-validColor, 20%);
       }
     }
 
@@ -188,8 +184,8 @@
       color: #777777;
       cursor: not-allowed;
       .boxShadow(0);
-      border: @defaultBorderWidth dashed darken(@inputColor, 20%);
-      background-color: darken(@inputColor, 5%);
+      border: @form-borderWidth dashed darken(@form-color, 20%);
+      background-color: darken(@form-color, 5%);
     }
 
     .icon {
@@ -212,22 +208,22 @@
 
   /* Dropdown */
   .select {
-    .basicInput(@borderColor:darken(@defaultInputColor,12%));
-    color: contrast(@inputColor, #222222, #f4f4f4);
+    .basicInput(@borderColor:@form-borderColor);
+    color: contrast(@form-color, #222222, #f4f4f4);
     //align-self: flex-start;
     max-width: 100%;
     min-width: 0;
     //flex: 1;
     padding-right: 38px;
-    background-color: @inputColor;
-    .arrowsUpDownBg(@color:contrast(@inputColor, #222222, #f4f4f4));
+    background-color: @form-color;
+    .arrowsUpDownBg(@color:contrast(@form-color, #222222, #f4f4f4));
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: right center;
     transition: all .3s ease;
 
     &:hover {
-      .boxShadow(@inputShadowHover, @inputShadowColor);
+      .boxShadow(@form-shadowHover, @form-shadowColor);
     }
 
     &.is-disabled,
@@ -235,8 +231,8 @@
       color: #777777;
       cursor: not-allowed;
       .boxShadow(0);
-      border: @defaultBorderWidth dashed darken(@inputColor, 20%);
-      background-color: darken(@inputColor, 5%);
+      border: @form-borderWidth dashed darken(@form-color, 20%);
+      background-color: darken(@form-color, 5%);
     }
 
     .form-group--validation &,
@@ -246,13 +242,13 @@
       &.is-invalid,
       &[aria-invalid="true"],
       &:invalid {
-        .inputValidation(@inputColor, @inputDangerColor, @focus:true);
+        .inputValidation(@form-color, @form-dangerColor, @focus:true);
       }
 
       .input-group.is-valid &,
       &.is-valid,
       &:valid {
-        .inputValidation(@inputColor, @inputValidColor, @focus:true);
+        .inputValidation(@form-color, @form-validColor, @focus:true);
       }
     }
 
@@ -266,13 +262,13 @@
   /* Text area */
   .textarea {
     resize: none;
-    margin: @formConf[inputMargin] 0;
-    padding: @formConf[inputPadding] @formConf[inputPadding]*3.75;
+    margin: @form-margin 0;
+    padding: @form-padding @form-padding*3.75;
     width: 250px;
     height: 180px;
-    background-color: @inputColor;
-    border: 1px solid darken(@inputColor, 10%);
-    color: contrast(@inputColor, #222222, #f4f4f4);
+    background-color: @form-color;
+    border: 1px solid @form-borderColor;
+    color: contrast(@form-color, #222222, #f4f4f4);
     transition: all .3s ease;
     background-position: 150% center;
     background-size: 15px;
@@ -289,15 +285,15 @@
   /* Switch */
   // A simple, yet elegant, boolean switch.
   .switch {
-    .basicInput(@borderColor:darken(@defaultInputColor,12%));
-    background-color: darken(@inputColor, 2%);
-    color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
+    .basicInput(@borderColor:@form-borderColor);
+    background-color: darken(@form-color, 2%);
+    color: contrast(darken(@form-color, 2%), #000000, #ffffff);
 
     &-input {
       display: none;
 
       &:checked + .switch-label {
-        background: lighten(@inputValidColor, 20%);
+        background: lighten(@form-validColor, 20%);
       }
 
       &:checked + .switch-label:after {
@@ -306,7 +302,7 @@
     }
 
     &-label {
-      background: darken(@inputColor, 10%);
+      background: darken(@form-color, 10%);
       .border-radius(@defaultBorderRadius);
       padding: 2px;
       transition: all .4s ease;
@@ -327,14 +323,14 @@
         height: 100%;
         background: #fff;
         transition: all .2s ease;
-        .boxShadow(@inputShadow, @inputShadowColor);
+        .boxShadow(@form-shadow, @form-shadowColor);
       }
     }
   }
 
   .tickbox() {
-    .basicInput(@padding: 0; @borderColor: darken(@inputColor, 12%));
-    color: contrast(darken(@inputColor, 2%), #000000, #ffffff);
+    .basicInput(@padding: 0; @borderColor: @form-borderColor);
+    color: contrast(darken(@form-color, 2%), #000000, #ffffff);
     &-input {
       opacity: 0;
       position: absolute;
@@ -350,7 +346,7 @@
       &:before {
         content: '';
         background: #fff;
-        border: 2px solid darken(@inputColor, 10%);;
+        border: 2px solid @form-borderColor;
         display: inline-block;
         vertical-align: middle;
         width: 1em;
@@ -362,20 +358,20 @@
       }
 
       &:not(:empty) {
-        padding: @formConf[inputPadding] @formConf[inputPadding]*3.75;
+        padding: @form-padding @form-padding*3.75;
 
         &:before {
           margin-right: 10px;
         }
 
         &:hover {
-          background-color: @inputColor;
+          background-color: @form-color;
         }
       }
     }
     &-input:checked + &-label:before {
-      background: lighten(@inputValidColor, 20%);
-      border: 2px solid lighten(@inputValidColor, 10%);
+      background: lighten(@form-validColor, 20%);
+      border: 2px solid lighten(@form-validColor, 10%);
     }
   }
 
@@ -405,21 +401,21 @@
       width: 100%;
       margin: 0;
       position: relative;
-      border-width: 0 @defaultBorderWidth;
+      border-width: 0 @form-borderWidth;
       font-weight: @fontWeightLight;
       font-size: .75em;
 
       &:nth-of-type(even) {
-        background-color: darken(@inputColor, 5%);
+        background-color: darken(@form-color, 5%);
       }
 
       &:first-child {
-        border-width: @defaultBorderWidth;
+        border-width: @form-borderWidth;
         border-bottom-width: 0;
       }
 
       &:last-child {
-        border-width: @defaultBorderWidth;
+        border-width: @form-borderWidth;
         border-top-width: 0;
       }
 
@@ -427,7 +423,7 @@
 
       & .radio-label,
       & .check-label {
-        padding: @formConf[inputPadding]*1.5 @formConf[inputPadding]*3.75;
+        padding: @form-padding*1.5 @form-padding*3.75;
         padding-right: 1.75em;
       }
     }
@@ -450,7 +446,7 @@
 
       .radio:not(:last-child) .radio-label,
       .check:not(:last-child) .check-label {
-        border-bottom: @defaultBorderWidth solid darken(@inputColor, 20%);
+        border-bottom: @form-borderWidth solid darken(@form-color, 20%);
       }
 
       .radio-label:before,
@@ -460,12 +456,12 @@
 
       .radio-input:checked + .radio-label,
       .check-input:checked + .check-label {
-        background: lighten(@inputValidColor, 20%);
-        border-bottom: @defaultBorderWidth solid lighten(@inputValidColor, 10%);
+        background: lighten(@form-validColor, 20%);
+        border-bottom: @form-borderWidth solid lighten(@form-validColor, 10%);
         color: #fff;
 
         &:hover {
-          background-color: lighten(@inputValidColor, 10%);;
+          background-color: lighten(@form-validColor, 10%);;
         }
       }
     }
@@ -571,17 +567,17 @@
     .boxShadow(0);
   }
   & .label {
-    border-width: 0 @defaultBorderWidth;
+    border-width: 0 @form-borderWidth;
     width: 100%;
     margin: 0;
 
     &:first-child {
-      border-width: @defaultBorderWidth;
+      border-width: @form-borderWidth;
       border-bottom-width: 0;
     }
 
     &:last-child {
-      border-width: @defaultBorderWidth;
+      border-width: @form-borderWidth;
       border-top-width: 0;
     }
   }
@@ -598,7 +594,7 @@
 .input-group--bar() {
   flex-flow: row;
   & .label {
-    border-width: @defaultBorderWidth;
+    border-width: @form-borderWidth;
 
     &:first-child {
       border-right-width: 0;
@@ -620,9 +616,9 @@
     width: auto;
     max-width: 30vw;
     margin-left: -1px;
-    margin-top: @formConf[inputMargin];
-    margin-bottom: @formConf[inputMargin];
-    .boxShadow(@inputShadow, @inputShadowColor);
+    margin-top: @form-margin;
+    margin-bottom: @form-margin;
+    .boxShadow(@form-shadow, @form-shadowColor);
   }
   & > *:not(:last-child) {
     border-top-right-radius: 0;

@@ -5,18 +5,26 @@
 // Prefixes and objects:
 // .msg-
 
+@msg-color: @hintColor;
+@msg-borderWidth: @defaultBorderWidth;
+@msg-borderRadius: @defaultBorderRadius;
+
+.msg when (@message=true) {
+  .msg();
+}
+
 .msg(
-  @msgColor: @hintColor,
-  @msgBorderWidth: @defaultBorderWidth,
-  @msgBorderRadius: 3px) when (@message=true) {
+  @color: @msg-color,
+  @borderWidth: @msg-borderWidth,
+  @borderRadius: @msg-borderRadius) {
   position: relative;
   padding: 15px;
   margin-bottom: 20px;
   font-size: .9rem;
-  color: darken(@msgColor, 25%);
-  background-color: lighten(@msgColor, 40%);
-  .border(@msgBorderWidth, solid, darken(@msgColor, 15%));
-  .border-radius(@msgBorderRadius);
+  color: darken(@color, 25%);
+  background-color: lighten(@color, 40%);
+  .border(@borderWidth, solid, darken(@color, 15%));
+  .border-radius(@borderRadius);
   display: none;
   opacity: 0;
   transition: opacity .5s ease;
@@ -35,8 +43,8 @@
     flex-shrink: 0;
   }
   & a {
-    color: darken(@msgColor, 35%);
-    border-bottom: 1px solid fadeout(darken(@msgColor, 35%), 50%);
+    color: darken(@color, 35%);
+    border-bottom: 1px solid fadeout(darken(@color, 35%), 50%);
   }
   &-content {
     flex-basis: 100%;
@@ -70,7 +78,7 @@
 
   &--full {
     margin-top: -1px;
-    border-width: @defaultBorderWidth 0;
+    border-width: @borderWidth 0;
     border-radius: 0;
     margin-bottom: 0;
   }
@@ -82,14 +90,12 @@
 }
 
 // Variations
-.colorizeMsg(
-  @color,
-  @msgBorderWidth: @defaultBorderWidth) when (@message=true) {
+.colorizeMsg(@color) when (@message=true) {
   color: darken(@color, 25%);
   background-color: lighten(@color, 35%);
   border-color: darken(@color, 15%);
   & a {
     color: darken(@color, 35%);
-    border-bottom: @msgBorderWidth solid fadeout(darken(@color, 35%), 50%);
+    border-bottom-color: fadeout(darken(@color, 35%), 50%);
   }
 }

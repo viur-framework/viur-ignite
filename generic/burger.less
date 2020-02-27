@@ -11,6 +11,10 @@
 @burger-borderRadius: @defaultBorderRadius;
 @burger-transitionDuration: .3s;
 
+.burger when (@burger=true) {
+  .burger();
+}
+
 .burger(
   @width: @burger-width,
   @height: @burger-height,
@@ -18,7 +22,7 @@
   @color: @burger-color,
   @borderRadius: @burger-borderRadius,
   @transitionDuration: @burger-transitionDuration
-  ) when (@burger=true) {
+  ) {
   display: block;
   align-self: center;
   .mq-min(@breakMedium, { display: none; });
