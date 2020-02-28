@@ -118,7 +118,19 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+/* Figures */
+
+// Addresses margin not present in IE6/7/8/9, S5, O11
+figure {
+  margin: 0;
+}
+
 /* Forms */
+// Corrects margin displayed oddly in IE6/7
+form {
+  margin: 0;
+}
+
 // 1. Corrects font size not being inherited in all browsers
 // 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
 // 3. Improves appearance and consistency in all browsers
@@ -186,3 +198,5 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+
