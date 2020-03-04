@@ -17,6 +17,7 @@
 // Spacing:
 @form-padding: @defaultPadding;
 @form-margin: @defaultMargin;
+@form-inputMaxWidth: 30vw;
 
 // Colors:
 @form-color: @defaultFormColor;
@@ -44,8 +45,8 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     min-width: 0;
-    flex: 1;
-    max-width: 100%;
+    flex: 1 1 0;
+    max-width: @form-inputMaxWidth;
     transition: all .3s ease;
     background-position: 150% center;
     background-size: 15px;
@@ -209,11 +210,10 @@
   /* Dropdown */
   .select {
     .basicInput(@borderColor:@form-borderColor);
+    flex: 1 1 0;
     color: contrast(@form-color, #222222, #f4f4f4);
-    //align-self: flex-start;
-    max-width: 100%;
+    max-width: @form-inputMaxWidth;
     min-width: 0;
-    //flex: 1;
     padding-right: 38px;
     background-color: @form-color;
     .arrowsUpDownBg(@color:contrast(@form-color, #222222, #f4f4f4));
@@ -614,7 +614,7 @@
   & > .check,
   & .option-group {
     width: auto;
-    max-width: 30vw;
+    max-width: @form-inputMaxWidth;
     margin-left: -1px;
     margin-top: @form-margin;
     margin-bottom: @form-margin;
