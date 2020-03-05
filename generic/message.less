@@ -10,10 +10,10 @@
 @msg-borderRadius: @defaultBorderRadius;
 
 .msg when (@message=true) {
-  .msg();
+  .genericMsg();
 }
 
-.msg(
+.genericMsg(
   @color: @msg-color,
   @borderWidth: @msg-borderWidth,
   @borderRadius: @msg-borderRadius) {

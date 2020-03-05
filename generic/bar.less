@@ -10,7 +10,7 @@
 
 & when (@bar=true) {
   .bar {
-    display: block;
+    display: flex;
     text-align: left;
 
     .mq-max(@breakSmall, {
@@ -35,8 +35,8 @@
     }
   }
   .bar-group {
-    display: block;
-    & > * {display: block; align-items: center;}
+    display: flex;
+    & > * {display: flex; align-items: center;}
     .mq-max(@breakSmall, {
       & > * + * {margin-top: 10px;}
     });
