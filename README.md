@@ -4,7 +4,7 @@
 >The ViUR Ignite Framework is the a sturdy foundation for ViUR products and Mausbrand projects.
 This LESS/CSS toolkit is the very core of ViUR Ignite. It is built upon the principles of many CSS guides and frameworks.
 
-For a detailed introduction and examples have a look at [ignite.viur.is](https://ignite.viur.is).
+For a detailed introduction and examples have a look at [ignite.viur.dev](https://ignite.viur.dev).
 
 Different projects demand different solutions.
 Ignite is a solution based on the needs of our python/jinja oriented stack.
