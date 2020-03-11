@@ -545,6 +545,28 @@
         }
       });
     }
+
+    &--third {
+      .mq-min(@breakMedium, {
+        column-count: 3;
+        break-inside: avoid;
+        column-fill: balance;
+        & * {
+          break-inside: avoid;
+        }
+      });
+    }
+
+    &--quarter {
+      .mq-min(@breakMedium, {
+        column-count: 4;
+        break-inside: avoid;
+        column-fill: balance;
+        & * {
+          break-inside: avoid;
+        }
+      });
+    }
   }
 }
 

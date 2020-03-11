@@ -103,7 +103,7 @@
   @backgroundColor,
   @borderWidth: @defaultBorderWidth,
   @shadow: 1,
-  @shadowHover: 2) when (@button=true) {
+  @shadowHover: 2) {
   color: contrast(darken(@backgroundColor, 15%), #222222, #f4f4f4);
   background-color: @backgroundColor;
   border: @borderWidth solid darken(@backgroundColor, 10%);
@@ -144,7 +144,7 @@
   @backgroundColor,
   @borderWidth: @defaultBorderWidth,
   @shadow: 1,
-  @shadowHover: 2) when (@button=true) {
+  @shadowHover: 2) {
   color: darken(@backgroundColor, 5%);
   border: @borderWidth solid darken(@backgroundColor, 10%);
   .boxShadow(@shadow, @backgroundColor);
