@@ -1,16 +1,16 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE)
 
 # Ignite
->The ViUR Ignite Framework is the a sturdy foundation for ViUR products and Mausbrand projects.
-This LESS/CSS toolkit is the very core of ViUR Ignite. It is built upon the principles of many CSS guides and frameworks.
+>The ViUR Ignite Framework is a sturdy foundation for ViUR products and Mausbrand projects.
+This LESS/CSS toolkit is the very core of ViUR Ignite. It is built on the principles of many CSS guides and frameworks.
 
 For a detailed introduction and examples have a look at [ignite.viur.is](https://ignite.viur.is).
 
-Different projects demand different solutions.
+Different projects require different solutions.
 Ignite is a solution based on the needs of our python/jinja oriented stack.
 A lightweight framework for many different customer projects.
 For other purposes you may use one of the frameworks or guides below.
-Their samples, knowledge and expertise helped us to make Ignite
+Their samples, knowledge and expertise helped us make Ignite
 
 * [Primer CSS](http://primercss.io)
 * [Enduring CSS](https://benfrain.com/enduring-css-writing-style-sheets-rapidly-changing-long-lived-projects/)
@@ -24,9 +24,9 @@ Thanks guys!
 
 ## What is this framework for?
 * Ignite is a development toolkit for sturdy HTML and CSS
-* It is a lightweightned collection of helpful CSS components
+* It is a lightweight collection of helpful CSS components
 * It is responsive and adaptable
-* It is build in LESS
+* It is built with LESS
 
 ---
 
@@ -34,7 +34,7 @@ Thanks guys!
 
 **Submodule**
 
-We recommend to add ignite as submodule in your project:
+We recommend to add ignite as a submodule in your project:
 ```bash
 git submodule add git@github.com:viur-framework/ignite.git
 ```
@@ -45,7 +45,7 @@ git submodule add https://github.com/viur-framework/ignite.git
 
 **LESS Import**
 
-Than you can import ignite in your project style.less
+Then you can import ignite in your projects style.less
 ```less
 @import "ignite/ignite";
 ```
