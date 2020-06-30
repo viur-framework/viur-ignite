@@ -6,6 +6,9 @@
 // .btn-group
 
 @btn-backgroundColor: #e7e5e5;
+@btn-hoverColor: lighten(@backgroundColor, 5%);
+@btn-activeColor: lighten(@backgroundColor, 10%);
+@btn-disabledColor: desaturate(@backgroundColor, 20%);
 @btn-padding: @defaultPadding;
 @btn-margin: @defaultMargin;
 @btn-borderWidth: @defaultBorderWidth;
@@ -42,24 +45,24 @@
     color: contrast(@backgroundColor, #222222, #f4f4f4);
   }
   &:hover {
-    color: contrast(lighten(@backgroundColor, 5%));
-    background-color: lighten(@backgroundColor, 5%);
+    color: contrast(@btn-hoverColor);
+    background-color: @btn-hoverColor;
     .boxShadow(@shadowHover, @shadowColor);
   }
   &:active,
   &.is-active {
-    color: contrast(lighten(@backgroundColor, 10%));
-    background-color: lighten(@backgroundColor, 10%);
+    color: contrast(@btn-activeColor);
+    background-color: @btn-activeColor;
   }
   &.is-disabled,
   &:disabled,
   &[aria-disabled=true] {
     &:hover,
     & {
-      color: darken(desaturate(@backgroundColor, 20%), 10%);
+      color: darken(@btn-disabledColor, 10%);
       cursor: not-allowed;
       border-style: dashed;
-      background-color: lighten(desaturate(@backgroundColor, 20%), 30%);
+      background-color: lighten(@btn-disabledColor, 30%);
       .boxShadow(0);
     }
   }
