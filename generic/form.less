@@ -39,22 +39,21 @@
 & when (@form=true) {
   /* Input */
   .input {
-    .basicInput;
+    .basicInput(@padding:@form-padding, @margin:@form-margin, @borderRadius:@form-borderRadius, @borderWidth:@form-borderWidth, @borderColor:@form-borderColor, @fontWeight: @fontWeightLight);
     background-color: @form-color;
     color: contrast(@form-color, #222222, #f4f4f4);
     white-space: nowrap;
     text-overflow: ellipsis;
     min-width: 0;
     flex: 1 1 0;
-    max-width: @form-inputMaxWidth;
     transition: all .3s ease;
     background-position: 150% center;
-    background-size: 15px;
+    background-size: 1em;
     background-repeat: no-repeat;
-
     .form-group--validation &,
     .input-group--validation &,
     &--validation {
+      padding-right: ~"calc("@form-padding*2~" + 1em)";
       .input-group.is-invalid &,
       &.is-invalid,
       &[aria-invalid="true"],
@@ -81,7 +80,7 @@
     &.is-readonly,
     &:read-only,
     &[aria-readonly="true"] {
-      .inputValidation(@form-color, darken(@form-color, 50%), @cursor:auto);
+      .inputValidation(@form-color, darken(@form-color, 50%), @cursor:not-allowed);
       .boxShadow(0);
       border-style: dashed;
       border-bottom-style: solid;
@@ -137,11 +136,10 @@
   /* Label */
   .label {
     .basicInput(@borderColor:@form-borderColor);
-    align-self: flex-start;
     white-space: nowrap;
     background-color: darken(@form-color, 2%);
     color: contrast(darken(@form-color, 2%), #000000, #ffffff);
-    min-width: 190px;
+    flex-shrink: 0;
 
     .input-group.is-required &,
     &.is-required {
@@ -212,7 +210,6 @@
     .basicInput(@borderColor:@form-borderColor);
     flex: 1 1 0;
     color: contrast(@form-color, #222222, #f4f4f4);
-    max-width: @form-inputMaxWidth;
     min-width: 0;
     padding-right: 38px;
     background-color: @form-color;
@@ -637,7 +634,6 @@
   & > .check,
   & .option-group {
     width: auto;
-    max-width: @form-inputMaxWidth;
     margin-left: -1px;
     margin-top: @form-margin;
     margin-bottom: @form-margin;

@@ -9,7 +9,7 @@
   background-color: lighten(@validationColor, 40%);
   & when not (@backgroundImage=false) {
     background-image: url(@backgroundImage);
-    background-position: 95% center;
+    background-position: ~"calc(100% - "@form-padding*2~")" center;
   }
   & when not (@cursor=false) {
     cursor: @cursor;
