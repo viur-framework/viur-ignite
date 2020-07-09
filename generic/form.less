@@ -135,7 +135,7 @@
 
   /* Label */
   .label {
-    .basicInput(@borderColor:@form-borderColor);
+    .basicInput(@padding:@form-padding, @margin:@form-margin, @borderRadius:@form-borderRadius, @borderWidth:@form-borderWidth, @borderColor:@form-borderColor, @fontWeight: @fontWeightLight);
     white-space: nowrap;
     background-color: darken(@form-color, 2%);
     color: contrast(darken(@form-color, 2%), #000000, #ffffff);
@@ -207,7 +207,7 @@
 
   /* Dropdown */
   .select {
-    .basicInput(@borderColor:@form-borderColor);
+    .basicInput(@padding:@form-padding, @margin:@form-margin, @borderRadius:@form-borderRadius, @borderWidth:@form-borderWidth, @borderColor:@form-borderColor, @fontWeight: @fontWeightLight);
     flex: 1 1 0;
     color: contrast(@form-color, #222222, #f4f4f4);
     min-width: 0;
@@ -282,7 +282,7 @@
   /* Switch */
   // A simple, yet elegant, boolean switch.
   .switch {
-    .basicInput(@borderColor:@form-borderColor);
+    .basicInput(@padding:@form-padding, @margin:@form-margin, @borderRadius:@form-borderRadius, @borderWidth:@form-borderWidth, @borderColor:@form-borderColor, @fontWeight: @fontWeightLight);
     background-color: darken(@form-color, 2%);
     color: contrast(darken(@form-color, 2%), #000000, #ffffff);
 
@@ -326,7 +326,7 @@
   }
 
   .tickbox() {
-    .basicInput(@padding: 0; @borderColor: @form-borderColor);
+    .basicInput(@padding: 0, @margin:@form-margin, @borderRadius:@form-borderRadius, @borderWidth:@form-borderWidth, @borderColor:@form-borderColor, @fontWeight: @fontWeightLight);
     color: contrast(darken(@form-color, 2%), #000000, #ffffff);
     &-input {
       opacity: 0;
