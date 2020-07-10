@@ -475,7 +475,7 @@
   // Group buttons, labels and inputs together.
   .input-group {
     display: flex;
-    //align-items: center; => destroys btn alignment
+    align-items: center;
 
     & .select,
     & .input,
@@ -576,7 +576,8 @@
   & .textarea,
   & > .radio,
   & > .check,
-  & .option-group {
+  & .option-group,
+  & .input-group-item {
     width: 100%;
     margin: 0;
     margin-top: -1px;
@@ -629,7 +630,8 @@
   & .textarea,
   & > .radio,
   & > .check,
-  & .option-group {
+  & .option-group,
+  & .input-group-item {
     width: auto;
     margin-left: -1px;
     margin-top: @form-margin;
