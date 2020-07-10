@@ -136,7 +136,6 @@
   /* Label */
   .label {
     .basicInput(@borderColor:@form-borderColor);
-    white-space: nowrap;
     background-color: darken(@form-color, 2%);
     color: contrast(darken(@form-color, 2%), #000000, #ffffff);
     flex-shrink: 0;
@@ -305,8 +304,8 @@
       transition: all .4s ease;
       outline: 0;
       display: block;
-      width: 3em;
-      height: 1.5em;
+      width: 2.6em;
+      height: 1.3em;
       position: relative;
       cursor: pointer;
       user-select: none;
@@ -525,7 +524,7 @@
   }
 
   /* Form group */
-  // Use formGroups to separate different inputs or input-groups.
+  // Use form-groups to separate different inputs or input-groups.
   .form-group {
     margin-bottom: @bottomSpace;
 

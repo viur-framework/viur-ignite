@@ -1,5 +1,5 @@
 @charset "UTF-8";
-// BASIC INPUT
+/* BASIC INPUT */
 
 // Height and width of all inputs and buttons.
 // This helps to align basic form elements.
@@ -9,15 +9,18 @@
   -moz-appearance: none;
   display: inline-flex;
   position: relative;
+  border-width: 0;
+  border-radius: 0;
   .border-radius(@borderRadius);
-  border: @borderWidth solid @borderColor;
+  .border(@borderWidth, solid, @borderColor);
   padding: @padding @padding*3.75;
-  margin: @margin 0;
+  margin-top: @margin;
+  margin-bottom: @margin;
   vertical-align: middle;
   font-size: 1em;
-  font-weight: @fontWeight;
-  line-height:1.5;
+  line-height: @lineHeight;
+  font-weight: @fontWeightLight;
   .mq-print({
-    border:0;
+    border-width: 0;
   });
 }
