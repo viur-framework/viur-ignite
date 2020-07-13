@@ -8,33 +8,31 @@
 // .bar-
 // .bar-group-
 
-& when (@bar=true) {
-  .bar {
+.genericBar() {
+  display: flex;
+  text-align: left;
+
+  .mq-max(@breakSmall, {
+    & > * + * {margin-top: 10px;}
+  });
+
+  .mq-min(@breakSmall, {
+    font-size: .9rem;
+    align-items: stretch;
     display: flex;
-    text-align: left;
+    flex-wrap: wrap;
+    min-height: 35px;
+    position: relative;
+    text-align: center;
+    justify-content: space-between;
+    & > * + * {margin-left: 10px;}
+    &-item {align-self: center;}
+  });
 
-    .mq-max(@breakSmall, {
-      & > * + * {margin-top: 10px;}
-    });
-
-    .mq-min(@breakSmall, {
-      font-size: .9rem;
-      align-items: stretch;
-      display: flex;
-      flex-wrap: wrap;
-      min-height: 35px;
-      position: relative;
-      text-align: center;
-      justify-content: space-between;
-      & > * + * {margin-left: 10px;}
-      &-item {align-self: center;}
-    });
-
-    &-link {
-      .mq-min(@breakSmall, { display: flex; });
-    }
+  &-link {
+    .mq-min(@breakSmall, { display: flex; });
   }
-  .bar-group {
+  &-group {
     display: flex;
     & > * {display: flex; align-items: center;}
     .mq-max(@breakSmall, {

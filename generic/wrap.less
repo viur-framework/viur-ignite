@@ -12,36 +12,45 @@
 // .sidebar-
 // .section
 
-& when (@wrap=true) {
-  .outerwrap {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 100%;
-  }
+.outerwrap() {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100%;
+}
 
-  .wrap {
-    position: relative;
-    min-width: 100%;
-    flex: 1 0 100%;
-    .zIndex('content', 0);
-  }
+.wrap() {
+  position: relative;
+  min-width: 100%;
+  flex: 1 0 100%;
+  .zIndex('content', 0);
+}
 
-  // Container to center the content in the middle of the page.
-  .bind {
-    max-width: @pageWidth;
-    padding: 0 @outerSpace;
-    margin: 0 auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 100%;
-    .mq-min(@breakSmall, { .mq-landscape({ flex-flow: row wrap; }) });
-    .mq-min(@breakMedium, { flex-flow: row wrap; });
-    .mq-print({ padding: 0; margin: 0; display: block; flex: none; max-width: 210mm; });
-  }
+// Container to center the content in the middle of the page.
+.bind() {
+  max-width: @pageWidth;
+  padding: 0 @outerSpace;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 100%;
+  .mq-min(@breakSmall, { .mq-landscape({ flex-flow: row wrap; }) });
+  .mq-min(@breakMedium, { flex-flow: row wrap; });
+  .mq-print({ padding: 0; margin: 0; display: block; flex: none; max-width: 210mm; });
+}
+
+
+
+/* Content Containers */
+.content() {
+  flex: 2 0;
+  min-width: 0;
+  max-width: 100%;
+  .order('content', 2);
+  .mq-min(@breakMedium, { .order('content', 2); });
 
   /* Sidebars */
-  .content ~ .sidebar {
+  & ~ .sidebar {
     font-size: .9em;
     .order('content', 4);
     padding: @innerSpace 0 @bottomSpace;
@@ -55,29 +64,20 @@
     .mq-min(@breakMedium, { flex: 0 0 25%; .order('content', 4); padding: @innerSpace 0 @bottomSpace @innerSpace; });
   }
 
-  .content ~ .sidebar--left {
+  & ~ .sidebar--left {
     .mq-min(@breakMedium, { padding: @innerSpace @innerSpace*3 @bottomSpace 0; .order('content', 1); });
   }
 
-  .content ~ .sidebar--marginal {
+  & ~ .sidebar--marginal {
     font-size: .8em;
     flex: 0 0 15%;
     min-width: 200px;
   }
+}
 
-  /* Content Containers */
-  .content {
-    flex: 2 0;
-    min-width: 0;
-    max-width: 100%;
-    .order('content', 2);
-    .mq-min(@breakMedium, { .order('content', 2); });
-  }
-
-  /* Container to separate chunks of content in the middle of the page. */
-  .section {
-    min-width: 0; // Prevents overflows.
-    padding-top: @innerSpace;
-    padding-bottom: @bottomSpace;
-  }
+/* Container to separate chunks of content in the middle of the page. */
+.section() {
+  min-width: 0; // Prevents overflows.
+  padding-top: @innerSpace;
+  padding-bottom: @bottomSpace;
 }
