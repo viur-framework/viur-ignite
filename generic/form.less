@@ -507,6 +507,13 @@
     }
   }
 
+  & .input-group-item {
+    border-radius: @form-borderRadius;
+    &--jam {
+      border-radius: 0;
+    }
+  }
+
   .mq-max(@breakSmall, {
     &:not(.input-group--bar) {
       .input-group--block();
@@ -519,50 +526,12 @@
   });
 }
 
-/* Form group */
-// Use form-groups to separate different inputs or input-groups.
-.form-group() {
-  margin-bottom: @bottomSpace;
-
-  &--half {
-    .mq-min(@breakMedium, {
-      column-count: 2;
-      break-inside: avoid;
-      column-fill: balance;
-      & * {
-        break-inside: avoid;
-      }
-    });
-  }
-
-  &--third {
-    .mq-min(@breakMedium, {
-      column-count: 3;
-      break-inside: avoid;
-      column-fill: balance;
-      & * {
-        break-inside: avoid;
-      }
-    });
-  }
-
-  &--quarter {
-    .mq-min(@breakMedium, {
-      column-count: 4;
-      break-inside: avoid;
-      column-fill: balance;
-      & * {
-        break-inside: avoid;
-      }
-    });
-  }
-}
-
 .input-group--block() {
   flex-direction: column;
   &:not(:last-child) {
     margin-bottom: @bottomSpace;
   }
+  & .label,
   & .select,
   & .input,
   & .btn,
@@ -578,21 +547,6 @@
     flex-basis: auto;
     .boxShadow(0);
   }
-  & .label {
-    border-width: 0 @form-borderWidth;
-    width: 100%;
-    margin: 0;
-
-    &:first-child {
-      border-width: @form-borderWidth;
-      border-bottom-width: 0;
-    }
-
-    &:last-child {
-      border-width: @form-borderWidth;
-      border-top-width: 0;
-    }
-  }
   & > *:not(:last-child) {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -601,21 +555,20 @@
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }
+  & .input-group-item {
+    &--first {
+     border-bottom-right-radius: 0;
+     border-bottom-left-radius: 0;
+    }
+    &--last {
+     border-top-right-radius: 0;
+     border-top-left-radius: 0;
+    }
+  }
 }
 
 .input-group--bar() {
   flex-flow: row;
-  & .label {
-    border-width: @form-borderWidth;
-
-    &:first-child {
-      border-right-width: 0;
-    }
-
-    &:last-child {
-      border-left-width: 0;
-    }
-  }
   & .label,
   & .select,
   & .input,
@@ -632,12 +585,66 @@
     margin-bottom: @form-margin;
     .boxShadow(@form-shadow, @form-shadowColor);
   }
-  & > *:not(:last-child) {
+  & > *:not(:last-child),
+  & *:last-child > *:not(:last-child),
+  & *:not(:last-child) > * {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  & > *:not(:first-child) {
+  & > *:not(:first-child),
+  & *:first-child > *:not(:first-child),
+  & *:not(:first-child) > * {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+  & .input-group-item {
+    &--first {
+      border-radius: @form-borderRadius 0 0 @form-borderRadius !important;
+    }
+    &--last {
+      border-radius: 0 @form-borderRadius @form-borderRadius 0 !important;
+    }
+  }
+}
+
+/* Form group */
+// Use form-groups to separate different inputs or input-groups.
+.form() {
+  &-group {
+    * + & {margin-top: @topSpace;}
+
+    &--half {
+      .mq-min(@breakMedium, {
+        column-count: 2;
+        break-inside: avoid;
+        column-fill: balance;
+        & * {
+          break-inside: avoid;
+        }
+      });
+    }
+
+    &--third {
+      .mq-min(@breakMedium, {
+        column-count: 3;
+        break-inside: avoid;
+        column-fill: balance;
+        & * {
+          break-inside: avoid;
+        }
+      });
+    }
+
+    &--quarter {
+      .mq-min(@breakMedium, {
+        column-count: 4;
+        break-inside: avoid;
+        column-fill: balance;
+        & * {
+          break-inside: avoid;
+        }
+      });
+    }
+  }
+  * + &-item {margin-top: @innerSpace}
 }
