@@ -586,14 +586,14 @@
     .boxShadow(@form-shadow, @form-shadowColor);
   }
   & > *:not(:last-child),
-  & *:last-child > *:not(:last-child),
-  & *:not(:last-child) > * {
+  & *:last-child > .input-group-item:not(:last-child),
+  & *:not(:last-child) > .input-group-item {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
   & > *:not(:first-child),
-  & *:first-child > *:not(:first-child),
-  & *:not(:first-child) > * {
+  & *:first-child > .input-group-item:not(:first-child),
+  & *:not(:first-child) > .input-group-item {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
