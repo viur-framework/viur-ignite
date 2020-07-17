@@ -29,6 +29,14 @@
     &-item {align-self: center;}
   });
 
+  &-item {
+    &--left {margin-right: auto;}
+    &--right {margin-left: auto;}
+    &--center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
   &-link {
     .mq-min(@breakSmall, { display: flex; });
   }

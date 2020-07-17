@@ -532,15 +532,15 @@
   &:not(:last-child) {
     margin-bottom: @bottomSpace;
   }
-  & .label,
-  & .select,
-  & .input,
-  & .btn,
-  & .switch,
-  & .textarea,
+  & > .label,
+  & > .select,
+  & > .input,
+  & > .btn,
+  & > .switch,
+  & > .textarea,
   & > .radio,
   & > .check,
-  & .option-group,
+  & > .option-group,
   & .input-group-item {
     width: 100%;
     margin: 0;
@@ -548,37 +548,39 @@
     flex-basis: auto;
     .boxShadow(0);
   }
-  & > *:not(:last-child) {
+  & > *:not(:last-child),
+  & *:last-child > .input-group-item:not(:last-child),
+  & *:not(:last-child) > .input-group-item {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
-  & > *:not(:first-child) {
+  & > *:not(:first-child),
+  & *:first-child > .input-group-item:not(:first-child),
+  & *:not(:first-child) > .input-group-item {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }
   & .input-group-item {
     &--first {
-     border-bottom-right-radius: 0;
-     border-bottom-left-radius: 0;
+      border-radius: @form-borderRadius @form-borderRadius 0 0 !important;
     }
     &--last {
-     border-top-right-radius: 0;
-     border-top-left-radius: 0;
+      border-radius: 0 0 @form-borderRadius @form-borderRadius !important;
     }
   }
 }
 
 .input-group--bar() {
   flex-flow: row;
-  & .label,
-  & .select,
-  & .input,
-  & .btn,
-  & .switch,
-  & .textarea,
+  & > .label,
+  & > .select,
+  & > .input,
+  & > .btn,
+  & > .switch,
+  & > .textarea,
   & > .radio,
   & > .check,
-  & .option-group,
+  & > .option-group,
   & .input-group-item {
     width: auto;
     margin-left: -1px;
@@ -587,14 +589,14 @@
     .boxShadow(@form-shadow, @form-shadowColor);
   }
   & > *:not(:last-child),
-  & *:last-child > *:not(:last-child),
-  & *:not(:last-child) > * {
+  & *:last-child > .input-group-item:not(:last-child),
+  & *:not(:last-child) > .input-group-item {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
   & > *:not(:first-child),
-  & *:first-child > *:not(:first-child),
-  & *:not(:first-child) > * {
+  & *:first-child > .input-group-item:not(:first-child),
+  & *:not(:first-child) > .input-group-item {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
