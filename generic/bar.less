@@ -26,17 +26,17 @@
     text-align: center;
     justify-content: space-between;
     & > * + * {margin-left: 10px;}
-    &-item {align-self: center;}
+    &-item {
+      align-self: center;
+      &--left {margin-right: auto !important;}
+      &--right {margin-left: auto !important;}
+      &--center {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
   });
 
-  &-item {
-    &--left {margin-right: auto;}
-    &--right {margin-left: auto;}
-    &--center {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
   &-link {
     .mq-min(@breakSmall, { display: flex; });
   }
