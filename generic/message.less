@@ -15,7 +15,6 @@
   @borderRadius: @msg-borderRadius) {
   position: relative;
   padding: 15px;
-  margin-bottom: 20px;
   font-size: .9rem;
   color: darken(@color, 25%);
   background-color: lighten(@color, 40%);
@@ -24,6 +23,7 @@
   display: none;
   opacity: 0;
   transition: opacity .5s ease;
+  &:not(:last-child) {margin-bottom: 20px;}
   &.is-active {
     display: flex;
     flex-direction: row;
