@@ -1,16 +1,6 @@
 @charset "UTF-8";
 /* FALLBACK IGNITE APPCONFIGURATION */
 
-// Opt-Ins
-@bar: false;
-@burger: false;
-@button: false;
-@form: false;
-@icon: false;
-@message: false;
-@table: false;
-@wrap: false;
-
 // Color and Shadow Sets
 @mainColor: #d00f1c; // The corporate color - defining most of the looks.
 @complementColor: #333; // A color used to sit next to the maincolor.
@@ -64,11 +54,14 @@
 @pageWidth: 1400px; // max-width of the centered container.
 @paragraphWidth: 77ch; // max-width of text paragraphs: 77 characters.
 
-@breakSmall: 37.5em; // smart phones: 600px / 16px = 37.5em;
-@breakMedium: 56.25em; // tablets: 900px / 16px = 56.25em;
+// Supported screen sizes:
+@breakTiny:  23em; // old smart phones or gadgets like smart watches up to: 368px / 16px = 23em;
+@breakSmall: 40em; // smart phones up to: 640px / 16px = 40em;
+@breakMedium: 65em; // tablets up to: 1040px / 16px = 65em;
 @breakLarge: 75em; // screens: 1200px / 16px = 75em;
 @breakXlarge: 93.75em; // big screens: 1500px / 16px = 93.75em;
 @breakXxlarge: 112.5em; // huge screens: 1800px / 16px = 112.5em;
 @break4k: 225em; // 4k screens: 3600px / 16px = 225em;
 @break2x: 2; // hiDPI displays
+
 @breakPrint: print; // make it printable!

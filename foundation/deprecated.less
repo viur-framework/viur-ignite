@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* DEPRECATED VARIABLES */
 // Here deprecated variables are redirected to their successors or a viable default.
-
+// !!! This file will be cleared with the next major update. Please migrate your projects!
 
 @defaultInputColor: @defaultFormColor;
 
@@ -21,3 +21,61 @@
 @inputBorderRadius: @form-borderRadius;
 @inputBorderWidth: @form-borderWidth;
 @inputBorderColor: @form-borderColor;
+
+// Emulating old guard behaviour for standard generic elements:
+.bar when (@bar=true) {
+  .genericBar();
+}
+
+.burger when (@burger=true) {
+  .genericBurger();
+}
+
+.btn when (@button=true) {
+  .genericBtn();
+}
+
+& when (@form=true) {
+  .input {
+    .genericInput();
+  }
+  .label {
+    .genericLabel();
+  }
+  .select {
+    .genericSelect();
+  }
+  .form {
+    .genericForm();
+  }
+  .textarea {
+    .genericTextarea();
+  }
+  .switch {
+    .genericSwitch();
+  }
+  .radio {
+    .genericRadio();
+  }
+  .check {
+    .genericCheck();
+  }
+  .option-group {
+    .genericOption-group();
+  }
+  .input-group {
+    .genericInput-group();
+  }
+}
+
+.icon when (@icon=true) {
+  .genericIcon();
+}
+
+.msg when (@message=true) {
+  .genericMsg();
+}
+
+.table when (@table=true) {
+  .genericTable();
+}
