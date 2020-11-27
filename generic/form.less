@@ -288,7 +288,6 @@
   .basicInput(@padding:@form-padding, @margin:@form-margin, @borderRadius:@form-borderRadius, @borderWidth:@form-borderWidth, @borderColor:@form-borderColor, @fontWeight: @fontWeightLight);
   background-color: darken(@form-color, 2%);
   color: contrast(darken(@form-color, 2%), #000000, #ffffff);
-
   &-input {
     display: none;
 
@@ -303,7 +302,7 @@
 
   &-label {
     background: darken(@form-color, 10%);
-    .border-radius(@defaultBorderRadius);
+    .border-radius(@form-borderRadius);
     padding: 2px;
     transition: all .4s ease;
     outline: 0;
@@ -323,8 +322,13 @@
       height: 100%;
       background: #fff;
       transition: all .2s ease;
+      .border-radius(@form-borderRadius);
       .boxShadow(@form-shadow, @form-shadowColor);
     }
+  }
+
+  .input-group & {
+    align-self: stretch;
   }
 }
 
@@ -403,6 +407,7 @@
     position: relative;
     border-width: 0 @form-borderWidth;
     font-weight: @fontWeightLight;
+    border-radius: 0;
 
     &:nth-of-type(even) {
       background-color: darken(@form-color, 5%);

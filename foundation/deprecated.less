@@ -22,7 +22,18 @@
 @inputBorderWidth: @form-borderWidth;
 @inputBorderColor: @form-borderColor;
 
+// These opt-ins are deprecated!
+@bar: false;
+@burger: false;
+@button: false;
+@form: false;
+@icon: false;
+@message: false;
+@table: false;
+@wrap: false;
+
 // Emulating old guard behaviour for standard generic elements:
+
 .bar when (@bar=true) {
   .genericBar();
 }

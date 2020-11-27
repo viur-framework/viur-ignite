@@ -12,13 +12,13 @@
 // .sidebar-
 // .section
 
-.outerwrap() {
+.genericOuterwrap() {
   display: flex;
   flex-wrap: wrap;
   min-height: 100%;
 }
 
-.wrap() {
+.genericWrap() {
   position: relative;
   min-width: 100%;
   flex: 1 0 100%;
@@ -26,7 +26,7 @@
 }
 
 // Container to center the content in the middle of the page.
-.bind() {
+.genericBind() {
   max-width: @pageWidth;
   padding: 0 @outerSpace;
   margin: 0 auto;
@@ -42,7 +42,7 @@
 
 
 /* Content Containers */
-.content() {
+.genericContent() {
   flex: 2 0;
   min-width: 0;
   max-width: 100%;
@@ -76,7 +76,7 @@
 }
 
 /* Container to separate chunks of content in the middle of the page. */
-.section() {
+.genericSection() {
   min-width: 0; // Prevents overflows.
   padding-top: @innerSpace;
   padding-bottom: @bottomSpace;

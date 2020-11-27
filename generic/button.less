@@ -5,12 +5,13 @@
 // .btn-
 // .btn-group
 
-@btn-backgroundColor: #e7e5e5;
-@btn-hoverColor: lighten(@backgroundColor, 5%);
-@btn-activeColor: lighten(@backgroundColor, 10%);
-@btn-disabledColor: desaturate(@backgroundColor, 20%);
+@btn-backgroundColor: #eeecec;
+@btn-hoverColor: lighten(@btn-backgroundColor, 5%);
+@btn-activeColor: lighten(@btn-backgroundColor, 10%);
+@btn-disabledColor: desaturate(@btn-backgroundColor, 20%);
 @btn-padding: @defaultPadding;
 @btn-margin: @defaultMargin;
+@btn-borderColor: darken(@btn-backgroundColor, 10%);
 @btn-borderWidth: @defaultBorderWidth;
 @btn-borderRadius: @defaultBorderRadius;
 @btn-shadow: @defaultShadow;
@@ -23,12 +24,13 @@
   @padding: @btn-padding,
   @margin: @btn-margin,
   @borderRadius: @btn-borderRadius,
+  @borderColor: @btn-borderColor,
   @borderWidth: @btn-borderWidth,
   @shadow: @btn-shadow,
   @shadowHover: @btn-shadowHover,
   @shadowColor: @btn-shadowColor,
   @fontWeight: @btn-fontWeight) {
-  .basicInput(@padding, @margin, @borderRadius, @borderWidth, darken(@backgroundColor, 10%), @fontWeight);
+  .basicInput(@padding, @margin, @borderRadius, @borderWidth, @borderColor, @fontWeight);
   color: contrast(@backgroundColor, #222222, #f4f4f4);
   background-color: @backgroundColor;
   .boxShadow(@shadow, @shadowColor);
@@ -160,8 +162,8 @@
 .invertColorizedBtn(
   @backgroundColor,
   @borderWidth: @defaultBorderWidth,
-  @shadow: 1,
-  @shadowHover: 2) {
+  @shadow: 0,
+  @shadowHover: 1) {
   color: darken(@backgroundColor, 5%);
   border: @borderWidth solid darken(@backgroundColor, 10%);
   .boxShadow(@shadow, @backgroundColor);

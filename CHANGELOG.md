@@ -14,6 +14,8 @@ All notable changes to this project will be documented in this file.
 - standardised `.basicTickbox()` and `.basicInput()`
 - made `margin-bottom` of `.genericMsg` conditional
 - adjusted screen sizes
+- many small changes and adjustments
+- some styling changes
 
 ### Added
 - **BREAKING:** added prefixed variables to all generic elements
