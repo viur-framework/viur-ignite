@@ -83,7 +83,8 @@ When using a <button> element, always specify a type. When using a <a> element, 
       .boxShadow(@shadow, @shadowColor);
     }
   }
-  & > .icon {
+  & > .icon,
+  & > .logo {
     align-self: center;
     width: 1.3em;
     height: 1.3em;
@@ -96,7 +97,8 @@ When using a <button> element, always specify a type. When using a <a> element, 
   &--small {
     font-size: .8em;
 
-    & > .icon:first-child {
+    & > .icon:first-child,
+    & > .logo:first-child {
       margin-right: .15em;
     }
   }
@@ -108,24 +110,6 @@ When using a <button> element, always specify a type. When using a <a> element, 
     width: 100%;
     text-align: center;
   }
-  & > .logo {
-    align-self: center;
-    width: 1.3em;
-    height: 1.3em;
-
-    &:first-child {
-      margin-left: -.2em;
-      margin-right: .25em;
-    }
-  }
-  &--small {
-    font-size: .8em;
-
-    & > .logo:first-child {
-      margin-right: .15em;
-    }
-  }
-
 }
 
 .colorizeBtn(
