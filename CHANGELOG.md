@@ -27,7 +27,9 @@ All notable changes to this project will be documented in this file.
 - added important mobility to `.{bar}-items` (left, center, right modifier).
 - **NEW** popup.less: a popup container that appears above other content onscreen
 - **NEW** popout.less: a popout container that emerges from a location with an arrow pointing at it
+- **NEW** box.less: a visible multi-purpose container (head/body/foot), which can group other elements.
 - **NEW** deprecated.less: deprecated variables are redirected to their successors or a viable default
+- **NEW** `@spaceSmall`, `@spaceMedium`, `@spaceLarge` too better coordinate space between different objects.
 - **NEW** cascading `.{input-groups}` are now supported
 - **NEW** `.{input-group}-items` and their modifiers help to style (cascading) `.{input-groups}`
 

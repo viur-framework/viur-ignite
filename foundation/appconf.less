@@ -45,11 +45,15 @@
 @defaultFormColor: #fff;
 
 // Spaces
-@outerSpace: 20px; // Space around objects, boxes etc.
-@innerSpace: 10px; // Space within objects: mostly paddings.
-@topSpace: 20px; // The distance between two sections.
-@bottomSpace: 20px; // The distance between two sections.
-@gridSpace: 20px; // Space between grid items.
+@spaceSmall: 10px;
+@spaceMedium: 20px;
+@spaceLarge: 30px;
+
+@outerSpace: @spaceMedium; // Space around objects, boxes etc.
+@innerSpace: @spaceSmall; // Space within objects: mostly paddings.
+@topSpace: @spaceMedium; // The Y distance between two sections.
+@bottomSpace: @spaceMedium; // The Y distance between two sections.
+@gridSpace: @spaceMedium; // Space between grid items.
 
 // Width, Height and Media Queries
 @pageWidth: 1400px; // max-width of the centered container.
