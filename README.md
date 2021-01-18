@@ -25,7 +25,7 @@ For a detailed introduction and examples have a look at [ignite.viur.dev](https:
 ## Generic application elements
 * _bar.less_ – a multi-purpose horizontal level, which can contain other elements.
 * _burger.less_ – a common menu burger: three horizontal lines that open your hidden menu.
-* _button.less_ – a simple button with complex features (hover, active, disabled, busy, different sizes and more).
+* _button.less_ – a simple button with a complex feature set (hover, active, disabled, busy, different sizes and more).
 * _form.less_ – all common form elements (inputs, labels, selects, textareas, grouping etc.).
 * _icon.less_ – proper sizing and coloring for inline SVG icons used in buttons or other elements.
 * _message.less_ – a simple message template used for alerts, hints, errors, warnings etc.
