@@ -10,7 +10,7 @@
         .pickOrder(@elementName, @counter);
     }
 
-    .loop(@elementName, length(@zIndexOrder));
+    .loop(@elementName, length(@orderOrder));
 
     .pickOrder(@elementName, @counter) when (extract(@orderOrder, @counter) = @elementName) {
         order: @counter * 100 + @elementOffset;
