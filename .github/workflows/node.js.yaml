@@ -1,0 +1,59 @@
+name: Compile & Lint Less
+
+on:
+  push:
+    branches:
+      - '**'
+#      - master
+#      - develop
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    name: Compile Less on Node.js ${{ matrix.node-version }}
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10, 12, 14, 15]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install lessc
+        run: npm install less -g
+
+      - name: Compile less > css
+        run: lessc ignite.less
+
+
+  lint:
+    name: Lint Less on Node.js ${{ matrix.node-version }}
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10, 12, 14, 15]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install lesshint
+        run: npm install lesshint -g
+
+      - name: Lint less
+        run: lesshint . ignite.less

@@ -1,0 +1,15 @@
+fileExtensions:
+  - ".less"
+
+spaceAroundComma: # so we can have multiline mixin signatures
+  allowNewline: true
+  severity: error
+
+singleLinePerProperty:
+  severity: error
+
+maxCharPerLine:
+  limit: 120
+
+stringQuotes:
+  style: double
