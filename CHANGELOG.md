@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [develop]
 
+
+## [4.0.0] - 2021-02-26
+
 ### Changed
 - **BREAKING:** changed many variables of basic and generic elements (see deprecated.less for more)
 - **BREAKING:** changed names of generic elements mixins to `.generic{Name}()` – e.g. `.genericBtn()` instead of `.btn()` 
@@ -187,6 +190,7 @@ Moreover flex layout is no longer the exception but the norm.
 - Changelog started here
 
 
+[4.0.0]: https://github.com/viur-framework/ignite/compare/3.2.0...4.0.0
 [3.2.0]: https://github.com/viur-framework/ignite/compare/3.1.0...3.2.0
 [3.1.0]: https://github.com/viur-framework/ignite/compare/3.0.00...3.1.0
 [3.0.0]: https://github.com/viur-framework/ignite/compare/1.0.24...3.0.00
