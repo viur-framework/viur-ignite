@@ -23,7 +23,7 @@
   display: none;
   opacity: 0;
   transition: opacity .5s ease;
-  &:not(:last-child) {margin-bottom: 20px;}
+  * + & {margin-top: @spaceMedium;}
   &.is-active {
     display: flex;
     flex-direction: row;
