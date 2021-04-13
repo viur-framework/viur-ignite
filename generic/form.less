@@ -28,9 +28,18 @@
 
 // Colors:
 @form-color: @defaultFormColor;
-@form-validColor: @successColor;
-@form-dangerColor: @failColor;
-@form-hintColor: @hintColor;
+@form-validColor: darken(@successColor, 5%);
+@form-validBorderColor: lighten(@successColor, 15%);
+@form-validBackgroundColor: lighten(@successColor, 40%);
+@form-invalidColor: darken(@failColor, 5%);
+@form-invalidBorderColor: lighten(@failColor, 15%);
+@form-invalidBackgroundColor: lighten(@failColor, 40%);
+@form-disabledColor: darken(@form-color, 50%);
+@form-disabledBorderColor: lighten(darken(@form-color, 50%), 15%);
+@form-disabledBackgroundColor: lighten(darken(@form-color, 50%), 40%);
+@form-hintColor: darken(@hintColor, 5%);
+@form-hintBorderColor: lighten(@hintColor, 15%);
+@form-hintBackgroundColor: lighten(@hintColor, 40%);
 @form-requiredColor: @mainColor;
 
 // Shadows:
@@ -64,13 +73,13 @@
     &.is-invalid,
     &[aria-invalid="true"],
     &:invalid:not(:placeholder-shown) {
-      .inputValidation(@form-color, @form-dangerColor, @backgroundImage:true, @cursor:false, @focus:true);
-      .penBg(@color:@form-dangerColor);
+      .inputValidation(@form-color, @form-invalidColor, @form-invalidBorderColor, @form-invalidBackgroundColor, @backgroundImage:true, @cursor:false, @focus:true);
+      .penBg(@color:@form-invalidColor);
     }
 
     .input-group.is-recommended &,
     &.is-recommended {
-      .inputValidation(@form-color, @form-hintColor, @backgroundImage:true, @cursor:false, @focus:true);
+      .inputValidation(@form-color, @form-hintColor, @form-hintBorderColor, @form-hintBackgroundColor, @backgroundImage:true, @cursor:false, @focus:true);
       .penBg(@color:@form-hintColor);
     }
 
@@ -78,7 +87,7 @@
     &.is-valid,
     &[aria-invalid="false"],
     &:valid:not(:placeholder-shown):not([type="password"]) {
-      .inputValidation(@form-color, @form-validColor, @backgroundImage:true, @cursor:false, @focus:true);
+      .inputValidation(@form-color, @form-validColor, @form-validBorderColor, @form-validBackgroundColor, @backgroundImage:true, @cursor:false, @focus:true);
       .checkBg(@color:@form-validColor);
     }
   }
@@ -86,7 +95,7 @@
   &.is-readonly,
   &:read-only,
   &[aria-readonly="true"] {
-    .inputValidation(@form-color, darken(@form-color, 50%), @cursor:not-allowed);
+    .inputValidation(@form-color, @form-disabledColor, @cursor:not-allowed);
     .boxShadow(0);
     border-style: dashed;
     border-bottom-style: solid;
@@ -95,8 +104,8 @@
   &.is-disabled,
   &:disabled,
   &[aria-disabled="true"] {
-    .inputValidation(@form-color, darken(@form-color, 15%), @backgroundImage:true, @cursor:not-allowed);
-    .not-allowedBg(@color:darken(@form-color,15%));
+    .inputValidation(@form-color, @form-disabledColor, @form-disabledBorderColor, @form-disabledBackgroundColor, @backgroundImage:true, @cursor:not-allowed);
+    .not-allowedBg(@color:@form-disabledColor);
     .boxShadow(0);
     border-style: dashed;
   }
@@ -168,23 +177,23 @@
   &--validation {
     .input-group.is-invalid &,
     &.is-invalid {
-      color: darken(@form-dangerColor, 25%);
-      border-color: @form-dangerColor;
-      background-color: lighten(@form-dangerColor, 20%);
+      color: @form-invalidColor;
+      border-color: @form-invalidBorderColor;
+      background-color: @form-invalidBackgroundColor;
     }
 
     .input-group.is-recommended &,
     &.is-recommended {
-      color: darken(@form-hintColor, 25%);
-      border-color: @form-hintColor;
-      background-color: lighten(@form-hintColor, 20%);
+      color: @form-hintColor;
+      border-color: @form-hintBorderColor;
+      background-color: @form-hintBackgroundColor;
     }
 
     .input-group.is-valid &,
     &.is-valid {
-      color: darken(@form-validColor, 25%);
-      border-color: @form-validColor;
-      background-color: lighten(@form-validColor, 20%);
+      color: @form-validColor;
+      border-color: @form-validBorderColor;
+      background-color: @form-validBackgroundColor;
     }
   }
 
@@ -193,8 +202,8 @@
     color: #777777;
     cursor: not-allowed;
     .boxShadow(0);
-    border: @form-borderWidth dashed darken(@form-color, 20%);
-    background-color: darken(@form-color, 5%);
+    border: @form-borderWidth dashed @form-disabledBorderColor;
+    background-color: @form-disabledBackgroundColor;
   }
 
   .icon {
@@ -238,8 +247,8 @@
     color: #777777;
     cursor: not-allowed;
     .boxShadow(0);
-    border: @form-borderWidth dashed darken(@form-color, 20%);
-    background-color: darken(@form-color, 5%);
+    border: @form-borderWidth dashed @form-disabledBorderColor;
+    background-color: @form-disabledBackgroundColor;
   }
 
   .form-group--validation &,
@@ -249,7 +258,7 @@
     &.is-invalid,
     &[aria-invalid="true"],
     &:invalid {
-      .inputValidation(@form-color, @form-dangerColor, @focus:true);
+      .inputValidation(@form-color, @form-invalidColor, @focus:true);
     }
 
     .input-group.is-valid &,
