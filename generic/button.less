@@ -78,9 +78,8 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
   &.is-busy,
   &.is-loading,
   &[aria-busy=true] {
-    cursor: progress;
-
     &:hover {
+      cursor: progress;
       .boxShadow(@shadow, @shadowColor);
     }
   }
