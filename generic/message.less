@@ -5,20 +5,24 @@
 // Prefixes and objects:
 // .msg-
 
-@msg-color: @hintColor;
+@msg-color: darken(@hintColor, 25%);
+@msg-backgroundColor: lighten(@hintColor, 40%);
+@msg-borderColor: darken(@hintColor, 15%);
 @msg-borderWidth: @defaultBorderWidth;
 @msg-borderRadius: @defaultBorderRadius;
 
 .genericMsg(
   @color: @msg-color,
+  @backgroundColor: @msg-backgroundColor,
+  @borderColor: @msg-borderColor,
   @borderWidth: @msg-borderWidth,
   @borderRadius: @msg-borderRadius) {
   position: relative;
   padding: 15px;
   font-size: .9rem;
-  color: darken(@color, 25%);
-  background-color: lighten(@color, 40%);
-  .border(@borderWidth, solid, darken(@color, 15%));
+  color: @color;
+  background-color: @backgroundColor;
+  .border(@borderWidth, solid, @borderColor);
   .border-radius(@borderRadius);
   display: none;
   opacity: 0;
@@ -40,8 +44,8 @@
     flex-shrink: 0;
   }
   & a {
-    color: darken(@color, 35%);
-    border-bottom: 1px solid fadeout(darken(@color, 35%), 50%);
+    color: darken(@color, 10%);
+    border-bottom: 1px solid fadeout(darken(@color, 10%), 50%);
   }
   &-content {
     flex-basis: 100%;
@@ -87,10 +91,10 @@
 }
 
 // Variations
-.colorizeMsg(@color) {
+.colorizeMsg(@color, @backgroundColor: lighten(@color, 35%), @borderColor: darken(@color, 15%)) {
   color: darken(@color, 25%);
-  background-color: lighten(@color, 35%);
-  border-color: darken(@color, 15%);
+  background-color: @backgroundColor;
+  border-color: @borderColor;
   & a {
     color: darken(@color, 35%);
     border-bottom-color: fadeout(darken(@color, 35%), 50%);
