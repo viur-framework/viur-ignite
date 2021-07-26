@@ -90,8 +90,12 @@
   }
 }
 
+@msg-colorizeColor: @mainColor;
+@msg-colorizeBackgroundColor: lighten(@msg-colorizeColor, 35%);
+@msg-colorizeBorderColor: darken(@msg-colorizeColor, 15%);
+
 // Variations
-.colorizeMsg(@color, @backgroundColor: lighten(@color, 35%), @borderColor: darken(@color, 15%)) {
+.colorizeMsg(@color: @msg-colorizeColor, @backgroundColor: @msg-colorizeBackgroundColor, @borderColor: @msg-colorizeBorderColor) {
   color: darken(@color, 25%);
   background-color: @backgroundColor;
   border-color: @borderColor;
