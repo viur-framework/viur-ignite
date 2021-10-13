@@ -30,6 +30,11 @@
 
 
 *, *::before, *::after {
+  font-smooth: always;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-shadow: 0 0 1px transparent;
   .mq-print({
     text-shadow: none !important;
     box-shadow: none !important;

@@ -68,12 +68,19 @@ Use the .{box}--content class for padding if needed.
     flex-shrink: 0;
     border-bottom-left-radius: @borderRadius;
     border-bottom-right-radius: @borderRadius;
+    & > *:last-child {
+      border-bottom-left-radius: @borderRadius;
+      border-bottom-right-radius: @borderRadius;
+    }
   }
   &--content {
     padding: @innerSpace;
   }
   &--content-wide {
     padding: @innerSpace*2;
+  }
+  & + & {
+   margin-top: @outerSpace;
   }
 }
 
