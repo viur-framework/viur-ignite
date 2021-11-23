@@ -17,7 +17,7 @@
 */
 
 @popup-width: 33%;
-@popup-maxWidth: @pageWidth/2;
+@popup-maxWidth: @pageWidth / 2;
 @popup-outerSpace: @outerSpace;
 @popup-borderRadius: @defaultBorderRadius;
 @popup-overlayColor: @clearColor;
@@ -28,16 +28,16 @@
   @outerSpace: @popup-outerSpace;
   @borderRadius: @popup-borderRadius;
   @overlayColor: @popup-overlayColor;
-  ){
+  ) {
   opacity: 0;
   position: fixed;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
   .zIndex('background',-1);
   pointer-events: none;
   width: 90%;
-  max-height: ~"calc(100vh - "2 * @outerSpace~")";
+  max-height: ~'calc(100vh - ' 2 * @outerSpace~ ')';
   transform: translateX(-50%);
-  left:50%;
+  left: 50%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -66,17 +66,16 @@
     pointer-events: none;
     user-select: none;
     opacity: 0;
-    background:fadeout(@overlayColor,100%);
-    transition: all .3s ease;
+    background: fadeout(@overlayColor, 100%);
+    transition: all 0.3s ease;
     .zIndex('background',-1);
-
   }
   &.is-active ~ &-overlay,
   &-overlay.is-active {
     pointer-events: auto;
     opacity: 1;
-    background:fadeout(@overlayColor,40%);
-    .zIndex('overlay',0)
+    background: fadeout(@overlayColor, 40%);
+    .zIndex('overlay',0);
   }
 
   .mq-min(@breakMedium, {
@@ -91,7 +90,7 @@
   // Positioning of the popup
   &--center {
     top: 40%;
-    transform: translate(-50%, ~"calc(-100% - "@outerSpace + 5px~")");
+    transform: translate(-50%, ~'calc(-100% - ' @outerSpace + 5px~ ')');
     bottom: inherit;
     &.is-active {
       transform: translate(-50%, -40%);
@@ -102,11 +101,11 @@
   &--se,
   &--sw {
     bottom: @outerSpace;
-    transform: translate(0, ~"calc(100% + "@outerSpace + 5px~")");
+    transform: translate(0, ~'calc(100% + ' @outerSpace + 5px~ ')');
     top: inherit;
   }
   &--s {
-    transform: translate(-50%, ~"calc(100% + "@outerSpace + 5px~")");
+    transform: translate(-50%, ~'calc(100% + ' @outerSpace + 5px~ ')');
     &.is-active {
       transform: translate(-50%, 0);
     }
@@ -129,12 +128,12 @@
   &--ne,
   &--nw {
     top: @outerSpace;
-    transform: translate(0, ~"calc(-100% - "@outerSpace + 5px~")");
+    transform: translate(0, ~'calc(-100% - ' @outerSpace + 5px~ ')');
     bottom: inherit;
   }
 
   &--n {
-    transform: translate(-50%, ~"calc(-100% - "@outerSpace + 5px~")");
+    transform: translate(-50%, ~'calc(-100% - ' @outerSpace + 5px~ ')');
     &.is-active {
       transform: translate(-50%, 0);
     }
@@ -163,11 +162,11 @@
   }
   &--e {
     right: @outerSpace;
-    transform: translate(~"calc(100% + "@outerSpace + 5px~")", -50%);
+    transform: translate(~'calc(100% + ' @outerSpace + 5px~ ')', -50%);
     left: inherit;
   }
   &--w {
     left: @outerSpace;
-    transform: translate(~"calc(-100% - "@outerSpace + 5px~")", -50%);
+    transform: translate(~'calc(-100% - ' @outerSpace + 5px~ ')', -50%);
   }
 }

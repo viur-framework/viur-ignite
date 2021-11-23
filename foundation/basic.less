@@ -8,7 +8,6 @@
 // Objects use a font size based on this size: using »rem« (root em).
 // Inline elements and type should react to their direct surroundings - thus use »em«.
 
-
 @basic-bodyBackgroundColor: @backgroundColor;
 @basic-bodyLineHeight: @defaultLineHeight;
 @basic-bodyTextColor: @textColor;
@@ -22,14 +21,15 @@
 @basic-headLineHeight: 1.6;
 @basic-subColor: lighten(@complementColor, 20%);
 @basic-leadFontWeight: @fontWeightLight;
-@basic-markColor: lighten(@mainColor,40%);
+@basic-markColor: lighten(@mainColor, 40%);
 @basic-quoteColor: @complementColor;
 @basic-codeBackgroundColor: darken(@backgroundColor, 5%);
 @basic-kbdBackgroundColor: darken(@backgroundColor, 10%);
 @basic-selectionBackgroundColor: darken(@mainColor, 10%);
 
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   font-smooth: always;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased;
@@ -96,7 +96,7 @@ a,
   color: @basic-linkColor;
   text-decoration: none;
   outline: 0;
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
   &:hover,
   &:active {
     color: @basic-linkHoverColor;
@@ -124,12 +124,20 @@ a[href^="ftp://"]:after {
 // Typography
 
 // Please style your headlines with the help of classes (e.g.: .headline, .subline, .heading)
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: inherit;
   font-family: @basic-headFonts;
   font-weight: inherit;
   line-height: @basic-headLineHeight;
-  a {font-weight: inherit; color: inherit;}
+  a {
+    font-weight: inherit;
+    color: inherit;
+  }
   .mq-print({
     page-break-after: avoid;
     page-break-inside: avoid;
@@ -161,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  &:not(:last-of-type){
+  &:not(:last-of-type) {
     margin-bottom: @bottomSpace;
   }
   .mq-print({
@@ -177,15 +185,26 @@ p {
   hyphens: auto;
   max-width: @paragraphWidth;
   margin: 0 auto @bottomSpace 0;
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: @basic-headFontWeight;
     margin-bottom: @innerSpace;
   }
 }
 
-strong {font-weight: @fontWeightBold;}
-em {font-style:italic;}
-small {font-size: .8em}
+strong {
+  font-weight: @fontWeightBold;
+}
+em {
+  font-style: italic;
+}
+small {
+  font-size: 0.8em;
+}
 
 ins {
   text-decoration: none;
@@ -199,7 +218,7 @@ mark {
   &:before,
   &:after {
     letter-spacing: -0.2em;
-    content: "\00a0";
+    content: '\00a0';
   }
 }
 
@@ -211,9 +230,11 @@ blockquote {
   padding: 0 15px;
   border-left: 7px solid @basic-quoteColor;
   cite {
-    font-size: .8em;
+    font-size: 0.8em;
     vertical-align: baseline;
-    * {vertical-align: baseline;}
+    * {
+      vertical-align: baseline;
+    }
     &:before {
       display: inline-block;
       content: '\2014';
@@ -223,12 +244,13 @@ blockquote {
   }
   &:after {
     content: attr(cite);
-    font-size: .6em;
+    font-size: 0.6em;
     margin-top: 2em;
   }
 }
 
-code, pre {
+code,
+pre {
   font-family: @monoFonts;
   background: @basic-codeBackgroundColor;
   color: contrast(@basic-codeBackgroundColor);
@@ -245,7 +267,7 @@ code {
   &:before,
   &:after {
     letter-spacing: -0.2em;
-    content: "\00a0";
+    content: '\00a0';
   }
 }
 pre {
@@ -262,10 +284,10 @@ kbd {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
   color: contrast(@basic-kbdBackgroundColor);
   display: inline-block;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-family: @monoFonts;
   margin: 0 0.1em;
-  padding: .2em .6em;
+  padding: 0.2em 0.6em;
   text-shadow: 0 1px 0 #fff;
   white-space: nowrap;
   &.kbd--dark {
@@ -309,7 +331,16 @@ ol.is-list {
   list-style-type: upper-alpha;
 }
 
-table, blockquote, pre, code, figure, li, hr, ul, ol, a {
+table,
+blockquote,
+pre,
+code,
+figure,
+li,
+hr,
+ul,
+ol,
+a {
   .mq-print({
     page-break-inside: avoid;
   });

@@ -19,15 +19,17 @@
   @borderRadius: @msg-borderRadius) {
   position: relative;
   padding: 15px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: @color;
   background-color: @backgroundColor;
   .border(@borderWidth, solid, @borderColor);
   .border-radius(@borderRadius);
   display: none;
   opacity: 0;
-  transition: opacity .5s ease;
-  * + & {margin-top: @spaceMedium;}
+  transition: opacity 0.5s ease;
+  * + & {
+    margin-top: @spaceMedium;
+  }
   &.is-active {
     display: flex;
     flex-direction: row;
@@ -51,7 +53,7 @@
     flex-basis: 100%;
   }
   &-headline {
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: @fontWeightBold;
     color: inherit;
   }

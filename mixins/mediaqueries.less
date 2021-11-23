@@ -14,7 +14,6 @@
 //
 // ------------------------------------
 
-
 // Width Screen
 // ------------------------------------
 .mq-min(@min, @ruleset) {
@@ -24,7 +23,7 @@
 }
 
 .mq-max(@max, @ruleset) {
-  @media (max-width: (@max - .05)) {
+  @media (max-width: (@max - 0.05)) {
     @ruleset();
   }
 }
@@ -38,7 +37,7 @@
 }
 
 .mq-max-height(@max, @ruleset) {
-  @media (max-height: (@max - .05)) {
+  @media (max-height: (@max - 0.05)) {
     @ruleset();
   }
 }
@@ -57,22 +56,18 @@
   }
 }
 
-
 // HiDPI (Alias: ratio and retina)
 // ------------------------------------
 .mq-hdpi(@ratio: 1.5, @ruleset: default) {
   & when (isnumber(@ratio)) {
-    @media
-    only screen and (min-resolution: (round(@ratio * 96dpi))),
-    only screen and (min-resolution: (@ratio * 1dppx)) {
+    @media only screen and (min-resolution: (round(@ratio * 96dpi))),
+      only screen and (min-resolution: (@ratio * 1dppx)) {
       @ruleset();
     }
   }
 
   & when (isruleset(@ratio)) {
-    @media
-    only screen and ( min-resolution: 144dpi),
-    only screen and ( min-resolution: 1.5dppx) {
+    @media only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
       @ratio();
     }
   }
@@ -81,7 +76,6 @@
 .mq-ratio(@ratio, @ruleset: default) {
   .mq-hdpi(@ratio, @ruleset);
 }
-
 
 // Print
 // ------------------------------------
@@ -97,5 +91,5 @@
 }
 
 .no-print {
-  .mq-print({display:none;})
+  .mq-print({display:none;});
 }

@@ -15,7 +15,6 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
 // Prefixes and objects:
 // .btn-
 
-
 @btn-backgroundColor: #eeecec;
 @btn-hoverColor: lighten(@btn-backgroundColor, 5%);
 @btn-activeColor: lighten(@btn-backgroundColor, 10%);
@@ -48,7 +47,7 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   &:link,
   &:visited {
     color: contrast(@backgroundColor, #222222, #f4f4f4);
@@ -65,7 +64,7 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
   }
   &.is-disabled,
   &:disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     &:hover,
     & {
       color: darken(@btn-disabledColor, 10%);
@@ -77,7 +76,7 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
   }
   &.is-busy,
   &.is-loading,
-  &[aria-busy=true] {
+  &[aria-busy='true'] {
     &:hover {
       cursor: progress;
       .boxShadow(@shadow, @shadowColor);
@@ -90,15 +89,15 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
     height: 1.3em;
 
     &:first-child {
-      margin-left: -(@padding/2);
+      margin-left: -(@padding / 2);
       margin-right: @padding;
     }
   }
   &--small {
-    font-size: .8em;
+    font-size: 0.8em;
     & > .icon:first-child,
     & > .logo:first-child {
-      margin-right: .15em;
+      margin-right: 0.15em;
     }
   }
   &--large {
@@ -138,7 +137,7 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
   }
   &.is-disabled,
   &:disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     &:hover,
     & {
       color: lighten(desaturate(@backgroundColor, 20%), 10%);
@@ -178,7 +177,7 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
   }
   &.is-disabled,
   &:disabled,
-  &[aria-disabled=true] {
+  &[aria-disabled='true'] {
     &:hover,
     & {
       color: lighten(desaturate(@backgroundColor, 20%), 30%);
@@ -191,4 +190,3 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
     .zIndex('content', 1); // border colors are important here.
   }
 }
-
