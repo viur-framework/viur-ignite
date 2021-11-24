@@ -106,17 +106,17 @@ a,
     line-height: inherit;
   }
   // Force empty links to show:
-  &[href^="http"]:empty::before {
+  &[href^='http']:empty::before {
     content: attr(href);
   }
 }
 
-
 a[href^="http://"]:after,
 a[href^="https://"]:after,
-a[href^="ftp://"]:after {
+a[href^="ftp://"]:after
+{
   .mq-print({
-    content: " (" attr(href) ")";
+    content: ' (' attr(href) ')';
     font-size: 80%;
   });
 }
