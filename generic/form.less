@@ -315,7 +315,6 @@
       left: 50%;
     }
   }
-
   &-label {
     background: darken(@form-color, 10%);
     .border-radius(@form-borderRadius);
@@ -341,9 +340,18 @@
       .boxShadow(@form-shadow, @form-shadowColor);
     }
   }
-
   .input-group & {
     align-self: stretch;
+  }
+
+  &.is-disabled {
+    color: #777777;
+    cursor: not-allowed;
+    .boxShadow(0);
+    border: @form-borderWidth dashed @form-disabledBorderColor;
+    & * {
+      cursor: not-allowed;
+    }
   }
 }
 
