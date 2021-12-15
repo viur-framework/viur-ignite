@@ -75,7 +75,7 @@ Use the .{box}--content class for padding if needed.
   &--content-wide {
     padding: @innerSpace*2;
   }
-  & + & {
+  &:not(.is-hidden) + & {
    margin-top: @outerSpace;
   }
 }
