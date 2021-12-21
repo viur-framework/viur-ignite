@@ -8,17 +8,17 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   display: inline-flex;
-  vertical-align: middle;
+  align-items: center;
   position: relative;
   border-width: 0;
   border-radius: 0;
   .border-radius(@borderRadius);
   .border(@borderWidth, solid, @borderColor);
-  padding: @padding @padding*3.75;
+  padding: 0 @padding*3.75;
   margin-top: @margin;
   margin-bottom: @margin;
   font-size: 1em;
-  line-height: 1;
+  line-height: @defaultLineHeight;
   font-weight: @fontWeightLight;
   min-height: @height;
   .mq-print({
