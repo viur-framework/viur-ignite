@@ -304,6 +304,7 @@
   .basicInput(@padding:@form-padding, @margin:@form-margin, @borderRadius:@form-borderRadius, @borderWidth:@form-borderWidth, @borderColor:@form-borderColor, @fontWeight: @fontWeightLight);
   background-color: darken(@form-color, 2%);
   color: contrast(darken(@form-color, 2%), #000000, #ffffff);
+  height: @defaultItemHeight;
   &-input {
     display: none;
 
@@ -323,6 +324,7 @@
     outline: 0;
     display: block;
     width: 2.6em;
+    height: 100%;
     position: relative;
     cursor: pointer;
     user-select: none;
