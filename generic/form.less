@@ -308,6 +308,7 @@
   .basicInput(@padding:@form-padding, @margin:@form-margin, @borderRadius:@form-borderRadius, @borderWidth:@form-borderWidth, @borderColor:@form-borderColor, @fontWeight: @fontWeightLight);
   background-color: darken(@form-color, 2%);
   color: contrast(darken(@form-color, 2%), #000000, #ffffff);
+  height: @defaultItemHeight;
   &-input {
     display: none;
 
@@ -319,7 +320,6 @@
       left: 50%;
     }
   }
-
   &-label {
     background: darken(@form-color, 10%);
     .border-radius(@form-borderRadius);
@@ -328,7 +328,7 @@
     outline: 0;
     display: block;
     width: 2.6em;
-    height: 1.3em;
+    height: 100%;
     position: relative;
     cursor: pointer;
     user-select: none;
@@ -346,9 +346,18 @@
       .boxShadow(@form-shadow, @form-shadowColor);
     }
   }
-
   .input-group & {
     align-self: stretch;
+  }
+
+  &.is-disabled {
+    color: #777777;
+    cursor: not-allowed;
+    .boxShadow(0);
+    border: @form-borderWidth dashed @form-disabledBorderColor;
+    & * {
+      cursor: not-allowed;
+    }
   }
 }
 
