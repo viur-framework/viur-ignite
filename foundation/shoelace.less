@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* SHOELACE ADAPTER */
 
+.themeName(@name) {
+  @shoelaceColor: hsla(ceil(hue(@color)) ceil(saturation(@color)) ceil(lightness(@color)) / @alpha);
+  --sl-@{name}-@{n}: @shoelaceColor;
+}
+
 .colorConverter(@color, @name, @n, @alpha: 100%) {
   @shoelaceColor: hsla(ceil(hue(@color)) ceil(saturation(@color)) ceil(lightness(@color)) / @alpha);
   --sl-@{name}-@{n}: @shoelaceColor;
@@ -45,9 +50,9 @@
     --sl-shadow-@{shoelaceName}: 0 19px 38px fadeout(@color, 70%), 0 15px 12px @secondColor;
   }
 }
-
+:root,
 :host,
-.sl-theme-viur {
+.sl-theme-@{themeName} {
   /*
      * Color Primitives
      */
