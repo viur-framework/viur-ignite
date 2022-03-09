@@ -1,13 +1,8 @@
 @charset "UTF-8";
 /* SHOELACE ADAPTER */
 
-.themeName(@name) {
-  @shoelaceColor: hsla(ceil(hue(@color)) ceil(saturation(@color)) ceil(lightness(@color)) / @alpha);
-  --sl-@{name}-@{n}: @shoelaceColor;
-}
-
 .colorConverter(@color, @name, @n, @alpha: 100%) {
-  @shoelaceColor: hsla(ceil(hue(@color)) ceil(saturation(@color)) ceil(lightness(@color)) / @alpha);
+  @shoelaceColor: hsla(hue(@color) saturation(@color) lightness(@color) ~'/' @alpha);
   --sl-@{name}-@{n}: @shoelaceColor;
 }
 
