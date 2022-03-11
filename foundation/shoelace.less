@@ -1,6 +1,40 @@
 @charset "UTF-8";
 /* SHOELACE ADAPTER */
 
+@sl-themeName: @themeName;
+@sl-mainColor: @mainColor;
+@sl-successColor: @successColor;
+@sl-warnColor: @warnColor;
+@sl-failColor: @failColor;
+@sl-hintColor: @hintColor;
+@sl-complementColor: @complementColor;
+
+@sl-borderRadiusSmall: @borderRadiusSmall;
+@sl-borderRadiusMedium: @borderRadiusMedium;
+@sl-borderRadiusLarge: @borderRadiusLarge;
+@sl-borderRadiusXlarge: @borderRadiusXlarge;
+@sl-borderRadiusCircle: @borderRadiusCircle;
+@sl-borderRadiusPill: @borderRadiusPill;
+
+@sl-defaultShadowColor: @defaultShadowColor;
+@sl-backgroundColor: @backgroundColor;
+@sl-clearColor: @clearColor;
+
+@sl-monoFonts: @monoFonts;
+@sl-bodyFonts: @bodyFonts;
+@sl-bodyFontsSerif: @bodyFontsSerif;
+
+@sl-fontWeightLight: @fontWeightLight;
+@sl-fontWeightNormal: @fontWeightNormal;
+@sl-fontWeightSemiBold: @fontWeightSemiBold;
+@sl-fontWeightBold: @fontWeightBold;
+
+@sl-lineHeightDenser: @defaultLineHeight - 0.75;
+@sl-lineHeightDense: @defaultLineHeight - 0.5;
+@sl-defaultLineHeight: @defaultLineHeight;
+@sl-lineHeightLoose: @defaultLineHeight + 0.5;
+@sl-lineHeightLooser: @defaultLineHeight + 0.75;
+
 .colorConverter(@color, @name, @n, @alpha: 100%) {
   @shoelaceColor: hsla(hue(@color) saturation(@color) lightness(@color) ~'/' @alpha);
   --sl-@{name}-@{n}: @shoelaceColor;
@@ -47,7 +81,7 @@
 }
 :root,
 :host,
-.sl-theme-@{themeName} {
+.sl-theme-@{sl-themeName} {
   /*
      * Color Primitives
      */
@@ -288,77 +322,77 @@
      * Theme Tokens
      */
   /* Primary */
-  .colorConverter(lighten(@mainColor, 40%), color-primary, 50);
-  .colorConverter(lighten(@mainColor, 35%), color-primary, 100);
-  .colorConverter(lighten(@mainColor, 25%), color-primary, 200);
-  .colorConverter(lighten(@mainColor, 15%), color-primary, 300);
-  .colorConverter(lighten(@mainColor, 5%), color-primary, 400);
-  .colorConverter(@mainColor, color-primary, 500);
-  .colorConverter(darken(@mainColor, 5%), color-primary, 600);
-  .colorConverter(darken(@mainColor, 15%), color-primary, 700);
-  .colorConverter(darken(@mainColor, 25%), color-primary, 800);
-  .colorConverter(darken(@mainColor, 35%), color-primary, 900);
-  .colorConverter(darken(@mainColor, 40%), color-primary, 950);
+  .colorConverter(lighten(@sl-mainColor, 40%), color-primary, 50);
+  .colorConverter(lighten(@sl-mainColor, 35%), color-primary, 100);
+  .colorConverter(lighten(@sl-mainColor, 25%), color-primary, 200);
+  .colorConverter(lighten(@sl-mainColor, 15%), color-primary, 300);
+  .colorConverter(lighten(@sl-mainColor, 5%), color-primary, 400);
+  .colorConverter(@sl-mainColor, color-primary, 500);
+  .colorConverter(darken(@sl-mainColor, 5%), color-primary, 600);
+  .colorConverter(darken(@sl-mainColor, 15%), color-primary, 700);
+  .colorConverter(darken(@sl-mainColor, 25%), color-primary, 800);
+  .colorConverter(darken(@sl-mainColor, 35%), color-primary, 900);
+  .colorConverter(darken(@sl-mainColor, 40%), color-primary, 950);
   /* Success */
-  .colorConverter(lighten(@successColor, 40%), color-success, 50);
-  .colorConverter(lighten(@successColor, 35%), color-success, 100);
-  .colorConverter(lighten(@successColor, 25%), color-success, 200);
-  .colorConverter(lighten(@successColor, 15%), color-success, 300);
-  .colorConverter(lighten(@successColor, 5%), color-success, 400);
-  .colorConverter(@successColor, color-success, 500);
-  .colorConverter(darken(@successColor, 5%), color-success, 600);
-  .colorConverter(darken(@successColor, 15%), color-success, 700);
-  .colorConverter(darken(@successColor, 25%), color-success, 800);
-  .colorConverter(darken(@successColor, 35%), color-success, 900);
-  .colorConverter(darken(@successColor, 40%), color-success, 950);
+  .colorConverter(lighten(@sl-successColor, 40%), color-success, 50);
+  .colorConverter(lighten(@sl-successColor, 35%), color-success, 100);
+  .colorConverter(lighten(@sl-successColor, 25%), color-success, 200);
+  .colorConverter(lighten(@sl-successColor, 15%), color-success, 300);
+  .colorConverter(lighten(@sl-successColor, 5%), color-success, 400);
+  .colorConverter(@sl-successColor, color-success, 500);
+  .colorConverter(darken(@sl-successColor, 5%), color-success, 600);
+  .colorConverter(darken(@sl-successColor, 15%), color-success, 700);
+  .colorConverter(darken(@sl-successColor, 25%), color-success, 800);
+  .colorConverter(darken(@sl-successColor, 35%), color-success, 900);
+  .colorConverter(darken(@sl-successColor, 40%), color-success, 950);
   /* Warning */
-  .colorConverter(lighten(@warnColor, 40%), color-warning, 50);
-  .colorConverter(lighten(@warnColor, 35%), color-warning, 100);
-  .colorConverter(lighten(@warnColor, 25%), color-warning, 200);
-  .colorConverter(lighten(@warnColor, 15%), color-warning, 300);
-  .colorConverter(lighten(@warnColor, 5%), color-warning, 400);
-  .colorConverter(@warnColor, color-warning, 500);
-  .colorConverter(darken(@warnColor, 5%), color-warning, 600);
-  .colorConverter(darken(@warnColor, 15%), color-warning, 700);
-  .colorConverter(darken(@warnColor, 25%), color-warning, 800);
-  .colorConverter(darken(@warnColor, 35%), color-warning, 900);
-  .colorConverter(darken(@warnColor, 40%), color-warning, 950);
+  .colorConverter(lighten(@sl-warnColor, 40%), color-warning, 50);
+  .colorConverter(lighten(@sl-warnColor, 35%), color-warning, 100);
+  .colorConverter(lighten(@sl-warnColor, 25%), color-warning, 200);
+  .colorConverter(lighten(@sl-warnColor, 15%), color-warning, 300);
+  .colorConverter(lighten(@sl-warnColor, 5%), color-warning, 400);
+  .colorConverter(@sl-warnColor, color-warning, 500);
+  .colorConverter(darken(@sl-warnColor, 5%), color-warning, 600);
+  .colorConverter(darken(@sl-warnColor, 15%), color-warning, 700);
+  .colorConverter(darken(@sl-warnColor, 25%), color-warning, 800);
+  .colorConverter(darken(@sl-warnColor, 35%), color-warning, 900);
+  .colorConverter(darken(@sl-warnColor, 40%), color-warning, 950);
   /* Danger */
-  .colorConverter(lighten(@failColor, 40%), color-danger, 50);
-  .colorConverter(lighten(@failColor, 35%), color-danger, 100);
-  .colorConverter(lighten(@failColor, 25%), color-danger, 200);
-  .colorConverter(lighten(@failColor, 15%), color-danger, 300);
-  .colorConverter(lighten(@failColor, 5%), color-danger, 400);
-  .colorConverter(@failColor, color-danger, 500);
-  .colorConverter(darken(@failColor, 5%), color-danger, 600);
-  .colorConverter(darken(@failColor, 15%), color-danger, 700);
-  .colorConverter(darken(@failColor, 25%), color-danger, 800);
-  .colorConverter(darken(@failColor, 35%), color-danger, 900);
-  .colorConverter(darken(@failColor, 40%), color-danger, 950);
+  .colorConverter(lighten(@sl-failColor, 40%), color-danger, 50);
+  .colorConverter(lighten(@sl-failColor, 35%), color-danger, 100);
+  .colorConverter(lighten(@sl-failColor, 25%), color-danger, 200);
+  .colorConverter(lighten(@sl-failColor, 15%), color-danger, 300);
+  .colorConverter(lighten(@sl-failColor, 5%), color-danger, 400);
+  .colorConverter(@sl-failColor, color-danger, 500);
+  .colorConverter(darken(@sl-failColor, 5%), color-danger, 600);
+  .colorConverter(darken(@sl-failColor, 15%), color-danger, 700);
+  .colorConverter(darken(@sl-failColor, 25%), color-danger, 800);
+  .colorConverter(darken(@sl-failColor, 35%), color-danger, 900);
+  .colorConverter(darken(@sl-failColor, 40%), color-danger, 950);
   /* Info */
-  .colorConverter(lighten(@hintColor, 40%), color-info, 50);
-  .colorConverter(lighten(@hintColor, 35%), color-info, 100);
-  .colorConverter(lighten(@hintColor, 25%), color-info, 200);
-  .colorConverter(lighten(@hintColor, 15%), color-info, 300);
-  .colorConverter(lighten(@hintColor, 5%), color-info, 400);
-  .colorConverter(@hintColor, color-info, 500);
-  .colorConverter(darken(@hintColor, 5%), color-info, 600);
-  .colorConverter(darken(@hintColor, 15%), color-info, 700);
-  .colorConverter(darken(@hintColor, 25%), color-info, 800);
-  .colorConverter(darken(@hintColor, 35%), color-info, 900);
-  .colorConverter(darken(@hintColor, 40%), color-info, 950);
+  .colorConverter(lighten(@sl-hintColor, 40%), color-info, 50);
+  .colorConverter(lighten(@sl-hintColor, 35%), color-info, 100);
+  .colorConverter(lighten(@sl-hintColor, 25%), color-info, 200);
+  .colorConverter(lighten(@sl-hintColor, 15%), color-info, 300);
+  .colorConverter(lighten(@sl-hintColor, 5%), color-info, 400);
+  .colorConverter(@sl-hintColor, color-info, 500);
+  .colorConverter(darken(@sl-hintColor, 5%), color-info, 600);
+  .colorConverter(darken(@sl-hintColor, 15%), color-info, 700);
+  .colorConverter(darken(@sl-hintColor, 25%), color-info, 800);
+  .colorConverter(darken(@sl-hintColor, 35%), color-info, 900);
+  .colorConverter(darken(@sl-hintColor, 40%), color-info, 950);
   /* Secondary */
-  .colorConverter(lighten(@complementColor, 40%), color-secondary, 50);
-  .colorConverter(lighten(@complementColor, 35%), color-secondary, 100);
-  .colorConverter(lighten(@complementColor, 25%), color-secondary, 200);
-  .colorConverter(lighten(@complementColor, 15%), color-secondary, 300);
-  .colorConverter(lighten(@complementColor, 5%), color-secondary, 400);
-  .colorConverter(@complementColor, color-secondary, 500);
-  .colorConverter(darken(@complementColor, 5%), color-secondary, 600);
-  .colorConverter(darken(@complementColor, 15%), color-secondary, 700);
-  .colorConverter(darken(@complementColor, 25%), color-secondary, 800);
-  .colorConverter(darken(@complementColor, 35%), color-secondary, 900);
-  .colorConverter(darken(@complementColor, 40%), color-secondary, 950);
+  .colorConverter(lighten(@sl-complementColor, 40%), color-secondary, 50);
+  .colorConverter(lighten(@sl-complementColor, 35%), color-secondary, 100);
+  .colorConverter(lighten(@sl-complementColor, 25%), color-secondary, 200);
+  .colorConverter(lighten(@sl-complementColor, 15%), color-secondary, 300);
+  .colorConverter(lighten(@sl-complementColor, 5%), color-secondary, 400);
+  .colorConverter(@sl-complementColor, color-secondary, 500);
+  .colorConverter(darken(@sl-complementColor, 5%), color-secondary, 600);
+  .colorConverter(darken(@sl-complementColor, 15%), color-secondary, 700);
+  .colorConverter(darken(@sl-complementColor, 25%), color-secondary, 800);
+  .colorConverter(darken(@sl-complementColor, 35%), color-secondary, 900);
+  .colorConverter(darken(@sl-complementColor, 40%), color-secondary, 950);
 
   /* Neutral */
   --sl-color-neutral-50: var(--sl-color-gray-50);
@@ -378,27 +412,27 @@
   /*
      * Border radii
      */
-  --sl-border-radius-small: @borderRadiusSmall;
-  --sl-border-radius-medium: @borderRadiusMedium;
-  --sl-border-radius-large: @borderRadiusLarge;
-  --sl-border-radius-x-large: @borderRadiusXlarge;
-  --sl-border-radius-circle: @borderRadiusCircle;
-  --sl-border-radius-pill: @borderRadiusPill;
+  --sl-border-radius-small: @sl-borderRadiusSmall;
+  --sl-border-radius-medium: @sl-borderRadiusMedium;
+  --sl-border-radius-large: @sl-borderRadiusLarge;
+  --sl-border-radius-x-large: @sl-borderRadiusXlarge;
+  --sl-border-radius-circle: @sl-borderRadiusCircle;
+  --sl-border-radius-pill: @sl-borderRadiusPill;
 
   /*
      * Elevations
     */
-  .boxShadowConverter(1, @color: @defaultShadowColor, x-small);
-  .boxShadowConverter(2, @color: @defaultShadowColor, small);
-  .boxShadowConverter(3, @color: @defaultShadowColor, medium);
-  .boxShadowConverter(4, @color: @defaultShadowColor, large);
-  .boxShadowConverter(5, @color: @defaultShadowColor, x-large);
+  .boxShadowConverter(1, @color: @sl-defaultShadowColor, x-small);
+  .boxShadowConverter(2, @color: @sl-defaultShadowColor, small);
+  .boxShadowConverter(3, @color: @sl-defaultShadowColor, medium);
+  .boxShadowConverter(4, @color: @sl-defaultShadowColor, large);
+  .boxShadowConverter(5, @color: @sl-defaultShadowColor, x-large);
 
   /*
      * Surfaces
      */
-  --sl-surface-base: @backgroundColor;
-  --sl-surface-base-alt: @clearColor;
+  --sl-surface-base: @sl-backgroundColor;
+  --sl-surface-base-alt: @sl-clearColor;
   /*
      * Spacings
      */
@@ -424,9 +458,9 @@
      * Typography
      */
   /* Fonts */
-  --sl-font-mono: @monoFonts;
-  --sl-font-sans: @bodyFonts;
-  --sl-font-serif: Georgia, 'Times New Roman', serif;
+  --sl-font-mono: @sl-monoFonts;
+  --sl-font-sans: @sl-bodyFonts;
+  --sl-font-serif: @sl-bodyFontsSerif;
   /* Font sizes */
   --sl-font-size-2x-small: 0.625rem; /* 10px */
   --sl-font-size-x-small: 0.75rem; /* 12px */
@@ -438,10 +472,10 @@
   --sl-font-size-3x-large: 3rem; /* 48px */
   --sl-font-size-4x-large: 4.5rem; /* 72px */
   /* Font weights */
-  --sl-font-weight-light: @fontWeightLight;
-  --sl-font-weight-normal: @fontWeightNormal;
-  --sl-font-weight-semibold: @fontWeightSemiBold;
-  --sl-font-weight-bold: @fontWeightBold;
+  --sl-font-weight-light: @sl-fontWeightLight;
+  --sl-font-weight-normal: @sl-fontWeightNormal;
+  --sl-font-weight-semibold: @sl-fontWeightSemiBold;
+  --sl-font-weight-bold: @sl-fontWeightBold;
   /* Letter spacings */
   --sl-letter-spacing-denser: -0.03em;
   --sl-letter-spacing-dense: -0.015em;
@@ -449,20 +483,16 @@
   --sl-letter-spacing-loose: 0.075em;
   --sl-letter-spacing-looser: 0.15em;
   /* Line heights */
-  @lineHeightDenser: @defaultLineHeight - 0.75;
-  --sl-line-height-denser: @lineHeightDenser;
-  @lineHeightDense: @defaultLineHeight - 0.5;
-  --sl-line-height-dense: @lineHeightDense;
-  --sl-line-height-normal: @defaultLineHeight;
-  @lineHeightLoose: @defaultLineHeight + 0.5;
-  --sl-line-height-loose: @lineHeightLoose;
-  @lineHeightLooser: @defaultLineHeight + 0.75;
-  --sl-line-height-looser: @lineHeightLooser;
+  --sl-line-height-denser: @sl-lineHeightDenser;
+  --sl-line-height-dense: @sl-lineHeightDense;
+  --sl-line-height-normal: @sl-defaultLineHeight;
+  --sl-line-height-loose: @sl-lineHeightLoose;
+  --sl-line-height-looser: @sl-lineHeightLooser;
   /*
      * Forms
      */
   /* Focus rings */
-  .colorConverter(@mainColor, focus-ring, color, 40%);
+  .colorConverter(@sl-mainColor, focus-ring, color, 40%);
   --sl-focus-ring-width: 3px;
   --sl-focus-ring: 0 0 0 var(--sl-focus-ring-width) var(--sl-focus-ring-color);
   /* Buttons */
