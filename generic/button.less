@@ -124,14 +124,14 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
     color: contrast(darken(@backgroundColor, 15%), #222222, #f4f4f4);
   }
   &:hover {
-    color: contrast(darken(@backgroundColor, 15%));
+    color: contrast(lighten(@backgroundColor, 5%));
     background-color: lighten(@backgroundColor, 5%);
     border: @borderWidth solid darken(@backgroundColor, 5%);
     .boxShadow(@shadowHover, @backgroundColor);
   }
   &:active,
   &.is-active {
-    color: contrast(darken(@backgroundColor, 20%));
+    color: contrast(lighten(@backgroundColor, 10%));
     background-color: lighten(@backgroundColor, 10%);
     border: @borderWidth solid lighten(@backgroundColor, 5%);
   }
@@ -140,7 +140,7 @@ Colorized and inverted buttons are a way to enhance generic buttons — they can
   &[aria-disabled='true'] {
     &:hover,
     & {
-      color: lighten(desaturate(@backgroundColor, 20%), 10%);
+      color: contrast(lighten(desaturate(@backgroundColor, 20%), 30%), desaturate(@backgroundColor, 10%), darken(desaturate(@backgroundColor, 20%), 10%));
       .boxShadow(0);
       border-style: dashed;
       background-color: lighten(desaturate(@backgroundColor, 20%), 30%);

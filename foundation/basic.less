@@ -169,7 +169,7 @@ h6 {
 }
 
 p {
-  &:not(:last-of-type) {
+  &:not(:last-child){
     margin-bottom: @bottomSpace;
   }
   .mq-print({
@@ -362,3 +362,7 @@ a {
 :focus {
   outline: 1px dotted #ddd;
 }
+
+[hidden],
+.hidden,
+.is-hidden {display: none !important;}
