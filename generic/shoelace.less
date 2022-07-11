@@ -1,5 +1,17 @@
 @charset "UTF-8";
-/* SHOELACE ADAPTER */
+/* VIUR SHOELACE ADAPTER */
+
+/*
+The Viur Shoelace Adapter (ViSA) uses ViUR Ignite template variables to style and build a Shoelace theme.
+Thus it is possible to use Shoelace and Ignite in parallel. Preprocessed LESS meets webcomponents.
+VISA provides a mapping of many LESS variables onto Shoelace css custom properties
+as well as a set of mixins to process Ignite styling to fit the demands of Shoelace:
+- convert colors to HSLA and custom properties
+- convert z-indexes and box-shadows to css custom properties.
+*/
+
+// Prefixes and objects:
+// .sl-
 
 @sl-themeName: @themeName;
 @sl-mainColor: @mainColor;
@@ -79,9 +91,7 @@
     --sl-shadow-@{shoelaceName}: 0 19px 38px fadeout(@color, 70%), 0 15px 12px @secondColor;
   }
 }
-:root,
-:host,
-.sl-theme-@{sl-themeName} {
+.sl-theme() {
   /*
      * Color Primitives
      */
