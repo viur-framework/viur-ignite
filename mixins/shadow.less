@@ -27,44 +27,52 @@
 //    }
 //}
 
-.boxShadow(@level, @color: @defaultShadowColor){
-    & when (@level = 0) {box-shadow: none;}
-    & when (@level = 1) {
-        box-shadow: 0 1px 3px fadeout(@color,88%), 0 1px 2px fadeout(@color,76%);
-    }
-    & when (@level = 2) {
-        box-shadow: 0 3px 6px fadeout(@color,84%), 0 3px 6px fadeout(@color,77%);
-    }
-    & when (@level = 3) {
-        box-shadow: 0 10px 20px fadeout(@color,81%), 0 6px 6px fadeout(@color,77%);
-    }
-    & when (@level = 4) {
-        box-shadow: 0 14px 28px fadeout(@color,75%), 0 10px 10px fadeout(@color,78%);
-    }
-    & when (@level = 5) {
-        box-shadow: 0 19px 38px fadeout(@color,70%), 0 15px 12px fadeout(@color,78%);
-    }
+.boxShadow(@level, @color: @defaultShadowColor) {
+  & when (@level = 0) {
+    box-shadow: none;
+  }
+  & when (@level = 1) {
+    box-shadow: 0 1px 3px fadeout(@color, 88%), 0 1px 2px fadeout(@color, 76%);
+  }
+  & when (@level = 2) {
+    box-shadow: 0 3px 6px fadeout(@color, 84%), 0 3px 6px fadeout(@color, 77%);
+  }
+  & when (@level = 3) {
+    box-shadow: 0 10px 20px fadeout(@color, 81%), 0 6px 6px fadeout(@color, 77%);
+  }
+  & when (@level = 4) {
+    box-shadow: 0 14px 28px fadeout(@color, 75%), 0 10px 10px fadeout(@color, 78%);
+  }
+  & when (@level = 5) {
+    box-shadow: 0 19px 38px fadeout(@color, 70%), 0 15px 12px fadeout(@color, 78%);
+  }
 }
 
-.textShadow(@level: 1, @color: @defaultShadowColor){
-    & when (@level = 0) {text-shadow: none;}
-    & when (@level = 1) {
-        text-shadow: 0 1px 3px fadeout(@color,88%), 0 1px 2px fadeout(@color,76%);
-    }
-    & when (@level = 2) {
-        text-shadow: 0 3px 6px fadeout(@color,84%), 0 3px 6px fadeout(@color,77%);
-    }
-    & when (@level = 3) {
-        text-shadow: 0 10px 20px fadeout(@color,81%), 0 6px 6px fadeout(@color,77%);
-    }
-    & when (@level = 4) {
-        text-shadow: 0 14px 28px fadeout(@color,75%), 0 10px 10px fadeout(@color,78%);
-    }
-    & when (@level = 5) {
-        text-shadow: 0 19px 38px fadeout(@color,70%), 0 15px 12px fadeout(@color,78%);
-    }
+.textShadow(@level: 1, @color: @defaultShadowColor) {
+  & when (@level = 0) {
+    text-shadow: none;
+  }
+  & when (@level = 1) {
+    text-shadow: 0 1px 3px fadeout(@color, 88%), 0 1px 2px fadeout(@color, 76%);
+  }
+  & when (@level = 2) {
+    text-shadow: 0 3px 6px fadeout(@color, 84%), 0 3px 6px fadeout(@color, 77%);
+  }
+  & when (@level = 3) {
+    text-shadow: 0 10px 20px fadeout(@color, 81%), 0 6px 6px fadeout(@color, 77%);
+  }
+  & when (@level = 4) {
+    text-shadow: 0 14px 28px fadeout(@color, 75%), 0 10px 10px fadeout(@color, 78%);
+  }
+  & when (@level = 5) {
+    text-shadow: 0 19px 38px fadeout(@color, 70%), 0 15px 12px fadeout(@color, 78%);
+  }
 }
 
 /* Shadow Helper Classes */
-.shd {.boxShadow(1, @defaultShadowColor);}
-.txt-shd {.textShadow(1, @defaultShadowColor);}
+.shd {
+  .boxShadow(1, @defaultShadowColor);
+}
+.txt-shd {
+  .textShadow(1, @defaultShadowColor);
+}

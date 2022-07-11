@@ -51,7 +51,8 @@
     padding: @padding;
   }
 
-  &-head { // hide workaround
+  &-head {
+    // hide workaround
     position: absolute;
     clip: rect(1px 1px 1px 1px);
     clip: rect(1px, 1px, 1px, 1px);
@@ -67,7 +68,7 @@
     .border(@borderWidth, solid, darken(@headBackgroundColor, 15%));
     font-weight: @fontWeightNormal;
     text-align: center;
-    color: contrast(darken(@headBackgroundColor,15%));
+    color: contrast(darken(@headBackgroundColor, 15%));
   }
 
   &-body-row,
@@ -75,13 +76,18 @@
     .border(@borderWidth, solid, darken(@headBackgroundColor, 15%));
     &.is-active {
       background-color: darken(@selectionColor, 2%);
-      &-body-cell, &-foot-cell { color: contrast(@selectionColor); }
+      &-body-cell,
+      &-foot-cell {
+        color: contrast(@selectionColor);
+      }
     }
   }
 
   &-body-row {
     margin-bottom: 1em;
-    &:last-of-type { margin-bottom: 0; }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &-foot {
@@ -93,8 +99,8 @@
     margin-top: 1em;
   }
 
-  &-body-cell[scope="row"],
-  &-foot-cell[scope="row"] {
+  &-body-cell[scope='row'],
+  &-foot-cell[scope='row'] {
     background-color: @selectionColor;
     color: contrast(@selectionColor);
   }
@@ -190,4 +196,3 @@
     }
   });
 }
-

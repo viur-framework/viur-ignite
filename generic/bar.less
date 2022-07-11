@@ -41,7 +41,10 @@
   }
   &-group {
     display: flex;
-    & > * {display: flex; align-items: center;}
+    & > * {
+      display: flex;
+      align-items: center;
+    }
     .mq-max(@breakSmall, {
       flex-direction: column;
       & > * + * {margin-top: 10px;}

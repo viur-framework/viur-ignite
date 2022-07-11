@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 ## [develop]
 
+## [4.1.0]
+
+### Changed
+- better customization for input validation
+- changes to `.basicInput()`
+- some styling, linting and QoL changes
+
+### Added
+- **NEW** shoelace.less: Viur Shoelace Adapter (ViSA) that uses ViUR Ignite template variables to style and build a Shoelace theme.
+- added support for different colors to `.genericMsg()`
+- added `.is-disabled` to `.genericSwitch()` element styling
+- reintroduced `.is-hidden` classes
+
 
 ## [4.0.0] - 2021-02-26
 

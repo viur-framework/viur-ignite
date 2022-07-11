@@ -4,7 +4,6 @@
 @zIndexOrder: 'background', 'content', 'tooltip', 'foreground', 'nav', 'overlay', 'alert', 'admin', 'dev';
 
 .zIndex(@elementName, @elementOffset:0) {
-
   .loop(@elementName, @counter) when (@counter > 0) {
     .loop(@elementName, @counter - 1);
     .pickIndex(@elementName, @counter);
@@ -17,4 +16,6 @@
   }
 }
 
-.zDev() {.zIndex('dev', 0);}
+.zDev() {
+  .zIndex('dev', 0);
+}

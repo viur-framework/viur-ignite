@@ -13,7 +13,7 @@
   animation-fill-mode: forwards;
   & when not (@backgroundImage=false) {
     background-image: url(@backgroundImage);
-    background-position: ~"calc(100% - "@form-padding*2~")" center;
+    background-position: ~'calc(100% - ' @form-padding*2~ ')' center;
   }
   & when not (@cursor=false) {
     cursor: @cursor;
@@ -36,5 +36,3 @@
     }
   }
 }
-
-
