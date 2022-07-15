@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [develop]
 
-## [4.1.0]
+## [4.1.0] - 2022-07-15
 
 ### Changed
 - better customization for input validation
@@ -203,6 +203,7 @@ Moreover flex layout is no longer the exception but the norm.
 - Changelog started here
 
 
+[4.1.0]: https://github.com/viur-framework/ignite/compare/4.0.0...4.1.0
 [4.0.0]: https://github.com/viur-framework/ignite/compare/3.2.0...4.0.0
 [3.2.0]: https://github.com/viur-framework/ignite/compare/3.1.0...3.2.0
 [3.1.0]: https://github.com/viur-framework/ignite/compare/3.0.00...3.1.0
