@@ -18,11 +18,9 @@
   });
 
   .mq-min(@breakSmall, {
-    font-size: .9rem;
     align-items: stretch;
     display: flex;
     flex-wrap: wrap;
-    min-height: 35px;
     position: relative;
     text-align: center;
     justify-content: space-between;
@@ -43,7 +41,10 @@
   }
   &-group {
     display: flex;
-    & > * {display: flex; align-items: center;}
+    & > * {
+      display: flex;
+      align-items: center;
+    }
     .mq-max(@breakSmall, {
       flex-direction: column;
       & > * + * {margin-top: 10px;}

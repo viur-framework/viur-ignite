@@ -28,9 +28,18 @@
 
 // Colors:
 @form-color: @defaultFormColor;
-@form-validColor: @successColor;
-@form-dangerColor: @failColor;
-@form-hintColor: @hintColor;
+@form-validColor: darken(@successColor, 5%);
+@form-validBorderColor: lighten(@successColor, 15%);
+@form-validBackgroundColor: lighten(@successColor, 40%);
+@form-invalidColor: darken(@failColor, 5%);
+@form-invalidBorderColor: lighten(@failColor, 15%);
+@form-invalidBackgroundColor: lighten(@failColor, 40%);
+@form-disabledColor: darken(@form-color, 50%);
+@form-disabledBorderColor: lighten(darken(@form-color, 50%), 15%);
+@form-disabledBackgroundColor: lighten(darken(@form-color, 50%), 40%);
+@form-hintColor: darken(@hintColor, 5%);
+@form-hintBorderColor: lighten(@hintColor, 15%);
+@form-hintBackgroundColor: lighten(@hintColor, 40%);
 @form-requiredColor: @mainColor;
 
 // Shadows:
@@ -52,41 +61,41 @@
   text-overflow: ellipsis;
   min-width: 0;
   flex: 1 1 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   background-position: 150% center;
   background-size: 1em;
   background-repeat: no-repeat;
   .form-group--validation &,
   .input-group--validation &,
   &--validation {
-    padding-right: ~"calc("@form-padding*2~" + 1em)";
+    padding-right: ~'calc(' @form-padding*2~ ' + 1em)';
     .input-group.is-invalid &,
     &.is-invalid,
-    &[aria-invalid="true"],
+    &[aria-invalid='true'],
     &:invalid:not(:placeholder-shown) {
-      .inputValidation(@form-color, @form-dangerColor, @backgroundImage:true, @cursor:false, @focus:true);
-      .penBg(@color:@form-dangerColor);
+      .inputValidation(@form-color, @form-invalidColor, @form-invalidBorderColor, @form-invalidBackgroundColor, @backgroundImage:true, @cursor:false, @focus:true);
+      .penBg(@color:@form-invalidColor);
     }
 
     .input-group.is-recommended &,
     &.is-recommended {
-      .inputValidation(@form-color, @form-hintColor, @backgroundImage:true, @cursor:false, @focus:true);
+      .inputValidation(@form-color, @form-hintColor, @form-hintBorderColor, @form-hintBackgroundColor, @backgroundImage:true, @cursor:false, @focus:true);
       .penBg(@color:@form-hintColor);
     }
 
     .input-group.is-valid &,
     &.is-valid,
-    &[aria-invalid="false"],
-    &:valid:not(:placeholder-shown):not([type="password"]) {
-      .inputValidation(@form-color, @form-validColor, @backgroundImage:true, @cursor:false, @focus:true);
+    &[aria-invalid='false'],
+    &:valid:not(:placeholder-shown):not([type='password']) {
+      .inputValidation(@form-color, @form-validColor, @form-validBorderColor, @form-validBackgroundColor, @backgroundImage:true, @cursor:false, @focus:true);
       .checkBg(@color:@form-validColor);
     }
   }
 
   &.is-readonly,
   &:read-only,
-  &[aria-readonly="true"] {
-    .inputValidation(@form-color, darken(@form-color, 50%), @cursor:not-allowed);
+  &[aria-readonly='true'] {
+    .inputValidation(@form-color, @form-disabledColor, @cursor:not-allowed);
     .boxShadow(0);
     border-style: dashed;
     border-bottom-style: solid;
@@ -94,9 +103,9 @@
 
   &.is-disabled,
   &:disabled,
-  &[aria-disabled="true"] {
-    .inputValidation(@form-color, darken(@form-color, 15%), @backgroundImage:true, @cursor:not-allowed);
-    .not-allowedBg(@color:darken(@form-color,15%));
+  &[aria-disabled='true'] {
+    .inputValidation(@form-color, @form-disabledColor, @form-disabledBorderColor, @form-disabledBackgroundColor, @backgroundImage:true, @cursor:not-allowed);
+    .not-allowedBg(@color:@form-disabledColor);
     .boxShadow(0);
     border-style: dashed;
   }
@@ -108,7 +117,7 @@
   }
 
   &--small {
-    font-size: .8em;
+    font-size: 0.8em;
     font-weight: @fontWeightNormal;
   }
 
@@ -122,23 +131,28 @@
 }
 
 // placeholder text color
-.input::placeholder, .textarea::placeholder {
+.input::placeholder,
+.textarea::placeholder {
   color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
   opacity: 1;
 }
-.input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder {
+.input::-webkit-input-placeholder,
+.textarea::-webkit-input-placeholder {
   color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
   opacity: 1;
 }
-.input:-moz-placeholder, .textarea:-moz-placeholder {
+.input:-moz-placeholder,
+.textarea:-moz-placeholder {
   color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
   opacity: 1;
 }
-.input::-moz-placeholder, .textarea::-moz-placeholder {
+.input::-moz-placeholder,
+.textarea::-moz-placeholder {
   color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
   opacity: 1;
 }
-.input:-ms-input-placeholder, .textarea:-ms-input-placeholder {
+.input:-ms-input-placeholder,
+.textarea:-ms-input-placeholder {
   color: lighten(contrast(@form-color, #222222, #f4f4f4), 50%);
   opacity: 1;
 }
@@ -168,23 +182,23 @@
   &--validation {
     .input-group.is-invalid &,
     &.is-invalid {
-      color: darken(@form-dangerColor, 25%);
-      border-color: @form-dangerColor;
-      background-color: lighten(@form-dangerColor, 20%);
+      color: @form-invalidColor;
+      border-color: @form-invalidBorderColor;
+      background-color: @form-invalidBackgroundColor;
     }
 
     .input-group.is-recommended &,
     &.is-recommended {
-      color: darken(@form-hintColor, 25%);
-      border-color: @form-hintColor;
-      background-color: lighten(@form-hintColor, 20%);
+      color: @form-hintColor;
+      border-color: @form-hintBorderColor;
+      background-color: @form-hintBackgroundColor;
     }
 
     .input-group.is-valid &,
     &.is-valid {
-      color: darken(@form-validColor, 25%);
-      border-color: @form-validColor;
-      background-color: lighten(@form-validColor, 20%);
+      color: @form-validColor;
+      border-color: @form-validBorderColor;
+      background-color: @form-validBackgroundColor;
     }
   }
 
@@ -193,17 +207,17 @@
     color: #777777;
     cursor: not-allowed;
     .boxShadow(0);
-    border: @form-borderWidth dashed darken(@form-color, 20%);
-    background-color: darken(@form-color, 5%);
+    border: @form-borderWidth dashed @form-disabledBorderColor;
+    background-color: @form-disabledBackgroundColor;
   }
 
   .icon {
-    margin: 0 .25em 0 -.1em;
+    margin: 0 0.25em 0 -0.1em;
     align-self: center;
   }
 
   &--small {
-    font-size: .8em;
+    font-size: 0.8em;
     font-weight: @fontWeightNormal;
     min-width: 90px;
   }
@@ -213,7 +227,6 @@
     margin: 0;
   }
 }
-
 
 /* Dropdown */
 .genericSelect() {
@@ -227,7 +240,7 @@
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: right center;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     .boxShadow(@form-shadowHover, @form-shadowColor);
@@ -238,8 +251,8 @@
     color: #777777;
     cursor: not-allowed;
     .boxShadow(0);
-    border: @form-borderWidth dashed darken(@form-color, 20%);
-    background-color: darken(@form-color, 5%);
+    border: @form-borderWidth dashed @form-disabledBorderColor;
+    background-color: @form-disabledBackgroundColor;
   }
 
   .form-group--validation &,
@@ -247,9 +260,9 @@
   &--validation {
     .is-invalid&,
     &.is-invalid,
-    &[aria-invalid="true"],
+    &[aria-invalid='true'],
     &:invalid {
-      .inputValidation(@form-color, @form-dangerColor, @focus:true);
+      .inputValidation(@form-color, @form-invalidColor, @focus:true);
     }
 
     .input-group.is-valid &,
@@ -260,7 +273,7 @@
   }
 
   &--small {
-    font-size: .8em;
+    font-size: 0.8em;
     font-weight: @fontWeightNormal;
     background-size: 10px;
   }
@@ -276,7 +289,7 @@
   background-color: @form-color;
   border: 1px solid @form-borderColor;
   color: contrast(@form-color, #222222, #f4f4f4);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   background-position: 150% center;
   background-size: 15px;
   background-repeat: no-repeat;
@@ -295,6 +308,7 @@
   .basicInput(@padding:@form-padding, @margin:@form-margin, @borderRadius:@form-borderRadius, @borderWidth:@form-borderWidth, @borderColor:@form-borderColor, @fontWeight: @fontWeightLight);
   background-color: darken(@form-color, 2%);
   color: contrast(darken(@form-color, 2%), #000000, #ffffff);
+  height: @defaultItemHeight;
   &-input {
     display: none;
 
@@ -306,16 +320,15 @@
       left: 50%;
     }
   }
-
   &-label {
     background: darken(@form-color, 10%);
     .border-radius(@form-borderRadius);
     padding: 2px;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
     outline: 0;
     display: block;
     width: 2.6em;
-    height: 1.3em;
+    height: 100%;
     position: relative;
     cursor: pointer;
     user-select: none;
@@ -324,18 +337,27 @@
       left: 0;
       position: relative;
       display: block;
-      content: "";
+      content: '';
       width: 50%;
       height: 100%;
       background: #fff;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       .border-radius(@form-borderRadius);
       .boxShadow(@form-shadow, @form-shadowColor);
     }
   }
-
   .input-group & {
     align-self: stretch;
+  }
+
+  &.is-disabled {
+    color: #777777;
+    cursor: not-allowed;
+    .boxShadow(0);
+    border: @form-borderWidth dashed @form-disabledBorderColor;
+    & * {
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -363,7 +385,7 @@
       width: 1em;
       height: 1em;
       text-align: center;
-      transition: all .4s ease;
+      transition: all 0.4s ease;
       box-shadow: inset 0 0 0 2px #fff;
       flex-shrink: 0;
     }
@@ -471,12 +493,11 @@
       color: #fff;
 
       &:hover {
-        background-color: lighten(@form-validColor, 10%);;
+        background-color: lighten(@form-validColor, 10%);
       }
     }
   }
 }
-
 
 .input,
 .label + .input--block,
@@ -624,7 +645,9 @@
 // Use form-groups to separate different inputs or input-groups.
 .genericForm() {
   &-group {
-    * + & {margin-top: @topSpace;}
+    * + & {
+      margin-top: @topSpace;
+    }
 
     &--half {
       .mq-min(@breakMedium, {
@@ -659,5 +682,7 @@
       });
     }
   }
-  * + &-item {margin-top: @innerSpace}
+  * + &-item {
+    margin-top: @innerSpace;
+  }
 }

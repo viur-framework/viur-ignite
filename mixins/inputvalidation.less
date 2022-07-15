@@ -3,13 +3,17 @@
 
 // This helps to align form validation feedback.
 
-.inputValidation(@inputColor, @validationColor, @backgroundImage:false, @cursor:false, @focus:false) {
-  color: darken(@validationColor, 15%);
-  border-color: @validationColor;
-  background-color: lighten(@validationColor, 40%);
+.inputValidation(@inputColor, @validationColor, @validationBorderColor: lighten(@validationColor, 15%), @validationBackgroundColor: lighten(@validationColor, 40%), @backgroundImage:false, @cursor:false, @focus:false) {
+  color: @validationColor;
+  border-color: @validationBorderColor;
+  background-color: @validationBackgroundColor;
+  transition: 0.25s all ease-in;
+  animation-name: fadeOut;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
   & when not (@backgroundImage=false) {
     background-image: url(@backgroundImage);
-    background-position: ~"calc(100% - "@form-padding*2~")" center;
+    background-position: ~'calc(100% - ' @form-padding*2~ ')' center;
   }
   & when not (@cursor=false) {
     cursor: @cursor;
@@ -21,6 +25,14 @@
 
     & when not (@backgroundImage=false) {
       background-position: 150% center;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      background-color: @validationBackgroundColor;
+    }
+    100% {
+      background-color: @inputColor;
     }
   }
 }
