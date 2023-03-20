@@ -97,8 +97,8 @@
 @msg-colorizeBorderColor: darken(@msg-colorizeColor, 15%);
 
 // Variations
-.colorizeMsg(@color: @msg-colorizeColor, @backgroundColor: @msg-colorizeBackgroundColor, @borderColor: @msg-colorizeBorderColor) {
-  color: darken(@color, 25%);
+.colorizeMsg(@color: darken(@msg-colorizeColor, 25%), @backgroundColor: @msg-colorizeBackgroundColor, @borderColor: @msg-colorizeBorderColor) {
+  color: @color;
   background-color: @backgroundColor;
   border-color: @borderColor;
   & a {
