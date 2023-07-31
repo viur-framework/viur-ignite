@@ -1,21 +1,10 @@
 @charset "UTF-8";
-/* FALLBACK IGNITE 2022 APPCONFIGURATION */
-
-@themeName: viur;
+/* DEFAULT IGNITE SETTINGS 2023 */
 
 :root,
 :host {
-  /* Font Stacks */
-  /* Default font stack. */
-  --ignt-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --ignt-font-serif: Georgia, 'Times New Roman', serif;
 
-  /* Fonts for headlines, blockquotes and alike. */
-  --ignt-head-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --ignt-head-font-serif: Georgia, 'Times New Roman', serif;
-
-  /* Fonts for code pieces. */
-  --ignt-font-mono: 'Source Code Pro', Courier, monospace;
+  --ignt-theme-name: "viur";
 
   /* Color and Shadow Sets */
    /* The corporate color - defining most of the looks. */
@@ -150,10 +139,16 @@
   --ignt-border-radius-default: 0.4rem;
   --ignt-border-radius-small: calc(var(--ignt-border-radius-default) / 2);
   --ignt-border-radius-medium: var(--ignt-border-radius-default);
-  --ignt-border-radius-large: calc(var(--ignt-border-radius-default)  * 1.5);
+  --ignt-border-radius-large: calc(var(--ignt-border-radius-default) * 1.5);
   --ignt-border-radius-x-large: calc(var(--ignt-border-radius-default) * 2);
   --ignt-border-radius-circle: 50%;
   --ignt-border-radius-pill: 9999px;
+
+  /* Border widths */
+  --ignt-border-width-default: 1px;
+  --ignt-border-width-small: calc(var(--ignt-border-width-default) / 2);
+  --ignt-border-width-medium: var(--ignt-border-width-default);
+  --ignt-border-width-large: calc(var(--ignt-border-width-default) * 1.5);
 
   /* Elevations */
   --ignt-shadow-default: var(--ignt-shadow-none);
@@ -228,6 +223,94 @@
     var(--ignt-color-shadow-l),
     0.22
   );
+
+  /* Spacings */
+  --ignt-spacing-3x-small: 0.125rem; /* 2px */
+  --ignt-spacing-2x-small: 0.25rem; /* 4px */
+  --ignt-spacing-x-small: 0.5rem; /* 8px */
+  --ignt-spacing-small: 0.75rem; /* 12px */
+  --ignt-spacing-medium: 1rem; /* 16px */
+  --ignt-spacing-large: 1.25rem; /* 20px */
+  --ignt-spacing-x-large: 1.75rem; /* 28px */
+  --ignt-spacing-2x-large: 2.25rem; /* 36px */
+  --ignt-spacing-3x-large: 3rem; /* 48px */
+  --ignt-spacing-4x-large: 4.5rem; /* 72px */
+
+  /* Transitions */
+  --ignt-transition-x-slow: 1000ms;
+  --ignt-transition-slow: 500ms;
+  --ignt-transition-medium: 250ms;
+  --ignt-transition-fast: 150ms;
+  --ignt-transition-x-fast: 50ms;
+
+  /* Font Stacks */
+  /* Default font stack. */
+  --ignt-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ignt-font-serif: Georgia, 'Times New Roman', serif;
+
+  /* Fonts for headlines, blockquotes and alike. */
+  --ignt-head-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ignt-head-font-serif: Georgia, 'Times New Roman', serif;
+
+  /* Fonts for code pieces. */
+  --ignt-font-mono: 'Source Code Pro', Courier, monospace;
+
+  /* Font sizes */
+  --ignt-font-size-3x-small: 0.3rem; /* ~5px */
+  --ignt-font-size-2x-small: 0.625rem; /* 10px */
+  --ignt-font-size-x-small: 0.75rem; /* 12px */
+  --ignt-font-size-small: 0.875rem; /* 14px */
+  --ignt-font-size-medium: 1rem; /* 16px */
+  --ignt-font-size-large: 1.25rem; /* 20px */
+  --ignt-font-size-x-large: 1.5rem; /* 24px */
+  --ignt-font-size-2x-large: 2.25rem; /* 36px */
+  --ignt-font-size-3x-large: 3rem; /* 48px */
+  --ignt-font-size-4x-large: 4.5rem; /* 72px */
+
+  /* Font weights */
+  --ignt-font-weight-light: 300;
+  --ignt-font-weight-normal: 400;
+  --ignt-font-weight-semibold: 500;
+  --ignt-font-weight-bold: 700;
+
+  /* Letter spacings */
+  --ignt-letter-spacing-denser: -0.03em;
+  --ignt-letter-spacing-dense: -0.015em;
+  --ignt-letter-spacing-normal: normal;
+  --ignt-letter-spacing-loose: 0.075em;
+  --ignt-letter-spacing-looser: 0.15em;
+
+  /* Line heights */
+  --ignt-line-height-default: 1.5;
+  --ignt-line-height-denser: calc(var(--ignt-line-height-default) - 0.75);
+  --ignt-line-height-dense: calc(var(--ignt-line-height-default) - 0.5);
+  --ignt-line-height-normal: var(--ignt-line-height-default);
+  --ignt-line-height-loose: calc(var(--ignt-line-height-default) + 0.5);
+  --ignt-line-height-looser: calc(var(--ignt-line-height-default) + 0.75);
+
+  /* Different widths and heights */
+  --ignt-page-width-default: 1400px; /* max-width of the centered container */
+  --ignt-paragraph-width-default: 77ch; /* max-width of text paragraphs: 77 characters */
+  --ignt-item-height-default: 2em;
+
+  /* Z-indexes */
+  --ignt-z-index-drawer: 0;
+  --ignt-z-index-dialog: 100;
+  --ignt-z-index-dropdown: 200;
+  --ignt-z-index-toast: 300;
+  --ignt-z-index-tooltip: 400;
+
+  /* Media queries / Supported screen sizes */
+  --ignt-break-2x-small: 23em; /* old smart phones or gadgets like smart watches up to: 368px / 16px = 23em */
+  --ignt-break-x-small: 40em; /* smart phones up to: 640px / 16px = 40em */
+  --ignt-break-small: 65em; /* tablets up to: 1040px / 16px = 65em */
+  --ignt-break-medium: 75em; /* screens: 1200px / 16px = 75em */
+  --ignt-break-large: 93.75em; /* big screens: 1500px / 16px = 93.75em */
+  --ignt-break-x-large: 112.5em; /* huge screens: 1800px / 16px = 112.5em */
+  --ignt-break-2x-large: 225em; /* 4k screens: 3600px / 16px = 225em */
+
+  --ignt-break-hdpi: 2; /* hiDPI displays */
+  --ignt-break-print: print; /* make it printable! */
 }
 
 @textColor: #222;
@@ -239,37 +322,12 @@
 @warnColor: #f5b639; // Orange
 @failColor: #f44336; // Red
 @hintColor: #1da7e0; // Blue
-
-// Font Weights
-@fontWeightLight: 300;
-@fontWeightNormal: 400;
-@fontWeightSemiBold: 500;
-@fontWeightBold: 700;
-
-// Font Sizes
-@fontSizeSmall: 15px;
-@fontSizeMedium: 17px;
-@fontSizeLarge: 19px;
-@fontSizeExtraLarge: 21px;
-@fontSizeXxLarge: 23px;
-@fontSize4k: 25px;
-
-@defaultLineHeight: 1.5;
-@defaultItemHeight: 2em;
-
-// Buttons and Forms
-@defaultPadding: 0.3em; // please use em — otherwise elements won't scale
-@defaultMargin: 0; // please use em — otherwise elements won't scale
-@defaultBorderWidth: 1px;
-
 @defaultFormColor: #fff;
 
-
-
 // Spaces
-@spaceSmall: 10px;
-@spaceMedium: 20px;
-@spaceLarge: 30px;
+@spaceSmall: var(--ignt-spacing-x-small);
+@spaceMedium: var(--ignt-spacing-large);
+@spaceLarge: var(--ignt-spacing-x-large);
 
 @outerSpace: @spaceMedium; // Space around objects, boxes etc.
 @innerSpace: @spaceSmall; // Space within objects: mostly paddings.
@@ -277,18 +335,3 @@
 @bottomSpace: @spaceMedium; // The Y distance between two sections.
 @gridSpace: @spaceMedium; // Space between grid items.
 
-// Width, Height and Media Queries
-@pageWidth: 1400px; // max-width of the centered container.
-@paragraphWidth: 77ch; // max-width of text paragraphs: 77 characters.
-
-// Supported screen sizes:
-@breakTiny: 23em; // old smart phones or gadgets like smart watches up to: 368px / 16px = 23em;
-@breakSmall: 40em; // smart phones up to: 640px / 16px = 40em;
-@breakMedium: 65em; // tablets up to: 1040px / 16px = 65em;
-@breakLarge: 75em; // screens: 1200px / 16px = 75em;
-@breakXlarge: 93.75em; // big screens: 1500px / 16px = 93.75em;
-@breakXxlarge: 112.5em; // huge screens: 1800px / 16px = 112.5em;
-@break4k: 225em; // 4k screens: 3600px / 16px = 225em;
-@break2x: 2; // hiDPI displays
-
-@breakPrint: print; // make it printable!
