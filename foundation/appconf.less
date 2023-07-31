@@ -3,9 +3,233 @@
 
 @themeName: viur;
 
-// Color and Shadow Sets
-@mainColor: #d00f1c; // The corporate color - defining most of the looks.
-@complementColor: #333; // A color used to sit next to the maincolor.
+:root,
+:host {
+  /* Font Stacks */
+  /* Default font stack. */
+  --ignt-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ignt-font-serif: Georgia, 'Times New Roman', serif;
+
+  /* Fonts for headlines, blockquotes and alike. */
+  --ignt-head-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ignt-head-font-serif: Georgia, 'Times New Roman', serif;
+
+  /* Fonts for code pieces. */
+  --ignt-font-mono: 'Source Code Pro', Courier, monospace;
+
+  /* Color and Shadow Sets */
+   /* The corporate color - defining most of the looks. */
+  --ignt-color-primary-h: 356;
+  --ignt-color-primary-s: 87;
+  --ignt-color-primary-l: 44;
+
+  /* A color used to sit next to the maincolor. */
+  --ignt-color-secondary-h: 0;
+  --ignt-color-secondary-s: 0;
+  --ignt-color-secondary-l: 20;
+
+  --ignt-color-primary-50: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.4)
+  );
+  --ignt-color-primary-100: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.35)
+  );
+  --ignt-color-primary-200: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.25)
+  );
+  --ignt-color-primary-300: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.15)
+  );
+  --ignt-color-primary-400: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.05)
+  );
+  --ignt-color-primary-500: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    var(--ignt-color-primary-l)
+  );
+  --ignt-color-primary-600: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.95)
+  );
+  --ignt-color-primary-700: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.85)
+  );
+  --ignt-color-primary-800:  hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.75)
+  );
+  --ignt-color-primary-900: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.65)
+  );
+  --ignt-color-primary-950:  hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.60)
+  );;
+
+  --ignt-color-secondary-50: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.4)
+  );
+  --ignt-color-secondary-100: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.35)
+  );
+  --ignt-color-secondary-200: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.25)
+  );
+  --ignt-color-secondary-300: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.15)
+  );
+  --ignt-color-secondary-400: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.05)
+  );
+  --ignt-color-secondary-500: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    var(--ignt-color-secondary-l)
+  );
+  --ignt-color-secondary-600: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.95)
+  );
+  --ignt-color-secondary-700: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.85)
+  );
+  --ignt-color-secondary-800:  hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.75)
+  );
+  --ignt-color-secondary-900: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.65)
+  );
+  --ignt-color-secondary-950:  hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.60)
+  );
+
+  /* Surfaces */
+  --ignt-surface-base: #fafafa;
+  --ignt-surface-base-alt: #fff;
+
+  /* Measurements and Media Queries */
+
+  /* Border radii */
+  --ignt-border-radius-default: 0.4rem;
+  --ignt-border-radius-small: calc(var(--ignt-border-radius-default) / 2);
+  --ignt-border-radius-medium: var(--ignt-border-radius-default);
+  --ignt-border-radius-large: calc(var(--ignt-border-radius-default)  * 1.5);
+  --ignt-border-radius-x-large: calc(var(--ignt-border-radius-default) * 2);
+  --ignt-border-radius-circle: 50%;
+  --ignt-border-radius-pill: 9999px;
+
+  /* Elevations */
+  --ignt-shadow-default: var(--ignt-shadow-none);
+  --ignt-shadow-hover-default: var(--ignt-shadow-x-small);
+
+  --ignt-color-shadow-h: 0;
+  --ignt-color-shadow-s: 0;
+  --ignt-color-shadow-l: 0;
+  --ignt-color-shadow: hsl(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l)
+  );
+
+  --ignt-shadow-none: none;
+  --ignt-shadow-x-small: 0 1px 3px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.12
+  ), 0 1px 2px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.24
+  );
+
+  --ignt-shadow-small: 0 3px 6px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.16
+  ), 0 3px 6px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.23
+  );
+
+  --ignt-shadow-medium: 0 10px 20px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.19
+  ), 0 6px 6px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.23
+  );
+
+  --ignt-shadow-large: 0 14px 28px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.25
+  ), 0 10px 10px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.22
+  );
+
+  --ignt-shadow-x-large: 0 19px 38px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.30
+  ), 0 15px 12px hsla(
+    var(--ignt-color-shadow-h),
+    var(--ignt-color-shadow-s),
+    var(--ignt-color-shadow-l),
+    0.22
+  );
+}
+
 @textColor: #222;
 @invTextColor: #f4f4f4;
 @backgroundColor: #fafafa;
@@ -15,13 +239,6 @@
 @warnColor: #f5b639; // Orange
 @failColor: #f44336; // Red
 @hintColor: #1da7e0; // Blue
-
-// Font Stacks
-@bodyFonts: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; // Default font stack.
-@bodyFontsSerif: Georgia, 'Times New Roman', serif;
-@headFonts: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; // Fonts for headlines, blockquotes and alike.
-@headFontsSerif: Georgia, 'Times New Roman', serif;
-@monoFonts: 'Source Code Pro', Courier, monospace; // Fonts for code pieces.
 
 // Font Weights
 @fontWeightLight: 300;
@@ -45,19 +262,9 @@
 @defaultMargin: 0; // please use em — otherwise elements won't scale
 @defaultBorderWidth: 1px;
 
-@defaultBorderRadius: 0.4rem;
-
-@borderRadiusSmall: @defaultBorderRadius / 2;
-@borderRadiusMedium: @defaultBorderRadius;
-@borderRadiusLarge: @defaultBorderRadius * 1.5;
-@borderRadiusXlarge: @defaultBorderRadius * 2;
-@borderRadiusCircle: 50%;
-@borderRadiusPill: 9999px;
-
-@defaultShadow: 0;
-@defaultShadowHover: 1;
-@defaultShadowColor: #000;
 @defaultFormColor: #fff;
+
+
 
 // Spaces
 @spaceSmall: 10px;

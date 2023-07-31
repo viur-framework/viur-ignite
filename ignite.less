@@ -1,12 +1,21 @@
 @charset "UTF-8";
-/* ViUR Ignite 2022 (v4.1.0) */
+/* ViUR Ignite 2023 (v5.0.0) */
 
 // This is the master file.
-// It imports all less files in their intended order for easy mass-inclusion.
+// It imports all css files in their intended order for easy mass-inclusion.
 
 // !!! Please use Ignite as a library and do not customize this file or any import.
-// All generic elements are mixins with parentheses — they do not show up in your CSS output unless you use them.
 
-@import 'foundation/_foundation'; // Fundamental parts: reset, positioning, type and utilities
-@import 'generic/_generic'; // Generic elements: buttons, forms and messages
-@import 'mixins/_mixins'; // Mixins: small, helpful tools
+@layer
+  foundation,
+  elements,
+  utilities;
+
+// Fundamental parts: reset, positioning, type and themes
+@import url('foundation/reset.css') layer(foundation.reset);
+@import url('foundation/basic.css') layer(foundation.basic);
+@import url('foundation/settings.css') layer(foundation.settings);
+@import url('foundation/themes.css') layer(foundation.themes);
+
+// Utilities: small, helpful tools
+@import url('utilities/utilities.css') layer(utilities.utilities);
