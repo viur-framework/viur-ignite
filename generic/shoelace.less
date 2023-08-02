@@ -14,7 +14,7 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
 // .sl-
 
 @sl-themeName: @themeName;
-@sl-mainColor: @mainColor;
+@sl-mainColor: var(--ignt-color-primary-500);
 @sl-successColor: @successColor;
 @sl-warnColor: @warnColor;
 @sl-failColor: @failColor;
@@ -416,6 +416,7 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-color-neutral-800: var(--sl-color-gray-800);
   --sl-color-neutral-900: var(--sl-color-gray-900);
   --sl-color-neutral-950: var(--sl-color-gray-950);
+
   /* Neutral one-offs */
   --sl-color-neutral-0: hsl(0, 0%, 100%);
   --sl-color-neutral-1000: hsl(0, 0%, 0%);
@@ -555,7 +556,7 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-input-filled-color-focus: var(--sl-color-neutral-700);
   --sl-input-filled-color-disabled: var(--sl-color-neutral-800);
 
-  .colorConverter(@mainColor, input-focus-ring, color, 40%);
+  .colorConverter(var(--ignt-color-primary-500), input-focus-ring, color, 40%);
   --sl-input-focus-ring-offset: 0;
 
   /* Labels */
