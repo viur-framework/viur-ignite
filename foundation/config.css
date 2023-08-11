@@ -235,15 +235,3 @@
   --ignt-break-print: print; /* make it printable! */
 }
 
-
-
-// Spaces
-@spaceMedium: var(--ignt-spacing-large);
-@spaceLarge: var(--ignt-spacing-x-large);
-
-@outerSpace: @spaceMedium; // Space around objects, boxes etc.
-@innerSpace: var(--ignt-spacing-x-small); // Space within objects: mostly paddings.
-@topSpace: @spaceMedium; // The Y distance between two sections.
-@bottomSpace: @spaceMedium; // The Y distance between two sections.
-@gridSpace: @spaceMedium; // Space between grid items.
-

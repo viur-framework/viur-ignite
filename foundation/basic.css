@@ -1,12 +1,13 @@
 @charset "UTF-8";
 /* BASICS, FUNDAMENTALS and TYPE */
 
-// ViUR Ignite supports the 100% Easy to read standard:
+/* ViUR Ignite supports the 100% Easy to read standard:
 // https://ia.net/know-how/100e2r
 
 // The body font size is 100%. The root font size adapts to different displays.
 // Objects use a font size based on this size using »rem« (root em).
 // Inline elements and type should react to their direct surroundings - thus use »em«.
+*/
 
 *,
 *::before,
@@ -19,7 +20,7 @@
   @media (--ignt-mq-print) {
     text-shadow: none !important;
     box-shadow: none !important;
-  };
+  }
 }
 
 @page {
@@ -48,11 +49,12 @@ html {
   --ignt-basic-color-code: var(--ignt-color-gray-100);
   --ignt-basic-color-kbd: var(--ignt-color-gray-200);
   --ignt-basic-color-selection: var(--ignt-color-primary-600);
+  --ignt-basic-color-selection-text: var(--ignt-color-text-default);
 
   overflow-y: scroll;
   overflow-x: hidden;
   font-size: var(--ignt-basic-font-size);
-  // Font-size scales with screen-size:
+  /* Font-size scales with screen-size: */
   @media (--ignt-mq-min-break-2x-small) {
     --ignt-basic-font-size: var(--ignt-font-size-2x-small)
   };
@@ -112,7 +114,7 @@ a,
   p &:visited {
     line-height: inherit;
   }
-  // Force empty links to show:
+  /* Force empty links to show: */
   &[href^='http']:empty::before {
     content: attr(href);
   }
@@ -120,17 +122,16 @@ a,
 
 a[href^="http://"]:after,
 a[href^="https://"]:after,
-a[href^="ftp://"]:after
-{
+a[href^="ftp://"]:after {
   @media (--ignt-mq-print) {
     content: ' (' attr(href) ')';
     font-size: 80%;
   };
 }
 
-// Typography
+/* Typography */
 
-// Please style your headlines with the help of classes (e.g.: .headline, .subline, .heading)
+/* Please style your headlines with the help of classes (e.g.: .headline, .subline, .heading) */
 h1,
 h2,
 h3,
@@ -151,7 +152,7 @@ h6 {
   };
 }
 
-// Use .headline for your important headlines.
+/* Use .headline for your important headlines. */
 .headline {
   font-family: var(--ignt-basic-font-head);
   font-weight: var(--ignt-basic-font-weight-head);
@@ -159,18 +160,18 @@ h6 {
   line-height: var(--ignt-basic-line-height-head);
 }
 
-// Use .subline to your headline
+/* Use .subline to your headline */
 .subline {
   font-family: var(--ignt-basic-font-head);
   color: var(--ignt-basic-color-sub);
 }
 
-// remove margin-top of .subline after .headline
+/* remove margin-top of .subline after .headline */
 .headline + .subline {
   margin-top: 0;
 }
 
-// Use .lead to emphasize the first paragraph of a section.
+/* Use .lead to emphasize the first paragraph of a section. */
 .lead {
   font-size: 1.3em;
   font-weight: var(--ignt-basic-font-weight-lead);
@@ -261,7 +262,7 @@ code,
 pre {
   font-family: var(--ignt-font-mono);
   background: var(--ignt-basic-color-code);
-  color: ;
+  color: var(--ignt-basic-color-text);
 }
 code {
   white-space: pre;
@@ -283,30 +284,32 @@ pre {
   margin-bottom: 10px;
 }
 
-// Keys
+/* Keys */
 .kbd,
 kbd {
-  background-color: @basic-kbdBackgroundColor;
-  border: 1px solid darken(@basic-kbdBackgroundColor, 5%);
+  background-color: var(--ignt-basic-color-kbd);
+  border: 1px solid var(--ignt-color-gray-300);
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-  color: contrast(@basic-kbdBackgroundColor);
+  --hsl-color: var(--ignt-color-black);
+  --alpha: 0.2;
+  box-shadow: 0 1px 0 var(--hsl-plus-alpha), 0 0 0 2px var(--ignt-color-white) inset;
+  color: var(--ignt-color-black);
   display: inline-block;
   font-size: 0.8rem;
-  font-family: @monoFonts;
+  font-family: var(--ignt-font-mono);
   margin: 0 0.1em;
   padding: 0.2em 0.6em;
   text-shadow: 0 1px 0 #fff;
   white-space: nowrap;
   &.kbd--dark {
-    border: 1px solid contrast(darken(@basic-kbdBackgroundColor, 5%));
-    background-color: contrast(@basic-kbdBackgroundColor);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px lighten(contrast(@basic-kbdBackgroundColor), 20%) inset;
-    color: @basic-kbdBackgroundColor;
+    border: 1px solid var(--ignt-color-gray-900);
+    background-color: var(--ignt-color-gray-800);
+    box-shadow: 0 1px 0 var(--hsl-plus-alpha), 0 0 0 2px var(--ignt-color-gray-700) inset;
+    color: var(--ignt-color-white);
   }
 }
 
-// Lists
+/* Lists */
 ul.is-list {
   padding: 3px 4ch;
   margin: 0;
@@ -339,38 +342,36 @@ ol.is-list {
   list-style-type: upper-alpha;
 }
 
-table,
-blockquote,
-pre,
-code,
-figure,
-li,
-hr,
-ul,
-ol,
-a {
-  @media (--ignt-mq-print) {
+@media (--ignt-mq-print) {
+  table,
+  blockquote,
+  pre,
+  code,
+  figure,
+  li,
+  hr,
+  ul,
+  ol,
+  a {
     page-break-inside: avoid;
-  };
+  }
 }
 
-// Selections
+/* Selections */
 ::-moz-selection {
-  background-color: @basic-selectionBackgroundColor;
+  background-color: var(--ignt-basic-color-selection);
   text-shadow: none;
-  color: contrast(@basic-selectionBackgroundColor);
+  color: var(--ignt-basic-color-selection-text);
 }
 
 ::selection {
-  background-color: @basic-selectionBackgroundColor;
+  background-color: var(--ignt-basic-color-selection);
   text-shadow: none;
-  color: contrast(@basic-selectionBackgroundColor);
+  color: var(--ignt-basic-color-selection-text);
 }
 
 :focus {
   outline: 1px dotted #ddd;
 }
 
-[hidden],
-.hidden,
-.is-hidden {display: none !important;}
+
