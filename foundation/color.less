@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/* COLOR SETTINGS 2023 */
+
+:root,
+:host {
+  /* Color Sets */
+
+  @successColor: #4cad42; // Green
+  @warnColor: #f5b639; // Orange
+  @failColor: #f44336; // Red
+  @hintColor: #1da7e0; // Blue
+
+  --ignt-color-primary-50: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.4)
+  );
+  --ignt-color-primary-100: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.35)
+  );
+  --ignt-color-primary-200: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.25)
+  );
+  --ignt-color-primary-300: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.15)
+  );
+  --ignt-color-primary-400: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 1.05)
+  );
+  --ignt-color-primary-500: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    var(--ignt-color-primary-l)
+  );
+  --ignt-color-primary-600: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.95)
+  );
+  --ignt-color-primary-700: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.85)
+  );
+  --ignt-color-primary-800:  hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.75)
+  );
+  --ignt-color-primary-900: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.65)
+  );
+  --ignt-color-primary-950:  hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    calc(var(--ignt-color-primary-l) * 0.60)
+  );;
+
+  --ignt-color-secondary-50: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.4)
+  );
+  --ignt-color-secondary-100: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.35)
+  );
+  --ignt-color-secondary-200: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.25)
+  );
+  --ignt-color-secondary-300: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.15)
+  );
+  --ignt-color-secondary-400: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 1.05)
+  );
+  --ignt-color-secondary-500: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    var(--ignt-color-secondary-l)
+  );
+  --ignt-color-secondary-600: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.95)
+  );
+  --ignt-color-secondary-700: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.85)
+  );
+  --ignt-color-secondary-800:  hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.75)
+  );
+  --ignt-color-secondary-900: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.65)
+  );
+  --ignt-color-secondary-950:  hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    calc(var(--ignt-color-secondary-l) * 0.60)
+  );
+
+  /* Gray scale */
+  --ignt-color-white: hsl(0, 0%, 100%);
+  --ignt-color-gray-50: hsl(240 0% 97.5%);
+  --ignt-color-gray-100: hsl(240 4.8% 95.9%);
+  --ignt-color-gray-200: hsl(240 5.9% 90%);
+  --ignt-color-gray-300: hsl(240 4.9% 83.9%);
+  --ignt-color-gray-400: hsl(240 5% 64.9%);
+  --ignt-color-gray-500: hsl(240 3.8% 46.1%);
+  --ignt-color-gray-600: hsl(240 5.2% 33.9%);
+  --ignt-color-gray-700: hsl(240 5.3% 26.1%);
+  --ignt-color-gray-800: hsl(240 3.7% 15.9%);
+  --ignt-color-gray-900: hsl(240 5.9% 10%);
+  --ignt-color-gray-950: hsl(240 7.3% 8%);
+  --ignt-color-black: hsl(0, 0%, 0%);
+
+
+}
