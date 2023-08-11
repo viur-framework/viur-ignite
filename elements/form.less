@@ -28,18 +28,18 @@
 
 // Colors:
 @form-color: @defaultFormColor;
-@form-validColor: darken(@successColor, 5%);
-@form-validBorderColor: lighten(@successColor, 15%);
-@form-validBackgroundColor: lighten(@successColor, 40%);
-@form-invalidColor: darken(@failColor, 5%);
-@form-invalidBorderColor: lighten(@failColor, 15%);
-@form-invalidBackgroundColor: lighten(@failColor, 40%);
+@form-validColor: darken(var(--ignt-color-success), 5%);
+@form-validBorderColor: lighten(var(--ignt-color-success), 15%);
+@form-validBackgroundColor: lighten(var(--ignt-color-success), 40%);
+@form-invalidColor: darken(var(--ignt-color-fail), 5%);
+@form-invalidBorderColor: lighten(var(--ignt-color-fail), 15%);
+@form-invalidBackgroundColor: lighten(var(--ignt-color-fail), 40%);
 @form-disabledColor: darken(@form-color, 50%);
 @form-disabledBorderColor: lighten(darken(@form-color, 50%), 15%);
 @form-disabledBackgroundColor: lighten(darken(@form-color, 50%), 40%);
-@form-hintColor: darken(@hintColor, 5%);
-@form-hintBorderColor: lighten(@hintColor, 15%);
-@form-hintBackgroundColor: lighten(@hintColor, 40%);
+@form-hintColor: darken(var(--ignt-color-hint), 5%);
+@form-hintBorderColor: lighten(var(--ignt-color-hint), 15%);
+@form-hintBackgroundColor: lighten(var(--ignt-color-hint), 40%);
 @form-requiredColor: var(--ignt-color-primary-500);
 
 // Shadows:

@@ -9,157 +9,51 @@
   /* Color and Shadow Sets */
 
   /* The corporate color - defining most of the looks. */
-  --ignt-color-primary: hsl(356, 87%, 44%);
   --ignt-color-primary-h: 356; /* hue */
   --ignt-color-primary-s: 87%; /* saturation */
   --ignt-color-primary-l: 44%; /* lightness */
+  --ignt-color-primary: hsl(
+    var(--ignt-color-primary-h),
+    var(--ignt-color-primary-s),
+    var(--ignt-color-primary-l)
+  );
 
   /* A color used to sit next to the maincolor. */
-  --ignt-color-secondary: hsl(0, 0%, 20%);
-  --ignt-color-secondary-h: 0;
-  --ignt-color-secondary-s: 0%;
-  --ignt-color-secondary-l: 20%;
+  --ignt-color-secondary-h: calc(var(--ignt-color-primary-h) - 180);
+  --ignt-color-secondary-s: var(--ignt-color-primary-s);
+  --ignt-color-secondary-l: var(--ignt-color-primary-l);
+  --ignt-color-secondary: hsl(
+    var(--ignt-color-secondary-h),
+    var(--ignt-color-secondary-s),
+    var(--ignt-color-secondary-l)
+  );
+
+  /* From Black to White */
+  --ignt-color-black: hsl(0, 0%, 0%);
+  --ignt-color-gray-h: 240;
+  --ignt-color-gray-s: 2%;
+  --ignt-color-gray-l: 50%;
+  --ignt-color-gray: hsl(
+    var(--ignt-color-gray-h),
+    var(--ignt-color-gray-s),
+    var(--ignt-color-gray-l));
+  --ignt-color-white: hsl(0, 0%, 100%);
+
+  /* Alert colors */
+  --ignt-color-success: #4cad42; // Green
+  --ignt-color-warn: #f5b639; // Orange
+  --ignt-color-fail: #f44336; // Red
+  --ignt-color-hint: #1da7e0; // Blue
 
   /* Surfaces */
-  --ignt-surface-base: var(--ignt-color-gray-100);
-  --ignt-surface-base-alt: var(--ignt-color-white);
+  --ignt-surface-default: var(--ignt-color-gray-100);
+  --ignt-surface-alt: var(--ignt-color-white);
 
   /* Text colors */
   --ignt-color-text-default: var(--ignt-color-gray-800);
   --ignt-color-text-inverted: var(--ignt-color-gray-100);
   --ignt-color-link-default: var(--ignt-color-primary-700);
-
-  @successColor: #4cad42; // Green
-  @warnColor: #f5b639; // Orange
-  @failColor: #f44336; // Red
-  @hintColor: #1da7e0; // Blue
-
-  --ignt-color-primary-50: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 1.4)
-  );
-  --ignt-color-primary-100: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 1.35)
-  );
-  --ignt-color-primary-200: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 1.25)
-  );
-  --ignt-color-primary-300: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 1.15)
-  );
-  --ignt-color-primary-400: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 1.05)
-  );
-  --ignt-color-primary-500: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    var(--ignt-color-primary-l)
-  );
-  --ignt-color-primary-600: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 0.95)
-  );
-  --ignt-color-primary-700: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 0.85)
-  );
-  --ignt-color-primary-800:  hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 0.75)
-  );
-  --ignt-color-primary-900: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 0.65)
-  );
-  --ignt-color-primary-950:  hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    calc(var(--ignt-color-primary-l) * 0.60)
-  );;
-
-  --ignt-color-secondary-50: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 1.4)
-  );
-  --ignt-color-secondary-100: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 1.35)
-  );
-  --ignt-color-secondary-200: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 1.25)
-  );
-  --ignt-color-secondary-300: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 1.15)
-  );
-  --ignt-color-secondary-400: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 1.05)
-  );
-  --ignt-color-secondary-500: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    var(--ignt-color-secondary-l)
-  );
-  --ignt-color-secondary-600: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 0.95)
-  );
-  --ignt-color-secondary-700: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 0.85)
-  );
-  --ignt-color-secondary-800:  hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 0.75)
-  );
-  --ignt-color-secondary-900: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 0.65)
-  );
-  --ignt-color-secondary-950:  hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    calc(var(--ignt-color-secondary-l) * 0.60)
-  );
-
-  /* Gray scale */
-  --ignt-color-white: hsl(0, 0%, 100%);
-  --ignt-color-gray-50: hsl(240 0% 97.5%);
-  --ignt-color-gray-100: hsl(240 4.8% 95.9%);
-  --ignt-color-gray-200: hsl(240 5.9% 90%);
-  --ignt-color-gray-300: hsl(240 4.9% 83.9%);
-  --ignt-color-gray-400: hsl(240 5% 64.9%);
-  --ignt-color-gray-500: hsl(240 3.8% 46.1%);
-  --ignt-color-gray-600: hsl(240 5.2% 33.9%);
-  --ignt-color-gray-700: hsl(240 5.3% 26.1%);
-  --ignt-color-gray-800: hsl(240 3.7% 15.9%);
-  --ignt-color-gray-900: hsl(240 5.9% 10%);
-  --ignt-color-gray-950: hsl(240 7.3% 8%);
-  --ignt-color-black: hsl(0, 0%, 0%);
+  --ignt-color-hover-default: var(--ignt-color-primary-500);
 
   /* Measurements and Media Queries */
 
