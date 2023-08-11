@@ -5,27 +5,8 @@
 // https://ia.net/know-how/100e2r
 
 // The body font size is 100%. The root font size adapts to different displays.
-// Objects use a font size based on this size: using »rem« (root em).
+// Objects use a font size based on this size using »rem« (root em).
 // Inline elements and type should react to their direct surroundings - thus use »em«.
-
-@basic-bodyBackgroundColor: @backgroundColor;
-@basic-bodyLineHeight: @defaultLineHeight;
-@basic-bodyTextColor: @textColor;
-@basic-bodyFonts: @bodyFonts;
-@basic-bodyFontWeight: @fontWeightNormal;
-@basic-linkColor: var(--ignt-color-primary-500);
-@basic-linkHoverColor: darken(var(--ignt-color-primary-500), 10%);
-@basic-headColor: var(--ignt-color-primary-500);
-@basic-headFonts: @headFonts;
-@basic-headFontWeight: @fontWeightNormal;
-@basic-headLineHeight: 1.6;
-@basic-subColor: lighten(@complementColor, 20%);
-@basic-leadFontWeight: @fontWeightLight;
-@basic-markColor: lighten(var(--ignt-color-primary-500), 40%);
-@basic-quoteColor: @complementColor;
-@basic-codeBackgroundColor: darken(@backgroundColor, 5%);
-@basic-kbdBackgroundColor: darken(@backgroundColor, 10%);
-@basic-selectionBackgroundColor: darken(var(--ignt-color-primary-500), 10%);
 
 *,
 *::before,
@@ -35,10 +16,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-shadow: 0 0 1px transparent;
-  .mq-print({
+  @media (--ignt-mq-print) {
     text-shadow: none !important;
     box-shadow: none !important;
-  });
+  };
 }
 
 @page {
@@ -48,26 +29,52 @@
 }
 
 html {
+  --ignt-basic-surface: var(--ignt-surface-default);
+  --ignt-basic-line-height: var(--ignt-line-height-normal);
+  --ignt-basic-font-body: var(--ignt-font-sans);
+  --ignt-basic-font-size: var(--ignt-font-size-3x-small);
+  --ignt-basic-font-weight: var(--ignt-font-weight-normal);
+  --ignt-basic-color-text: var(--ignt-color-text-default);
+  --ignt-basic-color-link: var(--ignt-color-link-default);
+  --ignt-basic-color-hover: var(--ignt-color-hover-default);
+  --ignt-basic-color-head: var(--ignt-color-primary-500);
+  --ignt-basic-font-head: var(--ignt-font-sans);
+  --ignt-basic-font-weight-head: var(--ignt-font-weight-normal);
+  --ignt-basic-line-height-head: var(--ignt-line-height-loose);
+  --ignt-basic-color-sub: var(--ignt-color-secondary-400);
+  --ignt-basic-font-weight-lead: var(--ignt-font-weight-light);
+  --ignt-basic-color-mark: var(--ignt-color-primary-200);
+  --ignt-basic-color-quote: var(--ignt-color-secondary-500);
+  --ignt-basic-color-code: var(--ignt-color-gray-100);
+  --ignt-basic-color-kbd: var(--ignt-color-gray-200);
+  --ignt-basic-color-selection: var(--ignt-color-primary-600);
+
   overflow-y: scroll;
   overflow-x: hidden;
-  font-size: @fontSizeSmall;
+  font-size: var(--ignt-basic-font-size);
   // Font-size scales with screen-size:
-  .mq-min (@breakMedium, {
-    font-size: @fontSizeMedium;
+  @media (--ignt-mq-min-break-2x-small) {
+    --ignt-basic-font-size: var(--ignt-font-size-2x-small)
+  };
+  @media (--ignt-mq-min-break-x-small) {
+    --ignt-basic-font-size: var(--ignt-font-size-x-small)
+  };
+  @media (--ignt-mq-min-break-small) {
+    --ignt-basic-font-size: var(--ignt-font-size-small)
+  };
+  @media (--ignt-mq-min-break-medium) {
+    --ignt-basic-font-size: var(--ignt-font-size-medium)
+  };
+  @media (--ignt-mq-min-break-large) {
+    --ignt-basic-font-size: var(--ignt-font-size-large)
   });
-  .mq-min (@breakLarge, {
-    font-size: @fontSizeLarge;
+  @media (--ignt-mq-min-break-x-large) {
+    --ignt-basic-font-size: var(--ignt-font-size-x-large)
   });
-  .mq-min (@breakXlarge, {
-    font-size: @fontSizeExtraLarge;
+  @media (--ignt-mq-min-break-2x-large) {
+    --ignt-basic-font-size: var(--ignt-font-size-2x-large)
   });
-  .mq-min (@breakXxlarge, {
-    font-size: @fontSizeXxLarge;
-  });
-  .mq-min (@break4k, {
-    font-size: @fontSize4k;
-  });
-  .mq-print({
+  @media (--ignt-mq-print) {
     padding-left: 1.8cm;
     padding-right: 1.8cm;
     padding-top: 2.54cm;
@@ -75,31 +82,31 @@ html {
     background: none;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-  });
+  };
 }
 
 body {
-  background: @basic-bodyBackgroundColor;
-  line-height: @basic-bodyLineHeight;
-  color: @basic-bodyTextColor;
-  font-family: @basic-bodyFonts;
+  background: var(--ignt-basic-surface);
+  line-height: var(--ignt-basic-line-height);
+  color: var(--ignt-basic-color-text);
+  font-family: var(--ignt-basic-font-body);
+  font-weight: var(--ignt-basic-font-weight);
+  font-size: 100.01%;
   -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
   -webkit-text-size-adjust: 100%;
   min-height: 100vh;
-  font-size: 100.01%;
-  font-weight: @basic-bodyFontWeight;
 }
 
 /* Links */
 a,
 .link {
-  color: @basic-linkColor;
+  color: var(--ignt-basic-color-link);
   text-decoration: none;
   outline: 0;
   transition: all ease-in-out 0.3s;
   &:hover,
   &:active {
-    color: @basic-linkHoverColor;
+    --ignt-basic-color-link: var(--ignt-basic-color-hover);
   }
   p &,
   p &:visited {
@@ -115,10 +122,10 @@ a[href^="http://"]:after,
 a[href^="https://"]:after,
 a[href^="ftp://"]:after
 {
-  .mq-print({
+  @media (--ignt-mq-print) {
     content: ' (' attr(href) ')';
     font-size: 80%;
-  });
+  };
 }
 
 // Typography
@@ -131,30 +138,31 @@ h4,
 h5,
 h6 {
   color: inherit;
-  font-family: @basic-headFonts;
+  font-family: var(--ignt-basic-font-head);
   font-weight: inherit;
-  line-height: @basic-headLineHeight;
+  line-height: inherit;
   a {
     font-weight: inherit;
     color: inherit;
   }
-  .mq-print({
+  @media (--ignt-mq-print) {
     page-break-after: avoid;
     page-break-inside: avoid;
-  });
+  };
 }
 
 // Use .headline for your important headlines.
 .headline {
-  font-family: @basic-headFonts;
-  font-weight: @basic-headFontWeight;
-  color: @basic-headColor;
+  font-family: var(--ignt-basic-font-head);
+  font-weight: var(--ignt-basic-font-weight-head);
+  color: var(--ignt-basic-color-head);
+  line-height: var(--ignt-basic-line-height-head);
 }
 
 // Use .subline to your headline
 .subline {
-  font-family: @basic-headFonts;
-  color: @basic-subColor;
+  font-family: var(--ignt-basic-font-head);
+  color: var(--ignt-basic-color-sub);
 }
 
 // remove margin-top of .subline after .headline
@@ -165,17 +173,17 @@ h6 {
 // Use .lead to emphasize the first paragraph of a section.
 .lead {
   font-size: 1.3em;
-  font-weight: @basic-leadFontWeight;
+  font-weight: var(--ignt-basic-font-weight-lead);
 }
 
 p {
   &:not(:last-child){
-    margin-bottom: @bottomSpace;
+    margin-bottom: var(--ignt-spacing-medium);
   }
-  .mq-print({
+  @media (--ignt-mq-print) {
     orphans: 3;
     widows: 3;
-  });
+  };
 }
 
 .paragraph {
@@ -183,27 +191,27 @@ p {
   line-height: 1.6;
   text-align: justify;
   hyphens: auto;
-  max-width: @paragraphWidth;
-  margin: 0 auto @bottomSpace 0;
+  max-width: var(--ignt-paragraph-width-default);
+  margin: 0 auto var(--ignt-spacing-medium) 0;
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-weight: @basic-headFontWeight;
-    margin-bottom: @innerSpace;
+    font-family: var(--ignt-basic-font-head);
+    margin-bottom: var(--ignt-spacing-x-small);
   }
 }
 
 strong {
-  font-weight: @fontWeightBold;
+  font-weight: var(--ignt-font-weight-bold);
 }
 em {
   font-style: italic;
 }
 small {
-  font-size: 0.8em;
+  font-size: var(--ignt-font-size-3x-small);
 }
 
 ins {
@@ -212,8 +220,8 @@ ins {
 }
 
 mark {
-  background: @basic-markColor;
-  color: contrast(@basic-markColor, @textColor, @invTextColor);
+  background: var(--ignt-basic-color-mark);
+  color: var(--ignt-basic-color-text);
   padding: 1px;
   &:before,
   &:after {
@@ -223,12 +231,12 @@ mark {
 }
 
 blockquote {
-  font-family: @basic-headFonts;
+  font-family: var(--ignt-basic-font-head);
   font-style: italic;
-  font-size: 1.2em;
-  color: @basic-quoteColor;
+  font-size: var(--ignt-font-size-large);
+  color: var(--ignt-basic-color-quote);
   padding: 0 15px;
-  border-left: 7px solid @basic-quoteColor;
+  border-left: 7px solid var(--ignt-basic-color-quote);
   cite {
     font-size: 0.8em;
     vertical-align: baseline;
@@ -239,7 +247,7 @@ blockquote {
       display: inline-block;
       content: '\2014';
       margin-right: 3px;
-      color: @basic-quoteColor;
+      color: var(--ignt-basic-color-quote);
     }
   }
   &:after {
@@ -251,9 +259,9 @@ blockquote {
 
 code,
 pre {
-  font-family: @monoFonts;
-  background: @basic-codeBackgroundColor;
-  color: contrast(@basic-codeBackgroundColor);
+  font-family: var(--ignt-font-mono);
+  background: var(--ignt-basic-color-code);
+  color: ;
 }
 code {
   white-space: pre;
@@ -341,9 +349,9 @@ hr,
 ul,
 ol,
 a {
-  .mq-print({
+  @media (--ignt-mq-print) {
     page-break-inside: avoid;
-  });
+  };
 }
 
 // Selections
