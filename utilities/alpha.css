@@ -1,0 +1,16 @@
+/* HSL ALPHA */
+/* Utility to add an ALPHA channel to an existing HSL color */
+
+:root {
+  --hsl-color: hsl(0,0%,0%);
+  --alpha: 1;
+  --hsl-plus-alpha: hsla(var(--hsl-color), var(--alpha));
+}
+
+/*
+.example {
+  --hsl-color: var(--any-hsl-color);
+  --alpha: 0.5;
+  background: var(--hsl-plus-alpha);
+}
+ */
