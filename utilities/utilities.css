@@ -3,3 +3,22 @@
 [hidden],
 .hidden,
 .is-hidden {display: none;}
+
+.pos-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pos-center-x {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.pos-center-y {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}

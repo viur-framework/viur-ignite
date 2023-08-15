@@ -1,9 +1,9 @@
 @charset "UTF-8";
-/* DEFAULT IGNITE SETTINGS 2023 */
+/* IGNITE DEFAULT CONFIGURATION 2023 */
 
 :root,
 :host {
-
+  color-scheme: normal;
   --ignt-theme-name: "viur";
 
   /* Color and Shadow Sets */
@@ -40,10 +40,10 @@
   --ignt-color-white: hsl(0, 0%, 100%);
 
   /* Alert colors */
-  --ignt-color-success: #4cad42; // Green
-  --ignt-color-warn: #f5b639; // Orange
-  --ignt-color-fail: #f44336; // Red
-  --ignt-color-hint: #1da7e0; // Blue
+  --ignt-color-success: #4cad42; /* Green */
+  --ignt-color-warn: #f5b639; /* Orange */
+  --ignt-color-danger: #f44336; /* Red */
+  --ignt-color-hint: #1da7e0; /* Blue */
 
   /* Surfaces */
   --ignt-surface-default: var(--ignt-color-gray-100);

@@ -142,7 +142,7 @@ h6 {
   font-family: var(--ignt-basic-font-head);
   font-weight: inherit;
   line-height: inherit;
-  a {
+  & a {
     font-weight: inherit;
     color: inherit;
   }
