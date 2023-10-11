@@ -9,41 +9,21 @@
   /* Color and Shadow Sets */
 
   /* The corporate color - defining most of the looks. */
-  --ignt-color-primary-h: 356; /* hue */
-  --ignt-color-primary-s: 87%; /* saturation */
-  --ignt-color-primary-l: 44%; /* lightness */
-  --ignt-color-primary: hsl(
-    var(--ignt-color-primary-h),
-    var(--ignt-color-primary-s),
-    var(--ignt-color-primary-l)
-  );
+  --ignt-color-primary: hsla(356, 87%, 44%, 1);
 
   /* A color used to sit next to the maincolor. */
-  --ignt-color-secondary-h: calc(var(--ignt-color-primary-h) - 180);
-  --ignt-color-secondary-s: var(--ignt-color-primary-s);
-  --ignt-color-secondary-l: var(--ignt-color-primary-l);
-  --ignt-color-secondary: hsl(
-    var(--ignt-color-secondary-h),
-    var(--ignt-color-secondary-s),
-    var(--ignt-color-secondary-l)
-  );
+  --ignt-color-secondary: hsla(176, 87%, 44%, 1);
 
   /* From Black to White */
-  --ignt-color-black: hsl(0, 0%, 0%);
-  --ignt-color-gray-h: 240;
-  --ignt-color-gray-s: 2%;
-  --ignt-color-gray-l: 50%;
-  --ignt-color-gray: hsl(
-    var(--ignt-color-gray-h),
-    var(--ignt-color-gray-s),
-    var(--ignt-color-gray-l));
-  --ignt-color-white: hsl(0, 0%, 100%);
+  --ignt-color-black: hsla(0, 0%, 0%, 1);
+  --ignt-color-gray: hsla(240, 2%, 50%, 1);
+  --ignt-color-white: hsla(0, 0%, 100%, 1);
 
   /* Alert colors */
-  --ignt-color-success: #4cad42; /* Green */
-  --ignt-color-warn: #f5b639; /* Orange */
-  --ignt-color-danger: #f44336; /* Red */
-  --ignt-color-hint: #1da7e0; /* Blue */
+  --ignt-color-success: color-mix(in oklch, var(--ignt-color-primary), green 80%);
+  --ignt-color-warn: color-mix(in oklch, var(--ignt-color-primary), orange 80%);
+  --ignt-color-danger: color-mix(in oklch, var(--ignt-color-primary), darkred 80%);
+  --ignt-color-hint: color-mix(in oklch, var(--ignt-color-primary), teal 80%);
 
   /* Surfaces */
   --ignt-surface-default: var(--ignt-color-gray-100);
@@ -76,75 +56,28 @@
   --ignt-shadow-default: var(--ignt-shadow-none);
   --ignt-shadow-hover-default: var(--ignt-shadow-x-small);
 
-  --ignt-color-shadow-h: 0;
-  --ignt-color-shadow-s: 0;
-  --ignt-color-shadow-l: 0;
-  --ignt-color-shadow: hsl(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l)
-  );
-
+  --ignt-color-shadow: var(--ignt-color-black);
   --ignt-shadow-none: none;
-  --ignt-shadow-x-small: 0 1px 3px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.12
-  ), 0 1px 2px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.24
-  );
 
-  --ignt-shadow-small: 0 3px 6px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.16
-  ), 0 3px 6px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.23
-  );
+  --ignt-shadow-x-small:
+    0 1px 3px color-mix(in oklch, var(--ignt-color-shadow) 12%, transparent),
+    0 1px 2px color-mix(in oklch, var(--ignt-color-shadow) 24%, transparent);
 
-  --ignt-shadow-medium: 0 10px 20px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.19
-  ), 0 6px 6px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.23
-  );
+  --ignt-shadow-small:
+    0 3px 6px color-mix(in oklch, var(--ignt-color-shadow) 16%, transparent),
+    0 3px 6px color-mix(in oklch, var(--ignt-color-shadow) 23%, transparent);
 
-  --ignt-shadow-large: 0 14px 28px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.25
-  ), 0 10px 10px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.22
-  );
+  --ignt-shadow-medium:
+    0 10px 20px color-mix(in oklch, var(--ignt-color-shadow) 19%, transparent),
+    0 6px 6px color-mix(in oklch, var(--ignt-color-shadow) 23%, transparent);
 
-  --ignt-shadow-x-large: 0 19px 38px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.30
-  ), 0 15px 12px hsla(
-    var(--ignt-color-shadow-h),
-    var(--ignt-color-shadow-s),
-    var(--ignt-color-shadow-l),
-    0.22
-  );
+  --ignt-shadow-large:
+    0 14px 28px color-mix(in oklch, var(--ignt-color-shadow) 25%, transparent),
+    0 10px 10px color-mix(in oklch, var(--ignt-color-shadow) 22%, transparent);
+
+  --ignt-shadow-x-large:
+    0 19px 38px color-mix(in oklch, var(--ignt-color-shadow) 30%, transparent),
+    0 15px 12px color-mix(in oklch, var(--ignt-color-shadow) 22%, transparent);
 
   /* Spacings */
   --ignt-spacing-3x-small: 0.125rem; /* 2px */

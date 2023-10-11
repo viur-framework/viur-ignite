@@ -19,7 +19,7 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
 @sl-warnColor: var(--ignt-color-warn);
 @sl-failColor: var(--ignt-color-danger);
 @sl-hintColor: var(--ignt-color-hint);
-@sl-complementColor: @complementColor;
+@sl-complementColor: var(--ignt-color-secondary);
 
 @sl-borderRadiusSmall: @borderRadiusSmall;
 @sl-borderRadiusMedium: @borderRadiusMedium;
@@ -332,17 +332,18 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
      * Theme Tokens
      */
   /* Primary */
-  .colorConverter(lighten(@sl-mainColor, 40%), color-primary, 50);
-  .colorConverter(lighten(@sl-mainColor, 35%), color-primary, 100);
-  .colorConverter(lighten(@sl-mainColor, 25%), color-primary, 200);
-  .colorConverter(lighten(@sl-mainColor, 15%), color-primary, 300);
-  .colorConverter(lighten(@sl-mainColor, 5%), color-primary, 400);
-  .colorConverter(@sl-mainColor, color-primary, 500);
-  .colorConverter(darken(@sl-mainColor, 5%), color-primary, 600);
-  .colorConverter(darken(@sl-mainColor, 15%), color-primary, 700);
-  .colorConverter(darken(@sl-mainColor, 25%), color-primary, 800);
-  .colorConverter(darken(@sl-mainColor, 35%), color-primary, 900);
-  .colorConverter(darken(@sl-mainColor, 40%), color-primary, 950);
+  --sl-color-primary-50: var(--ignt-color-primary-50);
+  --sl-color-primary-100: var(--ignt-color-primary-100);
+  --sl-color-primary-200: var(--ignt-color-primary-200);
+  --sl-color-primary-300: var(--ignt-color-primary-300);
+  --sl-color-primary-400: var(--ignt-color-primary-400);
+  --sl-color-primary-500: var(--ignt-color-primary-500);
+  --sl-color-primary-600: var(--ignt-color-primary-600);
+  --sl-color-primary-700: var(--ignt-color-primary-700);
+  --sl-color-primary-800: var(--ignt-color-primary-800);
+  --sl-color-primary-900: var(--ignt-color-primary-900);
+  --sl-color-primary-950: var(--ignt-color-primary-950);
+
   /* Success */
   .colorConverter(lighten(@sl-successColor, 40%), color-success, 50);
   .colorConverter(lighten(@sl-successColor, 35%), color-success, 100);
@@ -355,6 +356,7 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   .colorConverter(darken(@sl-successColor, 25%), color-success, 800);
   .colorConverter(darken(@sl-successColor, 35%), color-success, 900);
   .colorConverter(darken(@sl-successColor, 40%), color-success, 950);
+
   /* Warning */
   .colorConverter(lighten(@sl-warnColor, 40%), color-warning, 50);
   .colorConverter(lighten(@sl-warnColor, 35%), color-warning, 100);
@@ -367,6 +369,7 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   .colorConverter(darken(@sl-warnColor, 25%), color-warning, 800);
   .colorConverter(darken(@sl-warnColor, 35%), color-warning, 900);
   .colorConverter(darken(@sl-warnColor, 40%), color-warning, 950);
+
   /* Danger */
   .colorConverter(lighten(@sl-failColor, 40%), color-danger, 50);
   .colorConverter(lighten(@sl-failColor, 35%), color-danger, 100);
@@ -379,6 +382,7 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   .colorConverter(darken(@sl-failColor, 25%), color-danger, 800);
   .colorConverter(darken(@sl-failColor, 35%), color-danger, 900);
   .colorConverter(darken(@sl-failColor, 40%), color-danger, 950);
+
   /* Info */
   .colorConverter(lighten(@sl-hintColor, 40%), color-info, 50);
   .colorConverter(lighten(@sl-hintColor, 35%), color-info, 100);
@@ -391,62 +395,53 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   .colorConverter(darken(@sl-hintColor, 25%), color-info, 800);
   .colorConverter(darken(@sl-hintColor, 35%), color-info, 900);
   .colorConverter(darken(@sl-hintColor, 40%), color-info, 950);
+
   /* Secondary */
-  .colorConverter(lighten(@sl-complementColor, 40%), color-secondary, 50);
-  .colorConverter(lighten(@sl-complementColor, 35%), color-secondary, 100);
-  .colorConverter(lighten(@sl-complementColor, 25%), color-secondary, 200);
-  .colorConverter(lighten(@sl-complementColor, 15%), color-secondary, 300);
-  .colorConverter(lighten(@sl-complementColor, 5%), color-secondary, 400);
-  .colorConverter(@sl-complementColor, color-secondary, 500);
-  .colorConverter(darken(@sl-complementColor, 5%), color-secondary, 600);
-  .colorConverter(darken(@sl-complementColor, 15%), color-secondary, 700);
-  .colorConverter(darken(@sl-complementColor, 25%), color-secondary, 800);
-  .colorConverter(darken(@sl-complementColor, 35%), color-secondary, 900);
-  .colorConverter(darken(@sl-complementColor, 40%), color-secondary, 950);
+  --sl-color-secondary-50: var(--ignt-color-secondary-50);
+  --sl-color-secondary-100: var(--ignt-color-secondary-100);
+  --sl-color-secondary-200: var(--ignt-color-secondary-200);
+  --sl-color-secondary-300: var(--ignt-color-secondary-300);
+  --sl-color-secondary-400: var(--ignt-color-secondary-400);
+  --sl-color-secondary-500: var(--ignt-color-secondary-500);
+  --sl-color-secondary-600: var(--ignt-color-secondary-600);
+  --sl-color-secondary-700: var(--ignt-color-secondary-700);
+  --sl-color-secondary-800: var(--ignt-color-secondary-800);
+  --sl-color-secondary-900: var(--ignt-color-secondary-900);
+  --sl-color-secondary-950: var(--ignt-color-secondary-950);
 
   /* Neutral */
-  --sl-color-neutral-50: var(--sl-color-gray-50);
-  --sl-color-neutral-100: var(--sl-color-gray-100);
-  --sl-color-neutral-200: var(--sl-color-gray-200);
-  --sl-color-neutral-300: var(--sl-color-gray-300);
-  --sl-color-neutral-400: var(--sl-color-gray-400);
-  --sl-color-neutral-500: var(--sl-color-gray-500);
-  --sl-color-neutral-600: var(--sl-color-gray-600);
-  --sl-color-neutral-700: var(--sl-color-gray-700);
-  --sl-color-neutral-800: var(--sl-color-gray-800);
-  --sl-color-neutral-900: var(--sl-color-gray-900);
-  --sl-color-neutral-950: var(--sl-color-gray-950);
+  --sl-color-neutral-50: var(--ignt-color-gray-50);
+  --sl-color-neutral-100: var(--ignt-color-gray-100);
+  --sl-color-neutral-200: var(--ignt-color-gray-200);
+  --sl-color-neutral-300: var(--ignt-color-gray-300);
+  --sl-color-neutral-400: var(--ignt-color-gray-400);
+  --sl-color-neutral-500: var(--ignt-color-gray-500);
+  --sl-color-neutral-600: var(--ignt-color-gray-600);
+  --sl-color-neutral-700: var(--ignt-color-gray-700);
+  --sl-color-neutral-800: var(--ignt-color-gray-800);
+  --sl-color-neutral-900: var(--ignt-color-gray-900);
+  --sl-color-neutral-950: var(--ignt-color-gray-950);
 
   /* Neutral one-offs */
-  --sl-color-neutral-0: hsl(0, 0%, 100%);
-  --sl-color-neutral-1000: hsl(0, 0%, 0%);
-  /*
-     * Border radii
-     */
-  --sl-border-radius-small: @sl-borderRadiusSmall;
-  --sl-border-radius-medium: @sl-borderRadiusMedium;
-  --sl-border-radius-large: @sl-borderRadiusLarge;
-  --sl-border-radius-x-large: @sl-borderRadiusXlarge;
-  --sl-border-radius-circle: @sl-borderRadiusCircle;
-  --sl-border-radius-pill: @sl-borderRadiusPill;
+  --sl-color-neutral-0: var(--ignt-color-white);
+  --sl-color-neutral-1000: var(--ignt-color-black);
 
-  /*
-     * Elevations
-    */
-  .boxShadowConverter(1, @color: @sl-defaultShadowColor, x-small);
-  .boxShadowConverter(2, @color: @sl-defaultShadowColor, small);
-  .boxShadowConverter(3, @color: @sl-defaultShadowColor, medium);
-  .boxShadowConverter(4, @color: @sl-defaultShadowColor, large);
-  .boxShadowConverter(5, @color: @sl-defaultShadowColor, x-large);
+  /* Border radii */
+  --sl-border-radius-small: var(--ignt-border-radius-small);
+  --sl-border-radius-medium: var(--ignt-border-radius-medium);
+  --sl-border-radius-large: var(--ignt-border-radius-large);
+  --sl-border-radius-x-large: var(--ignt-border-radius-x-large);
+  --sl-border-radius-circle: var(--ignt-border-radius-circle);
+  --sl-border-radius-pill: var(--ignt-border-radius-pill);
 
-  /*
-     * Surfaces
-     */
-  --sl-surface-base: @sl-backgroundColor;
-  --sl-surface-base-alt: @sl-clearColor;
-  /*
-     * Spacings
-     */
+  /* Elevations */
+  --sl-shadow-x-small: var(--ignt-shadow-x-small);
+
+  /* Surfaces */
+  --sl-surface-base: var(--ignt-surface-default);
+  --sl-surface-base-alt: var(--ignt-surface-alt);
+
+  /* Spacings */
   --sl-spacing-3x-small: 0.125rem; /* 2px */
   --sl-spacing-2x-small: 0.25rem; /* 4px */
   --sl-spacing-x-small: 0.5rem; /* 8px */
@@ -457,21 +452,19 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-spacing-2x-large: 2.25rem; /* 36px */
   --sl-spacing-3x-large: 3rem; /* 48px */
   --sl-spacing-4x-large: 4.5rem; /* 72px */
-  /*
-     * Transitions
-     */
+
+  /* Transitions */
   --sl-transition-x-slow: 1000ms;
   --sl-transition-slow: 500ms;
   --sl-transition-medium: 250ms;
   --sl-transition-fast: 150ms;
   --sl-transition-x-fast: 50ms;
-  /*
-     * Typography
-     */
+
+  /* Typography */
   /* Fonts */
-  --sl-font-mono: @sl-monoFonts;
-  --sl-font-sans: @sl-bodyFonts;
-  --sl-font-serif: @sl-bodyFontsSerif;
+  --sl-font-mono: var(--ignt-font-mono);
+  --sl-font-sans: var(--ignt-font-sans);
+  --sl-font-serif: var(--ignt-font-serif);
   /* Font sizes */
   --sl-font-size-2x-small: 0.625rem; /* 10px */
   --sl-font-size-x-small: 0.75rem; /* 12px */
