@@ -14,8 +14,8 @@ It imports all css files in their intended order for easy mass-inclusion.
   utilities;
 
 /* Fundamental parts: reset, positioning, type and themes */
+@import url('foundation/config.css');
 @import url('foundation/reset.css') layer(foundation.reset);
-@import url('foundation/config.css') layer(foundation.config);
 @import url('foundation/basic.css') layer(foundation.basic);
 @import url('foundation/color.css') layer(foundation.color);
 @import url('foundation/themes.css') layer(foundation.themes);
@@ -24,5 +24,5 @@ It imports all css files in their intended order for easy mass-inclusion.
 @import url('elements/bar.css') layer(elements.bar);
 
 /* Utilities: small, helpful tools */
-@import url('utilities/alpha.css') layer(utilities.alpha);
+@import url('utilities/mediaqueries.css') layer(utilities.mediaqueries);
 @import url('utilities/utilities.css') layer(utilities.utilities);

@@ -70,7 +70,7 @@ td {
   vertical-align: top;
 }
 
-// remember to define focus styles!
+/* remember to define focus styles! */
 :focus {
   outline: 0;
 }
@@ -80,7 +80,7 @@ ul {
   list-style: none;
 }
 
-// tables still need 'cellspacing="0"' in the markup
+/* tables still need 'cellspacing="0"' in the markup */
 table {
   border-collapse: separate;
   border-spacing: 0;
@@ -95,53 +95,53 @@ td {
 
 /* HTML5 display definitions */
 
-// Prevents modern browsers from displaying 'audio' without controls
-// Remove excess height in iOS5 devices
+/* Prevents modern browsers from displaying 'audio' without controls
+ Remove excess height in iOS5 devices */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
 /* Base */
-// Prevents iOS text size adjust after orientation change, without disabling user zoom
-// www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+/* Prevents iOS text size adjust after orientation change, without disabling user zoom
+ www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 html {
-  -webkit-text-size-adjust: 1em;
-  -ms-text-size-adjust: 1em;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
-// Addresses font-family inconsistency between 'textarea' and other form elements.
+/* Addresses font-family inconsistency between 'textarea' and other form elements. */
 html,
 button,
 input,
 select,
 textarea {
-  font-family: @bodyFonts;
+  font-family: var(--ignt-font-sans);
 }
 
 /* Links */
 
-// Addresses outline displayed oddly in Chrome
+/* Addresses outline displayed oddly in Chrome */
 a:focus {
   outline: thin dotted;
 }
 
-// Improves readability when focused and also mouse hovered in all browsers
-// people.opera.com/patrickl/experiments/keyboard/test
+/* Improves readability when focused and also mouse hovered in all browsers
+/* people.opera.com/patrickl/experiments/keyboard/test */
 a:hover,
 a:active {
   outline: 0;
 }
 
-// Improves readability of pre-formatted text in all browsers
+/* Improves readability of pre-formatted text in all browsers */
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-// Prevents sub and sup affecting line-height in all browsers
-// gist.github.com/413930
+/* Prevents sub and sup affecting line-height in all browsers
+ gist.github.com/413930 */
 sub,
 sup {
   font-size: 0.65em;
@@ -159,34 +159,41 @@ sub {
 }
 
 /* Embedded content */
-// avoid overflow by high resolution images
+/* avoid overflow by high resolution images */
 img {
   max-width: 100%;
   height: auto;
-  .mq-print({ page-break-before: auto; page-break-after: auto; page-break-inside: avoid; });
+  @media (--ignt-mq-print) {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+  }
 }
 
-// Corrects overflow displayed oddly
+
+
+
+/* Corrects overflow displayed oddly */
 svg:not(:root) {
   overflow: hidden;
 }
 
 /* Figures */
 
-// Addresses margin not present in IE6/7/8/9, S5, O11
+/* Addresses margin not present in IE6/7/8/9, S5, O11 */
 figure {
   margin: 0;
 }
 
 /* Forms */
-// Corrects margin displayed oddly in IE6/7
+/* Corrects margin displayed oddly in IE6/7 */
 form {
   margin: 0;
 }
 
-// 1. Corrects font size not being inherited in all browsers
-// 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
-// 3. Improves appearance and consistency in all browsers
+/* 1. Corrects font size not being inherited in all browsers
+/* 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+/* 3. Improves appearance and consistency in all browsers */
 button,
 input,
 select,
@@ -195,18 +202,18 @@ textarea {
   -moz-appearance: none;
   border-width: 0;
   border-radius: 0;
-  font-size: 100%; // 1
-  margin: 0; // 2
-  vertical-align: baseline; // 3
-  *vertical-align: middle; // 3
+  font-size: 100%; /* 1 */
+  margin: 0; /* 2 */
+  vertical-align: baseline; /* 3 */
+  *vertical-align: middle; /* 3 */
 }
 
-// 1. Improves usability and consistency of cursor style between image-type 'input' and others
+/* 1. Improves usability and consistency of cursor style between image-type 'input' and others */
 button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  cursor: pointer; // 1
+  cursor: pointer; /* 1 */
 }
 
 /* Re-set default cursor for disabled elements */
@@ -215,28 +222,28 @@ input[disabled] {
   cursor: default;
 }
 
-// Removes inner padding and search cancel button in S5, Chrome on OS X
+/* Removes inner padding and search cancel button in S5, Chrome on OS X */
 input[type='search']::-webkit-search-decoration,
 input[type='search']::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
-// Removes inner padding and border in FF3+
-// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+/* Removes inner padding and border in FF3+
+/* www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-// 2. Improves readability and alignment in all browsers
+/* 2. Improves readability and alignment in all browsers */
 textarea {
-  vertical-align: top; // 2
+  vertical-align: top; /* 2 */
 }
 
 /* Tables */
 
-// Remove most spacing between table cells
+/* Remove most spacing between table cells */
 table {
   border-collapse: collapse;
   border-spacing: 0;

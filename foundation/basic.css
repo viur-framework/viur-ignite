@@ -2,11 +2,11 @@
 /* BASICS, FUNDAMENTALS and TYPE */
 
 /* ViUR Ignite supports the 100% Easy to read standard:
-// https://ia.net/know-how/100e2r
+/* https://ia.net/know-how/100e2r
 
-// The body font size is 100%. The root font size adapts to different displays.
-// Objects use a font size based on this size using »rem« (root em).
-// Inline elements and type should react to their direct surroundings - thus use »em«.
+/* The body font size is 100%. The root font size adapts to different displays.
+/* Objects use a font size based on this size using »rem« (root em).
+/* Inline elements and type should react to their direct surroundings - thus use »em«.
 */
 
 *,
@@ -69,13 +69,13 @@ html {
   };
   @media (--ignt-mq-min-break-large) {
     --ignt-basic-font-size: var(--ignt-font-size-large)
-  });
+  };
   @media (--ignt-mq-min-break-x-large) {
     --ignt-basic-font-size: var(--ignt-font-size-x-large)
-  });
+  };
   @media (--ignt-mq-min-break-2x-large) {
     --ignt-basic-font-size: var(--ignt-font-size-2x-large)
-  });
+  };
   @media (--ignt-mq-print) {
     padding-left: 1.8cm;
     padding-right: 1.8cm;
@@ -290,9 +290,7 @@ kbd {
   background-color: var(--ignt-basic-color-kbd);
   border: 1px solid var(--ignt-color-gray-300);
   border-radius: 3px;
-  --hsl-color: var(--ignt-color-black);
-  --alpha: 0.2;
-  box-shadow: 0 1px 0 var(--hsl-plus-alpha), 0 0 0 2px var(--ignt-color-white) inset;
+  box-shadow: 0 1px 0 color-mix(in oklch, var(--ignt-color-shadow) 20%, transparent), 0 0 0 2px var(--ignt-color-white) inset;
   color: var(--ignt-color-black);
   display: inline-block;
   font-size: 0.8rem;
@@ -304,7 +302,7 @@ kbd {
   &.kbd--dark {
     border: 1px solid var(--ignt-color-gray-900);
     background-color: var(--ignt-color-gray-800);
-    box-shadow: 0 1px 0 var(--hsl-plus-alpha), 0 0 0 2px var(--ignt-color-gray-700) inset;
+    box-shadow: 0 1px 0 color-mix(in oklch, var(--ignt-color-shadow) 20%, transparent), 0 0 0 2px var(--ignt-color-gray-700) inset;
     color: var(--ignt-color-white);
   }
 }
