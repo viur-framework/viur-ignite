@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 ## [develop]
 
+ViUR Ignite 5.0.0 is a streamlined PostCSS boilerplate. Many LESS based features have been removed.
+It is recommended to use ViUR Ignite 5.0.0 in combination with ViUR Shoelace.
+
+### Change
+- **BREAKING** change LESS to PostCSS
+- **BREAKING** change variables to custom properties
+
+### Remove
+- **BREAKING** remove most generic elements (box, burger, button, icon, message, table, popout, popup)
+- **BREAKING** remove mixins (basicinput, border, inputvalidation, order, shadow, svg, zindex)
+
 ## [4.1.0] - 2022-07-15
 
 ### Changed
