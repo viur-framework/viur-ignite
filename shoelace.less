@@ -6,9 +6,13 @@
 
 // !!! Please use Ignite as a library and do not customize this file or any import.
 
-@import 'foundation/appconf'; // stores all default variables and constants.
-@import 'utilities/zindex'; // organizes and unifies `zindex` across the whole application.
-@import 'elements/shoelace'; // the viur shoelace adapter™ (ViSA)
+@layer
+  foundation,
+  elements,
+  utilities;
+
+@import url('foundation/config.css'); // stores all default variables and constants.
+@import url('elements/shoelace.css'); // the viur shoelace adapter™ (ViSA)
 
 :root,
 :host,

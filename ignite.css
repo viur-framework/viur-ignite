@@ -1,8 +1,7 @@
-
 /* ViUR Ignite 2023 (v5.0.0) */
 
 /*
-This is the master file.
+This is the main file.
 It imports all css files in their intended order for easy mass-inclusion.
 
 !!! Please use Ignite as a library and do not customize this file or any import.
