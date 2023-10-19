@@ -1,6 +1,19 @@
 /* MEDIA QUERIES */
 /* Custom Media Query adaptation of Denis Malinochkins Media Queries Library (Less).*/
 
+/*
+
+With @custom-media you can use the constants true and false. These are especially handy when debugging.
+If you are unsure how your page is affected when a certain media query matches or not you can use these,
+to quickly toggle the results.
+
+Examples:
+@custom-media --ignt-mq-max-break-2x-small true;
+@custom-media --ignt-mq-min-break-medium false;
+@custom-media --ignt-mq-print true;
+
+*/
+
 @custom-media --ignt-mq-max-break-2x-small (max-width: 22.95em); /* gadgets like smart watches or old phones */
 @custom-media --ignt-mq-max-break-x-small (max-width: 39.95em); /* smart phones */
 @custom-media --ignt-mq-max-break-small (max-width: 64.95em); /* tablets */
@@ -35,9 +48,8 @@
 
 @custom-media --ignt-mq-landscape (orientation: landscape);
 @custom-media --ignt-mq-portrait (orientation: portrait);
-@custom-media --ignt-mq-hdpi (only screen and (min-resolution: 144dpi),
-                          only screen and (min-resolution: 1.5dppx));
-@custom-media --ignt-mq-print (print);
+@custom-media --ignt-mq-hdpi only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx);
+@custom-media --ignt-mq-print print;
 @custom-media --ignt-mq-touch (pointer: coarse);
 @custom-media --ignt-mq-mouse (pointer: fine);
 @custom-media --ignt-mq-light (prefers-color-scheme: light);

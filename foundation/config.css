@@ -149,10 +149,11 @@
 
   /* Z-indexes */
   --ignt-z-index-drawer: 0;
-  --ignt-z-index-dialog: 100;
-  --ignt-z-index-dropdown: 200;
-  --ignt-z-index-toast: 300;
-  --ignt-z-index-tooltip: 400;
+  --ignt-z-index-content: 100;
+  --ignt-z-index-dialog: 200;
+  --ignt-z-index-dropdown: 300;
+  --ignt-z-index-toast: 400;
+  --ignt-z-index-tooltip: 500;
 
   /* Media queries / Supported screen sizes */
   --ignt-break-2x-small: 23em; /* old smart phones or gadgets like smart watches up to: 368px / 16px = 23em */

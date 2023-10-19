@@ -1,4 +1,4 @@
-/* ViUR Ignite 2023 (v5.0.0) */
+/* ViUR Ignite 2024 (v5.0.0) */
 
 /*
 This is the main file.
@@ -13,7 +13,7 @@ It imports all css files in their intended order for easy mass-inclusion.
   utilities;
 
 /* Fundamental parts: reset, positioning, type and themes */
-@import url('foundation/config.css');
+@import url('foundation/config.css') layer(foundation.config);
 @import url('foundation/reset.css') layer(foundation.reset);
 @import url('foundation/basic.css') layer(foundation.basic);
 @import url('foundation/color.css') layer(foundation.color);
