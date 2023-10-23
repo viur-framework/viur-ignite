@@ -18,7 +18,7 @@ It imports all css files in their intended order for easy mass-inclusion.
 @import url('foundation/basic.css') layer(foundation.basic);
 @import url('foundation/color.css') layer(foundation.color);
 @import url('foundation/themes.css') layer(foundation.themes);
-@import url('foundation/shoelace.css') layer(foundation.shoelace); // the viur shoelace adapter™ (ViSA)
+@import url('foundation/shoelace.css') layer(foundation.shoelace); /* the viur shoelace adapter™ (ViSA) */
 
 /* Layout elements */
 @import url('elements/bar.css') layer(elements.bar);

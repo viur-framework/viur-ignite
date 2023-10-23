@@ -23,7 +23,7 @@
   --ignt-color-success: color-mix(in oklch, var(--ignt-color-primary), green 80%);
   --ignt-color-warn: color-mix(in oklch, var(--ignt-color-primary), orange 80%);
   --ignt-color-danger: color-mix(in oklch, var(--ignt-color-primary), darkred 80%);
-  --ignt-color-hint: color-mix(in oklch, var(--ignt-color-primary), teal 80%);
+  --ignt-color-info: color-mix(in oklch, var(--ignt-color-primary), teal 80%);
 
   /* Surfaces */
   --ignt-surface-default: var(--ignt-color-gray-100);
@@ -94,7 +94,7 @@
   /* Transitions */
   --ignt-transition-x-slow: 1000ms;
   --ignt-transition-slow: 500ms;
-  --ignt-transition-medium: 250ms;
+  --ignt-transition-medium: 300ms;
   --ignt-transition-fast: 150ms;
   --ignt-transition-x-fast: 50ms;
 
