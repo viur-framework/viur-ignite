@@ -2,8 +2,9 @@
 
 :root,
 :host {
-  color-scheme: normal;
   --ignt-theme-name: "viur";
+  --ignt-color-scheme: normal;
+  color-scheme: var(--ignt-color-scheme);
 
   /* Color and Shadow Sets */
 

@@ -54,4 +54,43 @@
   --ignt-color-success-800: color-mix(in oklch, var(--ignt-color-success), black 25%);
   --ignt-color-success-900: color-mix(in oklch, var(--ignt-color-success), black 35%);
   --ignt-color-success-950: color-mix(in oklch, var(--ignt-color-success), black 40%);
+
+  /* Warn scale */
+  --ignt-color-warn-50: color-mix(in oklch, var(--ignt-color-warn), white 40%);
+  --ignt-color-warn-100: color-mix(in oklch, var(--ignt-color-warn), white 35%);
+  --ignt-color-warn-200: color-mix(in oklch, var(--ignt-color-warn), white 25%);
+  --ignt-color-warn-300: color-mix(in oklch, var(--ignt-color-warn), white 15%);
+  --ignt-color-warn-400: color-mix(in oklch, var(--ignt-color-warn), white 5%);
+  --ignt-color-warn-500: var(--ignt-color-warn);
+  --ignt-color-warn-600: color-mix(in oklch, var(--ignt-color-warn), black 5%);
+  --ignt-color-warn-700: color-mix(in oklch, var(--ignt-color-warn), black 15%);
+  --ignt-color-warn-800: color-mix(in oklch, var(--ignt-color-warn), black 25%);
+  --ignt-color-warn-900: color-mix(in oklch, var(--ignt-color-warn), black 35%);
+  --ignt-color-warn-950: color-mix(in oklch, var(--ignt-color-warn), black 40%);
+
+  /* Danger scale */
+  --ignt-color-danger-50: color-mix(in oklch, var(--ignt-color-danger), white 40%);
+  --ignt-color-danger-100: color-mix(in oklch, var(--ignt-color-danger), white 35%);
+  --ignt-color-danger-200: color-mix(in oklch, var(--ignt-color-danger), white 25%);
+  --ignt-color-danger-300: color-mix(in oklch, var(--ignt-color-danger), white 15%);
+  --ignt-color-danger-400: color-mix(in oklch, var(--ignt-color-danger), white 5%);
+  --ignt-color-danger-500: var(--ignt-color-danger);
+  --ignt-color-danger-600: color-mix(in oklch, var(--ignt-color-danger), black 5%);
+  --ignt-color-danger-700: color-mix(in oklch, var(--ignt-color-danger), black 15%);
+  --ignt-color-danger-800: color-mix(in oklch, var(--ignt-color-danger), black 25%);
+  --ignt-color-danger-900: color-mix(in oklch, var(--ignt-color-danger), black 35%);
+  --ignt-color-danger-950: color-mix(in oklch, var(--ignt-color-danger), black 40%);
+
+  /* Hint scale */
+  --ignt-color-hint-50: color-mix(in oklch, var(--ignt-color-hint), white 40%);
+  --ignt-color-hint-100: color-mix(in oklch, var(--ignt-color-hint), white 35%);
+  --ignt-color-hint-200: color-mix(in oklch, var(--ignt-color-hint), white 25%);
+  --ignt-color-hint-300: color-mix(in oklch, var(--ignt-color-hint), white 15%);
+  --ignt-color-hint-400: color-mix(in oklch, var(--ignt-color-hint), white 5%);
+  --ignt-color-hint-500: var(--ignt-color-hint);
+  --ignt-color-hint-600: color-mix(in oklch, var(--ignt-color-hint), black 5%);
+  --ignt-color-hint-700: color-mix(in oklch, var(--ignt-color-hint), black 15%);
+  --ignt-color-hint-800: color-mix(in oklch, var(--ignt-color-hint), black 25%);
+  --ignt-color-hint-900: color-mix(in oklch, var(--ignt-color-hint), black 35%);
+  --ignt-color-hint-950: color-mix(in oklch, var(--ignt-color-hint), black 40%);
 }

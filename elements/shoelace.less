@@ -1,100 +1,20 @@
-
 /* VIUR SHOELACE ADAPTER */
 
 /*
-The Viur Shoelace Adapter (ViSA) uses ViUR Ignite template variables to style and build a Shoelace theme.
-Thus it is possible to use Shoelace and Ignite in parallel. Preprocessed LESS meets webcomponents.
-VISA provides a mapping of many LESS variables onto Shoelace css custom properties
-as well as a set of mixins to process Ignite styling to fit the demands of Shoelace:
-- convert colors to HSLA and custom properties
-- convert z-indexes and box-shadows to css custom properties.
+The Viur Shoelace Adapter (ViSA) uses ViUR Ignite template properties to style and build a Shoelace theme.
+Thus it is possible to use Shoelace and Ignite in parallel.
+
+VISA provides a mapping of many custom properties.
 */
 
 // Prefixes and objects:
 // .sl-
 
-@sl-themeName: @themeName;
-@sl-mainColor: var(--ignt-color-primary-500);
-@sl-successColor: var(--ignt-color-success);
-@sl-warnColor: var(--ignt-color-warn);
-@sl-failColor: var(--ignt-color-danger);
-@sl-hintColor: var(--ignt-color-hint);
-@sl-complementColor: var(--ignt-color-secondary);
-
-@sl-borderRadiusSmall: @borderRadiusSmall;
-@sl-borderRadiusMedium: @borderRadiusMedium;
-@sl-borderRadiusLarge: @borderRadiusLarge;
-@sl-borderRadiusXlarge: @borderRadiusXlarge;
-@sl-borderRadiusCircle: @borderRadiusCircle;
-@sl-borderRadiusPill: @borderRadiusPill;
-
-@sl-defaultShadowColor: @defaultShadowColor;
-@sl-backgroundColor: @backgroundColor;
-@sl-clearColor: @clearColor;
-
-@sl-monoFonts: @monoFonts;
-@sl-bodyFonts: @bodyFonts;
-@sl-bodyFontsSerif: @bodyFontsSerif;
-
-@sl-fontWeightLight: var(--ignt-font-weight-light);
-@sl-fontWeightNormal: var(--ignt-font-weight-normal);
-@sl-fontWeightSemiBold: @fontWeightSemiBold;
-@sl-fontWeightBold: var(--ignt-font-weight-bold);
-
-@sl-lineHeightDenser: @defaultLineHeight - 0.75;
-@sl-lineHeightDense: @defaultLineHeight - 0.5;
-@sl-defaultLineHeight: @defaultLineHeight;
-@sl-lineHeightLoose: @defaultLineHeight + 0.5;
-@sl-lineHeightLooser: @defaultLineHeight + 0.75;
-
-.colorConverter(@color, @name, @n, @alpha: 100%) {
-  @shoelaceColor: hsla(hue(@color) saturation(@color) lightness(@color) ~'/' @alpha);
-  --sl-@{name}-@{n}: @shoelaceColor;
-}
-
-.zIndexConverter(@elementName, @elementOffset:0, @shoelaceName) {
-  .loop(@elementName, @counter) when (@counter > 0) {
-    .loop(@elementName, @counter - 1);
-    .pickIndex(@elementName, @counter);
-  }
-
-  .loop(@elementName, length(@zIndexOrder));
-
-  .pickIndex(@elementName, @counter) when (extract(@zIndexOrder, @counter) = @elementName) {
-    @zIndexCalc: @counter * 100 + @elementOffset;
-    --sl-z-index-@{shoelaceName}: @zIndexCalc;
-  }
-}
-
-.boxShadowConverter(@level, @color: @defaultShadowColor, @shoelaceName) {
-  & when (@level = 0) {
-    --sl-shadow-@{shoelaceName}: none;
-  }
-  & when (@level = 1) {
-    @secondColor: fadeout(@color, 76%);
-    --sl-shadow-@{shoelaceName}: 0 1px 3px fadeout(@color, 88%), 0 1px 2px @secondColor;
-  }
-  & when (@level = 2) {
-    @secondColor: fadeout(@color, 77%);
-    --sl-shadow-@{shoelaceName}: 0 3px 6px fadeout(@color, 84%), 0 3px 6px @secondColor;
-  }
-  & when (@level = 3) {
-    @secondColor: fadeout(@color, 77%);
-    --sl-shadow-@{shoelaceName}: 0 10px 20px fadeout(@color, 81%), 0 6px 6px @secondColor;
-  }
-  & when (@level = 4) {
-    @secondColor: fadeout(@color, 78%);
-    --sl-shadow-@{shoelaceName}: 0 14px 28px fadeout(@color, 75%), 0 10px 10px @secondColor;
-  }
-  & when (@level = 5) {
-    @secondColor: fadeout(@color, 78%);
-    --sl-shadow-@{shoelaceName}: 0 19px 38px fadeout(@color, 70%), 0 15px 12px @secondColor;
-  }
-}
 .sl-theme() {
-  /*
-     * Color Primitives
-     */
+  --sl-theme-name: var(--ignt-theme-name);
+  --sl-color-scheme: var(--ignt-color-scheme);
+
+  /* Color Primitives */
   /* Gray */
   --sl-color-gray-50: hsl(240 2% 97.5%);
   --sl-color-gray-100: hsl(240 4.8% 95.9%);
@@ -328,9 +248,8 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-color-rose-800: hsl(343.4 79.7% 34.7%);
   --sl-color-rose-900: hsl(341.5 75.5% 30.4%);
   --sl-color-rose-950: hsl(341.3 70.1% 17.1%);
-  /*
-     * Theme Tokens
-     */
+
+  /* Theme Tokens */
   /* Primary */
   --sl-color-primary-50: var(--ignt-color-primary-50);
   --sl-color-primary-100: var(--ignt-color-primary-100);
@@ -345,56 +264,56 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-color-primary-950: var(--ignt-color-primary-950);
 
   /* Success */
-  .colorConverter(lighten(@sl-successColor, 40%), color-success, 50);
-  .colorConverter(lighten(@sl-successColor, 35%), color-success, 100);
-  .colorConverter(lighten(@sl-successColor, 25%), color-success, 200);
-  .colorConverter(lighten(@sl-successColor, 15%), color-success, 300);
-  .colorConverter(lighten(@sl-successColor, 5%), color-success, 400);
-  .colorConverter(@sl-successColor, color-success, 500);
-  .colorConverter(darken(@sl-successColor, 5%), color-success, 600);
-  .colorConverter(darken(@sl-successColor, 15%), color-success, 700);
-  .colorConverter(darken(@sl-successColor, 25%), color-success, 800);
-  .colorConverter(darken(@sl-successColor, 35%), color-success, 900);
-  .colorConverter(darken(@sl-successColor, 40%), color-success, 950);
+  --sl-color-success-50: var(--ignt-color-success-50);
+  --sl-color-success-100: var(--ignt-color-success-100);
+  --sl-color-success-200: var(--ignt-color-success-200);
+  --sl-color-success-300: var(--ignt-color-success-300);
+  --sl-color-success-400: var(--ignt-color-success-400);
+  --sl-color-success-500: var(--ignt-color-success-500);
+  --sl-color-success-600: var(--ignt-color-success-600);
+  --sl-color-success-700: var(--ignt-color-success-700);
+  --sl-color-success-800: var(--ignt-color-success-800);
+  --sl-color-success-900: var(--ignt-color-success-900);
+  --sl-color-success-950: var(--ignt-color-success-950);
 
   /* Warning */
-  .colorConverter(lighten(@sl-warnColor, 40%), color-warning, 50);
-  .colorConverter(lighten(@sl-warnColor, 35%), color-warning, 100);
-  .colorConverter(lighten(@sl-warnColor, 25%), color-warning, 200);
-  .colorConverter(lighten(@sl-warnColor, 15%), color-warning, 300);
-  .colorConverter(lighten(@sl-warnColor, 5%), color-warning, 400);
-  .colorConverter(@sl-warnColor, color-warning, 500);
-  .colorConverter(darken(@sl-warnColor, 5%), color-warning, 600);
-  .colorConverter(darken(@sl-warnColor, 15%), color-warning, 700);
-  .colorConverter(darken(@sl-warnColor, 25%), color-warning, 800);
-  .colorConverter(darken(@sl-warnColor, 35%), color-warning, 900);
-  .colorConverter(darken(@sl-warnColor, 40%), color-warning, 950);
+  --sl-color-warn-50: var(--ignt-color-warn-50);
+  --sl-color-warn-100: var(--ignt-color-warn-100);
+  --sl-color-warn-200: var(--ignt-color-warn-200);
+  --sl-color-warn-300: var(--ignt-color-warn-300);
+  --sl-color-warn-400: var(--ignt-color-warn-400);
+  --sl-color-warn-500: var(--ignt-color-warn-500);
+  --sl-color-warn-600: var(--ignt-color-warn-600);
+  --sl-color-warn-700: var(--ignt-color-warn-700);
+  --sl-color-warn-800: var(--ignt-color-warn-800);
+  --sl-color-warn-900: var(--ignt-color-warn-900);
+  --sl-color-warn-950: var(--ignt-color-warn-950);
 
   /* Danger */
-  .colorConverter(lighten(@sl-failColor, 40%), color-danger, 50);
-  .colorConverter(lighten(@sl-failColor, 35%), color-danger, 100);
-  .colorConverter(lighten(@sl-failColor, 25%), color-danger, 200);
-  .colorConverter(lighten(@sl-failColor, 15%), color-danger, 300);
-  .colorConverter(lighten(@sl-failColor, 5%), color-danger, 400);
-  .colorConverter(@sl-failColor, color-danger, 500);
-  .colorConverter(darken(@sl-failColor, 5%), color-danger, 600);
-  .colorConverter(darken(@sl-failColor, 15%), color-danger, 700);
-  .colorConverter(darken(@sl-failColor, 25%), color-danger, 800);
-  .colorConverter(darken(@sl-failColor, 35%), color-danger, 900);
-  .colorConverter(darken(@sl-failColor, 40%), color-danger, 950);
+  --sl-color-danger-50: var(--ignt-color-danger-50);
+  --sl-color-danger-100: var(--ignt-color-danger-100);
+  --sl-color-danger-200: var(--ignt-color-danger-200);
+  --sl-color-danger-300: var(--ignt-color-danger-300);
+  --sl-color-danger-400: var(--ignt-color-danger-400);
+  --sl-color-danger-500: var(--ignt-color-danger-500);
+  --sl-color-danger-600: var(--ignt-color-danger-600);
+  --sl-color-danger-700: var(--ignt-color-danger-700);
+  --sl-color-danger-800: var(--ignt-color-danger-800);
+  --sl-color-danger-900: var(--ignt-color-danger-900);
+  --sl-color-danger-950: var(--ignt-color-danger-950);
 
   /* Info */
-  .colorConverter(lighten(@sl-hintColor, 40%), color-info, 50);
-  .colorConverter(lighten(@sl-hintColor, 35%), color-info, 100);
-  .colorConverter(lighten(@sl-hintColor, 25%), color-info, 200);
-  .colorConverter(lighten(@sl-hintColor, 15%), color-info, 300);
-  .colorConverter(lighten(@sl-hintColor, 5%), color-info, 400);
-  .colorConverter(@sl-hintColor, color-info, 500);
-  .colorConverter(darken(@sl-hintColor, 5%), color-info, 600);
-  .colorConverter(darken(@sl-hintColor, 15%), color-info, 700);
-  .colorConverter(darken(@sl-hintColor, 25%), color-info, 800);
-  .colorConverter(darken(@sl-hintColor, 35%), color-info, 900);
-  .colorConverter(darken(@sl-hintColor, 40%), color-info, 950);
+  --sl-color-info-50: var(--ignt-color-info-50);
+  --sl-color-info-100: var(--ignt-color-info-100);
+  --sl-color-info-200: var(--ignt-color-info-200);
+  --sl-color-info-300: var(--ignt-color-info-300);
+  --sl-color-info-400: var(--ignt-color-info-400);
+  --sl-color-info-500: var(--ignt-color-info-500);
+  --sl-color-info-600: var(--ignt-color-info-600);
+  --sl-color-info-700: var(--ignt-color-info-700);
+  --sl-color-info-800: var(--ignt-color-info-800);
+  --sl-color-info-900: var(--ignt-color-info-900);
+  --sl-color-info-950: var(--ignt-color-info-950);
 
   /* Secondary */
   --sl-color-secondary-50: var(--ignt-color-secondary-50);
@@ -442,59 +361,62 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-surface-base-alt: var(--ignt-surface-alt);
 
   /* Spacings */
-  --sl-spacing-3x-small: 0.125rem; /* 2px */
-  --sl-spacing-2x-small: 0.25rem; /* 4px */
-  --sl-spacing-x-small: 0.5rem; /* 8px */
-  --sl-spacing-small: 0.75rem; /* 12px */
-  --sl-spacing-medium: 1rem; /* 16px */
-  --sl-spacing-large: 1.25rem; /* 20px */
-  --sl-spacing-x-large: 1.75rem; /* 28px */
-  --sl-spacing-2x-large: 2.25rem; /* 36px */
-  --sl-spacing-3x-large: 3rem; /* 48px */
-  --sl-spacing-4x-large: 4.5rem; /* 72px */
+  --sl-spacing-3x-small: var(--ignt-spacing-3x-small);
+  --sl-spacing-2x-small: var(--ignt-spacing-2x-small);
+  --sl-spacing-x-small: var(--ignt-spacing-x-small);
+  --sl-spacing-small: var(--ignt-spacing-small);
+  --sl-spacing-medium: var(--ignt-spacing-medium);
+  --sl-spacing-large: var(--ignt-spacing-large);
+  --sl-spacing-x-large: var(--ignt-spacing-x-large);
+  --sl-spacing-2x-large: var(--ignt-spacing-2x-large);
+  --sl-spacing-3x-large: var(--ignt-spacing-3x-large);
+  --sl-spacing-4x-large: var(--ignt-spacing-4x-large);
 
   /* Transitions */
-  --sl-transition-x-slow: 1000ms;
-  --sl-transition-slow: 500ms;
-  --sl-transition-medium: 250ms;
-  --sl-transition-fast: 150ms;
-  --sl-transition-x-fast: 50ms;
+  --sl-transition-x-slow: var(--ignt-transition-x-slow);
+  --sl-transition-slow: var(--ignt-transition-slow);
+  --sl-transition-medium: var(--ignt-transition-medium);
+  --sl-transition-fast: var(--ignt-transition-fast);
+  --sl-transition-x-fast: var(--ignt-transition-x-fast);
 
   /* Typography */
   /* Fonts */
   --sl-font-mono: var(--ignt-font-mono);
   --sl-font-sans: var(--ignt-font-sans);
   --sl-font-serif: var(--ignt-font-serif);
+
   /* Font sizes */
-  --sl-font-size-2x-small: 0.625rem; /* 10px */
-  --sl-font-size-x-small: 0.75rem; /* 12px */
-  --sl-font-size-small: 0.875rem; /* 14px */
-  --sl-font-size-medium: 1rem; /* 16px */
-  --sl-font-size-large: 1.25rem; /* 20px */
-  --sl-font-size-x-large: 1.5rem; /* 24px */
-  --sl-font-size-2x-large: 2.25rem; /* 36px */
-  --sl-font-size-3x-large: 3rem; /* 48px */
-  --sl-font-size-4x-large: 4.5rem; /* 72px */
+  --sl-font-size-2x-small: var(--ignt-font-size-2x-small);
+  --sl-font-size-x-small: var(--ignt-font-size-x-small);
+  --sl-font-size-small: var(--ignt-font-size-small);
+  --sl-font-size-medium: var(--ignt-font-size-medium);
+  --sl-font-size-large: var(--ignt-font-size-large);
+  --sl-font-size-x-large: var(--ignt-font-size-x-large);
+  --sl-font-size-2x-large: var(--ignt-font-size-2x-large);
+  --sl-font-size-3x-large: var(--ignt-font-size-3x-large);
+  --sl-font-size-4x-large: var(--ignt-font-size-4x-large);
+
   /* Font weights */
-  --sl-font-weight-light: @sl-fontWeightLight;
-  --sl-font-weight-normal: @sl-fontWeightNormal;
-  --sl-font-weight-semibold: @sl-fontWeightSemiBold;
-  --sl-font-weight-bold: @sl-fontWeightBold;
+  --sl-font-weight-light: var(--ignt-font-weight-light);
+  --sl-font-weight-normal: var(--ignt-font-weight-normal);
+  --sl-font-weight-semibold: var(--ignt-font-weight-semibold);
+  --sl-font-weight-bold: var(--ignt-font-weight-bold);
+
   /* Letter spacings */
-  --sl-letter-spacing-denser: -0.03em;
-  --sl-letter-spacing-dense: -0.015em;
-  --sl-letter-spacing-normal: normal;
-  --sl-letter-spacing-loose: 0.075em;
-  --sl-letter-spacing-looser: 0.15em;
+  --sl-letter-spacing-denser: var(--ignt-letter-spacing-denser);
+  --sl-letter-spacing-dense: var(--ignt-letter-spacing-dense);
+  --sl-letter-spacing-normal: var(--ignt-letter-spacing-normal);
+  --sl-letter-spacing-loose: var(--ignt-letter-spacing-loose);
+  --sl-letter-spacing-looser: var(--ignt-letter-spacing-looser);
+
   /* Line heights */
-  --sl-line-height-denser: @sl-lineHeightDenser;
-  --sl-line-height-dense: @sl-lineHeightDense;
-  --sl-line-height-normal: @sl-defaultLineHeight;
-  --sl-line-height-loose: @sl-lineHeightLoose;
-  --sl-line-height-looser: @sl-lineHeightLooser;
-  /*
-     * Forms
-     */
+  --sl-line-height-denser: var(--ignt-line-height-denser);
+  --sl-line-height-dense: var(--ignt-line-height-dense);
+  --sl-line-height-normal: var(--ignt-line-height-normal);
+  --sl-line-height-loose: var(--ignt-line-height-loose);
+  --sl-line-height-looser: var(--ignt-line-height-looser);
+
+  /* Forms*/
   /* Focus rings */
   --sl-focus-ring-color: var(--sl-color-primary-600);
   --sl-focus-ring-style: solid;
@@ -506,6 +428,7 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-button-font-size-small: var(--sl-font-size-x-small);
   --sl-button-font-size-medium: var(--sl-font-size-small);
   --sl-button-font-size-large: var(--sl-font-size-medium);
+
   /* Inputs */
   --sl-input-height-small: 1.875rem; /* 30px */
   --sl-input-height-medium: 2.5rem; /* 40px */
@@ -549,7 +472,7 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-input-filled-color-focus: var(--sl-color-neutral-700);
   --sl-input-filled-color-disabled: var(--sl-color-neutral-800);
 
-  .colorConverter(var(--ignt-color-primary-500), input-focus-ring, color, 40%);
+  --sl-input-focus-ring-color: var(--ignt-color-primary-500);
   --sl-input-focus-ring-offset: 0;
 
   /* Labels */
@@ -557,27 +480,26 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-input-label-font-size-medium: var(--sl-font-size-medium);
   --sl-input-label-font-size-large: var(--sl-font-size-large);
   --sl-input-label-color: inherit;
+
   /* Help text */
   --sl-input-help-text-font-size-small: var(--sl-font-size-x-small);
   --sl-input-help-text-font-size-medium: var(--sl-font-size-small);
   --sl-input-help-text-font-size-large: var(--sl-font-size-medium);
   --sl-input-help-text-color: var(--sl-color-neutral-500);
+
   /* Toggles (checkboxes, radios, switches) */
   --sl-toggle-size: 1rem;
-  /*
-     * Overlays
-     */
+
+  /* Overlays */
   --sl-overlay-background-color: var(--sl-color-blue-gray-500);
   --sl-overlay-opacity: 33%;
-  /*
-     * Panels
-     */
+
+  /* Panels */
   --sl-panel-background-color: var(--sl-surface-base-alt);
   --sl-panel-border-color: var(--sl-color-neutral-200);
   --sl-panel-border-width: 1px;
-  /*
-     * Tooltips
-     */
+
+  /* Tooltips */
   --sl-tooltip-border-radius: var(--sl-border-radius-medium);
   --sl-tooltip-background-color: var(--sl-color-neutral-800);
   --sl-tooltip-color: var(--sl-color-neutral-0);
@@ -588,12 +510,12 @@ as well as a set of mixins to process Ignite styling to fit the demands of Shoel
   --sl-tooltip-padding: var(--sl-spacing-2x-small) var(--sl-spacing-x-small);
   --sl-tooltip-arrow-size: 5px;
   --sl-tooltip-arrow-start-end-offset: 8px;
-  /*
-     * Z-indexes
-     */
-  .zIndexConverter('background', @elementOffset:0, drawer);
-  .zIndexConverter('content', @elementOffset:0, dialog);
-  .zIndexConverter('tooltip', @elementOffset:0, dropdown);
-  .zIndexConverter('foreground', @elementOffset:0, toast);
-  .zIndexConverter('overlay', @elementOffset:0, tooltip);
+
+  /* Z-indexes */
+  --sl-z-index-drawer: var(--ignt-z-index-drawer);
+  --sl-z-index-content: var(--ignt-z-index-content);
+  --sl-z-index-dialog: var(--ignt-z-index-dialog);
+  --sl-z-index-dropdown: var(--ignt-z-index-dropdown);
+  --sl-z-index-toast: var(--ignt-z-index-toast);
+  --sl-z-index-tooltip: var(--ignt-z-index-tooltip);
 }
