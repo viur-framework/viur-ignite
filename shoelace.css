@@ -1,22 +1,17 @@
+/* ViUR Shoelace Adapter 2024 */
 
-/* ViUR Shoelace Adapter 2022 */
+/*
+This is the standalone shoelace theme file.
+It imports all css files in their intended order for easy mass-inclusion.
 
-// This is the standalone shoelace theme file.
-// It imports all less files in their intended order for easy mass-inclusion.
-
-// !!! Please use Ignite as a library and do not customize this file or any import.
+!!! Please use Ignite as a library and do not customize this file or any import.
+*/
 
 @layer
   foundation,
   elements,
   utilities;
 
-@import url('foundation/config.css'); // stores all default variables and constants.
-@import url('elements/shoelace.css'); // the viur shoelace adapter™ (ViSA)
-
-:root,
-:host,
-.sl-theme-@{sl-themeName} {
-  .sl-theme();
-}
+@import url('foundation/config.css') layer(foundation.config); // stores all default variables and constants.
+@import url('foundation/shoelace.css') layer(foundation.shoelace); // the viur shoelace adapter™ (ViSA)
 

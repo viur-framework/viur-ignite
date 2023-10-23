@@ -10,7 +10,8 @@ VISA provides a mapping of many custom properties.
 // Prefixes and objects:
 // .sl-
 
-.sl-theme() {
+:root,
+:host {
   --sl-theme-name: var(--ignt-theme-name);
   --sl-color-scheme: var(--ignt-color-scheme);
 
