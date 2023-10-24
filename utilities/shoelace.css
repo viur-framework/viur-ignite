@@ -7,8 +7,11 @@ Thus it is possible to use Shoelace and Ignite in parallel.
 VISA provides a mapping of many custom properties.
 */
 
-// Prefixes and objects:
-// .sl-
+/*
+Prefixes and objects:
+  .sl-
+*/
+
 
 :root,
 :host {

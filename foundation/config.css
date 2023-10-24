@@ -156,6 +156,11 @@
   --ignt-z-index-toast: 400;
   --ignt-z-index-tooltip: 500;
 
+  /* ORDER!!! */
+  --ignt-order-header: 0;
+  --ignt-order-body: 100;
+  --ignt-order-footer: 200;
+
   /* Media queries / Supported screen sizes */
   --ignt-break-2x-small: 23em; /* old smart phones or gadgets like smart watches up to: 368px / 16px = 23em */
   --ignt-break-x-small: 40em; /* smart phones up to: 640px / 16px = 40em */

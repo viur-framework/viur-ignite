@@ -9,20 +9,19 @@ It imports all css files in their intended order for easy mass-inclusion.
 
 @layer
   foundation,
+  themes,
   elements,
   utilities;
 
 /* Fundamental parts: reset, positioning, type and themes */
 @import url('foundation/config.css') layer(foundation.config);
+@import url('foundation/mediaqueries.css') layer(utilities.mediaqueries);
 @import url('foundation/reset.css') layer(foundation.reset);
 @import url('foundation/basic.css') layer(foundation.basic);
 @import url('foundation/color.css') layer(foundation.color);
-@import url('foundation/themes.css') layer(foundation.themes);
-@import url('foundation/shoelace.css') layer(foundation.shoelace); /* the viur shoelace adapter™ (ViSA) */
 
-/* Layout elements */
-@import url('elements/bar.css') layer(elements.bar);
+@import url('themes/themes.css') layer(themes.themes);
 
 /* Utilities: small, helpful tools */
-@import url('utilities/mediaqueries.css') layer(utilities.mediaqueries);
 @import url('utilities/utilities.css') layer(utilities.utilities);
+@import url('utilities/shoelace.css') layer(utilities.shoelace); /* the viur shoelace adapter™ (ViSA) */
