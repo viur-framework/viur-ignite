@@ -492,14 +492,16 @@ Prefixes and objects:
   --sl-input-help-text-color: var(--sl-color-neutral-500);
 
   /* Toggles (checkboxes, radios, switches) */
-  --sl-toggle-size: 1rem;
+  --sl-toggle-size-small: 0.875rem; /* 14px @ 16px base  */
+  --sl-toggle-size-medium: 1.125rem; /* 18px @ 16px base */
+  --sl-toggle-size-large: 1.375rem; /* 22px @ 16px base */
 
   /* Overlays */
   --sl-overlay-background-color: var(--sl-color-blue-gray-500);
   --sl-overlay-opacity: 33%;
 
   /* Panels */
-  --sl-panel-background-color: var(--sl-surface-base-alt);
+  --sl-panel-background-color: var(--sl-color-neutral-0);
   --sl-panel-border-color: var(--sl-color-neutral-200);
   --sl-panel-border-width: 1px;
 
@@ -512,8 +514,7 @@ Prefixes and objects:
   --sl-tooltip-font-size: var(--sl-font-size-small);
   --sl-tooltip-line-height: var(--sl-line-height-dense);
   --sl-tooltip-padding: var(--sl-spacing-2x-small) var(--sl-spacing-x-small);
-  --sl-tooltip-arrow-size: 5px;
-  --sl-tooltip-arrow-start-end-offset: 8px;
+  --sl-tooltip-arrow-size: 6px;
 
   /* Z-indexes */
   --sl-z-index-drawer: var(--ignt-z-index-drawer);
@@ -522,4 +523,10 @@ Prefixes and objects:
   --sl-z-index-dropdown: var(--ignt-z-index-dropdown);
   --sl-z-index-toast: var(--ignt-z-index-toast);
   --sl-z-index-tooltip: var(--ignt-z-index-tooltip);
+
+  --sl-foreground-color: var(--sl-color-neutral-0);
+  --sl-background-color:  var(--sl-color-neutral-1000);
+
+  --sl-hover-color: var(--sl-color-primary-500);
+  --sl-scrollbar-color: var(--sl-color-neutral-300);
 }
