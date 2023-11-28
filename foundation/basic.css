@@ -32,7 +32,7 @@ html {
   --ignt-basic-surface: var(--ignt-surface-default);
   --ignt-basic-line-height: var(--ignt-line-height-normal);
   --ignt-basic-font-body: var(--ignt-font-sans);
-  --ignt-basic-font-size: var(--ignt-font-size-3x-small);
+  --ignt-basic-font-size: var(--ignt-font-size-2x-small);
   --ignt-basic-font-weight: var(--ignt-font-weight-normal);
   --ignt-basic-color-text: var(--ignt-color-text-default);
   --ignt-basic-color-link: var(--ignt-color-link-default);
@@ -54,9 +54,6 @@ html {
   overflow-x: hidden;
   font-size: var(--ignt-basic-font-size);
   /* Font-size scales with screen-size: */
-  @media (--ignt-mq-min-break-2x-small) {
-    --ignt-basic-font-size: var(--ignt-font-size-2x-small)
-  };
   @media (--ignt-mq-min-break-x-small) {
     --ignt-basic-font-size: var(--ignt-font-size-x-small)
   };
