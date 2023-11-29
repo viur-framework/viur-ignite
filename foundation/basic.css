@@ -286,8 +286,8 @@ kbd {
   background-color: var(--ignt-basic-color-kbd);
   border: 1px solid var(--ignt-color-gray-300);
   border-radius: 3px;
-  box-shadow: 0 1px 0 color-mix(in oklch, var(--ignt-color-shadow) 20%, transparent), 0 0 0 2px var(--ignt-color-white) inset;
-  color: var(--ignt-color-black);
+  box-shadow: 0 1px 0 color-mix(in oklch, var(--ignt-color-shadow) 20%, transparent), 0 0 0 2px var(--ignt-color-neutral-0) inset;
+  color: var(--ignt-color-neutral-1000);
   display: inline-block;
   font-size: 0.8rem;
   font-family: var(--ignt-font-mono);
@@ -299,7 +299,7 @@ kbd {
     border: 1px solid var(--ignt-color-gray-900);
     background-color: var(--ignt-color-gray-800);
     box-shadow: 0 1px 0 color-mix(in oklch, var(--ignt-color-shadow) 20%, transparent), 0 0 0 2px var(--ignt-color-gray-700) inset;
-    color: var(--ignt-color-white);
+    color: var(--ignt-color-neutral-0);
   }
 }
 

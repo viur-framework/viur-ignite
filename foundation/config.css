@@ -15,9 +15,9 @@
   --ignt-color-secondary: hsla(176, 87%, 44%, 1);
 
   /* From Black to White */
-  --ignt-color-black: hsla(0, 0%, 0%, 1);
+  --ignt-color-neutral-1000: hsla(0, 0%, 0%, 1);
   --ignt-color-gray: hsla(240, 2%, 50%, 1);
-  --ignt-color-white: hsla(0, 0%, 100%, 1);
+  --ignt-color-neutral-0: hsla(0, 0%, 100%, 1);
 
   /* Alert colors */
   --ignt-color-success: color-mix(in oklch, var(--ignt-color-primary), green 80%);
@@ -27,7 +27,7 @@
 
   /* Surfaces */
   --ignt-surface-default: var(--ignt-color-gray-100);
-  --ignt-surface-alt: var(--ignt-color-white);
+  --ignt-surface-alt: var(--ignt-color-neutral-0);
 
   /* Text colors */
   --ignt-color-text-default: var(--ignt-color-gray-800);
@@ -56,7 +56,7 @@
   --ignt-shadow-default: var(--ignt-shadow-none);
   --ignt-shadow-hover-default: var(--ignt-shadow-x-small);
 
-  --ignt-color-shadow: var(--ignt-color-black);
+  --ignt-color-shadow: var(--ignt-color-neutral-1000);
   --ignt-shadow-none: none;
 
   --ignt-shadow-x-small:
