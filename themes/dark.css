@@ -4,10 +4,10 @@
   --ignt-theme-name: "viur-dark";
   --ignt-color-scheme: dark;
 
-  --ignt-mix-color-down: hsla(0, 0%, 0%, 1);
-  --ignt-mix-color-up: hsla(0, 0%, 100%, 1);
+  --ignt-mix-color-down: hsla(0, 0%, 0%, 1); /* black */
+  --ignt-mix-color-up: hsla(0, 0%, 100%, 1); /* white */
 
-  --ignt-color-neutral-1000: hsla(0, 0%, 100%, 1);
-  --ignt-color-neutral-0: hsl(240, 5.9%, 11%);
+  --ignt-color-neutral-1000: hsla(0, 0%, 100%, 1); /* white */
+  --ignt-color-neutral-0: hsl(240, 5.9%, 11%); /* dark gray */
 }
 
