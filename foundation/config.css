@@ -21,7 +21,7 @@
 
   /* Alert colors */
   --ignt-color-success: color-mix(in oklch, var(--ignt-color-primary), green 80%);
-  --ignt-color-warn: color-mix(in oklch, var(--ignt-color-primary), orange 80%);
+  --ignt-color-warning: color-mix(in oklch, var(--ignt-color-primary), orange 80%);
   --ignt-color-danger: color-mix(in oklch, var(--ignt-color-primary), darkred 80%);
   --ignt-color-info: color-mix(in oklch, var(--ignt-color-primary), teal 80%);
 

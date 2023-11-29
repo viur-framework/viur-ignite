@@ -280,16 +280,16 @@
   --ignt-color-success-950: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-up) 70%);
 
   /* Warn scale */
-  --ignt-color-warn-50: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-down) 70%);
-  --ignt-color-warn-100: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-down) 65%);
-  --ignt-color-warn-200: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-down) 50%);
-  --ignt-color-warn-300: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-down) 35%);
-  --ignt-color-warn-400: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-down) 15%);
-  --ignt-color-warn-500: var(--ignt-color-warn);
-  --ignt-color-warn-600: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-up) 15%);
-  --ignt-color-warn-700: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-up) 35%);
-  --ignt-color-warn-800: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-up) 50%);
-  --ignt-color-warn-900: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-up) 65%);
+  --ignt-color-warning-50: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 70%);
+  --ignt-color-warning-100: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 65%);
+  --ignt-color-warning-200: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 50%);
+  --ignt-color-warning-300: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 35%);
+  --ignt-color-warning-400: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 15%);
+  --ignt-color-warning-500: var(--ignt-color-warning);
+  --ignt-color-warning-600: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 15%);
+  --ignt-color-warning-700: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 35%);
+  --ignt-color-warning-800: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 50%);
+  --ignt-color-warning-900: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-up) 65%);
   --ignt-color-warn-950: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-up) 70%);
 
   /* Danger scale */

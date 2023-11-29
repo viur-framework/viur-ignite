@@ -281,17 +281,17 @@ Prefixes and objects:
   --sl-color-success-950: var(--ignt-color-success-950);
 
   /* Warning */
-  --sl-color-warn-50: var(--ignt-color-warn-50);
-  --sl-color-warn-100: var(--ignt-color-warn-100);
-  --sl-color-warn-200: var(--ignt-color-warn-200);
-  --sl-color-warn-300: var(--ignt-color-warn-300);
-  --sl-color-warn-400: var(--ignt-color-warn-400);
-  --sl-color-warn-500: var(--ignt-color-warn-500);
-  --sl-color-warn-600: var(--ignt-color-warn-600);
-  --sl-color-warn-700: var(--ignt-color-warn-700);
-  --sl-color-warn-800: var(--ignt-color-warn-800);
-  --sl-color-warn-900: var(--ignt-color-warn-900);
-  --sl-color-warn-950: var(--ignt-color-warn-950);
+  --sl-color-warning-50: var(--ignt-color-warning-50);
+  --sl-color-warning-100: var(--ignt-color-warning-100);
+  --sl-color-warning-200: var(--ignt-color-warning-200);
+  --sl-color-warning-300: var(--ignt-color-warning-300);
+  --sl-color-warning-400: var(--ignt-color-warning-400);
+  --sl-color-warning-500: var(--ignt-color-warning-500);
+  --sl-color-warning-600: var(--ignt-color-warning-600);
+  --sl-color-warning-700: var(--ignt-color-warning-700);
+  --sl-color-warning-800: var(--ignt-color-warning-800);
+  --sl-color-warning-900: var(--ignt-color-warning-900);
+  --sl-color-warning-950: var(--ignt-color-warning-950);
 
   /* Danger */
   --sl-color-danger-50: var(--ignt-color-danger-50);
