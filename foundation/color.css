@@ -289,8 +289,8 @@
   --ignt-color-warning-600: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 15%);
   --ignt-color-warning-700: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 35%);
   --ignt-color-warning-800: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 50%);
-  --ignt-color-warning-900: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-up) 65%);
-  --ignt-color-warn-950: color-mix(in srgb, var(--ignt-color-warn), var(--ignt-mix-color-up) 70%);
+  --ignt-color-warning-900: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 65%);
+  --ignt-color-warning-950: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 70%);
 
   /* Danger scale */
   --ignt-color-danger-50: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-down) 70%);
