@@ -13,6 +13,7 @@ It imports all css files in their intended order for easy mass-inclusion.
   elements,
   utilities;
 
+@import url('foundation/color.css') layer(foundation.color);
 @import url('foundation/config.css') layer(foundation.config); /* stores all default variables and constants. */
 @import url('utilities/shoelace.css') layer(foundation.shoelace); /* the viur shoelace adapter™ (ViSA) */
 
