@@ -20,10 +20,10 @@
   --ignt-color-neutral-0: hsla(0, 0%, 100%, 1);
 
   /* Alert colors */
-  --ignt-color-success: color-mix(in oklch, var(--ignt-color-primary), green 80%);
-  --ignt-color-warning: color-mix(in oklch, var(--ignt-color-primary), orange 80%);
-  --ignt-color-danger: color-mix(in oklch, var(--ignt-color-primary), darkred 80%);
-  --ignt-color-info: color-mix(in oklch, var(--ignt-color-primary), teal 80%);
+  --ignt-color-success: color-mix(in oklch, var(--ignt-color-primary), hsla(130 45% 47% / 100%) 90%);
+  --ignt-color-warning: color-mix(in oklch, var(--ignt-color-primary), hsla(40 90% 60% / 100%) 90%);
+  --ignt-color-danger: color-mix(in oklch, var(--ignt-color-primary), hsla(4 90% 58% / 100%) 90%);
+  --ignt-color-info: color-mix(in oklch, var(--ignt-color-primary), hsla(198 77% 49% / 100%) 90%);
 
   /* Surfaces */
   --ignt-surface-default: var(--ignt-color-gray-100);
