@@ -1,6 +1,5 @@
 /* LIGHT THEME */
-:root,
-:host {
+.sl-theme-viur-light {
   --ignt-theme-name: "viur-light";
   --ignt-color-scheme: light;
 

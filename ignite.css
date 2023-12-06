@@ -20,8 +20,8 @@ It imports all css files in their intended order for easy mass-inclusion.
 @import url('foundation/basic.css') layer(foundation.basic);
 @import url('foundation/color.css') layer(foundation.color);
 
-@import url('themes/dark.css') layer(themes.dark) (--ignt-mq-dark);
-@import url('themes/light.css') layer(themes.light) (--ignt-mq-light);
+@import url('themes/dark.css') layer(themes.dark);
+@import url('themes/light.css') layer(themes.light);
 
 /* Utilities: small, helpful tools */
 @import url('utilities/utilities.css') layer(utilities.utilities);

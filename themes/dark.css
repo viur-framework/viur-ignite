@@ -1,6 +1,5 @@
 /* DARK THEME */
-:root,
-:host {
+.sl-theme-viur-dark {
   --ignt-theme-name: "viur-dark";
   --ignt-color-scheme: dark;
 

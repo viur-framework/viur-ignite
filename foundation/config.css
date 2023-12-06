@@ -15,9 +15,13 @@
   --ignt-color-secondary: hsla(0 0% 20% / 100%);
 
   /* From Black to White */
-  --ignt-color-neutral-1000: hsla(0, 0%, 0%, 1);
   --ignt-color-gray: hsla(240, 2%, 50%, 1);
-  --ignt-color-neutral-0: hsla(0, 0%, 100%, 1);
+  
+  --ignt-color-neutral-1000: hsla(0, 0%, 0%, 1); /* black */
+  --ignt-color-neutral-0: hsla(0, 0%, 100%, 1); /* white */
+
+  --ignt-mix-color-up: hsla(0, 0%, 0%, 1); /* black */
+  --ignt-mix-color-down: hsla(0, 0%, 100%, 1); /* white */
 
   /* Alert colors */
   --ignt-color-success: color-mix(in oklch, var(--ignt-color-primary), hsla(130 45% 47% / 100%) 90%);
