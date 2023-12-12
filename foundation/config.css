@@ -9,19 +9,19 @@
   /* Color and Shadow Sets */
 
   /* The corporate color - defining most of the looks. */
-  --ignt-color-primary: hsla(356, 87%, 44%, 1);
+  --ignt-color-primary: hsla(356 87% 44% / 100%);
 
   /* A color used to sit next to the maincolor. */
   --ignt-color-secondary: hsla(0 0% 20% / 100%);
 
   /* From Black to White */
-  --ignt-color-gray: hsla(240, 4%, 46%, 1);
+  --ignt-color-gray: hsla(240 4% 46% / 100%);
 
-  --ignt-color-neutral-1000: hsla(0, 0%, 0%, 1); /* black */
-  --ignt-color-neutral-0: hsla(0, 0%, 100%, 1); /* white */
+  --ignt-color-neutral-1000: hsla(0 0% 0% / 100%); /* black */
+  --ignt-color-neutral-0: hsla(0 0% 100% / 100%); /* white */
 
-  --ignt-mix-color-up: hsla(0, 0%, 0%, 1); /* black */
-  --ignt-mix-color-down: hsla(0, 0%, 100%, 1); /* white */
+  --ignt-mix-color-up: hsla(0 0% 0% / 100%); /* black */
+  --ignt-mix-color-down: hsla(0 0% 100% / 100%); /* white */
 
   /* Alert colors */
   --ignt-color-success: color-mix(in oklch, var(--ignt-color-primary), hsla(130 45% 47% / 100%) 90%);
