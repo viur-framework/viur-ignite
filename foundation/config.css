@@ -15,8 +15,8 @@
   --ignt-color-secondary: hsla(0 0% 20% / 100%);
 
   /* From Black to White */
-  --ignt-color-gray: hsla(240, 2%, 50%, 1);
-  
+  --ignt-color-gray: hsla(240, 4%, 46%, 1);
+
   --ignt-color-neutral-1000: hsla(0, 0%, 0%, 1); /* black */
   --ignt-color-neutral-0: hsla(0, 0%, 100%, 1); /* white */
 
