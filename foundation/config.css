@@ -159,6 +159,7 @@
   --ignt-z-index-dropdown: 300;
   --ignt-z-index-toast: 400;
   --ignt-z-index-tooltip: 500;
+  --ignt-z-index-dev: 600;
 
   /* ORDER!!! */
   --ignt-order-header: 0;
