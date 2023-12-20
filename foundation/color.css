@@ -5,17 +5,17 @@
 
   /* Color Primitives */
   /* Gray scale */
-  --ignt-color-gray-50: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 80%);
-  --ignt-color-gray-100: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 75%);
-  --ignt-color-gray-200: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 55%);
-  --ignt-color-gray-300: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 35%);
-  --ignt-color-gray-400: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 15%);
+  --ignt-color-gray-50: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 95%);
+  --ignt-color-gray-100: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 90%);
+  --ignt-color-gray-200: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 75%);
+  --ignt-color-gray-300: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 60%);
+  --ignt-color-gray-400: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 25%);
   --ignt-color-gray-500: var(--ignt-color-gray);
   --ignt-color-gray-600: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 15%);
-  --ignt-color-gray-700: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 30%);
-  --ignt-color-gray-800: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 50%);
-  --ignt-color-gray-900: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 60%);
-  --ignt-color-gray-950: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 65%);
+  --ignt-color-gray-700: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 40%);
+  --ignt-color-gray-800: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 60%);
+  --ignt-color-gray-900: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 70%);
+  --ignt-color-gray-950: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 80%);
 
   /* Red */
   --ignt-color-red-50: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-down) 70%);
