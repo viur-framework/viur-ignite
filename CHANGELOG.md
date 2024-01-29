@@ -10,6 +10,10 @@ It is recommended to use ViUR Ignite 5.0.0 in combination with ViUR Shoelace.
 - **BREAKING** change LESS to PostCSS
 - **BREAKING** change variables to custom properties
 
+### Added
+- **NEW** support for dark/light mode
+- Better integration with Shoelace
+
 ### Remove
 - **BREAKING** remove most generic elements (box, burger, button, icon, message, table, popout, popup)
 - **BREAKING** remove mixins (basicinput, border, inputvalidation, order, shadow, svg, zindex)
