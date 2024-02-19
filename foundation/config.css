@@ -115,16 +115,16 @@
   --ignt-font-mono: 'Source Code Pro', Courier, monospace;
 
   /* Font sizes */
-  --ignt-font-size-3x-small: 0.3rem; /* ~5px */
-  --ignt-font-size-2x-small: 0.625rem; /* 10px */
-  --ignt-font-size-x-small: 0.75rem; /* 12px */
-  --ignt-font-size-small: 0.875rem; /* 14px */
-  --ignt-font-size-medium: 1rem; /* 16px */
-  --ignt-font-size-large: 1.25rem; /* 20px */
-  --ignt-font-size-x-large: 1.5rem; /* 24px */
-  --ignt-font-size-2x-large: 2.25rem; /* 36px */
-  --ignt-font-size-3x-large: 3rem; /* 48px */
-  --ignt-font-size-4x-large: 4.5rem; /* 72px */
+  --ignt-font-size-3x-small: 0.3em; /* ~5px */
+  --ignt-font-size-2x-small: 0.625em; /* 10px */
+  --ignt-font-size-x-small: 0.75em; /* 12px */
+  --ignt-font-size-small: 0.875em; /* 14px */
+  --ignt-font-size-medium: 1em; /* 16px */
+  --ignt-font-size-large: 1.25em; /* 20px */
+  --ignt-font-size-x-large: 1.5em; /* 24px */
+  --ignt-font-size-2x-large: 2.25em; /* 36px */
+  --ignt-font-size-3x-large: 3em; /* 48px */
+  --ignt-font-size-4x-large: 4.5em; /* 72px */
 
   /* Font weights */
   --ignt-font-weight-light: 300;
@@ -150,7 +150,9 @@
   /* Different widths and heights */
   --ignt-page-width-default: 1400px; /* max-width of the centered container */
   --ignt-paragraph-width-default: 77ch; /* max-width of text paragraphs: 77 characters */
-  --ignt-item-height-default: 2em;
+  --ignt-input-height-small: 1.25rem;
+  --ignt-input-height-medium: 1.75rem;
+  --ignt-input-height-large: 2rem;
 
   /* Z-indexes */
   --ignt-z-index-drawer: 0;

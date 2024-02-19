@@ -434,9 +434,9 @@ Prefixes and objects:
   --sl-button-font-size-large: var(--sl-font-size-medium);
 
   /* Inputs */
-  --sl-input-height-small: 1.875rem; /* 30px */
-  --sl-input-height-medium: 2.5rem; /* 40px */
-  --sl-input-height-large: 3.125rem; /* 50px */
+  --sl-input-height-small: var(--ignt-input-height-small);
+  --sl-input-height-medium: var(--ignt-input-height-medium);
+  --sl-input-height-large: var(--ignt-input-height-large);
   --sl-input-background-color: var(--sl-color-neutral-0);
   --sl-input-background-color-hover: var(--sl-input-background-color);
   --sl-input-background-color-focus: var(--sl-input-background-color);
