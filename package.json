@@ -1,0 +1,41 @@
+{
+  "name": "@viur/ignite",
+  "version": "5.0",
+  "homepage": "https://ignite.viur.dev",
+  "author": {
+    "name": "Mausbrand",
+    "email": "mail@mausbrand.de",
+    "url": "https://www.mausbrand.de"
+  },
+  "contributors": [
+    "Sven Eberth",
+    "Christopher Reinbothe",
+    "Andreas H. Kelch"
+  ],
+  "description": "PostCSS boilerplate",
+  "main": "ignite.css",
+  "unpkg": "dist/ignite.css",
+  "style": "dist/ignite.min.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viur-framework/viur-ignite.git"
+  },
+  "license": "LGPL-3.0-or-later",
+  "keywords": [
+    "css",
+    "postcss",
+    "boilerplate"
+  ],
+  "bugs": {
+    "url": "https://github.com/viur-framework/viur-ignite/issues"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "files": [
+    "ignite.css",
+    "LICENSE",
+    "README.md"
+  ]
+}
