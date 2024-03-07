@@ -49,7 +49,7 @@ git submodule add https://github.com/viur-framework/ignite.git
 
 **PostCSS Import**
 
-Then you can import ignite in your projects style.less
+Then you can import ignite in your projects style.css
 ```postcss
 @import url('ignite/ignite.css');
 ```
