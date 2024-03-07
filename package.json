@@ -1,6 +1,6 @@
 {
   "name": "@viur/ignite",
-  "version": "5.0",
+  "version": "5.0.0",
   "homepage": "https://ignite.viur.dev",
   "author": {
     "name": "Mausbrand",
@@ -12,7 +12,7 @@
     "Christopher Reinbothe",
     "Andreas H. Kelch"
   ],
-  "description": "PostCSS boilerplate",
+  "description": "A sizzling PostCSS boilerplate",
   "main": "ignite.css",
   "unpkg": "dist/ignite.css",
   "style": "dist/ignite.min.css",
@@ -41,6 +41,9 @@
     "postcss-sort-media-queries": "^5.2.0"
   },
   "scripts": {
+    "watch": "postcss ignite.css -o dist/ignite.css -w",
+    "dev": "postcss ignite.css -o dist/ignite.css",
+    "build": "mode=prod postcss ignite.css -o dist/ignite.min.css"
   },
   "files": [
     "ignite.css",

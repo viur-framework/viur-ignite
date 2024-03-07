@@ -15,21 +15,22 @@ For a detailed introduction and examples have a look at [ignite.viur.dev](https:
 * It is a lightweight collection of helpful CSS 
 * It is responsive and adaptable
 * It is built with PostCSS
+* It is a solid foundation for [Shoelace](https://github.com/viur-framework/vi-shoelace) and [VUEJS](https://github.com/viur-framework/vi-vue-components)
 
 ## Foundation
 * _basic.css_ – styling of all application basics (body, fonts, headlines, lists etc.).
-* _color.css_ – 
+* _color.css_ – is a collection of color tables.
 * _config.css_ – stores all default variables and constants.
 * _mediaqueries.css_ – is a really simple solution for media queries.
 * _reset.css_ – resets all browsers to the same base state.
 
 ## Themes
-* _dark.css_ -
-* _light.css_ -
+* _dark.css_ - is a starting point for a dark theme
+* _light.css_ - is a starting point for a light theme
 
 ## Utilities
-* _shoelace.css_ – 
-* _utilities.css_ – 
+* _shoelace.css_ – the ignite shoelace adapter (ISA)
+* _utilities.css_ – useful helpers
 
 ---
 
