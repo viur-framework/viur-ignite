@@ -1,7 +1,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE)
 
 # Ignite
-> ViUR Ignite is a sturdy PostCSS boilerplate  
+> ViUR Ignite is a sizzling PostCSS boilerplate  
 
 Our goal is to create a boilerplate that is sturdy and scalable 
 yet lightweight and adaptable to our different customer projects.
