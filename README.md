@@ -57,7 +57,7 @@ Then you can import ignite in your projects style.css
 ---
 
 ## Contribution guidelines
-* Available for use under the GPL-3.0 license
+* Available for use under the MIT license
 
 ---
 
