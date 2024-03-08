@@ -1,4 +1,5 @@
-[![License: MIT](https://img.shields.io/npm/l/@viur/ignite)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE)
+[![License: MIT](https://img.shields.io/npm/l/@viur/ignite)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE) ![NPM Version](https://img.shields.io/npm/v/:packageName)
+
 
 # Ignite
 > ViUR Ignite is a sizzling PostCSS boilerplate  
