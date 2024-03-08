@@ -1,4 +1,4 @@
-![NPM Version](https://img.shields.io/npm/v/%40viur%2Fignite) [![License: MIT](https://img.shields.io/npm/l/@viur/ignite)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/%40viur%2Fignite)](https://www.npmjs.com/package/@viur/ignite) [![License: MIT](https://img.shields.io/npm/l/@viur/ignite)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE)
 
 
 # Ignite
@@ -38,6 +38,7 @@ For a detailed introduction and examples have a look at [ignite.viur.dev](https:
 ## Usage
 
 **NPM**
+
 Use NPM to install Ignite: 
 ```bash
 npm install @viur/ignite 
@@ -51,6 +52,7 @@ This way you are able to get rid of ugly `../node_modules/@viur/ignite/ignite.cs
 ```
 
 **Submodule**
+
 You can add Ignite as submodule to your project as well:
 ```bash
 git submodule add git@github.com:viur-framework/ignite.git
@@ -65,6 +67,7 @@ Now you can import Ignite in your projects style.css
 ```
 
 **Builds**
+
 Preprocessed versions of Ignite can be found in `dist` folder:
 
 Bundled: 
