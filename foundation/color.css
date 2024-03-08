@@ -1,0 +1,323 @@
+/* COLOR TABLES */
+
+:root,
+:host {
+
+  /* Color Primitives */
+  /* Gray scale */
+  --ignt-color-gray-50: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 95%);
+  --ignt-color-gray-100: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 90%);
+  --ignt-color-gray-200: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 75%);
+  --ignt-color-gray-300: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 60%);
+  --ignt-color-gray-400: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-down) 25%);
+  --ignt-color-gray-500: var(--ignt-color-gray);
+  --ignt-color-gray-600: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 15%);
+  --ignt-color-gray-700: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 40%);
+  --ignt-color-gray-800: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 60%);
+  --ignt-color-gray-900: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 70%);
+  --ignt-color-gray-950: color-mix(in srgb, var(--ignt-color-gray), var(--ignt-mix-color-up) 80%);
+
+  /* Red */
+  --ignt-color-red-50: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-red-100: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-red-200: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-down) 55%);
+  --ignt-color-red-300: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-red-400: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-red-500: hsl(0 84.2% 60.2%);
+  --ignt-color-red-600: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-red-700: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-red-800: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-up) 55%);
+  --ignt-color-red-900: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-red-950: color-mix(in srgb, var(--ignt-color-red-500), var(--ignt-mix-color-up) 70%);
+
+
+  /* Orange */
+  --ignt-color-orange-50: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-orange-100: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-orange-200: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-down) 55%);
+  --ignt-color-orange-300: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-orange-400: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-orange-500: hsl(25 95% 53.1%);
+  --ignt-color-orange-600: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-orange-700: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-orange-800: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-up) 55%);
+  --ignt-color-orange-900: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-orange-950: color-mix(in srgb, var(--ignt-color-orange-500), var(--ignt-mix-color-up) 70%);
+
+  /* Amber */
+  --ignt-color-amber-50: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-amber-100: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-amber-200: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-down) 55%);
+  --ignt-color-amber-300: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-amber-400: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-amber-500: hsl(38 92.1% 50.2%);
+  --ignt-color-amber-600: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-amber-700: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-amber-800: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-up) 55%);
+  --ignt-color-amber-900: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-amber-950: color-mix(in srgb, var(--ignt-color-amber-500), var(--ignt-mix-color-up) 70%);
+
+  /* Yellow */
+  --ignt-color-yellow-50: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-yellow-100: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-yellow-200: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-down) 55%);
+  --ignt-color-yellow-300: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-yellow-400: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-yellow-500: hsl(45 93.4% 47.5%);
+  --ignt-color-yellow-600: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-yellow-700: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-yellow-800: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-up) 55%);
+  --ignt-color-yellow-900: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-yellow-950: color-mix(in srgb, var(--ignt-color-yellow-500), var(--ignt-mix-color-up) 70%);
+
+  /* Lime */
+  --ignt-color-lime-50: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-lime-100: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-lime-200: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-down) 55%);
+  --ignt-color-lime-300: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-lime-400: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-lime-500: hsl(83.7 80.5% 44.3%);
+  --ignt-color-lime-600: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-lime-700: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-lime-800: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-lime-900: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-lime-950: color-mix(in srgb, var(--ignt-color-lime-500), var(--ignt-mix-color-up) 70%);
+
+  /* Green */
+  --ignt-color-green-50: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-green-100: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-green-200: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-green-300: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-green-400: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-green-500: hsl(142.1 70.6% 45.3%);
+  --ignt-color-green-600: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-green-700: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-green-800: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-green-900: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-green-950: color-mix(in srgb, var(--ignt-color-green-500), var(--ignt-mix-color-up) 70%);
+
+  /* Emerald */
+  --ignt-color-emerald-50: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-emerald-100: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-emerald-200: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-emerald-300: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-emerald-400: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-emerald-500: hsl(160.1 84.1% 39.4%);
+  --ignt-color-emerald-600: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-emerald-700: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-emerald-800: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-emerald-900: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-emerald-950: color-mix(in srgb, var(--ignt-color-emerald-500), var(--ignt-mix-color-up) 70%);
+
+  /* Teal */
+  --ignt-color-teal-50: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-teal-100: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-teal-200: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-teal-300: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-teal-400: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-teal-500: hsl(173.4 80.4% 40%);
+  --ignt-color-teal-600: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-teal-700: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-teal-800: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-teal-900: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-teal-950: color-mix(in srgb, var(--ignt-color-teal-500), var(--ignt-mix-color-up) 70%);
+
+  /* Cyan */
+  --ignt-color-cyan-50: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-cyan-100: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-cyan-200: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-cyan-300: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-cyan-400: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-cyan-500: hsl(188.7 94.5% 42.7%);
+  --ignt-color-cyan-600: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-cyan-700: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-cyan-800: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-cyan-900: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-cyan-950: color-mix(in srgb, var(--ignt-color-cyan-500), var(--ignt-mix-color-up) 70%);
+
+  /* Sky */
+  --ignt-color-sky-50: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-sky-100: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-sky-200: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-sky-300: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-sky-400: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-sky-500: hsl(198.6 88.7% 48.4%);
+  --ignt-color-sky-600: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-sky-700: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-sky-800: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-sky-900: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-sky-950: color-mix(in srgb, var(--ignt-color-sky-500), var(--ignt-mix-color-up) 70%);
+
+  /* Blue */
+  --ignt-color-blue-50: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-blue-100: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-blue-200: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-blue-300: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-blue-400: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-blue-500: hsl(217.2 91.2% 59.8%);
+  --ignt-color-blue-600: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-blue-700: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-blue-800: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-blue-900: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-blue-950: color-mix(in srgb, var(--ignt-color-blue-500), var(--ignt-mix-color-up) 70%);
+
+  /* Indigo */
+  --ignt-color-indigo-50: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-indigo-100: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-indigo-200: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-indigo-300: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-indigo-400: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-indigo-500: hsl(240 83.5% 66.7%);
+  --ignt-color-indigo-600: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-indigo-700: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-indigo-800: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-indigo-900: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-indigo-950: color-mix(in srgb, var(--ignt-color-indigo-500), var(--ignt-mix-color-up) 70%);
+
+  /* Violet */
+  --ignt-color-violet-50: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-violet-100: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-violet-200: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-violet-300: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-violet-400: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-violet-500: hsl(260 89.5% 66.3%);
+  --ignt-color-violet-600: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-violet-700: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-violet-800: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-violet-900: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-violet-950: color-mix(in srgb, var(--ignt-color-violet-500), var(--ignt-mix-color-up) 70%);
+
+  /* Purple */
+  --ignt-color-purple-50: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-purple-100: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-purple-200: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-purple-300: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-purple-400: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-purple-500: hsl(270 91% 65.1%);
+  --ignt-color-purple-600: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-purple-700: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-purple-800: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-purple-900: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-purple-950: color-mix(in srgb, var(--ignt-color-purple-500), var(--ignt-mix-color-up) 70%);
+
+  /* Fuchsia */
+  --ignt-color-fuchsia-50: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-fuchsia-100: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-fuchsia-200: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-fuchsia-300: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-fuchsia-400: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-fuchsia-500: hsl(292 84.1% 60.6%);
+  --ignt-color-fuchsia-600: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-fuchsia-700: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-fuchsia-800: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-fuchsia-900: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-fuchsia-950: color-mix(in srgb, var(--ignt-color-fuchsia-500), var(--ignt-mix-color-up) 70%);
+
+  /* Pink */
+  --ignt-color-pink-50: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-pink-100: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-pink-200: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-pink-300: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-pink-400: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-pink-500: hsl(330.4 81.2% 60.4%);
+  --ignt-color-pink-600: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-pink-700: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-pink-800: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-pink-900: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-pink-950: color-mix(in srgb, var(--ignt-color-pink-500), var(--ignt-mix-color-up) 70%);
+
+  /* Rose */
+  --ignt-color-rose-50: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-down) 70%);
+  --ignt-color-rose-100: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-down) 65%);
+  --ignt-color-rose-200: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-down) 50%);
+  --ignt-color-rose-300: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-down) 35%);
+  --ignt-color-rose-400: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-down) 15%);
+  --ignt-color-rose-500: hsl(349.7 89.2% 60.2%);
+  --ignt-color-rose-600: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-up) 15%);
+  --ignt-color-rose-700: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-up) 35%);
+  --ignt-color-rose-800: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-up) 50%);
+  --ignt-color-rose-900: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-up) 65%);
+  --ignt-color-rose-950: color-mix(in srgb, var(--ignt-color-rose-500), var(--ignt-mix-color-up) 70%);
+
+  /* Theme tokens */
+  /* Primary scale */
+  --ignt-color-primary-50: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-down) 70%);
+  --ignt-color-primary-100: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-down) 65%);
+  --ignt-color-primary-200: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-down) 50%);
+  --ignt-color-primary-300: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-down) 35%);
+  --ignt-color-primary-400: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-down) 15%);
+  --ignt-color-primary-500: var(--ignt-color-primary);
+  --ignt-color-primary-600: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-up) 15%);
+  --ignt-color-primary-700: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-up) 35%);
+  --ignt-color-primary-800: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-up) 50%);
+  --ignt-color-primary-900: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-up) 65%);
+  --ignt-color-primary-950: color-mix(in srgb, var(--ignt-color-primary), var(--ignt-mix-color-up) 70%);
+
+  /* Secondary scale */
+  --ignt-color-secondary-50: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-down) 70%);
+  --ignt-color-secondary-100: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-down) 65%);
+  --ignt-color-secondary-200: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-down) 50%);
+  --ignt-color-secondary-300: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-down) 35%);
+  --ignt-color-secondary-400: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-down) 15%);
+  --ignt-color-secondary-500: var(--ignt-color-secondary);
+  --ignt-color-secondary-600: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-up) 15%);
+  --ignt-color-secondary-700: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-up) 35%);
+  --ignt-color-secondary-800: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-up) 50%);
+  --ignt-color-secondary-900: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-up) 65%);
+  --ignt-color-secondary-950: color-mix(in srgb, var(--ignt-color-secondary), var(--ignt-mix-color-up) 70%);
+
+  /* Success scale */
+  --ignt-color-success-50: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-down) 70%);
+  --ignt-color-success-100: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-down) 65%);
+  --ignt-color-success-200: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-down) 50%);
+  --ignt-color-success-300: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-down) 35%);
+  --ignt-color-success-400: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-down) 15%);
+  --ignt-color-success-500: var(--ignt-color-success);
+  --ignt-color-success-600: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-up) 15%);
+  --ignt-color-success-700: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-up) 35%);
+  --ignt-color-success-800: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-up) 50%);
+  --ignt-color-success-900: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-up) 65%);
+  --ignt-color-success-950: color-mix(in srgb, var(--ignt-color-success), var(--ignt-mix-color-up) 70%);
+
+  /* Warn scale */
+  --ignt-color-warning-50: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 70%);
+  --ignt-color-warning-100: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 65%);
+  --ignt-color-warning-200: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 50%);
+  --ignt-color-warning-300: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 35%);
+  --ignt-color-warning-400: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-down) 15%);
+  --ignt-color-warning-500: var(--ignt-color-warning);
+  --ignt-color-warning-600: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 15%);
+  --ignt-color-warning-700: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 35%);
+  --ignt-color-warning-800: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 50%);
+  --ignt-color-warning-900: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 65%);
+  --ignt-color-warning-950: color-mix(in srgb, var(--ignt-color-warning), var(--ignt-mix-color-up) 70%);
+
+  /* Danger scale */
+  --ignt-color-danger-50: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-down) 70%);
+  --ignt-color-danger-100: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-down) 65%);
+  --ignt-color-danger-200: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-down) 50%);
+  --ignt-color-danger-300: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-down) 35%);
+  --ignt-color-danger-400: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-down) 15%);
+  --ignt-color-danger-500: var(--ignt-color-danger);
+  --ignt-color-danger-600: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-up) 15%);
+  --ignt-color-danger-700: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-up) 35%);
+  --ignt-color-danger-800: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-up) 50%);
+  --ignt-color-danger-900: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-up) 65%);
+  --ignt-color-danger-950: color-mix(in srgb, var(--ignt-color-danger), var(--ignt-mix-color-up) 70%);
+
+  /* Hint scale */
+  --ignt-color-info-50: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-down) 70%);
+  --ignt-color-info-100: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-down) 65%);
+  --ignt-color-info-200: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-down) 50%);
+  --ignt-color-info-300: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-down) 35%);
+  --ignt-color-info-400: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-down) 15%);
+  --ignt-color-info-500: var(--ignt-color-info);
+  --ignt-color-info-600: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-up) 15%);
+  --ignt-color-info-700: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-up) 35%);
+  --ignt-color-info-800: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-up) 50%);
+  --ignt-color-info-900: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-up) 65%);
+  --ignt-color-info-950: color-mix(in srgb, var(--ignt-color-info), var(--ignt-mix-color-up) 70%);
+}
+
+
+

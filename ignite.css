@@ -1,0 +1,28 @@
+/* ViUR Ignite 2024 (v5.0.0) */
+
+/*
+This is the main file.
+It imports all css files in their intended order for easy mass-inclusion.
+
+!!! Please use Ignite as a library and do not customize this file or any import.
+*/
+
+@layer
+  foundation,
+  themes,
+  elements,
+  utilities;
+
+/* Fundamental parts: reset, positioning, type and themes */
+@import url('foundation/config.css') layer(foundation.config);
+@import url('foundation/mediaqueries.css') layer(utilities.mediaqueries);
+@import url('foundation/reset.css') layer(foundation.reset);
+@import url('foundation/basic.css') layer(foundation.basic);
+@import url('foundation/color.css') layer(foundation.color);
+
+@import url('themes/dark.css') layer(themes.dark);
+@import url('themes/light.css') layer(themes.light);
+
+/* Utilities: small, helpful tools */
+@import url('utilities/utilities.css') layer(utilities.utilities);
+@import url('utilities/shoelace.css') layer(utilities.shoelace); /* the viur shoelace adapter™ (ViSA) */
