@@ -1,4 +1,4 @@
-[![License: MIT](https://img.shields.io/npm/l/@viur/ignite)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE) ![NPM Version](https://img.shields.io/npm/v/:packageName)
+[![License: MIT](https://img.shields.io/npm/l/@viur/ignite)](https://raw.githubusercontent.com/viur-ignite/ignite/master/LICENSE) ![NPM Version](https://img.shields.io/npm/v/:@viur/ignite)
 
 
 # Ignite
