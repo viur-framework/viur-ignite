@@ -46,6 +46,11 @@
     "build": "mode=prod postcss ignite.css -o dist/ignite.min.css"
   },
   "files": [
+    "dist",
+    "foundation",
+    "themes",
+    "utilities",
+    ".postcssrc.cjs",
     "ignite.css",
     "LICENSE",
     "README.md"
