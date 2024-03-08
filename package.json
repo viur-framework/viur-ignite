@@ -43,7 +43,7 @@
   "scripts": {
     "watch": "postcss ignite.css -o dist/ignite.css -w",
     "dev": "postcss ignite.css -o dist/ignite.css",
-    "build": "mode=prod postcss ignite.css -o dist/ignite.min.css"
+    "build": "mode=build postcss ignite.css -o dist/ignite.min.css"
   },
   "files": [
     "dist",
