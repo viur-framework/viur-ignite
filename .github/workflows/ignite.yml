@@ -1,0 +1,64 @@
+name: Build Ignite
+
+on:
+  push:
+    tags:
+      - "v5.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+        path: "app/sources"
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: 'package-lock.json'
+    - run: npm install
+    - run: npm run build
+    - uses: actions/upload-artifact@master
+      with:
+        name: buildfiles
+        path: dist
+
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [ build ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@master
+        with:
+          name: buildfiles
+          path: ./dist
+
+      - name: archive
+        run: cd ./dist && zip viur-ignite.zip -r ./*
+
+      - name: Get version from tag
+        id: tag_name
+        run: |
+          echo ::set-output name=current_version::${GITHUB_REF#refs/tags/v}
+
+      - name: create release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./dist/viur-ignite.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+

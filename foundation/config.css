@@ -1,0 +1,183 @@
+/* IGNITE DEFAULT CONFIGURATION 2023 */
+
+:root,
+:host {
+  --ignt-theme-name: "viur";
+  --ignt-color-scheme: normal;
+  color-scheme: var(--ignt-color-scheme);
+
+  /* Color and Shadow Sets */
+
+  /* The corporate color - defining most of the looks. */
+  --ignt-color-primary: hsla(356 87% 44% / 100%);
+
+  /* A color used to sit next to the maincolor. */
+  --ignt-color-secondary: hsla(0 0% 20% / 100%);
+
+  /* From Black to White */
+  --ignt-color-gray: hsla(240 4% 46% / 100%);
+
+  --ignt-color-neutral-1000: hsla(0 0% 0% / 100%); /* black */
+  --ignt-color-neutral-0: hsla(0 0% 100% / 100%); /* white */
+
+  --ignt-mix-color-up: hsla(0 0% 0% / 100%); /* black */
+  --ignt-mix-color-down: hsla(0 0% 100% / 100%); /* white */
+
+  /* Alert colors */
+  --ignt-color-success: color-mix(in oklch, var(--ignt-color-primary), hsla(130 45% 47% / 100%) 90%);
+  --ignt-color-warning: color-mix(in oklch, var(--ignt-color-primary), hsla(40 90% 60% / 100%) 90%);
+  --ignt-color-danger: color-mix(in oklch, var(--ignt-color-primary), hsla(4 90% 58% / 100%) 90%);
+  --ignt-color-info: color-mix(in oklch, var(--ignt-color-primary), hsla(198 77% 49% / 100%) 90%);
+
+  /* Surfaces */
+  --ignt-surface-default: var(--ignt-color-gray-100);
+  --ignt-surface-alt: var(--ignt-color-neutral-0);
+
+  /* Text colors */
+  --ignt-color-text-default: var(--ignt-color-gray-800);
+  --ignt-color-text-inverted: var(--ignt-color-gray-100);
+  --ignt-color-link-default: var(--ignt-color-primary-700);
+  --ignt-color-hover-default: var(--ignt-color-primary-500);
+
+  /* Measurements and Media Queries */
+
+  /* Border radii */
+  --ignt-border-radius-default: 0.4rem;
+  --ignt-border-radius-small: calc(var(--ignt-border-radius-default) / 2);
+  --ignt-border-radius-medium: var(--ignt-border-radius-default);
+  --ignt-border-radius-large: calc(var(--ignt-border-radius-default) * 1.5);
+  --ignt-border-radius-x-large: calc(var(--ignt-border-radius-default) * 2);
+  --ignt-border-radius-circle: 50%;
+  --ignt-border-radius-pill: 9999px;
+
+  /* Border widths */
+  --ignt-border-width-default: 1px;
+  --ignt-border-width-small: calc(var(--ignt-border-width-default) / 2);
+  --ignt-border-width-medium: var(--ignt-border-width-default);
+  --ignt-border-width-large: calc(var(--ignt-border-width-default) * 1.5);
+
+  /* Elevations */
+  --ignt-shadow-default: var(--ignt-shadow-none);
+  --ignt-shadow-hover-default: var(--ignt-shadow-x-small);
+
+  --ignt-color-shadow: var(--ignt-color-neutral-1000);
+  --ignt-shadow-none: none;
+
+  --ignt-shadow-x-small:
+    0 1px 3px color-mix(in oklch, var(--ignt-color-shadow) 12%, transparent),
+    0 1px 2px color-mix(in oklch, var(--ignt-color-shadow) 24%, transparent);
+
+  --ignt-shadow-small:
+    0 3px 6px color-mix(in oklch, var(--ignt-color-shadow) 16%, transparent),
+    0 3px 6px color-mix(in oklch, var(--ignt-color-shadow) 23%, transparent);
+
+  --ignt-shadow-medium:
+    0 10px 20px color-mix(in oklch, var(--ignt-color-shadow) 19%, transparent),
+    0 6px 6px color-mix(in oklch, var(--ignt-color-shadow) 23%, transparent);
+
+  --ignt-shadow-large:
+    0 14px 28px color-mix(in oklch, var(--ignt-color-shadow) 25%, transparent),
+    0 10px 10px color-mix(in oklch, var(--ignt-color-shadow) 22%, transparent);
+
+  --ignt-shadow-x-large:
+    0 19px 38px color-mix(in oklch, var(--ignt-color-shadow) 30%, transparent),
+    0 15px 12px color-mix(in oklch, var(--ignt-color-shadow) 22%, transparent);
+
+  /* Spacings */
+  --ignt-spacing-3x-small: 0.125rem; /* 2px */
+  --ignt-spacing-2x-small: 0.25rem; /* 4px */
+  --ignt-spacing-x-small: 0.5rem; /* 8px */
+  --ignt-spacing-small: 0.75rem; /* 12px */
+  --ignt-spacing-medium: 1rem; /* 16px */
+  --ignt-spacing-large: 1.25rem; /* 20px */
+  --ignt-spacing-x-large: 1.75rem; /* 28px */
+  --ignt-spacing-2x-large: 2.25rem; /* 36px */
+  --ignt-spacing-3x-large: 3rem; /* 48px */
+  --ignt-spacing-4x-large: 4.5rem; /* 72px */
+
+  /* Transitions */
+  --ignt-transition-x-slow: 1000ms;
+  --ignt-transition-slow: 500ms;
+  --ignt-transition-medium: 300ms;
+  --ignt-transition-fast: 150ms;
+  --ignt-transition-x-fast: 50ms;
+
+  /* Font Stacks */
+  /* Default font stack. */
+  --ignt-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ignt-font-serif: Georgia, 'Times New Roman', serif;
+
+  /* Fonts for headlines, blockquotes and alike. */
+  --ignt-head-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ignt-head-font-serif: Georgia, 'Times New Roman', serif;
+
+  /* Fonts for code pieces. */
+  --ignt-font-mono: 'Source Code Pro', Courier, monospace;
+
+  /* Font sizes */
+  --ignt-font-size-3x-small: 0.3em; /* ~5px */
+  --ignt-font-size-2x-small: 0.625em; /* 10px */
+  --ignt-font-size-x-small: 0.75em; /* 12px */
+  --ignt-font-size-small: 0.875em; /* 14px */
+  --ignt-font-size-medium: 1em; /* 16px */
+  --ignt-font-size-large: 1.25em; /* 20px */
+  --ignt-font-size-x-large: 1.5em; /* 24px */
+  --ignt-font-size-2x-large: 2.25em; /* 36px */
+  --ignt-font-size-3x-large: 3em; /* 48px */
+  --ignt-font-size-4x-large: 4.5em; /* 72px */
+
+  /* Font weights */
+  --ignt-font-weight-light: 300;
+  --ignt-font-weight-normal: 400;
+  --ignt-font-weight-semibold: 500;
+  --ignt-font-weight-bold: 700;
+
+  /* Letter spacings */
+  --ignt-letter-spacing-denser: -0.03em;
+  --ignt-letter-spacing-dense: -0.015em;
+  --ignt-letter-spacing-normal: normal;
+  --ignt-letter-spacing-loose: 0.075em;
+  --ignt-letter-spacing-looser: 0.15em;
+
+  /* Line heights */
+  --ignt-line-height-default: 1.5;
+  --ignt-line-height-denser: calc(var(--ignt-line-height-default) - 0.75);
+  --ignt-line-height-dense: calc(var(--ignt-line-height-default) - 0.5);
+  --ignt-line-height-normal: var(--ignt-line-height-default);
+  --ignt-line-height-loose: calc(var(--ignt-line-height-default) + 0.5);
+  --ignt-line-height-looser: calc(var(--ignt-line-height-default) + 0.75);
+
+  /* Different widths and heights */
+  --ignt-page-width-default: 1400px; /* max-width of the centered container */
+  --ignt-paragraph-width-default: 77ch; /* max-width of text paragraphs: 77 characters */
+  --ignt-input-height-small: 1.25rem;
+  --ignt-input-height-medium: 1.75rem;
+  --ignt-input-height-large: 2rem;
+
+  /* Z-indexes */
+  --ignt-z-index-drawer: 0;
+  --ignt-z-index-content: 100;
+  --ignt-z-index-dialog: 200;
+  --ignt-z-index-dropdown: 300;
+  --ignt-z-index-toast: 400;
+  --ignt-z-index-tooltip: 500;
+  --ignt-z-index-dev: 600;
+
+  /* ORDER!!! */
+  --ignt-order-header: 0;
+  --ignt-order-body: 100;
+  --ignt-order-footer: 200;
+
+  /* Media queries / Supported screen sizes */
+  --ignt-break-2x-small: 23em; /* old smart phones or gadgets like smart watches up to: 368px / 16px = 23em */
+  --ignt-break-x-small: 40em; /* smart phones up to: 640px / 16px = 40em */
+  --ignt-break-small: 65em; /* tablets up to: 1040px / 16px = 65em */
+  --ignt-break-medium: 75em; /* screens: 1200px / 16px = 75em */
+  --ignt-break-large: 93.75em; /* big screens: 1500px / 16px = 93.75em */
+  --ignt-break-x-large: 112.5em; /* huge screens: 1800px / 16px = 112.5em */
+  --ignt-break-2x-large: 225em; /* 4k screens: 3600px / 16px = 225em */
+
+  --ignt-break-hdpi: 2; /* hiDPI displays */
+  --ignt-break-print: print; /* make it printable! */
+}
+

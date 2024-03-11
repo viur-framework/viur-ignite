@@ -1,0 +1,19 @@
+/* ViUR Shoelace Adapter 2024 */
+
+/*
+This is the standalone shoelace theme file.
+It imports all css files in their intended order for easy mass-inclusion.
+
+!!! Please use Ignite as a library and do not customize this file or any import.
+*/
+
+@layer
+  foundation,
+  themes,
+  elements,
+  utilities;
+
+@import url('foundation/color.css') layer(foundation.color);
+@import url('foundation/config.css') layer(foundation.config); /* stores all default variables and constants. */
+@import url('utilities/shoelace.css') layer(foundation.shoelace); /* the ignite shoelace adapter (ISA) */
+

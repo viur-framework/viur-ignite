@@ -1,20 +1,23 @@
-@charset "UTF-8";
-/* POSITION STYLES */
+/* UTILITIES */
 
-.pos-center() {
+[hidden],
+.hidden,
+.is-hidden {display: none;}
+
+.pos-center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.pos-centerX() {
+.pos-center-x {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
 }
 
-.pos-centerY() {
+.pos-center-y {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);

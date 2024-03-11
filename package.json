@@ -1,0 +1,57 @@
+{
+  "name": "@viur/ignite",
+  "version": "5.0.2",
+  "homepage": "https://ignite.viur.dev",
+  "author": {
+    "name": "Mausbrand",
+    "email": "mail@mausbrand.de",
+    "url": "https://www.mausbrand.de"
+  },
+  "contributors": [
+    "Sven Eberth",
+    "Christopher Reinbothe",
+    "Andreas H. Kelch"
+  ],
+  "description": "A sizzling PostCSS boilerplate",
+  "main": "ignite.css",
+  "unpkg": "dist/ignite.css",
+  "style": "dist/ignite.min.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viur-framework/viur-ignite.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "postcss",
+    "boilerplate"
+  ],
+  "bugs": {
+    "url": "https://github.com/viur-framework/viur-ignite/issues"
+  },
+  "devDependencies": {
+    "@csstools/postcss-bundler": "^1.0.6",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.3",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "postcss-discard-comments": "^6.0.1",
+    "postcss-focus": "^7.0.0",
+    "postcss-preset-env": "^9.3.0",
+    "postcss-sort-media-queries": "^5.2.0"
+  },
+  "scripts": {
+    "watch": "postcss ignite.css -o dist/ignite.css -w",
+    "dev": "postcss ignite.css -o dist/ignite.css",
+    "build": "mode=build postcss ignite.css -o dist/ignite.min.css"
+  },
+  "files": [
+    "dist",
+    "foundation",
+    "themes",
+    "utilities",
+    "ignite.css",
+    "LICENSE",
+    "README.md"
+  ]
+}

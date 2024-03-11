@@ -1,0 +1,11 @@
+/* LIGHT THEME */
+.sl-theme-viur-light {
+  --ignt-theme-name: "viur-light";
+  --ignt-color-scheme: light;
+
+  --ignt-mix-color-down: hsla(0 0% 100% / 100%); /* white */
+  --ignt-mix-color-up: hsla(0 0% 0% / 100%); /* black */
+
+  --ignt-color-neutral-1000: hsla(0 0% 0% / 100%); /* black */
+  --ignt-color-neutral-0: hsla(0 0% 100% / 100%); /* white */
+}
