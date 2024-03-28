@@ -104,7 +104,7 @@
 
   /* Font Stacks */
   /* Default font stack. */
-  --ignt-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ignt-font-sans: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   --ignt-font-serif: Georgia, 'Times New Roman', serif;
 
   /* Fonts for headlines, blockquotes and alike. */
