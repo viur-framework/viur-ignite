@@ -1,0 +1,55 @@
+/* GRID */
+/* Based on Russel Bishop's Container Units: https://russellbishop.co.uk/container-units and
+   Tylor Sticka's Breaking Out Layout: https://codepen.io/tylersticka/pen/wdmymG
+*/
+
+:root {
+  /* Grid logic */
+  --ignt-grid-gutters: calc(var(--ignt-grid-columns) - 1);
+
+  /* Grid proportion logic */
+  --ignt-column-proportion: calc(var(--ignt-grid-column-width) / var(--ignt-grid-width));
+  --ignt-gutter-proportion: calc((1 - (var(--ignt-grid-columns) * var(--ignt-column-proportion))) / var(--ignt-grid-gutters));
+
+  /* Container Units */
+  --ignt-column-unit: calc(var(--ignt-column-proportion) * var(--ignt-container-width));
+  --ignt-gutter-unit: calc(var(--ignt-gutter-proportion) * var(--ignt-container-width));
+  --ignt-column-and-gutter-unit: calc(var(--ignt-column-unit) + var(--ignt-gutter-unit));
+
+  /* Subgrid column spans */
+  /* Use `--ignt-subgrid-columns` with any number < `--ignt-grid-columns` */
+  --ignt-subgrid-columns: calc(var(--ignt-grid-columns) - 6) ;
+  --ignt-subgrid-span: calc(var(--ignt-subgrid-columns) * var(--ignt-column-and-gutter-unit) - var(--ignt-gutter-unit));
+
+  /* Container Width */
+  --ignt-container-width: 80vw;
+}
+
+@media (--ignt-mq-min-break-small) {
+  :root {
+    --ignt-container-width: 90vw;
+  }
+}
+
+@media (--ignt-mq-min-break-large) {
+  :root {
+    --ignt-container-width: var(--ignt-page-width-default);
+  }
+}
+
+.grid {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: [wrap-start] minmax(var(--ignt-spacing-medium), 1fr)
+                         [bind-start] repeat(var(--ignt-grid-columns), var(--ignt-column-unit))
+                         [bind-end] minmax(var(--ignt-spacing-medium), 1fr)
+                         [wrap-end];
+  grid-column-gap: var(--ignt-gutter-unit);
+}
+
+.subgrid {
+  width: var(--ignt-subgrid-span);
+  display: grid;
+  grid-template-columns: repeat(var(--ignt-subgrid-columns), var(--ignt-column-unit));
+  grid-column-gap: var(--ignt-gutter-unit);
+}

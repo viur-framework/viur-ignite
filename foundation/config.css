@@ -154,6 +154,11 @@
   --ignt-input-height-medium: 1.75rem;
   --ignt-input-height-large: 2rem;
 
+  /* Grid */
+  --ignt-grid-width: 960;
+  --ignt-grid-column-width: 60;
+  --ignt-grid-columns: 12;
+
   /* Z-indexes */
   --ignt-z-index-drawer: 0;
   --ignt-z-index-content: 100;
