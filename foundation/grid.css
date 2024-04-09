@@ -18,11 +18,11 @@
 
   /* Subgrid column spans */
   /* Use `--ignt-subgrid-columns` with any number < `--ignt-grid-columns` */
-  --ignt-subgrid-columns: calc(var(--ignt-grid-columns) - 6) ;
+  --ignt-subgrid-columns: clamp(1, calc(var(--ignt-grid-columns) - 6), var(--ignt-grid-columns));
   --ignt-subgrid-span: calc(var(--ignt-subgrid-columns) * var(--ignt-column-and-gutter-unit) - var(--ignt-gutter-unit));
 
   /* Container Width */
-  --ignt-container-width: 80vw;
+  --ignt-container-width: 95vw;
 }
 
 @media (--ignt-mq-min-break-small) {
