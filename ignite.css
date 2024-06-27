@@ -18,6 +18,7 @@ It imports all css files in their intended order for easy mass-inclusion.
 @import url('foundation/mediaqueries.css') layer(utilities.mediaqueries);
 @import url('foundation/reset.css') layer(foundation.reset);
 @import url('foundation/basic.css') layer(foundation.basic);
+@import url('foundation/grid.css') layer(foundation.grid);
 @import url('foundation/color.css') layer(foundation.color);
 
 @import url('themes/dark.css') layer(themes.dark);
