@@ -1,10 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [5.0.3] 
+## [5.1.0] 
 
 ### Changed
 - Change some custom properties in shoelace.css
+
+### Added
+- **NEW** Added a versatile grid implementation based on Russel Bishop's Container Units and Tylor Sticka's Breaking Out Layout
 
 ## [5.0.2] - 2024-03-08
 
