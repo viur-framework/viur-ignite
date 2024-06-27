@@ -1,6 +1,6 @@
 {
   "name": "@viur/ignite",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "homepage": "https://ignite.viur.dev",
   "author": {
     "name": "Mausbrand",
@@ -51,6 +51,7 @@
     "themes",
     "utilities",
     "ignite.css",
+    "shoelace.css",
     "LICENSE",
     "README.md"
   ]
