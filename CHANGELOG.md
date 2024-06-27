@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [5.1.1] 
+## [5.1.x] 
 
 ### Changed
 - Change some custom properties in shoelace.css
