@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [5.1.0] 
+
+### Changed
+- Change some custom properties in shoelace.css
+
+### Added
+- **NEW** Added a versatile grid implementation based on Russel Bishop's Container Units and Tylor Sticka's Breaking Out Layout
+
 ## [5.0.2] - 2024-03-08
 
 ViUR Ignite 5.0.x is a streamlined PostCSS boilerplate. Many LESS based features have been removed.
