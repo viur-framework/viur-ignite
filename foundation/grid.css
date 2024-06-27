@@ -53,3 +53,26 @@
   grid-template-columns: repeat(var(--ignt-subgrid-columns), var(--ignt-column-unit));
   grid-column-gap: var(--ignt-gutter-unit);
 }
+
+.wrap {
+  grid-column: wrap-start / wrap-end;
+  display: grid;
+  grid-template-columns: subgrid;
+  position: relative;
+  & + .wrap {margin-top: var(--ignt-spacing-medium);}
+}
+
+.bind {
+  grid-column: bind-start / bind-end;
+  display: grid;
+  grid-template-columns: subgrid;
+  position: relative;
+  & + .bind {margin-top: var(--ignt-spacing-medium);}
+  @media (--ignt-mq-print) {
+    padding:0;
+    margin:0;
+    display:block;
+    flex:none;
+    max-width:210mm;
+  };
+}
