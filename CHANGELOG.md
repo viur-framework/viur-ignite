@@ -1,14 +1,23 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [develop]
+## [5.1.0] 
 
-ViUR Ignite 5.0.0 is a streamlined PostCSS boilerplate. Many LESS based features have been removed.
-It is recommended to use ViUR Ignite 5.0.0 in combination with ViUR Shoelace.
+### Changed
+- Change some custom properties in shoelace.css
 
-### Change
+### Added
+- **NEW** Added a versatile grid implementation based on Russel Bishop's Container Units and Tylor Sticka's Breaking Out Layout
+
+## [5.0.2] - 2024-03-08
+
+ViUR Ignite 5.0.x is a streamlined PostCSS boilerplate. Many LESS based features have been removed.
+It is recommended to use ViUR Ignite 5.0.x in combination with ViUR Shoelace.
+
+### Changed
 - **BREAKING** change LESS to PostCSS
 - **BREAKING** change variables to custom properties
+- LICENSE is now MIT
 
 ### Added
 - **NEW** support for dark/light mode
@@ -17,6 +26,9 @@ It is recommended to use ViUR Ignite 5.0.0 in combination with ViUR Shoelace.
 ### Remove
 - **BREAKING** remove most generic elements (box, burger, button, icon, message, table, popout, popup)
 - **BREAKING** remove mixins (basicinput, border, inputvalidation, order, shadow, svg, zindex)
+
+## [4.1.1] - 2024-03-08
+This is the last version of LESS based Ignite with minor improvements.
 
 ## [4.1.0] - 2022-07-15
 
