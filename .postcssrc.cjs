@@ -12,7 +12,9 @@ module.exports = ({ ctx }) => ({
 			debug: true,
 			features: {
     			'color-mix': true,
-				'nesting-rules': true,
+				// postcss-nesting 13 defaults to edition 2024-02 (`:is()`-based, higher specificity);
+				// keep the previous desugared output
+				'nesting-rules': { edition: '2021', noIsPseudoSelector: true },
 				'oklab-function': true,
                 //'cascade-layers': true,
                 'custom-media-queries': true,
